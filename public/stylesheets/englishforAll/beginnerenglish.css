@@ -1,0 +1,521 @@
+body{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Section 1*/
+.course{
+
+}
+.course-announcement{
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 20, 20, 0.926),
+    rgba(42, 42, 43, 0.437),
+    rgba(40, 40, 41, 0.437),
+    rgba(161, 174, 179, 0.337),
+    rgba(177, 196, 202, 0.437),
+    rgba(94, 97, 99, 0.312)
+  ),
+              url("https://images.pexels.com/photos/1181414/pexels-photo-1181414.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  background-position: top center;
+  min-height: 90vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.course-heading{
+  font-size: 3rem;
+  padding: 1rem 0 0;
+  margin-right: 1rem;
+  text-align: center;
+  font-family: 'Abril Fatface', cursive;
+  letter-spacing: 0.2rem;
+  color: rgba(236, 233, 233, 0.877);
+}
+
+.level{
+  background-color: rgb(24, 23, 23);
+  padding: 0.5rem 1rem;
+  font-size: 1.8rem;
+  margin-top: 0;
+  border: 2px solid orangered;
+  text-align: center;
+  font-family: 'Abril Fatface', cursive;
+  letter-spacing: 0.2rem;
+  color: rgba(233, 230, 230, 0.877);
+}
+
+.course-paragraph{
+  font-size: 1.4rem;
+  margin-top: 0.3rem;
+  font-weight: 600;
+  font-family:'Kaushan Script', cursive;
+  letter-spacing: 0.1rem;
+  color: rgba(224, 220, 219, 0.808);
+  text-shadow: 1px 1px 2px rgba(252, 102, 33, 0.829);
+}
+
+.skill{
+  font-family: 'Kaushan Script', cursive;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: rgb(240, 232, 227);
+  padding: 1rem 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.829);
+}
+
+.course-details{
+  background-color: rgba(235, 240, 240, 0.986);
+  border: 2px solid black;
+  margin: 0.2rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+div > h3{
+  color: rgb(22, 23, 32);
+  font-family: 'Vollkorn', serif;
+  margin: 1rem 0.5rem;
+  font-size: 1rem;
+  padding: 1rem 0;
+  align-self: left ;
+}
+
+.course-details-info{
+  font-weight: bolder;
+  margin: 0 4px;
+  font-size: large;
+}
+
+h3 > i{
+  color: orangered;
+}
+.motivation{
+  border-radius: 0.4rem;
+  background-color: rgba(22, 20, 20, 0.877);
+  padding:0 1rem;
+  margin: 1rem 2rem 1rem 2rem;
+}
+
+.encouragement{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
+  margin-top: 1rem;
+  color: rgba(221, 219, 219, 0.808);
+  padding: 1rem 0;
+  letter-spacing: 0.2rem;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.start-learning-btn{
+  width: 15rem;
+  align-self: center;
+  border-radius: 3px;
+  background-color: black;
+  border: 2px solid orangered;
+}
+
+.start-learning-btn > a{
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: rgb(235, 222, 217);
+
+}
+
+.start-learning-btn:hover{
+  border: 2px solid rgb(0, 195, 255);
+}
+
+
+.img-wrapper > img{
+  border-radius: 1%;
+  border: 3px solid rgb(56, 57, 58);
+  margin-bottom: 1rem;
+  width: 1000px;
+  position:absolute;
+  top: 0;
+  left: 30%;
+}
+
+/* Section 2 */
+
+/* Fin Section 2 */
+
+/* Course */
+
+.week-wrapper{
+  margin-bottom: 4rem;
+}
+.week-lesson{
+  margin: 0 5rem;
+  padding: 1rem 0 2rem 0;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.week-lesson-img{
+  margin: 1rem;
+  width: 15rem;
+  height: 15rem;
+}
+
+
+.week-number{
+  display: inline;
+  font-family:'Marck Script', cursive;
+  font-size: 1.5rem;
+  margin: 0 2rem;
+}
+
+.week-number span{
+  width: 3rem;
+  padding: 0 1rem;
+  border-radius: 2px;
+  background-color: #222;
+  text-align: center;
+  font-family:'Kaushan Script', cursive;
+  color: whitesmoke;
+  border: 2px solid orangered;
+}
+
+.lesson-links{
+  margin: 2rem 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.self-practice-wrapper{
+  border: 1px solid black;
+  margin: 0 1rem;
+  background: #4B79A1;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #283E51, #4B79A1);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #283E51, #4B79A1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.practice-alone{
+  margin: 0.5rem;
+  padding: 0;
+  color: whitesmoke;
+  letter-spacing: 0.17rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.self-practice-btn{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 1rem;
+}
+
+.my-card{
+  padding: 0;
+}
+/* animations */
+
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+.animated {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/*=======================================*/
+/*=======================================*/
+/*=======================================*/
+/* lesson screen */
+#tv-container {
+  max-width: 1024px;
+  margin: auto;
+}
+
+#monitor {
+  background: #000;
+  position: relative;
+  border-top: 3px solid #888;
+  margin: 5%;
+  padding: 0.5% 2% 4% 2%;
+  border-radius: 10px;
+  border-bottom-left-radius: 50% 2%;
+  border-bottom-right-radius: 50% 2%;
+  transition: margin-right 1s;
+}
+
+#monitor:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 3%;
+  left: 36%;
+  height: .5%;
+  width: 28%;
+  background: #ddd;
+  border-radius: 50%;
+  box-shadow: 0 0 3px 0 white;
+}
+
+#monitorscreen {
+  position: relative;
+  background-color: #777;
+  background-size: cover;
+  background-position: top center;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  overflow: hidden;
+}
+
+.afrohk-text{
+  font-size:1.2rem;
+  font-family:'Kaushan Script', cursive;
+}
+
+.afrohk{
+  letter-spacing: 0.2rem;
+  color:white;
+}
+
+.tv{
+  letter-spacing: 0.2rem;
+  color: orangered;
+}
+
+
+#vimeo-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0;
+}
+
+@media all and (min-width: 560px) {
+  #monitor {
+    -webkit-animation: tvflicker .2s infinite alternate;
+    -moz-animation:    tvflicker .5s infinite alternate;
+    -o-animation:      tvflicker .5s infinite alternate;
+    animation:         tvflicker .5s infinite alternate;
+  }
+
+  @-webkit-keyframes tvflicker {
+    0%   { box-shadow: 0 0 100px 0 rgba(200,235,255,0.4); }
+    100% { box-shadow: 0 0 95px 0 rgba(200,230,255,0.45); }
+  }
+  @-moz-keyframes tvflicker {
+    0%   { box-shadow: 0 0 100px 0 rgba(225,235,255,0.4); }
+    100% { box-shadow: 0 0 60px 0 rgba(200,220,255,0.6); }
+  }
+  @-o-keyframes tvflicker {
+    0%   { box-shadow: 0 0 100px 0 rgba(225,235,255,0.4); }
+    100% { box-shadow: 0 0 60px 0 rgba(200,220,255,0.6); }
+  }
+  @keyframes tvflicker {
+    100% { box-shadow: 0 0 60px 0 rgba(200,220,255,0.6); }
+  }
+}
+
+/*=======================================*/
+/*=======================================*/
+/*=======================================*/
+
+
+
+/*===================================
+
+  Responsiveness
+
+  ==================================*/
+
+/* Extra small devices (phones, 600px and down) */
+@media(max-width: 600px) {
+  .course-details{
+    padding-left: 2.2rem;
+  }
+
+  .img-wrapper > img{
+    width: 300px;
+    height: 300px;
+  }
+
+  .learn-with-us > h3{
+    font-size: 3rem;
+    padding: 1rem 0;
+  }
+
+  .week-lesson{
+    margin: 0 1rem;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+  .week-number{
+    display: block;
+    font-size: 1.0rem;
+    margin: 1rem 0 ;
+  }
+
+  .week-number span{
+    width: 2rem;
+    padding: 0 0.5rem;
+    border: 1px solid orangered;
+    color: whitesmoke;
+  }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media(max-width: 800px) {
+  .course-details{
+    padding:1rem 5 rem;
+  }
+
+  .learn-with-us > h3{
+    font-size: 4rem;
+    padding: 1rem 0;
+  }
+  .img-wrapper > img{
+    width: 400px;
+    height: 400px;
+  }
+
+  .week-number{
+    display: block;
+    font-size: 1.0rem;
+    margin: 1rem 0 ;
+  }
+
+  .week-number span{
+    width: 2rem;
+    padding: 0 0.5rem;
+    border: 1px solid orangered;
+    color: whitesmoke;
+  }
+}
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (max-width: 1000px) {
+
+  .week-number{
+    display: block;
+    font-size: 1.0rem;
+    margin: 1rem 0 ;
+  }
+
+  .week-number span{
+    width: 2rem;
+    padding: 0 0.5rem;
+    border: 1px solid orangered;
+    color: whitesmoke;
+  }
+
+  .level{
+    background-color: rgb(24, 23, 23);
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+    margin-top: 0;
+    border: 2px solid orangered;
+    text-align: center;
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 0.2rem;
+    color: rgba(233, 230, 230, 0.877);
+  }
+
+  .course-heading{
+    font-size: 2rem;
+    padding: 1rem 0.7rem;
+    text-align: center;
+  }
+  
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) {}

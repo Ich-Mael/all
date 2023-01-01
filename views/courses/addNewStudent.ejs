@@ -1,0 +1,19 @@
+<% layout('layouts/boilerplate') %>
+<link href="/stylesheets/course.css" rel="stylesheet" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<!-- Google Fonts -->
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+	rel="stylesheet">
+<div class="container my-5">
+	<div class="col-md-8">
+		<h1 class="text-center">Adding student to a course</h1>
+		<form action="/addstudent" method="POST">
+			<label class="form-label my-3" for="course">Course Title</label>
+			<input class="form-control" type="text" name="courseTitle" placeholder="">
+			<label class="form-label my-3" for="student">Add Student</label>
+			<input class="form-control" type="text" name="student" placeholder="">
+			<button type="submit">Submit</button>
+		</form>
+	</div>
+</div>

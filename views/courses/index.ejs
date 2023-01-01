@@ -1,0 +1,81 @@
+<% layout('layouts/boilerplate') %>
+    <link href="/stylesheets/courses/course.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Akronim&family=Great+Vibes&family=Kaushan+Script&family=Marck+Script&family=Markazi+Text&family=Nosifer&family=Sigmar+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Section 1 -->
+    <section id="all-course-header" class="d-flex align-items-center">
+        <div class="container my-0">
+            <div data-aos="zoom-out" data-aos-delay="300" data-aos-duration="1800">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h1 class="pb-4">The Best Digital Learning Experience with <span class="af">Afro</span><span class="hk">HK</span></h1>
+                        <h2>Les meilleurs instructeurs à votre service</h2>
+                        <a href="/register" class="btn-get-started">Rejoignez-nous</a>
+                    </div>
+                    <!-- <div class="col-lg-6">
+                        <div class="all-course d-flex justify-content-center align-self-end" data-aos="zoom-in" data-aos-delay="1300" data-aos-duration="1800">
+                            <a href="#all-course-view" class="all-course-link animated tada">Explorer nos cours</a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!--Section 2-->
+    <section id="all-course-view">
+        <h1 class="all-course-heading text-center">All Courses</h1>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-lg-3 border border-info">
+
+
+                </div>
+                <div class="col-lg-9">
+                    <% for(let course of courses) {%>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" class="img-fluid img-thumbnail border border-dark">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-title">
+                                        <h4 class="course-title text-center">
+                                            <%= course.title %>
+                                        </h4>
+                                        <h5 class="px-1 text-muted text-center course-author">By
+                                            <%= course.instructors[0].surname %>
+                                                <%= course.instructors[0].name %>
+                                        </h5>
+                                    </div>
+
+                                    <!-- <% if(course.instructors[1]){%>
+                                        <h3 class="card-title course-author">
+                                            <%= course.instructors[1].surname %> -
+                                                <%= course.instructors[1].name %>
+                                        </h3>
+                                        <% }; %>-->
+                                    <h5 class="course-description">Description</h5>
+                                    <p class="card-text">
+                                        <%= course.description %>
+                                    </p>
+
+                                </div>
+                                <div class="col-md-2">
+                                    <p class="card-text">
+                                        <small class="text-danger"><%= course.price%></small>
+                                    </p>
+                                    <a class="btn btn-primary" href="/courses/<%=course._id%>">Acceder au cours</a>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                </div>
+            </div>
+        </div>
+
+    </section>

@@ -1,0 +1,22 @@
+<% layout('layouts/boilerplate') %>
+<style>
+    .article-image {
+        height: 60vh;
+    }
+
+    .article-title {
+        font-family: "Chivo", sans-serif;
+        font-weight: 700;
+        color: rgba(49, 5, 54, 0.877);
+        font-size: 3rem;
+    }
+</style>
+<div class="container col-lg-9 pb-5">
+    <div class="d-flex flex-column justifify-content-center align-items-center">
+        <h2 class="py-5 article-title"> <%= article.title %></h2>
+        <img src="<%= article.newsImageUrl %>" class="img-fluid img-thumbnail article-image" alt="">
+        <div class="article-content px-5 py-3">
+            <%- article.newsContent %>
+        </div>
+    </div>
+</div>

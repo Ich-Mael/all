@@ -1,0 +1,216 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  font-family: "Roboto" serif;
+  /* background: url("https://images.pexels.com/photos/5331211/pexels-photo-5331211.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"); */
+  background: url("https://images.pexels.com/photos/5054213/pexels-photo-5054213.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background: url("https://images.pexels.com/photos/5076531/pexels-photo-5076531.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  background: url("https://images.pexels.com/photos/5077047/pexels-photo-5077047.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position: center center;
+  position: relative;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin: 0;
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header::after{
+  opacity: 0.4;
+  background-color: #101111;
+}
+
+.header-content{
+  position: relative;
+  z-index: 200;
+}
+
+.inscription {
+  margin-top: 1rem;
+  padding: 2rem 0 2rem;
+}
+
+.create-account-header {
+  color: #fbfcfdfa;
+  text-shadow: 1px 1px 1px rgb(17, 17, 17);
+  font-family: "Poppins", sans-serif;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.89);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: 900;
+  z-index: 200;
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+
+.join-number {
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  font-family: "chango", cursive;
+  font-family: "Chivo", sans-serif;
+  font-weight: 900;
+  color: rgb(231, 160, 7);
+  text-shadow: 1px 1px 1px rgb(7, 7, 7);
+}
+
+.join-quote {
+  color: #fff;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 1px rgb(34, 33, 33);
+}
+
+.knowlegeable {
+  color: #f4f5f8;
+  font-size: 1rem;
+  padding: 1rem 0;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 600;
+}
+
+.card {
+  border: none;
+  padding: 20px;
+  -webkit-box-shadow: 6px -2px 16px -1px rgba(0, 0, 0, 0.64);
+  -moz-box-shadow: 6px -2px 16px -1px rgba(0, 0, 0, 0.64);
+  box-shadow: 6px -2px 16px -1px rgba(0, 0, 0, 0.64);
+  padding: 60px 35px 20px;
+  border-radius: 20px;
+  border: 0.3rem solid rgb(250, 246, 246);
+  background-color: #f3f3f750;
+  color: rgb(46, 45, 45);
+}
+
+.circle {
+  height: 40px;
+  width: 40px;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  background-color: #f1550c;
+  color: #fff;
+  font-size: 10px;
+  border-radius: 50%;
+}
+
+.form-input {
+  position: relative;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.form-input i {
+  color: #25272a;
+  position: absolute;
+  font-size: 18px;
+  top: 15px;
+  left: 10px;
+}
+
+.form-control {
+  height: 50px;
+  background-color: #e3e7ec;
+  text-indent: 24px;
+  font-size: 15px;
+  color: rgb(14, 18, 22);
+}
+
+.form-control:focus {
+  outline: none !important;
+}
+
+.form-check-label {
+  margin-top: 2px;
+  font-size: 14px;
+}
+
+.signup {
+  height: 50px;
+  font-size: 20px;
+}
+
+.social {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.social:hover {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.deja-compte {
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-family: Ultra;
+  margin: 1rem 2rem;
+  padding: 0.6rem;
+  text-align: center;
+  animation: all 0.3s;
+  text-decoration: none;
+  border: 1px solid rgb(252, 252, 252);
+  background-color: #222;
+  color: rgb(241, 72, 20);
+  border-radius: 3px;
+}
+
+.deja-compte:hover {
+  text-decoration: none;
+  color: antiquewhite;
+  background-color: #222;
+}
+
+/*
+===================================
+
+Responsiveness
+
+==================================*/
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (max-width: 800px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 1000px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  html{
+    font-size: 90%;
+  }
+
+  .header {
+    height: 60vh;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

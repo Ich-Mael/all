@@ -1,0 +1,587 @@
+body{
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-family: 'Times New Roman', Times, serif;
+  min-height: 100%;
+}
+/* Navbar */
+
+#brand-name{
+  color: rgba(255, 250, 240, 0.9);
+  /* font-family: 'Albril Fatface', cursive; */
+  /* font-family: 'Esteban'; */
+  font-family:'Ultra', serif;
+  font-size:2.5rem;
+  border-radius: 5%;
+  padding: 0 0.7rem;
+  /* text-shadow: 0.2rem 0.1rem 0.2rem rgba(34, 24, 67, 0.8); */
+}
+
+.nav-link{
+  font-size: 1rem;
+  color: rgb(243, 229, 229);
+  transition: all 0.3s;
+}
+.nav-link:hover{
+text-decoration: none;
+font-size: 1.1rem;
+color: rgb(255, 255, 255);
+}
+.afro{
+  color:black;
+}
+
+.hk{
+  color: orangered;
+}
+
+#user{
+  font-family: 'Kaushan Script', cursive;
+  font-size: 1.5rem;
+}
+
+.user-shadow{
+  color:azure;
+}
+
+
+.afro-shadow{
+  -webkit-text-stroke: 1px black;
+  letter-spacing: 0.2rem;
+  text-shadow:
+      2px 2px 0  rgb(248, 243, 243)        ,
+    -1px -1px 0 rgb(248, 243, 243),  
+     1px -1px 0 rgb(248, 243, 243),
+     -1px 1px 0 rgb(248, 243, 243),
+      1px 1px 0 rgb(248, 243, 243);
+}
+
+.hk-shadow{
+  -webkit-text-stroke: 1px black;
+  letter-spacing: 0.2rem;
+  text-shadow:
+      3px 3px 0 #000,
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000; 
+}
+.dropdown-menu{
+  border: 2px solid black;
+  background: #16222A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,#16222ad2, #3a6073de, #3A6073 ,#16222aea);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,#16222ada, #3a6073de, #3a6073d0, #16222ae3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */      
+}
+
+.dropdown-item{
+  font-size:1.2rem;
+  color:#dad2ce;
+  text-align: center;
+  font-family:'Vollkorn', serif;
+  font-weight: 400;
+}
+/* End Navbar */
+
+ /* header */
+ #header {
+  font-family: 'Merriweather', serif;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+}
+
+.header-heading{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70vh;
+  margin: 0 0 1rem;
+}
+
+.header-text{
+  text-align:center;
+  align-self: center;
+  color: rgba(255, 250, 240, 0.9);
+  font-size: 4rem;
+  font-weight: 500;
+  font-family:'Ultra', serif;
+  text-shadow: 0.2rem 0.1rem 0.2rem rgba(34, 24, 67, 0.8);
+}
+
+  
+  
+  @-webkit-keyframes bounce {
+    from, 20%, 53%, 80%, to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    40%, 43% {
+      -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      -webkit-transform: translate3d(0, -30px, 0);
+      transform: translate3d(0, -30px, 0);
+    }
+  
+    70% {
+      -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      -webkit-transform: translate3d(0, -15px, 0);
+      transform: translate3d(0, -15px, 0);
+    }
+  
+    90% {
+      -webkit-transform: translate3d(0, -4px, 0);
+      transform: translate3d(0, -4px, 0);
+    }
+  }
+  
+  @keyframes bounce {
+    from, 20%, 53%, 80%, to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    40%, 43% {
+      -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      -webkit-transform: translate3d(0, -30px, 0);
+      transform: translate3d(0, -30px, 0);
+    }
+  
+    70% {
+      -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      -webkit-transform: translate3d(0, -15px, 0);
+      transform: translate3d(0, -15px, 0);
+    }
+  
+    90% {
+      -webkit-transform: translate3d(0, -4px, 0);
+      transform: translate3d(0, -4px, 0);
+    }
+  }
+  
+  .bounce {
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+  
+  .animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-iteration-count: 3;
+  }
+  
+  #welcome {
+    margin: 3rem 0 2rem 0;
+    font-family: 'Ultra', serif;
+    font-size: 2.5rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    text-shadow: 0px 4px 3px rgba(216, 184, 158, 0.4);
+    color: rgb(33, 37, 32);
+  
+  }
+
+  .comprendre-mon-cours{
+    font-size: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    justify-content: center;
+  }
+
+  .my-card{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+  .my-hr {
+    border:none;
+    height: 20px;
+     width: 90%;
+    height: 50px;
+    margin-top: 0;
+    border-bottom: 1px solid #1f1209;
+    box-shadow: 0 20px 20px -20px #333;
+    margin: -50px auto 10px; 
+  }
+
+  .serie-text{
+    font-family:'Chango', cursive;
+    color: rgba(3, 1, 1, 0.808);
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    padding-top: 1rem;;
+    text-shadow: 1px 2px 2px rgba(250, 55, 6, 0.795);
+  }
+ .about{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color: rgba(0, 0, 0, 0.548);
+  font-weight: 400;
+  font-size: 1.3rem; 
+ }
+  .course-link{
+    color:#232526;
+    padding: 0;
+    font-family: 'Ultra', serif;
+  }
+  .course-btn:hover > .course-link{
+    text-decoration: none;
+    color:whitesmoke;
+  }
+
+  /* maths section */
+  
+  #maths-section {
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, 0.8),
+        rgba(34, 32, 41, 0.9)), url(../images/mathematics-3.jpg) center no-repeat;
+    background-size: cover;
+    color: rgb(32, 30, 20);
+    font-weight: 100;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 0.1;
+    padding-bottom: 2rem;
+  }
+  
+  .instruction-paragraph {
+    color: rgb(207, 230, 207);
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    padding: 1rem 0;
+  
+  }
+  
+  .chapitre {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: rgb(21, 24, 24);
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    outline: none;
+    border: none;
+    background: #c0c0aa;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1cefff, #c0c0aa);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1cefff, #c0c0aa);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 0.5rem;
+    box-shadow: 0 1.5rem 4rem rgba(241, 239, 239, 0.3);
+    box-shadow: 0 1.6rem 5rem rgba(247, 245, 245, 0.5);
+  }
+  
+  chapter-header {
+    background: #c0c0aa;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1cefff, #c0c0aa);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1cefff, #c0c0aa);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 0.5rem;
+    box-shadow: 0 1.5rem 6rem rgba(241, 239, 239, 0.3);
+    box-shadow: 0 1.6rem 7rem rgba(247, 245, 245, 0.5);
+  }
+  
+  /* Video cards Wrapper*/
+  #math-chap1-vid-1,
+  #math-chap1-vid-2 {
+    background: rgb(197, 216, 212);
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #FF8235, rgb(95, 235, 204));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, rgba(98, 231, 209, 0.5), rgba(215, 230, 227, 0.5),rgba(170, 233, 88, 0.8));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    color: #232526;
+  }
+  
+  
+  /* Section Exo Corrige */
+  
+  #maths-exo-section {
+    background: linear-gradient(to top,
+        rgba(34, 32, 41, 0.9),
+        rgba(34, 32, 41, 0.8)), url(../images/mathematics-3.jpg) center no-repeat;
+    background-size: cover;
+    color: rgb(32, 30, 20);
+    font-weight: 100;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 0.1;
+    padding-bottom: 2rem;
+  }
+  
+  .types-exercices {
+    list-style: none;
+  }
+  
+  #exo-btn-1 {
+    background: rgba(229, 45, 39, 0.9);
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, rgba(214, 55, 49, 0.8), rgba(214, 169, 169, 0.4), rgba(219, 79, 74, 0.9));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgba(214, 55, 49, 0.8), rgba(202, 181, 181, 0.4), rgba(219, 79, 74, 0.9));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 0.5rem;
+    box-shadow: 1rem 1rem 1rem rgba(36, 32, 32, 0.3);
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(29, 15, 15);
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  
+  #exo-btn-1a{
+    background: rgba(229, 45, 39, 0.9);
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, rgba(214, 55, 49, 0.8), rgba(214, 169, 169, 0.4), rgba(219, 79, 74, 0.9));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgba(36, 176, 211, 0.8), rgba(202, 181, 181, 0.4), rgba(30, 174, 218, 0.9));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 0.5rem;
+    box-shadow: 1rem 1rem 1rem rgba(36, 32, 32, 0.3);
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(29, 15, 15);
+    font-size: 1.2rem;
+    font-weight: 400; 
+  }
+  
+  #exo-btn-2 {
+    background: rgb(240, 198, 82);
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F37335, #FDC830);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgba(233, 179, 30, 0.808), rgba(211, 191, 147, 0.4), rgba(238, 167, 15, 0.9));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: 1rem 1rem 1rem rgba(36, 32, 32, 0.3);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(29, 15, 15);
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  
+  #exo-btn-3 {
+    background: rgb(42, 167, 90);
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F37335, #FDC830);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgba(7, 107, 7, 0.808), rgba(176, 206, 168, 0.4), rgba(4, 104, 9, 0.9));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: 1rem 1rem 1rem rgba(36, 32, 32, 0.3);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(29, 15, 15);
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  
+  #exo-btn{
+  }
+  
+  .btn:focus,
+  .btn:active:focus,
+  .btn.active:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  /* Chapitres Exo Entrainement*/
+  
+  #math-Exo-Ent-1 {
+    font-family: 'Times New Roman', Times, serif
+  }
+  
+  .chapitre-ent {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgb(12, 107, 185);
+  }
+  
+  /* Chapitres Exo Entrainement*/
+  
+  
+  /*Section Anglais*/
+  
+  #section-anglais-ecrit {
+    background: linear-gradient(to top,
+        rgba(34, 32, 41, 0.9),
+        rgba(34, 32, 41, 0.8)), url(../images/background-english-1.jpg) center no-repeat;
+    background-size: cover;
+    color: rgb(32, 30, 20);
+    font-weight: 100;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 0.1;
+  }
+  
+  /*Section Anglais*/
+  
+ 
+  /* footer */
+  #footer {
+    text-align: center;
+    color: #b9d5e2;
+    background-color: rgba(0, 0, 0, 0.849);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    min-height: fit-content;
+  }
+  
+  .afrohk-footer{
+    color: #f5f7f8;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 3.5rem;
+    text-shadow: 0px 4px 3px rgba(231, 46, 21, 0.4),
+      1px 2px 8px rgba(245, 46, 12, 0.5),
+      1px 2px 3px rgba(245, 25, 9, 0.3);
+    font-weight: 500;
+  }
+
+  .motto-footer{
+    font-family: 'Chango', cursive;
+    color: #e4faf9;
+    font-size: 1.5rem;
+  }
+  
+
+  
+  #call-manager {
+    width: 100%;
+    font-size: 1.2rem;
+    background: none;
+    outline: none;
+    border: none;
+  }
+  
+  
+
+  #call-manager-2 {
+    width: 100%;
+    font-size: 1.2rem;
+    background: none;
+    outline: none;
+    border: none;
+  }
+  
+  #call-manager-3 {
+    width: 100%;
+    font-size: 1.2rem;
+    background: none;
+    color: rgb(248, 244, 238);
+    outline: none;
+    border: none;
+  }
+  
+  #call-manager-link-1 {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #e75d0d;
+    transition: all 0.5s;
+  }
+  
+  #call-manager-link-2 {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #e99b0a;
+    transition: all 0.5s;
+  }
+  #call-manager-link-3 {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #1e90eebb;
+    transition: all 0.5s;
+  }
+  
+  
+  #call-manager-link-1:hover, #call-manager-link-2:hover,#call-manager-link-3:hover, #send-mail:hover{
+    text-decoration: none;
+    font-size: 1.3rem;
+      }
+  
+  #cont-ns {
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+   
+  #send-mail {
+    color: #f1e5ec;
+    transition: all 0.5s;
+    text-decoration: none;
+  }
+
+  .hear-from-you {
+    font-size: 2.5rem;
+    font-family: Libre;
+    text-transform: uppercase;
+    animation: anim2 2s infinite alternate;
+  }
+  
+  @keyframes anim2 {
+    0% {
+      transform: translateY(4px);
+    }
+  
+    100% {
+      transform: translateY(-4px);
+    }
+  }
+  
+  .copyright-text {
+    padding: 0.2rem 1rem;
+    font-size: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+  }
+  
+  .creator {
+    font-size: 1.1rem;
+    padding: 0.5rem 0 0.2rem;
+  }
+  
+  .made-by{
+      background: #000428;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      margin: 0 0;
+
+  }
+
+ 
+  .creator i {
+    color: tomato;
+  }
+
+  .creator span {
+      font-family: 'Kaushan Script', cursive;
+      color: rgba(207, 167, 207, 0.705);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0 0.3rem;
+      text-shadow: 1px 2px 3px black, 2px 3px 4px black, 3px 4px 5px black;
+  }
+
+
+  /* End footer */

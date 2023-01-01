@@ -1,0 +1,171 @@
+<% layout('layouts/boilerplate') %>
+<!-- WORD Processor-->
+<script src="https://cdn.tiny.cloud/1/p06f8vxdpje8xosyvnq48z68vc7n479iauh5s2jk9zx30qg2/tinymce/5/tinymce.min.js"
+    referrerpolicy="origin"></script>
+</script>
+<script>
+    tinymce.init({
+        selector: '.mytextarea',
+        height: 300,
+        max_width: 500,
+        min_height: 300,
+        min_width: 400
+    });
+</script>
+
+<style>
+    label {
+        color: #0d084c;
+        font-size: 1.4rem;
+    }
+</style>
+
+<div class="container d-flex mt-3 justify-content-center">
+    <div class="col-lg-8">
+        <div class="row py-3" style=" font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 1.2rem; background: #0f0c29;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        ">
+            <div class="col-lg-2" style="background-color: rgb(255, 183, 0);">
+                <p class="text-center" style="color: aliceblue;">
+                    Grading</p>
+            </div>
+            <div class="col-lg-6">
+                <p class="text-white text-center"><%= user.clubMember.name +" "+ user.clubMember.surname%> </p>
+            </div>
+            <div class="col-lg-4">
+                <p class="text-white"> <%= user.level %> </p>
+            </div>
+        </div>
+
+        <form
+            action="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/member/<%= member_id %>/grade"
+            method="POST">
+
+            <!-- Writing test info -->
+            <div class="my-5 p-3" style="border-radius:5px; border: 1px solid rgb(28, 26, 28);">
+                <h3 class="text-center bg-success text-white p-2">Writing Test Result</h3>
+                <div class="row">
+                    <!-- test level  -->
+                    <div class="col-md-4">
+                        <label class="form-label my-3" for="test level">Test level</label>
+                        <select class="form-select" name="grade[testLevel]" aria-label="Default select example">
+                            <option selected value="A1">A1</option>
+                            <option value="A2">A2</option>
+                            <option value="B1">B1</option>
+                            <option value="B2">B2</option>
+                            <option value="C1">C1</option>
+                            <option value="C2">C2</option>
+                        </select>
+                    </div>
+                    <!-- test periode  -->
+                    <div class="col-md-4">
+                        <label class="form-label my-3" for="testPeriod">Period of the test</label>
+                        <input type="date" class="form-control" name="grade[period]" value="" id="testPeriod"
+                            required />
+                    </div>
+                    <!-- test grade  -->
+                    <div class="col-md-4">
+                        <label class="form-label my-3" for="testGrade">Writing Test Grade</label>
+                        <input type="number" class="form-control" name="grade[testGrade]" value="" id="testGrade"
+                            required />
+                    </div>
+                </div>
+            </div>
+
+            <!-- skills grade -->
+            <div class="my-5 p-3" style="border-radius:5px; border: 1px solid rgb(8, 14, 60);">
+                <h3 class="text-center bg-success text-white p-2">Speaking Test Result</h3>
+                <div class="row">
+                    <!-- structure  -->
+                    <div class="col-md-6">
+                        <label class="form-label my-3" for="structure">Structure</label>
+                        <select class="form-select" name="grade[structure]" aria-label="Default select example">
+                            <option selected value="Not Sufficient">Not Sufficient</option>
+                            <option value="Sufficient">Sufficient</option>
+                            <option value="Good">Good</option>
+                            <option value="Very Good">Very Good</option>
+                            <option value="Excellent">Excellent</option>
+                        </select>
+                    </div>
+
+                    <!-- Pronunciation -->
+                    <div class="col-md-6">
+                        <label class="form-label my-3" for="pronunciation">Pronunciation</label>
+                        <select class="form-select" name="grade[pronunciation]" aria-label="Default select example">
+                            <option selected value="Not Sufficient">Not Sufficient</option>
+                            <option value="Sufficient">Sufficient</option>
+                            <option value="Good">Good</option>
+                            <option value="Very Good">Very Good</option>
+                            <option value="Excellent">Excellent</option>
+                        </select>
+                    </div>
+
+                    <!-- Fluency -->
+                    <div class="col-md-6">
+                        <label class="form-label my-3" for="fluency">Fluency</label>
+
+                        <select class="form-select" name="grade[fluency]" aria-label="Default select example">
+                            <option selected value="Not Sufficient">Not Sufficient</option>
+                            <option value="Sufficient">Sufficient</option>
+                            <option value="Good">Good</option>
+                            <option value="Very Good">Very Good</option>
+                            <option value="Excellent">Excellent</option>
+                        </select>
+                    </div>
+
+                    <!-- Vocabulary -->
+                    <div class="col-md-6">
+                        <label class="form-label my-3" for="vocabulary">Vocabulary</label>
+
+                        <select class="form-select" name="grade[vocabulary]" aria-label="Default select example">
+                            <option selected value="Not Sufficient">Not Sufficient</option>
+                            <option value="Sufficient">Sufficient</option>
+                            <option value="Good">Good</option>
+                            <option value="Very Good">Very Good</option>
+                            <option value="Excellent">Excellent</option>
+                        </select>
+                    </div>
+
+                    <!-- comprehension -->
+                    <div class="col-md-6">
+                        <label class="form-label my-3" for="comprehension">Comprehension</label>
+
+                        <select class="form-select" name="grade[comprehension]" aria-label="Default select example">
+                            <option selected value="Not Sufficient">Not Sufficient</option>
+                            <option value="Sufficient">Sufficient</option>
+                            <option value="Good">Good</option>
+                            <option value="Very Good">Very Good</option>
+                            <option value="Excellent">Excellent</option>
+                        </select>
+                    </div>
+
+                    <!-- interaction -->
+                    <div class="col-md-6">
+                        <label class="form-label my-3" for="interaction">Interaction</label>
+
+                        <select class="form-select" name="grade[interaction]" aria-label="Default select example">
+                            <option selected value="Not Sufficient">Not Sufficient</option>
+                            <option value="Sufficient">Sufficient</option>
+                            <option value="Good">Good</option>
+                            <option value="Very Good">Very Good</option>
+                            <option value="Excellent">Excellent</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overall feedback -->
+            <div class="my-5 p-3" style="border-radius:5px; border: 1px solid rgb(8, 14, 60);">
+                <h3 class="text-center bg-success text-white p-2">Overall Feedback and Recommendation</h3>
+
+                <!-- Testee feedback -->
+                <textarea type="text" class="form-control mytextarea"
+                    placeholder="What are the Strenghs and Weaknesses of the testee ?  What are your recommendations for continuous improvement "
+                    name="grade[feedback]" value="" id="feedback"></textarea>
+            </div>
+
+            <button type="submit" class="btn mb-5 btn-lg btn-primary"> Submit Grade </button>
+        </form>
+    </div>
+</div>

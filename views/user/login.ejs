@@ -1,0 +1,48 @@
+<% layout('layouts/boilerplate') %>
+<link href="stylesheets/user/login.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Rye&family=Titan+One&display=swap"
+  rel="stylesheet" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Akronim&family=Great+Vibes&family=Kaushan+Script&family=Marck+Script&family=Markazi+Text&family=Nosifer&family=Sigmar+One&display=swap"
+  rel="stylesheet" />
+<div id="login-wrapper" class="">
+  <div class="join">
+    <h1 class="join-text">
+      Rejoignez-nous et faîtes-vous former par les meilleurs 😉
+    </h1>
+    <div class="program-inscription-wrapper">
+      <a class="pas-compte mx-2 my-2 btn" href="#footer">Contactez-nous pour s'inscrire à un programme</a>
+    </div>
+  </div>
+  <div class="login-div">
+    <h1 class="text-center" id="login-header">CONNEXION</h1>
+    <form class="row g-3 validated-form mx-1" action="/login" method="POST" novalidate>
+      <div class="fields">
+        <div class="col my-1">
+          <i class="bi ii bi-person-circle fs-5"></i>
+          <label class="form-label" for="username">Nom Utilisateur</label>
+          <input class="form-control" placeholder="" id="username" name="username" type="text" value="" required />
+        </div>
+        <div class="col my-2">
+          <i class="bi ii bi-shield-lock-fill fs-5"></i>
+          <label class="form-label" for="password">Mot de Passe</label>
+          <input class="form-control" id="password" name="password" type="password" value="" required />
+        </div>
+        <div class="
+            col-12
+            mt-4
+            pb-3
+            d-flex
+            flex-column
+            align-items-center
+            justify-content-around
+          ">
+          <button type="submit" class="btn connexion my-2">
+            Connexion
+          </button>
+          <a class="mx-2 my-2 " href="/reset-password">Avez-vous oublié votre mot de passe?</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<% layout('layouts/100bacBoilerplate') %>
+<style>
+  .form-label {
+    margin-top: 1rem;
+  }
+</style>
+<style>
+  .subject-card {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 1.2rem;
+    color: rgb(27, 27, 124);
+  }
+</style>
+<h1 class="text-center py-3 text-primary">Operation 100% BAC</h1>
+<div class="container">
+  <div class="row mt-5">
+    <% for(let subject of subjects) {%>
+    <div class="col-md-4 subject-card">
+      <h3 class="text-center pt-3"><%= subject.title %></h3>
+      <a href="/admindashboard/100bac/class/<%=schoolClass._id%>/subject/<%=subject._id%>/chapter/new"
+        class="btn my-3 btn-primary">Add a new chapter</a>
+
+      <a href="/admindashboard/100bac/class/<%=schoolClass._id%>/subject/<%=subject._id%>/chapters"
+        class="btn my-3 btn-success">All Chapters</a>
+
+    </div>
+    <% } %>
+  </div>
+</div>

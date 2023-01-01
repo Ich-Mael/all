@@ -1,0 +1,236 @@
+<% layout('layouts/boilerplate') %>
+<link href="/stylesheets/englishforAll/englishClubs/home.css" rel="stylesheet" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<style>
+  .flag-wrapper {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: 18rem;
+  }
+
+  .find-club {
+    font-size: 2.5rem;
+    padding: 3rem 0.4rem 0;
+    text-align: center;
+    color: #7506dd;
+    font-weight: 600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .contry {
+    width: 25rem;
+  }
+</style>
+
+<div id="carouselExampleIndicators" class="carousel mb-0 pb-0 slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+      aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+      aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+      aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+      aria-label="Slide 5"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://i.ibb.co/PxNvNrv/neci-family.jpg" alt="Neci-family" class="d-block w-100" />
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.ibb.co/4mbxWfX/neci-theater-1.jpg" class="d-block w-100" alt="neci-theater" />
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://i.ibb.co/pJnR6bR/Neci-dance.jpg" alt="Neci-dance" class="d-block w-100" />
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://i.ibb.co/Ct2nTfD/neci-10.jpg.jpg" class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.ibb.co/P9wt7QW/disc-2.jpg" class="d-block w-100" alt="..." />
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- <div class="banner-wrapper m-0 p-0">
+  <h1 class="program-title text-center">Natural English clubs</h1>
+</div> -->
+
+<!-- why english clubs  -->
+<!-- <section class="why-eng-clubs d-flex justify-content-center flex-column">
+  <h2 class="why-heading">
+    <span class="underline"></span> All about Natural English clubs<span
+      class="underline"
+    ></span>
+  </h2>
+
+  <div
+    data-aos="zoom-in-right"
+    data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="500"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+  >
+    <div id="tv-container">
+      <div id="monitor">
+        <div class="afrohk-TV">
+          <h3 class="text-center afrohk-text mb-2 py-0">
+            <span class="afrohk">AfroHK</span><span class="tv">Radar</span>
+          </h3>
+        </div>
+        <div id="monitorscreen">
+          <iframe
+            id="vimeo-content"
+            src="https://player.vimeo.com/video/536620704?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            frameborder="0"
+            height="500px"
+            width="1000px"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allow="fullscreen"
+            title="High-intensity Classes"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- ours english clubs -->
+<section class="" style="margin-bottom: 3rem;">
+  <h2 class="program-title text-center">Apprenez naturellement l’Anglais</h2>
+
+  <h3 class="find-club">Find a club in your country and start improving now</h3>
+  <!-- <div class="container py-5">
+    
+    <div class="d-flex flex-column justifify-content-center
+    align-items-center">
+      <button type="button" class="btn btn-lg btn-outline-primary" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">
+        <h3 class="align-self-center year"> <span style="color:rgb(64, 10, 114);">Inscrivez-vous maintenant</span>
+        </h3>
+        <hr>
+        <h2 class="py-1"> Formulaire d'inscription au Natural English Club</h2>
+      </button>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Natural English Clubs enrollement forms</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSdx9IUnxFLPgBvVIFpPWGz9ht_Mz9txW2OgMPd7bipWCMm7DA/viewform?embedded=true"
+              width="100%" height="2917" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Fermer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> -->
+  <div class="d-flex container justify-content-center  flex-wrap mt-5">
+    <!-- Burkina-Faso -->
+    <div class="contry m-4">
+      <div class="flag-wrapper my-2 px-4">
+        <img class="img-fluid p-3"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Flag-map_of_Burkina_Faso.svg/1280px-Flag-map_of_Burkina_Faso.svg.png"
+          alt="Burkina-Faso">
+      </div>
+      <h3 class="text-center py-2" style="border-radius: 5px; color: rgb(15, 10, 10); background: #ffb347;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #ffcc33, #ffb347);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right,red, #f1be27, #089422); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      ">Burkina-Faso</h3>
+      <a class="btn btn-lg w-100 btn-outline-success fs-5" href="/englishlang4all/clubs/Burkina-Faso/hubs">Rejoindre un
+        club</a>
+    </div>
+
+    <!-- Senegal -->
+    <div class="contry m-4">
+      <div class="flag-wrapper my-2 px-4">
+        <img class="img-fluid p-3"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Flag-map_of_Senegal.svg/2560px-Flag-map_of_Senegal.svg.png"
+          alt="Senegal">
+      </div>
+      <h3 class="text-center py-2" style="border-radius: 5px; color: rgb(28, 20, 20); background: #ffb347;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #089422, rgb(247, 219, 7), #dd0606);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,#089422, rgb(247, 219, 7), #dd0606 ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  ">Senegal</h3>
+      <a class="btn btn-lg w-100 btn-outline-success fs-5" href="/englishlang4all/clubs/Senegal/hubs">Rejoindre un
+        club</a>
+    </div>
+
+    <!-- Niger -->
+    <div class="contry m-4">
+      <div class="flag-wrapper my-2 px-4">
+        <img class="img-fluid p-3"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Flag-map_of_Niger.svg/2560px-Flag-map_of_Niger.svg.png"
+          alt="Burkina-Faso">
+      </div>
+      <h3 class="text-center py-2" style="border-radius: 5px; color: rgb(28, 20, 20); background: #ffb347;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right,rgb(211, 103, 2), #ffffff, #089422);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right,rgb(211, 103, 2), #ffffff, #089422); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      ">Niger</h3>
+      <a class="btn btn-lg w-100 btn-outline-success fs-5" href="/englishlang4all/clubs/Niger/hubs">Rejoindre un
+        club</a>
+    </div>
+
+    <!-- Cameroun -->
+    <div class="contry m-4">
+      <div class="flag-wrapper my-2 px-4">
+        <img class="img-fluid p-3" src="https://vemaps.com/uploads/img/big/cm-06.jpg" alt="Cameroun">
+      </div>
+      <h3 class="text-center py-2" style="border-radius: 5px; color: rgb(28, 20, 20); background: #ffb347;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #089422, rgb(247, 59, 7), #ddb206);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,#089422, rgb(247, 59, 7), #ddb206 ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    ">Cameroun</h3>
+      <a class="btn btn-lg w-100 btn-outline-success fs-5" href="/englishlang4all/clubs/Benin/hubs">Rejoindre un
+        club</a>
+    </div>
+
+    <!-- Togo -->
+    <div class="contry m-4">
+      <div class="flag-wrapper my-2 px-4">
+        <img class="img-fluid p-3" src="https://vemaps.com/uploads/img/big/tg-06.jpg" alt="Togo">
+      </div>
+      <h3 class="text-center py-2" style="border-radius: 5px; color: rgb(28, 20, 20); background: #ffb347;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #089422, rgb(247, 219, 7), #dd0606);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right,#089422, rgb(247, 219, 7), #dd0606 ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      ">Togo</h3>
+      <a class="btn btn-lg w-100 btn-outline-success fs-5" href="/englishlang4all/clubs/Senegal/hubs">Rejoindre un
+        club</a>
+    </div>
+
+    <!-- Côte-D'ivoire -->
+    <div class="contry m-4">
+      <div class="flag-wrapper my-2 px-4">
+        <img class="img-fluid p-3" src="https://i.pinimg.com/originals/23/61/79/23617971558c1ebe0c59f1a7f4acfe1b.png"
+          alt="Côte d'Ivoire">
+      </div>
+      <h3 class="text-center py-2" style="border-radius: 5px; color: rgb(28, 20, 20); background: #ffb347;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, rgb(211, 103, 2), #ffffff, #089422);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right,rgb(211, 103, 2), #ffffff, #089422 ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        ">Côte d'Ivoire</h3>
+      <a class="btn btn-lg w-100 btn-outline-success fs-5" href="/englishlang4all/clubs/Côte d'Ivoire/hubs">Rejoindre un
+        club</a>
+    </div>
+  </div>
+
+
+  </div>
+</section>

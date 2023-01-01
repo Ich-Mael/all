@@ -1,0 +1,358 @@
+<% layout('layouts/boilerplate') %>
+<script type="text/javascript" src="/javascripts/quiz_scripts/quizlib.1.0.1.min.js"></script>
+<script type="text/javascript" src="/javascripts/lsc/main.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/quiz_stylesheet/quizlib.min.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/stylesheets/quiz_stylesheet/stylesheet.css" media="screen">
+<style>
+    .header-wrapper {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        perspective: 100rem;
+    }
+
+    .bg-img-wrapper {
+        width: 100%;
+        height: 80vh;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.979);
+    }
+
+    .bg-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        object-fit: cover;
+        animation: scale 25s;
+    }
+
+    @keyframes scale {
+        0% {
+            transform: scale(1.3);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    #banner-wrapper {
+        position: absolute;
+        z-index: 2;
+        top: 25%;
+        left: 10%;
+    }
+
+    @keyframes moveBanner {
+        0% {
+            transform: translateX(30rem) rotate(20deg);
+        }
+
+        100% {
+            transform: translateX(0) rotate(0);
+            opacity: 1;
+        }
+    }
+
+    #banner {}
+
+    .banner-heading {
+        color: #fcf9f9;
+        /* width: 90%; */
+        font-family: "Poppins", sans-serif;
+        /* font-family: "Kaushan Script", cursive; */
+        opacity: 0;
+        /* line-height: 5rem; */
+        text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.89);
+        animation: moveBanner 2s 1.2s forwards;
+        margin-bottom: 2rem;
+    }
+
+    .lsc {
+        color: blueviolet;
+        margin: 0;
+        padding: 0;
+    }
+
+    .lsc-acronym {
+        font-size: 5rem;
+        font-weight: 900;
+        letter-spacing: 0.1rem;
+    }
+
+    .lsc-title {
+        font-family: 'Times New Roman', Times, serif;
+        font-family: "Chivo", sans-serif;
+        font-weight: 700;
+        color: #f5f1f7;
+        background-color: rgb(215, 240, 250);
+        background: #FC466B;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #3F5EFB, #FC466B);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        padding: 2rem 1.2rem;
+        font-size: 3rem;
+    }
+
+    .lsc-text {
+        font-size: 1.2rem;
+    }
+
+    .lsc-text-input {
+        padding-left: 1rem;
+        width: 25rem;
+        border: 1px solid purple;
+        border-radius: 5px;
+        font-size: 1.2rem;
+    }
+
+    .number {
+        padding: 0.5rem;
+        margin: 0 1rem;
+        background-color: rgb(64, 151, 233);
+        color: #181515;
+        border-radius: 50%;
+    }
+
+    .lsc-song-info {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 2rem;
+        padding: 1rem 0;
+        color: blueviolet;
+    }
+
+    @media (max-width: 768px) {
+        #banner-wrapper {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 10%;
+        }
+
+        .lsc-acronym {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        .lsc-title {
+            font-size: 2rem;
+        }
+
+        .lsc-song-info {
+            font-size: 1.3rem;
+        }
+    }
+</style>
+<div id="header-wrapper">
+    <div class="bg-img-wrapper">
+        <img class="img-medium"
+            src=" https://images.pexels.com/photos/8044044/pexels-photo-8044044.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            alt="" />
+    </div>
+
+    <div id="banner-wrapper">
+        <div class="banner-heading">
+            <h3 class="lsc-acronym"><span class="lsc">L</span>isten</h3>
+            <h3 class="lsc-acronym"><span class="lsc">S</span>ing</h3>
+            <h3 class="lsc-acronym"><span class="lsc">C</span>omplete</h3>
+        </div>
+    </div>
+    <div>
+        <h2 class="text-center lsc-title">Améliorer votre Anglais avec des chansons</h2>
+        <div class="container col-md-8">
+            <h3 class="pb-2 text-center lsc-song-info">Song : Impossible by Shontelle </h3>
+            <div class="container">
+                <figure>
+                    <figcaption class="fs-4 py-3">Play the song, listen and fill the gaps with the missing words from
+                        the
+                        lyrics
+                    </figcaption>
+                    <audio controls src="/songs/Impossible - Shontelle [ LYRICS ON SCREEN ] HQ.mp3">
+                        Your browser does not support the
+                        <code>audio</code> element.
+                    </audio>
+                </figure>
+                <figure>
+                    <figcaption class="fs-4 py-3">Play the song, listen and fill the gaps with the missing words from
+                        the
+                        lyrics
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <!-- listen Sing and Complete-->
+        <div class=" container col-md-8">
+            <div id="quiz-1">
+                <!-- 1 -->
+                <p class="text-center bg-dark text-white py-2 fs-3">Lyrics with missing words</p>
+
+                <h4 class="py-3 text-center px-2  ms-2">Verse 1</h4>
+                <hr>
+                <div class="quizz-1-card quizlib-question">
+                    <div class="quizlib-question-title lsc-text mt-2 mb-3"><span class="number">01</span> I remember
+                        years ago
+                        Someone __1__ me I should take
+                    </div>
+                    <div class="quizlib-question-answers">
+                        <input type="text" name="q1" class="lsc-text-input">
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="quizz-1-card quizlib-question ">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">02</span> Caution when it
+                        __2__
+                        to love
+                        I did, I did
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" class="lsc-text-input" name="q2">
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="quizz-1-card quizlib-question ">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">03</span> And you __3__
+                        strong
+                        and
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" class="lsc-text-input" name="q3">
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="quizz-1-card quizlib-question ">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">04</span> I __4__ not My
+                        illusion, my mistake
+                        I was careless, I forgot
+                        I did
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" class="lsc-text-input" name="q4">
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="quizz-1-card quizlib-question ">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">05</span> And now when all is
+                        done There is nothing to say
+                        You have gone and so __5__ You have won
+                        You can go ahead tell them
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" class="lsc-text-input" name="q5">
+                    </div>
+                </div>
+                <hr>
+                <h4 class="py-3 text-center px-2  ms-2">Chorus (Refrain)</h4>
+                <hr>
+                <!-- 6 -->
+                <div class="quizz-1-card quizlib-question ">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">06</span> Tell them all I
+                        know
+                        now Shout it from the __6__ tops
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" class="lsc-text-input" name="q6">
+                    </div>
+                </div>
+                <!-- 7 -->
+                <div class="quizz-1-card quizlib-question ">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">07</span> Write it on the
+                        __7__ line
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" class="lsc-text-input" name="q7">
+                    </div>
+                </div>
+                <!-- 8 -->
+                <div class="quizz-1-card quizlib-question ">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">08</span> All we __8__ is
+                        gone
+                        now
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" class="lsc-text-input" name="q8">
+                    </div>
+                </div>
+                <!-- 9 -->
+                <div class="quizz-1-card quizlib-question ">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">09</span> Tell them I was
+                        happy
+                        And my heart is __9__ All my scars are open
+                        Tell them what I hoped would be Impossible, impossible Impossible, impossible
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" class="lsc-text-input" name="q9">
+                    </div>
+                </div>
+
+                <hr>
+                <h4 class="py-3 text-center px-2  ms-2">Verse 2</h4>
+                <hr>
+                <!-- 10 -->
+                <div class="quizz-1-card quizlib-question">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">10</span> Falling out of love
+                        is __10__
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" class="lsc-text-input" name="q10">
+                    </div>
+                </div>
+                <!-- 11 -->
+                <div class="quizz-1-card quizlib-question">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">11</span>
+                        Falling for betrayal is __11__ Broken trust and broken hearts I know, I know
+                        Thinking all you need is there
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" class="lsc-text-input" name="q11">
+                    </div>
+                </div>
+                <!-- 12 -->
+                <div class="quizz-1-card quizlib-question">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">12</span>
+                        Building __12__ on love and words
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" class="lsc-text-input" name="q12">
+                    </div>
+                </div>
+                <!-- 13 -->
+                <div class="quizz-1-card quizlib-question">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">13</span>
+                        empty __13__ will wear
+                        I know (I know)
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" class="lsc-text-input" name="q13">
+                    </div>
+                </div>
+                <!-- 14 -->
+                <div class="quizz-1-card quizlib-question">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">14</span>
+                        And now when all is gone
+                        There is nothing to say
+                        And if you're done with __14__ me
+                        On your own you can go ahead tell them
+
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" class="lsc-text-input" name="q14">
+                    </div>
+                </div>
+                <hr>
+                <h4 class="py-3 text-center px-2  ms-2">Chorus (Refrain) x 2</h4>
+                <hr>
+
+                <button class="btn btn-primary ms-5 my-3" type="button" onclick="showResults(this.parentNode.id);">Check
+                    Answers</button>
+            </div>
+            <div id="quiz-result" class="quizz-1-card">
+                You Scored <span id="quiz-percent"></span>% - <span id="quiz-score"></span>/<span
+                    id="quiz-max-score"></span><br />
+            </div>
+        </div>

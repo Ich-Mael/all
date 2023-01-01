@@ -1,0 +1,851 @@
+<% layout('layouts/boilerplate') %>
+<link href="/stylesheets/englishforAll/freelesson.css" rel="stylesheet" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+<!--SECTION 1 Course info-->
+<div class="course-announcement">
+  <div class="row">
+    <div class="course d-flex justify-content-center flex-column">
+      <div class="d-flex justify-content-center">
+        <h1 class="course-heading animated pulse">
+          Free English Lessons For Everyone
+        </h1>
+      </div>
+      <div class="mx-2 my-5 d-flex flex-wrap justify-content-center">
+        <div class="d-flex justify-content-center">
+          <h3 class="skill"><span>Pronunciation</span></h3>
+        </div>
+        <div class="d-flex justify-content-center">
+          <h3 class="skill"><span>Speaking</span></h3>
+        </div>
+        <div class="d-flex justify-content-center">
+          <h3 class="skill"><span class="">Listening</span></h3>
+        </div>
+        <div class="d-flex justify-content-center">
+          <h3 class="skill"><span class="">Reading</span></h3>
+        </div>
+        <div class="d-flex justify-content-center">
+          <h3 class="skill"><span class="">Vocabulary</span></h3>
+        </div>
+      </div>
+      <div></div>
+      <div class="row mx-2 my-2 d-flex justify-content-center">
+        <div class="col-md-4 col-lg-3">
+          <h3 class="course-details">
+            <i class="bi mx-2 bi-hourglass-split"></i>Durée-
+            <span class="course-details-info"> 4 semaines</span>
+          </h3>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <h3 class="heure-sem course-details">
+            <i class="bi mx-2 bi-clock-history"></i><span class="course-details-info"> 4 heures </span> par semaine
+          </h3>
+        </div>
+        <div class="col-md-4 col-lg-3">
+          <h3 class="course-details">
+            <i class="bi mx-2 bi-globe"></i><span class="course-details-info">100% </span> En ligne
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--SECTION 2 courses -->
+<div class="week-wrapper" id="course-section">
+  <!-- Week 1-->
+  <div class="week-lesson my-5">
+    <div class="lesson-info row">
+      <div class="col-md-3 d-flex justify-content-center">
+        <img
+          src="https://images.pexels.com/photos/7005409/pexels-photo-7005409.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+          alt="" class="week-lesson-img img-fluid img-thumbnail border" />
+      </div>
+      <div class="col-md-8">
+        <div class="d-flex justify-content-center flex-wrap align-items-center">
+          <p class="week-number">
+            <span class="me-3">Week 1</span>
+          </p>
+          <h1 class="lesson-title">Asking and Answering Questions</h1>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn ms-2 btn-outline-secondary" data-bs-toggle="modal"
+            data-bs-target="#learnmore">
+            Learn more about this lesson
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="learnmore" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Asking and Answering Questions
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lesson-links">
+          <button type="button" class="btn ms-2 btn-outline-primary" data-bs-toggle="modal"
+            data-bs-target="#lesson-1-vid-1">
+            Video lesson 1
+          </button>
+
+          <button type="button" class="btn ms-2 btn-outline-primary" data-bs-toggle="modal"
+            data-bs-target="#lesson-1-vid-2">
+            Video lesson 2
+          </button>
+
+          <button type="button" class="btn ms-2 btn-outline-success" data-bs-toggle="modal"
+            data-bs-target="#lesson-1-vid-3">
+            Let's practice together
+          </button>
+
+          <!-- Modal  for video 1-->
+          <div class="modal fade" id="lesson-1-vid-1" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Video-1</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div id="tv-container">
+                    <div id="monitor">
+                      <div class="afrohk-TV">
+                        <h3 class="text-center afrohk-text mb-2 py-0">
+                          <span class="afrohk">AfroHK</span><span class="tv">TV</span>
+                        </h3>
+                      </div>
+                      <div id="monitorscreen">
+                        <iframe id="vimeo-content"
+                          src="https://player.vimeo.com/video/536620704?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                          frameborder="0" height="500px" width="1000px" allow="autoplay; fullscreen; picture-in-picture"
+                          allow="fullscreen" title="High-intensity Classes"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal  for video 2-->
+          <div class="modal fade" id="lesson-1-vid-2" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Video-2</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div id="tv-container">
+                    <div id="monitor">
+                      <div class="afrohk-TV">
+                        <h3 class="text-center afrohk-text mb-2 py-0">
+                          <span class="afrohk">AfroHK</span><span class="tv">TV</span>
+                        </h3>
+                      </div>
+                      <div id="monitorscreen">
+                        <iframe id="vimeo-content"
+                          src="https://player.vimeo.com/video/536620704?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                          frameborder="0" height="500px" width="1000px" allow="autoplay; fullscreen; picture-in-picture"
+                          allow="fullscreen" title="High-intensity Classes"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal  for video 3-->
+          <div class="modal fade" id="lesson-1-vid-3" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Time to practice together 😉
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div id="tv-container">
+                    <div id="monitor">
+                      <div class="afrohk-TV">
+                        <h3 class="text-center afrohk-text mb-2 py-0">
+                          <span class="afrohk">AfroHK</span><span class="tv">TV</span>
+                        </h3>
+                      </div>
+                      <div id="monitorscreen">
+                        <iframe id="vimeo-content"
+                          src="https://player.vimeo.com/video/536620704?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                          frameborder="0" height="500px" width="1000px" allow="autoplay; fullscreen; picture-in-picture"
+                          allow="fullscreen" title="High-intensity Classes"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="self-practice-wrapper">
+          <h3 class="practice-alone text-center">Time to practice alone</h3>
+          <div class="self-practice-btn">
+            <button class="btn btn-info mx-2 my-2" type="button" data-bs-toggle="collapse" data-bs-target="#self-p-1"
+              aria-expanded="false" aria-controls="collapseExample">
+              Self-access-1
+            </button>
+            <button class="btn btn-info mx-2 my-2" type="button" data-bs-toggle="collapse" data-bs-target="#self-p-2"
+              aria-expanded="false" aria-controls="collapseExample">
+              Self-access-2
+            </button>
+            <button class="btn btn-warning mx-2 my-2" type="button" data-bs-toggle="collapse" data-bs-target="#self-p-3"
+              aria-expanded="false" aria-controls="collapseExample">
+              More exercises
+            </button>
+          </div>
+
+          <div class="collapse" id="self-p-1">
+            <div class="card card-body">
+              Some placeholder content for the collapse component. This panel is
+              hidden by default but revealed when the user activates the
+              relevant trigger.
+            </div>
+          </div>
+
+          <div class="collapse" id="self-p-2">
+            <div class="card card-body">self-practice-2</div>
+          </div>
+
+          <div class="collapse" id="self-p-3">
+            <div class="card card-body">More exercises</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Week 2-->
+  <div class="week-lesson my-5">
+    <div class="lesson-info row">
+      <div class="col-md-3 d-flex justify-content-center">
+        <img
+          src="https://images.pexels.com/photos/7005409/pexels-photo-7005409.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+          alt="" class="week-lesson-img img-fluid img-thumbnail border" />
+      </div>
+      <div class="col-md-8">
+        <div class="d-flex justify-content-center flex-wrap align-items-center">
+          <p class="week-number">
+            <span class="me-3">Week 1</span>
+          </p>
+          <h1 class="lesson-title">Asking and Answering Questions</h1>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn ms-2 btn-outline-secondary" data-bs-toggle="modal"
+            data-bs-target="#learnmore">
+            Learn more about this lesson
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="learnmore" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Asking and Answering Questions
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lesson-links">
+          <button type="button" class="btn ms-2 btn-outline-primary" data-bs-toggle="modal"
+            data-bs-target="#lesson-1-vid-1">
+            Video lesson 1
+          </button>
+
+          <button type="button" class="btn ms-2 btn-outline-primary" data-bs-toggle="modal"
+            data-bs-target="#lesson-1-vid-2">
+            Video lesson 2
+          </button>
+
+          <button type="button" class="btn ms-2 btn-outline-success" data-bs-toggle="modal"
+            data-bs-target="#lesson-1-vid-3">
+            Let's practice together
+          </button>
+
+          <!-- Modal  for video 1-->
+          <div class="modal fade" id="lesson-1-vid-1" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Video-1</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div id="tv-container">
+                    <div id="monitor">
+                      <div class="afrohk-TV">
+                        <h3 class="text-center afrohk-text mb-2 py-0">
+                          <span class="afrohk">AfroHK</span><span class="tv">TV</span>
+                        </h3>
+                      </div>
+                      <div id="monitorscreen">
+                        <iframe id="vimeo-content"
+                          src="https://player.vimeo.com/video/536620704?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                          frameborder="0" height="500px" width="1000px" allow="autoplay; fullscreen; picture-in-picture"
+                          allow="fullscreen" title="High-intensity Classes"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal  for video 2-->
+          <div class="modal fade" id="lesson-1-vid-2" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Video-2</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div id="tv-container">
+                    <div id="monitor">
+                      <div class="afrohk-TV">
+                        <h3 class="text-center afrohk-text mb-2 py-0">
+                          <span class="afrohk">AfroHK</span><span class="tv">TV</span>
+                        </h3>
+                      </div>
+                      <div id="monitorscreen">
+                        <iframe id="vimeo-content"
+                          src="https://player.vimeo.com/video/536620704?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                          frameborder="0" height="500px" width="1000px" allow="autoplay; fullscreen; picture-in-picture"
+                          allow="fullscreen" title="High-intensity Classes"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal  for video 3-->
+          <div class="modal fade" id="lesson-1-vid-3" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Time to practice together 😉
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div id="tv-container">
+                    <div id="monitor">
+                      <div class="afrohk-TV">
+                        <h3 class="text-center afrohk-text mb-2 py-0">
+                          <span class="afrohk">AfroHK</span><span class="tv">TV</span>
+                        </h3>
+                      </div>
+                      <div id="monitorscreen">
+                        <iframe id="vimeo-content"
+                          src="https://player.vimeo.com/video/536620704?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                          frameborder="0" height="500px" width="1000px" allow="autoplay; fullscreen; picture-in-picture"
+                          allow="fullscreen" title="High-intensity Classes"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="self-practice-wrapper">
+          <h3 class="practice-alone text-center">Time to practice alone</h3>
+          <div class="self-practice-btn">
+            <button class="btn btn-info mx-2 my-2" type="button" data-bs-toggle="collapse" data-bs-target="#self-p-1"
+              aria-expanded="false" aria-controls="collapseExample">
+              Self-access-1
+            </button>
+            <button class="btn btn-info mx-2 my-2" type="button" data-bs-toggle="collapse" data-bs-target="#self-p-2"
+              aria-expanded="false" aria-controls="collapseExample">
+              Self-access-2
+            </button>
+            <button class="btn btn-warning mx-2 my-2" type="button" data-bs-toggle="collapse" data-bs-target="#self-p-3"
+              aria-expanded="false" aria-controls="collapseExample">
+              More exercises
+            </button>
+          </div>
+
+          <div class="collapse" id="self-p-1">
+            <div class="card card-body">
+              Some placeholder content for the collapse component. This panel is
+              hidden by default but revealed when the user activates the
+              relevant trigger.
+            </div>
+          </div>
+
+          <div class="collapse" id="self-p-2">
+            <div class="card card-body">self-practice-2</div>
+          </div>
+
+          <div class="collapse" id="self-p-3">
+            <div class="card card-body">More exercises</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Week 3-->
+  <div class="week-lesson my-5">
+    <div class="lesson-info row">
+      <div class="col-md-3 d-flex justify-content-center">
+        <img
+          src="https://images.pexels.com/photos/7005409/pexels-photo-7005409.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+          alt="" class="week-lesson-img img-fluid img-thumbnail border" />
+      </div>
+      <div class="col-md-8">
+        <div class="d-flex justify-content-center flex-wrap align-items-center">
+          <p class="week-number">
+            <span class="me-3">Week 1</span>
+          </p>
+          <h1 class="lesson-title">Asking and Answering Questions</h1>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn ms-2 btn-outline-secondary" data-bs-toggle="modal"
+            data-bs-target="#learnmore">
+            Learn more about this lesson
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="learnmore" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Asking and Answering Questions
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lesson-links">
+          <button type="button" class="btn ms-2 btn-outline-primary" data-bs-toggle="modal"
+            data-bs-target="#lesson-1-vid-1">
+            Video lesson 1
+          </button>
+
+          <button type="button" class="btn ms-2 btn-outline-primary" data-bs-toggle="modal"
+            data-bs-target="#lesson-1-vid-2">
+            Video lesson 2
+          </button>
+
+          <button type="button" class="btn ms-2 btn-outline-success" data-bs-toggle="modal"
+            data-bs-target="#lesson-1-vid-3">
+            Let's practice together
+          </button>
+
+          <!-- Modal  for video 1-->
+          <div class="modal fade" id="lesson-1-vid-1" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Video-1</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div id="tv-container">
+                    <div id="monitor">
+                      <div class="afrohk-TV">
+                        <h3 class="text-center afrohk-text mb-2 py-0">
+                          <span class="afrohk">AfroHK</span><span class="tv">TV</span>
+                        </h3>
+                      </div>
+                      <div id="monitorscreen">
+                        <iframe id="vimeo-content"
+                          src="https://player.vimeo.com/video/536620704?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                          frameborder="0" height="500px" width="1000px" allow="autoplay; fullscreen; picture-in-picture"
+                          allow="fullscreen" title="High-intensity Classes"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal  for video 2-->
+          <div class="modal fade" id="lesson-1-vid-2" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Video-2</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div id="tv-container">
+                    <div id="monitor">
+                      <div class="afrohk-TV">
+                        <h3 class="text-center afrohk-text mb-2 py-0">
+                          <span class="afrohk">AfroHK</span><span class="tv">TV</span>
+                        </h3>
+                      </div>
+                      <div id="monitorscreen">
+                        <iframe id="vimeo-content"
+                          src="https://player.vimeo.com/video/536620704?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                          frameborder="0" height="500px" width="1000px" allow="autoplay; fullscreen; picture-in-picture"
+                          allow="fullscreen" title="High-intensity Classes"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal  for video 3-->
+          <div class="modal fade" id="lesson-1-vid-3" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Time to practice together 😉
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div id="tv-container">
+                    <div id="monitor">
+                      <div class="afrohk-TV">
+                        <h3 class="text-center afrohk-text mb-2 py-0">
+                          <span class="afrohk">AfroHK</span><span class="tv">TV</span>
+                        </h3>
+                      </div>
+                      <div id="monitorscreen">
+                        <iframe id="vimeo-content"
+                          src="https://player.vimeo.com/video/536620704?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                          frameborder="0" height="500px" width="1000px" allow="autoplay; fullscreen; picture-in-picture"
+                          allow="fullscreen" title="High-intensity Classes"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="self-practice-wrapper">
+          <h3 class="practice-alone text-center">Time to practice alone</h3>
+          <div class="self-practice-btn">
+            <button class="btn btn-info mx-2 my-2" type="button" data-bs-toggle="collapse" data-bs-target="#self-p-1"
+              aria-expanded="false" aria-controls="collapseExample">
+              Self-access-1
+            </button>
+            <button class="btn btn-info mx-2 my-2" type="button" data-bs-toggle="collapse" data-bs-target="#self-p-2"
+              aria-expanded="false" aria-controls="collapseExample">
+              Self-access-2
+            </button>
+            <button class="btn btn-warning mx-2 my-2" type="button" data-bs-toggle="collapse" data-bs-target="#self-p-3"
+              aria-expanded="false" aria-controls="collapseExample">
+              More exercises
+            </button>
+          </div>
+
+          <div class="collapse" id="self-p-1">
+            <div class="card card-body">
+              Some placeholder content for the collapse component. This panel is
+              hidden by default but revealed when the user activates the
+              relevant trigger.
+            </div>
+          </div>
+
+          <div class="collapse" id="self-p-2">
+            <div class="card card-body">self-practice-2</div>
+          </div>
+
+          <div class="collapse" id="self-p-3">
+            <div class="card card-body">More exercises</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Week 4-->
+  <div class="week-lesson my-5">
+    <div class="lesson-info row">
+      <div class="col-md-3 d-flex justify-content-center">
+        <img
+          src="https://images.pexels.com/photos/7005409/pexels-photo-7005409.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+          alt="" class="week-lesson-img img-fluid img-thumbnail border" />
+      </div>
+      <div class="col-md-8">
+        <div class="d-flex justify-content-center flex-wrap align-items-center">
+          <p class="week-number">
+            <span class="me-3">Week 1</span>
+          </p>
+          <h1 class="lesson-title">Asking and Answering Questions</h1>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn ms-2 btn-outline-secondary" data-bs-toggle="modal"
+            data-bs-target="#learnmore">
+            Learn more about this lesson
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="learnmore" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Asking and Answering Questions
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lesson-links">
+          <button type="button" class="btn ms-2 btn-outline-primary" data-bs-toggle="modal"
+            data-bs-target="#lesson-1-vid-1">
+            Video lesson 1
+          </button>
+
+          <button type="button" class="btn ms-2 btn-outline-primary" data-bs-toggle="modal"
+            data-bs-target="#lesson-1-vid-2">
+            Video lesson 2
+          </button>
+
+          <button type="button" class="btn ms-2 btn-outline-success" data-bs-toggle="modal"
+            data-bs-target="#lesson-1-vid-3">
+            Let's practice together
+          </button>
+
+          <!-- Modal  for video 1-->
+          <div class="modal fade" id="lesson-1-vid-1" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Video-1</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div id="tv-container">
+                    <div id="monitor">
+                      <div class="afrohk-TV">
+                        <h3 class="text-center afrohk-text mb-2 py-0">
+                          <span class="afrohk">AfroHK</span><span class="tv">TV</span>
+                        </h3>
+                      </div>
+                      <div id="monitorscreen">
+                        <iframe id="vimeo-content"
+                          src="https://player.vimeo.com/video/536620704?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                          frameborder="0" height="500px" width="1000px" allow="autoplay; fullscreen; picture-in-picture"
+                          allow="fullscreen" title="High-intensity Classes"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal  for video 2-->
+          <div class="modal fade" id="lesson-1-vid-2" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Video-2</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div id="tv-container">
+                    <div id="monitor">
+                      <div class="afrohk-TV">
+                        <h3 class="text-center afrohk-text mb-2 py-0">
+                          <span class="afrohk">AfroHK</span><span class="tv">TV</span>
+                        </h3>
+                      </div>
+                      <div id="monitorscreen">
+                        <iframe id="vimeo-content"
+                          src="https://player.vimeo.com/video/536620704?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                          frameborder="0" height="500px" width="1000px" allow="autoplay; fullscreen; picture-in-picture"
+                          allow="fullscreen" title="High-intensity Classes"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal  for video 3-->
+          <div class="modal fade" id="lesson-1-vid-3" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Time to practice together 😉
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div id="tv-container">
+                    <div id="monitor">
+                      <div class="afrohk-TV">
+                        <h3 class="text-center afrohk-text mb-2 py-0">
+                          <span class="afrohk">AfroHK</span><span class="tv">TV</span>
+                        </h3>
+                      </div>
+                      <div id="monitorscreen">
+                        <iframe id="vimeo-content"
+                          src="https://player.vimeo.com/video/536620704?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                          frameborder="0" height="500px" width="1000px" allow="autoplay; fullscreen; picture-in-picture"
+                          allow="fullscreen" title="High-intensity Classes"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="self-practice-wrapper">
+          <h3 class="practice-alone text-center">Time to practice alone</h3>
+          <div class="self-practice-btn">
+            <button class="btn btn-info mx-2 my-2" type="button" data-bs-toggle="collapse" data-bs-target="#self-p-1"
+              aria-expanded="false" aria-controls="collapseExample">
+              Self-access-1
+            </button>
+            <button class="btn btn-info mx-2 my-2" type="button" data-bs-toggle="collapse" data-bs-target="#self-p-2"
+              aria-expanded="false" aria-controls="collapseExample">
+              Self-access-2
+            </button>
+            <button class="btn btn-warning mx-2 my-2" type="button" data-bs-toggle="collapse" data-bs-target="#self-p-3"
+              aria-expanded="false" aria-controls="collapseExample">
+              More exercises
+            </button>
+          </div>
+
+          <div class="collapse" id="self-p-1">
+            <div class="card card-body">
+              Some placeholder content for the collapse component. This panel is
+              hidden by default but revealed when the user activates the
+              relevant trigger.
+            </div>
+          </div>
+
+          <div class="collapse" id="self-p-2">
+            <div class="card card-body">self-practice-2</div>
+          </div>
+
+          <div class="collapse" id="self-p-3">
+            <div class="card card-body">More exercises</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

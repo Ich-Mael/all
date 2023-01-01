@@ -1,0 +1,37 @@
+<% layout('layouts/boilerplate') %>
+<style type="text/css">
+  .jumbotron {
+    padding: 4rem 2rem;
+    margin: 2rem 0;
+    background-color: rgba(231, 239, 241, 0.733);
+    border-radius: 0.3rem;
+  }
+  .welcome{
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    letter-spacing: 0.13rem;
+    color: rgb(87, 8, 161);
+  }
+</style>
+
+
+<div class="container d-flex justify-content-center align-items-center">
+  <div class="jumbotron">
+    <h1 class="display-4 py-3 welcome">Bienvenue au temple du savoir</h1>
+    <hr class="my-4" />
+    <p class="lead text-success">
+      <strong>Félicitations 🥳🎊 ! </strong> votre compte a été créé avec
+      succès.
+    </p>
+    <p><strong>Etape suivante : Activation de compte </strong></p>
+    <br />
+    <a
+      class="btn btn-outline-primary btn-small mt-2"
+      href="/user/send-verification-email/<%= new_user_mail %>"
+      role="button"
+      >Cliquez ici pour recevoir un mail d'activation de compte</a
+    >
+  </div>
+</div>

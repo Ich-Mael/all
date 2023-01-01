@@ -1,0 +1,72 @@
+<% layout('layouts/engClubBoilerplate') %>
+<style>
+	html {
+		font-size: 80%;
+	}
+</style>
+<h1 class="text-center my-5" style="color: blueviolet;"><%= club.acronym %> Board Members Dashboard</h1>
+<h3 class="text-center">All Videos Lessons</h3>
+<hr>
+<div class="container col-md-8">
+	<div class="row">
+		<!-- Lessons section -->
+		<% for(let lesson of club.weeklyVideoLesson){ %>
+		<div class="container border my-4 py-2 border-success">
+			<div class="lesson-links">
+				<div>
+					<div class="lesson-wrapper my-3">
+						<h4 class="week-lesson-title" style="color: rgb(216, 92, 10)" ;> <%= lesson.lessonTitle %> </h4>
+						<p>
+							<%- lesson.lessonSummary%>
+						</p>
+						<button type="button" class="btn ms-2 video-btn btn-outline-primary" data-bs-toggle="modal"
+							data-bs-target="#lesson-1-vid-1">
+							Click to watch the video lesson
+						</button>
+						<a href="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/board_dashboard/videoLessons/<%= lesson._id%>/edit"
+							class="btn btn-outline-warning">Update lesson</a>
+					</div>
+				</div>
+				<!-- Modal  for video 1-->
+				<div class="modal fade" id="lesson-1-vid-1" tabindex="-1" aria-labelledby="exampleModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title text-primary" id="exampleModalLabel">
+									<%= lesson.lessonTitle %>
+								</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal"
+									aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<div id="tv-container">
+									<div id="monitor">
+										<div class="afrohk-TV">
+											<h3 class="text-center afrohk-text mb-2 py-0">
+												<span class="afrohk">AfroHK</span><span class="tv">Radar</span>
+											</h3>
+										</div>
+										<div id="monitorscreen">
+											<iframe id="vimeo-content" src="<%= lesson.videoLink %>" ub.weeklyVideoL
+												frameborder="0" height="500px" width="1000px"
+												allow="autoplay; fullscreen; picture-in-picture" allow="fullscreen"
+												title="High-intensity Classes"></iframe>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+									Close
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<% } %>
+	</div>
+</div>

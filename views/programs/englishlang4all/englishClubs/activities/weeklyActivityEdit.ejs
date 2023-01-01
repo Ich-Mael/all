@@ -1,0 +1,140 @@
+<% layout('layouts/engClubBoilerplate') %>
+<!-- WORD Processor-->
+<script src="https://cdn.tiny.cloud/1/p06f8vxdpje8xosyvnq48z68vc7n479iauh5s2jk9zx30qg2/tinymce/5/tinymce.min.js"
+  referrerpolicy="origin"></script>
+</script>
+<script>
+  tinymce.init({
+    selector: '.mytextarea',
+    height: 500,
+    max_width: 500,
+    min_height: 300,
+    min_width: 400
+  });
+</script>
+
+
+<!-- Weekly activity-->
+<div class="container  my-5  col-md-8">
+  <h1 class="text-center my-2" style="color: blueviolet;"><%= club.acronym %> Board Members Dashboard</h1>
+  <h3 class="text-center py-3 fs-4 d-inline-block">Update weekly Activity </h3>
+  <p>
+    <button class="btn mx-2 btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#wod"
+      aria-expanded="false" aria-controls="collapseExample">
+      Word of the day
+    </button>
+
+    <button class="btn mx-2 btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#iod"
+      aria-expanded="false" aria-controls="collapseExample">
+      Idiom or Expression of the day
+    </button>
+
+    <button class="btn mx-2 btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#wec"
+      aria-expanded="false" aria-controls="collapseExample">
+      Weekly English Club Meeting
+    </button>
+
+    <button class="btn mx-2 btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#eod"
+      aria-expanded="false" aria-controls="collapseExample">
+      Online Debate
+    </button>
+  </p>
+
+  <form action="/englishlang4all/Clubs/<%= club._id %>/board_dashboard/weeklyActivities/<%= weeklyActivity._id%>?_method=PUT" method="POST">
+    <div class="collapse mb-3" id="wod">
+      <!-- Word of the Day Section-->
+      <section class="word-day-wrapper my-4" style="background-color: rgb(197, 240, 248); padding: 2rem;">
+        <!-- Word Of The day -->
+        <label class="form-label fw-bold my-3" for="Word of the day">Word of the day</label>
+        <input type="text" class="form-control" name="wordOfDay[word]" id="word" value="<%= weeklyActivity.wordOfDay.word %>" />
+
+        <!-- meaning  -->
+        <label class="form-label fw-bold my-3" for="title">Meaning</label>
+        <input type="text" class="form-control" name="wordOfDay[wordMeaning]" value="<%= weeklyActivity.wordOfDay.wordMeaning %>" id="wordMeaning" />
+
+        <!-- Learn more  -->
+        <label class="form-label fw-bold my-3" for="learnMoreWord">Learn more</label>
+        <textarea type="text" class="form-control mytextarea" name="wordOfDay[learnMoreWord]" value=""
+          id="learnMoreWord"><%= weeklyActivity.wordOfDay.learnMoreWord %></textarea>
+      </section>
+    </div>
+
+    <div class="collapse mb-3" id="iod">
+      <!-- Idiom Of The Day Section-->
+      <section class="word-day-wrapper my-4" style="background-color: rgb(214, 248, 217); padding: 2rem;">
+        <!-- idiom of the day -->
+        <label class="form-label fw-bold my-3" for="Word of the day">Idiom or Useful
+          Expression</label>
+        <input type="text" class="form-control" name="IdiomDay[idiom]" id="idiom" value="<%= weeklyActivity.IdiomDay.idiom %>" />
+
+        <!-- meaning  -->
+        <label class="form-label fw-bold my-3" for="title">Meaning</label>
+        <input type="text" class="form-control" name="IdiomDay[idiomMeaning]" value="<%= weeklyActivity.IdiomDay.idiomMeaning %>" id="idiomMeaning" />
+
+        <!-- Learn more  -->
+        <label class="form-label fw-bold my-3" for="learnMoreIdiom">Learn more</label>
+        <textarea type="text" class="form-control mytextarea" name="IdiomDay[learnMoreIdiom]" value=""
+          id="learnMoreIdiom"><%= weeklyActivity.IdiomDay.learnMoreIdiom %></textarea>
+      </section>
+    </div>
+
+    <!-- English Club Meeting Section-->
+    <div class="collapse mb-3" id="wec">
+      <section class="word-day-wrapper my-4" style="background-color: rgb(214, 232, 248); padding: 2rem;">
+        <!-- meeting date -->
+        <label class="form-label fw-bold my-3" for="Word of the day">Meeting Date</label>
+        <input type="date" class="form-control" name="englishClubMeeting[meetingDate]" id="meetingDate" value="<%= weeklyActivity.englishClubMeeting.meetingDate %>" required/>
+
+        <!-- Venue  -->
+        <label class="form-label fw-bold my-3" for="title"> Venue </label>
+        <input type="text" class="form-control" name="englishClubMeeting[venue]" value="<%=weeklyActivity.englishClubMeeting.venue %> " id="venue" />
+
+        <!-- Time  -->
+        <label class="form-label fw-bold my-3" for="title"> Time </label>
+        <input type="time" class="form-control" name="englishClubMeeting[meetingTime]" value="<%=weeklyActivity.englishClubMeeting.meetingTime %> " id="time" required />
+
+        <!-- About the meeting  -->
+        <label class="form-label fw-bold my-3" for="learnMoreIdiom">More about the weekly
+          meeting</label>
+        <textarea type="text" class="form-control mytextarea" name="englishClubMeeting[about]" value=""
+          id="learnMoreIdiom"><%= weeklyActivity.englishClubMeeting.about %></textarea>
+      </section>
+    </div>
+
+    <!-- Online debate Section-->
+    <div class="collapse mb-3" id="eod">
+      <section class="word-day-wrapper my-4" style="background-color: rgb(248, 240, 214); padding: 2rem;">
+        <!-- topic one-->
+        <label class="form-label fw-bold my-3" for="topicOne"> Topic One</label>
+        <input type="text" class="form-control" name="OnlineDebate[topicOne]" value="<%=weeklyActivity.OnlineDebate.topicOne %>" id="topicOne" />
+
+        <!-- debate date one -->
+        <label class="form-label fw-bold my-3" for="Word of the day">Date for 1st Debate</label>
+        <input type="date" class="form-control" name="OnlineDebate[debateDateOne]" id="debateDateOne" value="" required />
+
+        <!-- Time one -->
+        <label class="form-label fw-bold my-3" for="time"> Time </label>
+        <input type="time" class="form-control" name="OnlineDebate[debateTimeOne]" value="" id="time" required/>
+
+
+        <!-- topic two-->
+        <label class="form-label fw-bold my-3" for="topicTwo"> Topic Two</label>
+        <input type="text" class="form-control" name="OnlineDebate[topicTwo]" value="<%=weeklyActivity.OnlineDebate.topicTwo %>" id="topicTwo" />
+        <!-- debate date two -->
+        <label class="form-label fw-bold my-3" for="Word of the day">Date for 2nd Debate</label>
+        <input type="date" class="form-control" name="OnlineDebate[debateDateTwo]" id="debateDateTwo" value="" required/>
+
+        <!-- Time  -->
+        <label class="form-label fw-bold my-3" for="time"> Time </label>
+        <input type="time" class="form-control" name="OnlineDebate[debateTimeTwo]" value="" id="time" required/>
+
+        <!-- About debate topics  topic  -->
+        <label class="form-label fw-bold my-3" for="learnMoreIdiom">More about the online debates</label>
+        <textarea type="text" class="form-control mytextarea" name="OnlineDebate[aboutTopic]" value=""
+          placeholder="Please don't forget to include debate room details for connexion" id="learnMoreIdiom"><%= weeklyActivity.OnlineDebate.aboutTopic %></textarea>
+      </section>
+    </div>
+    <button class="btn my-3 mx-2 btn-outline-success" type="submit">Update Weekly Activity</button>
+    <hr>
+  </form>
+</div>

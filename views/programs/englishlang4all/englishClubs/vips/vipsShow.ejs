@@ -1,0 +1,156 @@
+<% layout('layouts/engClubBoilerplate') %>
+<!-- WORD Processor-->
+<script src="https://cdn.tiny.cloud/1/p06f8vxdpje8xosyvnq48z68vc7n479iauh5s2jk9zx30qg2/tinymce/5/tinymce.min.js"
+  referrerpolicy="origin"></script>
+</script>
+<script>
+  tinymce.init({
+    selector: '.mytextarea',
+    height: 500,
+    max_width: 500,
+    min_height: 300,
+    min_width: 400
+  });
+</script>
+<style>
+  .student-month {
+    font-family: "Chivo", sans-serif;
+    font-weight: 700;
+    color: rgb(11, 18, 49);
+    letter-spacing: 0.1rem;
+    background: #e65c00;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right,
+        #f9d423,
+        #e65c00);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,
+        #e65c00,
+        #f9d423,
+        #e65c00);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  .instructor-month {
+    background: #000000;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right,
+        #434343,
+        #000000);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,
+        #434343,
+        #000000);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: whitesmoke;
+  }
+
+  .som-img-wrapper,
+  .iom-img-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .som-img-wrapper img,
+  .iom-img-wrapper img {
+    height: 300px;
+    width: 250px;
+    object-fit: cover;
+  }
+</style>
+
+<h1 class="text-center my-5" style="color: blueviolet;"><%= club.acronym %> Board Members Dashboard</h1>
+<div class="col-md-8 container">
+  <% for(let leader of   club.workersOfMonth) {%>
+  <h4 class="text-secondary"> <%= months[leader.createdAt.getMonth()]%> <%= leader.createdAt.getFullYear() %></h4>
+  <div class="d-flex justify-content-around border border-secondary border-3 rounded py-3 my-5" style="width: 100%;">
+    <div class="student-OM">
+      <div class="card border border-dark m-2">
+        <div class="card-header text-center
+				student-month">
+          Female leader of the Month
+        </div>
+        <div class="card-body">
+          <div class="som-img-wrapper">
+            <img src="<%= leader.studentOfMonth.imageUrl %>" alt="" class="img-thumbnail img-fluid">
+          </div>
+          <h5 class="card-title"><%= leader.studentOfMonth.fullname %></h5>
+          <p class="card-text"><%= leader.studentOfMonth.reasons %></p>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#som">
+            Learn more about the FLOM
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="som" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg
+				    modal-fullscreen-md-down">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    All about the FLOM
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <%- leader.studentOfMonth.about %>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn
+					  btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="instructor-OM">
+      <div class="card border border-dark m-2">
+        <div class="card-header text-center
+				instructor-month">
+          Male leader of the Month
+        </div>
+        <div class="card-body">
+          <div class="som-img-wrapper">
+            <img src="<%= leader.instructorOfMonth.imageUrl %>" alt="" class="img-thumbnail img-fluid">
+          </div>
+          <h5 class="card-title"><%=leader.instructorOfMonth.fullname%></h5>
+          <p class="card-text"><%= leader.instructorOfMonth.reasons %></p>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn
+				  btn-secondary" data-bs-toggle="modal" data-bs-target="#iom"> Learn more about the MLOM
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="iom" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg
+				    modal-fullscreen-md-down">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    All about the MLOM
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <%- leader.instructorOfMonth.about %>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <a href="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/board_dashboard/leadersOfMonth/<%= leader._id%>/edit"
+    class="btn btn-outline-success">Edit leaders of the month</a>
+  <hr>
+  <%}%>
+</div>

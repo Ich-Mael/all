@@ -1,0 +1,63 @@
+<% layout('layouts/boilerplate') %>
+ <link href="/stylesheets/user/userprofile.css" rel="stylesheet" />
+ <div class="container col-md-10 ">
+  <div class="row user-banner">
+   <div class="col-md-3">
+    <img src="<%= user.imageUrl %>" class="user-img img-thumbnail" alt="">
+   </div>
+   <div class="col-md-6">
+    <h1 class="welcome-msg py-3">
+     Salut
+     <%= user.username %> ! <span> <br> Bienvenue dans votre espace personnel d'apprentissage</span>
+    </h1>
+   </div>
+   <div class="col-md-3">
+   <a href="/reset-password" class="btn btn-outline-danger my-3">Reinitialiser mon mot de passe</a>
+   </div>
+  </div>
+ </div>
+
+ <p class="quote">Le savoir est une arme</p>
+ <h2 class="my-program">Mes programmes</h2>
+ <div class="row container mx-5 my-5">
+  <div class="col-md-4">
+   <% if (currentUser.isHighSchoolStudent) {%>
+    <div class="program-wrapper">
+     <div class="program-img-wrapper">
+      <img
+       src="https://www.careersportal.co.za/sites/default/files/styles/amp_1200x675_16_9/public/images/Terrique%20Faro/Maths_1.jpg?itok=tO4eBhoE"
+       class="img-fluid" alt="">
+      <a class="btn my-3 ms-3 btn-outline-success"
+       href="/user/<%=currentUser._id%>/highschoolDashboard/<%=currentUser.highSchool_id%>">Easy-Maths</a>
+      <%}%>
+     </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+   <% if (currentUser.isPecpStudent) {%>
+    <div class="program-wrapper">
+     <div class="program-img-wrapper">
+      <img src="https://cambridgeinstitute.co.in/wp-content/uploads/2021/03/english-img-22.jpg" class="img-fluid"
+       alt="">
+      <a class="btn my-3 ms-3 btn-outline-success"
+       href="/user/<%=currentUser._id%>/pecpStudentDashboard/<%=currentUser.pecpStudent_id%>">Personal
+       English
+       Coaching Program</a>
+      <%}%>
+     </div>
+    </div>
+  </div>
+ </div>
+
+ <!-- Instructors -->
+ <% if (currentUser.isPecpCoach) {%>
+  <h2 class="my-program">Pecp Coach Space</h2>
+  <div class="pecp-coach">
+   <div class="pecp-link-wrapper">
+    <a class="btn fs-4 btn-primary pecp-link"
+     href="/user/<%=currentUser._id%>/pecpCoachDashboard/<%=currentUser.pecpCoach_id%>">PECP
+     Coaching Dashboarb</a>
+    <%}%>
+   </div>
+  </div>

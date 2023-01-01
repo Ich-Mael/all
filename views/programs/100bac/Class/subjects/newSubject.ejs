@@ -1,0 +1,15 @@
+<% layout('layouts/100bacBoilerplate') %>
+<h1 class="text-center py-3 text-primary">Easy-Maths</h1>
+<!--  -->
+<div class="container col-md-6 my-5">
+	<h2 class="text-center py-3">Add new subject to <%= schoolClass.title %> </h2>
+	<form action="/admindashboard/100bac/class/<%= schoolClass._id %>/subject " method="POST">
+		<!-- Serie General information -->
+		<label class="form-label" for="title">Subject name</label>
+		<input type="text" class="form-control" id="subject-title" name="subject[title]" value="" />
+
+		<label class="form-label mt-4" for="title">Subject image url</label>
+		<input type="text" class="form-control" id="subject-image" name="subject[subjectImageUrl]" value="" />
+		<button type="submit" class="btn btn-outline-primary my-3">Create a new subject</button>
+	</form>
+</div>

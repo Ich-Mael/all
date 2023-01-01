@@ -1,0 +1,61 @@
+<% layout('layouts/boilerplate') %>
+<style>
+  .card-body {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+      rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    margin: 2rem 0;
+  }
+
+  html {
+    font-size: 85%;
+  }
+</style>
+
+<!--Section 2-->
+<section id="all-course-view">
+  <h1 class="py-3 text-center">Admin Dashboard for Courses</h1>
+  <hr />
+  <div class="container">
+    <div class="row mt-5">
+      <% for(let course of courses) {%>
+      <div class="col-md-4">
+        <div class="card-body">
+          <div class="card-title">
+            <h4 class="text-center"><%= course.title %></h4>
+            <h5 class="px-1 text-muted text-center fs-6">
+              By <%= course.instructors[0].surname %> <%=
+              course.instructors[0].name %>
+            </h5>
+          </div>
+
+          <!-- <% if(course.instructors[1]){%>
+            <h3 class="card-title course-author">
+               <%= course.instructors[1].surname %> -
+               <%= course.instructors[1].name %>
+          </h3>
+               <% }; %>-->
+        <div class="d-flex mt-3 justify-content-center">
+          <div>
+            <a class="btn btn-success mx-2"
+            href="/admindashboard/courses/<%=course._id%>/edit"
+            >Edit Course</a
+          >
+          <a class="btn btn-primary mx-2" href="/courses/<%=course._id%>"
+            >View Course</a
+          >
+          <form
+            action="/admindashboard/courses/<%=course._id%>?_method=DELETE"
+            method="POST" style="display: inline-block;"
+          >
+            <button class="btn btn-danger my-1 mx-2 btn-inline">
+              Delete Course
+            </button>
+          </form>
+        </div>
+        </div>
+      </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</section>

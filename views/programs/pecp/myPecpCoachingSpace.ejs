@@ -1,0 +1,454 @@
+<% layout('layouts/pecpBoilerplate') %>
+<!-- WORD Processor-->
+<script src="https://cdn.tiny.cloud/1/p06f8vxdpje8xosyvnq48z68vc7n479iauh5s2jk9zx30qg2/tinymce/5/tinymce.min.js"
+ referrerpolicy="origin"></script>
+</script>
+<script>
+ tinymce.init({
+  selector: '.mytextarea',
+  height: 200,
+  relative_urls: false,
+  remove_script_host: false,
+  toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+  plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+  max_width: 500,
+  min_height: 300,
+  min_width: 400
+ });
+</script>
+
+<style>
+ .pecp_wrapper {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background-color: aliceblue;
+  border-radius: 5px;
+ }
+
+ .pecs {
+  padding: 2rem 5rem;
+  font-family: 'Rye', cursive;
+  color: rgb(13, 87, 152);
+ }
+
+ .lg-heading {
+
+  color: rgb(13, 87, 152);
+  font-size: 1.3rem;
+
+  text-align: center;
+ }
+
+ .lg-heading-text {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  /* font-family: "Paytone One", sans-serif; */
+  /* font-family: 'Rye', cursive; */
+  /* font-family: 'Titan One', cursive; */
+  font-size: 1.4rem;
+ }
+
+ .lg-heading-paragraph {
+  font-family: "Paytone One", sans-serif;
+  font-size: 1.4rem;
+
+ }
+
+ .activity-links {
+  font-size: 1.2rem;
+  background-color: rgb(26, 136, 232);
+  color: aliceblue;
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: all 0.3s;
+  border-radius: 5px;
+ }
+
+ .activity-links:hover {
+  color: blue;
+  background-color: aliceblue;
+  border: 1px solid black;
+ }
+
+ .section-title {
+  font-family: "Paytone One", sans-serif;
+  font-size: 1.8rem;
+  background-color: blueviolet;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+ }
+
+ /* */
+ .student-box-wrapper {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 4px;
+ }
+
+ .student-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+ }
+
+ .student-learning {
+  height: 4rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+ }
+
+ label {
+  color: #6190E8;
+  font-size: 1.3rem;
+ }
+</style>
+
+<div class="container mb-5 d-flex flex-column align-items-center">
+ <div class="pecp_wrapper mt-5">
+  <h1 class="pecs">Hi <%= user.username %>! Welcome to your English Coaching Dashboard</h1>
+  <hr>
+  <div class="d-flex justify-content-around py-3">
+   <a href="#students" class="mx-2 activity-links d-block">My Students</a>
+   <a href="#resources" class="mx-2 activity-links d-block">Coaching Resources</a>
+  </div>
+ </div>
+
+</div>
+
+
+<!-- My students -->
+<div id="students">
+ <h3 class="section-title">My Students</h3>
+ <% for(student of coach.students){%>
+ <div class="d-flex justify-content-center">
+  <div class="col-md-8 px-3 py-5">
+   <div class="student-box-wrapper">
+    <div class="row">
+     <div class="col-md-3 student-pic">
+      <img src="<%= student.pecpStudentBasicInfo.imageUrl %>" class="img-fluid student-img img-thumbnail" alt="">
+     </div>
+     <div class="col-md-9 student-info">
+      <h1 class="student-name"><%= student.pecpStudentBasicInfo.surname %>
+       <%= student.pecpStudentBasicInfo.name %> <span
+        class="bg-success text-center mx-3 px-2 py-2 text-white"><%= student.level %></span></h1>
+      <hr class="mx-2">
+      <h6 class="text-success fst-italic fw-bold">Student Learning Goal</h6>
+      <p class="student-learning"><%= student.learningGoal %></p>
+     </div>
+    </div>
+
+    <!-- Manage Student -->
+    <div class="d-flex justify-content-around m-2 py-2" style="background: #6190E8;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    ">
+     <button class="btn ms-2 my-2 d-block btn-danger" type="button" data-bs-toggle="collapse"
+      data-bs-target="#GD_<%= student._id %>" aria-expanded="false" aria-controls="collapseExample">
+      Grade Student
+     </button>
+
+     <button class="btn ms-2 my-2 d-block btn-danger" type="button" data-bs-toggle="collapse"
+      data-bs-target="#Cv_<%= student._id %>" aria-expanded="false" aria-controls="collapseExample">
+      Cv
+     </button>
+     <% if(currentUser.role == "admin"){%>
+     <%}%>
+    
+    <button type="button" class="btn d-block ms-2 my-2 btn-primary" data-bs-toggle="collapse"
+     data-bs-target="#GR_<%= student._id %>">
+     Learning Advice
+     </button>
+
+     <button type="button" class="btn d-block ms-2 my-2 btn-success" data-bs-toggle="collapse"
+      data-bs-target="#CT_<%= student._id %>" aria-expanded="false" aria-controls="collapseExample"><i
+       class="fa-regular fa-comments"></i>
+      Schedule a conversation topic call
+     </button>
+
+     <button type="button" class="btn d-block ms-2 my-2 btn-primary" data-bs-toggle="collapse"
+      data-bs-target="#CF_<%= student._id %>" aria-expanded="false" aria-controls="collapseExample">
+      Conversation feedback and Practice
+     </button>
+    </div>
+
+    <div class="pb-3">
+     <!-- Grading -->
+     <div class="collapse" id="GD_<%= student._id %>" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+       <div class="modal-content">
+        <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalLabel">Grade
+          <%= student.pecpStudentBasicInfo.surname %> </h5>
+
+        </div>
+        <div class="modal-body">
+         <form
+          action="/user/<%=currentUser._id%>/pecpCoachDashboard/<%=currentUser.pecpCoach_id%>/pecpStudent/<%= student._id %>/grade"
+          method="POST">
+
+          <!-- Writing test info -->
+          <div class="my-5 p-3" style="border-radius:5px; border: 1px solid rgb(28, 26, 28);">
+           <h3 class="text-center bg-success text-white p-2">Writing Test Result</h3>
+           <div class="row">
+            <!-- test level  -->
+            <div class="col-md-4">
+             <label class="form-label my-3" for="test level">Test level</label>
+             <select class="form-select" name="grade[testLevel]" aria-label="Default select example">
+              <option selected value="A1">A1</option>
+              <option value="A2">A2</option>
+              <option value="B1">B1</option>
+              <option value="B2">B2</option>
+              <option value="C1">C1</option>
+              <option value="C2">C2</option>
+             </select>
+            </div>
+            <!-- test periode  -->
+            <div class="col-md-4">
+             <label class="form-label my-3" for="testPeriod">Period of the test</label>
+             <input type="date" class="form-control" name="grade[period]" value="" id="testPeriod" required />
+            </div>
+            <!-- test grade  -->
+            <div class="col-md-4">
+             <label class="form-label my-3" for="testGrade">Writing Test Grade</label>
+             <input type="number" class="form-control" name="grade[testGrade]" value="" id="testGrade" required />
+            </div>
+           </div>
+          </div>
+
+          <!-- skills grade -->
+          <div class="my-5 p-3" style="border-radius:5px; border: 1px solid rgb(8, 14, 60);">
+           <h3 class="text-center bg-success text-white p-2">Speaking Test Result</h3>
+           <div class="row">
+            <!-- structure  -->
+            <div class="col-md-6">
+             <label class="form-label my-3" for="structure">Structure</label>
+             <select class="form-select" name="grade[structure]" aria-label="Default select example">
+              <option selected value="Not Sufficient">Not Sufficient</option>
+              <option value="Sufficient">Sufficient</option>
+              <option value="Good">Good</option>
+              <option value="Very Good">Very Good</option>
+              <option value="Excellent">Excellent</option>
+             </select>
+            </div>
+
+            <!-- Pronunciation -->
+            <div class="col-md-6">
+             <label class="form-label my-3" for="pronunciation">Pronunciation</label>
+             <select class="form-select" name="grade[pronunciation]" aria-label="Default select example">
+              <option selected value="Not Sufficient">Not Sufficient</option>
+              <option value="Sufficient">Sufficient</option>
+              <option value="Good">Good</option>
+              <option value="Very Good">Very Good</option>
+              <option value="Excellent">Excellent</option>
+             </select>
+            </div>
+
+            <!-- Fluency -->
+            <div class="col-md-6">
+             <label class="form-label my-3" for="fluency">Fluency</label>
+
+             <select class="form-select" name="grade[fluency]" aria-label="Default select example">
+              <option selected value="Not Sufficient">Not Sufficient</option>
+              <option value="Sufficient">Sufficient</option>
+              <option value="Good">Good</option>
+              <option value="Very Good">Very Good</option>
+              <option value="Excellent">Excellent</option>
+             </select>
+            </div>
+
+            <!-- Vocabulary -->
+            <div class="col-md-6">
+             <label class="form-label my-3" for="vocabulary">Vocabulary</label>
+
+             <select class="form-select" name="grade[vocabulary]" aria-label="Default select example">
+              <option selected value="Not Sufficient">Not Sufficient</option>
+              <option value="Sufficient">Sufficient</option>
+              <option value="Good">Good</option>
+              <option value="Very Good">Very Good</option>
+              <option value="Excellent">Excellent</option>
+             </select>
+            </div>
+
+            <!-- comprehension -->
+            <div class="col-md-6">
+             <label class="form-label my-3" for="comprehension">Comprehension</label>
+
+             <select class="form-select" name="grade[comprehension]" aria-label="Default select example">
+              <option selected value="Not Sufficient">Not Sufficient</option>
+              <option value="Sufficient">Sufficient</option>
+              <option value="Good">Good</option>
+              <option value="Very Good">Very Good</option>
+              <option value="Excellent">Excellent</option>
+             </select>
+            </div>
+
+            <!-- interaction -->
+            <div class="col-md-6">
+             <label class="form-label my-3" for="interaction">Interaction</label>
+
+             <select class="form-select" name="grade[interaction]" aria-label="Default select example">
+              <option selected value="Not Sufficient">Not Sufficient</option>
+              <option value="Sufficient">Sufficient</option>
+              <option value="Good">Good</option>
+              <option value="Very Good">Very Good</option>
+              <option value="Excellent">Excellent</option>
+             </select>
+            </div>
+           </div>
+          </div>
+
+          <!-- Overall feedback -->
+          <div class="my-5 p-3" style="border-radius:5px; border: 1px solid rgb(8, 14, 60);">
+           <h3 class="text-center bg-success text-white p-2">Overall Feedback and Recommendation</h3>
+
+           <!-- Testee feedback -->
+           <textarea type="text" class="form-control mytextarea"
+            placeholder="What are the Strenghs and Weaknesses of the testee ?  What are your recommendations for continuous improvement "
+            name="grade[feedback]" value="" id="feedback"></textarea>
+          </div>
+
+          <button type="submit" class="btn mb-5 btn-lg btn-primary"> Submit Grade </button>
+         </form>
+        </div>
+
+       </div>
+      </div>
+     </div>
+
+     <!-- Cv -->
+     <div class="collapse" id="Cv_<%= student._id %>" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="ontainer">
+       <h5 class="modal-title text-center" id="">Cv Interview Practice files for
+        <%= student.pecpStudentBasicInfo.surname %> </h5>
+      </div>
+      <div class="container col-lg-10">
+       <form
+        action="/user/<%=currentUser._id%>/pecpCoachDashboard/<%=currentUser.pecpCoach_id%>/pecpStudent/<%= student._id %>/cv"
+        method="POST">
+        <!-- Cv in English -->
+        <label class="form-label my-3" for="">Cv in English pdf link</label>
+        <input type="text" class="form-control" placeholder="" name="cv[studentCvPdf]" required id="" value="" />
+
+        <!--Cv text-->
+        <label class="form-label my-3" for="Conv topic Details">Cv Interview text</label>
+        <textarea type="text" class="form-control mytextarea " placeholder=" " name="cv[studentCvInterview]"
+         id=""></textarea>
+
+        <!-- Student Cv audio -->
+        <label class="form-label my-3" for="call-link">Cv interview audio link</label>
+        <input type="text" class="form-control" placeholder="" name="cv[studentCvAudio]" required id="" value="" />
+
+        <button class="btn my-3  me-2 btn-success" type="submit">Submit Student C</button>
+
+       </form>
+      </div>
+     </div>
+
+     <!-- GR Modal -->
+     <div class="collapse" id="GR_<%= student._id %>" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+
+      <div class="">
+       <h5 class="modal-title" id="">General Recommendation for
+        <%= student.pecpStudentBasicInfo.surname %> </h5>
+      </div>
+
+     </div>
+
+     <!-- Conversation topic-->
+     <div class="collapse" id="CT_<%= student._id %>" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="">
+       <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Schedule Conversation Topic
+         <%= student.pecpStudentBasicInfo.surname %> </h5>
+       </div>
+       <div class="modal-body">
+        <form
+         action="/user/<%=currentUser._id%>/pecpCoachDashboard/<%=currentUser.pecpCoach_id%>/pecpStudent/<%= student._id %>/schedule_topic"
+         method="POST">
+         <!-- Conversation topic title -->
+         <label class="form-label my-3" for="conv_topic_title">Conversation Topic Title</label>
+         <input type="text" class="form-control" placeholder="Conversation title in a short an concise phrase"
+          name="conversation[topicTitle]" required id="" value="" />
+
+         <!--Conversation topic Details -->
+         <label class="form-label my-3" for="Conv topic Details">Conversation Topic Details</label>
+         <textarea type="text" class="form-control mytextarea "
+          placeholder="Provide any useful information for the learner, for a successful conversation practice. if neccessary, include youtube or article links relevant to the topic.  "
+          name="conversation[topicDetails]" id=""></textarea>
+
+         <!-- Date -->
+         <div class="row">
+          <div class="col my-2">
+           <label class="form-label my-3" for="call-date">Call Date</label>
+           <input type="date" class="form-control" name="conversation[callDate]" required id="" value="" />
+          </div>
+          <div class="col my-2">
+           <!-- Time -->
+           <label class="form-label my-3" for="call-time">Call Time</label>
+           <input type="time" class="form-control" name="conversation[callTime]" required id="" value="" />
+          </div>
+         </div>
+         <!-- Call Link Info -->
+         <label class="form-label my-3" for="call-link">Call Link Info</label>
+         <input type="text" class="form-control"
+          placeholder="If the conversation activity will be done on Zoom, Google Meet or Microsoft Team, please provide the call link here."
+          name="conversation[callLinkInfo]" required id="" value="" />
+         <button class="btn my-3  me-2 btn-success" type="submit">Schedule a conversation pratice call</button>
+
+        </form>
+       </div>
+      </div>
+     </div>
+
+     <% if(currentUser.role == "admin"){%>
+     <%}%>
+
+    <!-- Conversation Feedback -->
+    <div class="collapse" id="CF_<%= student._id %>" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+     <div class="">
+      <div class="modal-header">
+       <h5 class="modal-title" id="exampleModalLabel">Conversation Practice Feedback for
+        <%= student.pecpStudentBasicInfo.surname %> </h5>
+      </div>
+      <div class="modal-body">
+       <%if(student.pecpStudentConvFeedback.length !==0 ) {%>
+       <div class="container">
+        <div class="row">
+         <% for(conv of student.pecpStudentConvFeedback) {%>
+         <div class="col-md-6 my-3">
+          <div class="py-2 px-3" style="background-color: rgb(238, 248, 251); border-radius: 5px;">
+           <h6><i class="fa-regular mx-3 fa-comments" style="height: 3rem;"></i><%= conv.topicTitle %></h6>
+           <hr>
+           <a
+            href="/user/<%=currentUser._id%>/pecpCoachDashboard/<%=currentUser.pecpCoach_id%>/pecpStudent/<%= student._id %>/conv/<%=conv._id%>/feedback"
+            class="fs-6 btn btn-outline-primary mx-2">Provide Feedback</a>
+
+          </div>
+         </div>
+         <%}%>
+         </div>
+        </div>
+        <%} else {%>
+         <p class="fs-5 text-primary fst-italic">This learner hasn't done any conversation practice yet.</p>
+         <%}%> 
+       </div>
+    
+     </div>
+    </div>
+   </div>
+
+  </div>
+ </div>
+</div>
+<%}%>
+        </div>
+
+        <!-- My cvInt -->
+        <div id="resources">
+         <h3 class="section-title">Coaching resources</h3>
+        </div>

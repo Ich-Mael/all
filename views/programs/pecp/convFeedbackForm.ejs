@@ -1,0 +1,56 @@
+<% layout('layouts/pecpBoilerplate') %>
+<!-- WORD Processor-->
+<script src="https://cdn.tiny.cloud/1/p06f8vxdpje8xosyvnq48z68vc7n479iauh5s2jk9zx30qg2/tinymce/5/tinymce.min.js"
+    referrerpolicy="origin"></script>
+</script>
+<script>
+    tinymce.init({
+        selector: '.mytextarea',
+        height: 200,
+        relative_urls: false,
+        remove_script_host: false,
+        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+        max_width: 500,
+        min_height: 300,
+        min_width: 400
+    });
+</script>
+<style>
+    label {
+        font-size: 1.2rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(56, 17, 95);
+    }
+</style>
+
+<div class="container d-flex justify-content-center flex-column align-items-center col-md-8 my-5">
+    <h3 class="text-center py-3">Provide Feedback for <%= student.pecpStudentBasicInfo.username %></h3>
+    <div class="col-lg-10 py-2 px-2" style="border: 2px solid rgb(107, 5, 99) ; border-radius: 5px;">
+        <div>
+            <h4 class=""><%= conv.topicTitle %></h4>
+        </div>
+        <hr>
+        <form
+            action="/user/<%=currentUser._id%>/pecpCoachDashboard/<%=currentUser.pecpCoach_id%>/pecpStudent/<%= student._id %>/conv/<%=conv._id%>/feedback?_method=PUT"
+            method="POST">
+
+            <!-- Feedback -->
+            <label class="form-label my-3" for="Conv topic Details">Feedback on the learner's performance during the
+                call</label>
+            <textarea type="text" class="form-control mytextarea " placeholder=" " name="feedback" id=""></textarea>
+
+            <!-- recommendation -->
+            <label class="form-label my-3" for="Conv topic Details">Advice for the learner</label>
+            <textarea type="text" class="form-control mytextarea " placeholder="" name="recommendation"
+                id=""></textarea>
+
+            <!-- suggested Exercise -->
+            <label class="form-label my-3" for="Conv topic Details">Suggested Exercise for the learner</label>
+            <textarea type="text" class="form-control mytextarea " placeholder="" name="suggested_exercise"
+                id=""></textarea>
+
+            <button type="submit" class="btn btn-success my-2 mx-3">Provide Feedback</button>
+        </form>
+    </div>
+</div>

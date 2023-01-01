@@ -1,0 +1,51 @@
+<% layout('layouts/100bacBoilerplate') %>
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Chango&display=swap" rel="stylesheet" />
+<link href="stylesheets/100bac/100bachome.css" rel="stylesheet" />
+<!-- Series -->
+<section class="serie d-flex flex-column justify-content-around align-items-center">
+  <div class="container">
+    <div class="title">
+      <h1 class="title-heading text-center animated tada">
+        Easy-<span style="color: rgb(219, 180, 233);">maths</span>
+      </h1>
+      <p id="moto" class="text-center">
+        Le secret des bonnes notes en Maths
+      </p>
+    </div>
+  </div>
+  <div class="select-serie-wrapper d-flex justify-content-center">
+    <% if (!currentUser || currentUser == null) {%>
+    <a class="start-learning-btn" href="/login">Connectez-vous et préparez-vous pour votre BAC</a>
+    <%}%>
+  </div>
+</section>
+
+<!-- series -->
+<section class="py-5">
+  <h3 class="series-list">Les series et classes Disponibles</h3>
+
+  <!-- serie D -->
+  <div class="serie-wrapper container">
+  <h1 class="serie-name">Serie D</h1>
+  <div class="row py-4">
+  <% for(let schoolClass of allClassesD) {%>
+
+    <div class="col-sm-6 col-md-4  col-lg-3 my-3">
+      <div class="card">
+        <div class="card-body d-flex flex-column Justify-content-center">
+          <h5 class="card-title text-center"> <%= schoolClass.title %> </h5>
+          <button id="serie-d" class="col-12 text-center d-flex align-self-center my-3">
+            <a class="serie-link" href="/100bac/class/<%= schoolClass._id %>">Entrer<i
+                class="bi bi-box-arrow-in-right"></i></a>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <% } %>
+  </div>
+
+  </div>
+</section>
+<!--End Series -->

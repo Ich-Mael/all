@@ -1,0 +1,399 @@
+<% layout('layouts/boilerplate') %>
+<script type="text/javascript" src="/javascripts/quiz_scripts/quizlib.1.0.1.min.js"></script>
+<script type="text/javascript" src="/javascripts/lsc/song-3.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/quiz_stylesheet/quizlib.min.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/stylesheets/quiz_stylesheet/stylesheet.css" media="screen">
+<style>
+    .header-wrapper {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        perspective: 100rem;
+    }
+
+    .bg-img-wrapper {
+        width: 100%;
+        height: 80vh;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.979);
+    }
+
+    .bg-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        object-fit: cover;
+        animation: scale 25s;
+    }
+
+    @keyframes scale {
+        0% {
+            transform: scale(1.3);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    #banner-wrapper {
+        position: absolute;
+        z-index: 2;
+        top: 25%;
+        left: 10%;
+    }
+
+    @keyframes moveBanner {
+        0% {
+            transform: translateX(30rem) rotate(20deg);
+        }
+
+        100% {
+            transform: translateX(0) rotate(0);
+            opacity: 1;
+        }
+    }
+
+    #banner {}
+
+    .banner-heading {
+        color: #fcf9f9;
+        /* width: 90%; */
+        font-family: "Poppins", sans-serif;
+        /* font-family: "Kaushan Script", cursive; */
+        opacity: 0;
+        /* line-height: 5rem; */
+        text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.89);
+        animation: moveBanner 2s 1.2s forwards;
+        margin-bottom: 2rem;
+    }
+
+    .lsc {
+        color: blueviolet;
+        margin: 0;
+        padding: 0;
+    }
+
+    .lsc-acronym {
+        font-size: 5rem;
+        font-weight: 900;
+        letter-spacing: 0.1rem;
+    }
+
+    .lsc-title {
+        font-family: 'Times New Roman', Times, serif;
+        font-family: "Chivo", sans-serif;
+        font-weight: 700;
+        color: #f5f1f7;
+        background-color: rgb(215, 240, 250);
+        background: #FC466B;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #3F5EFB, #FC466B);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        padding: 2rem 1.2rem;
+        font-size: 3rem;
+    }
+
+    .lsc-text {
+        font-size: 1.2rem;
+    }
+
+    .lsc-text-input {
+        width: 25rem;
+        padding: 1rem;
+        border: 1px solid purple;
+        border-radius: 5px;
+        font-size: 1.2rem;
+    }
+
+    .number {
+        padding: 0.5rem;
+        margin: 0 1rem;
+        background-color: rgb(64, 151, 233);
+        color: #181515;
+        border-radius: 50%;
+    }
+
+    .lsc-song-info {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 2rem;
+        padding: 1rem 0;
+        color: blueviolet;
+    }
+
+
+    .repeat {
+        padding: 0.1rem 0.3rem;
+        margin: 0 0.5rem;
+        border-radius: 2px;
+        background-color: #0f6662;
+        color: #f5f1f7;
+    }
+
+    #song-wrapper {
+        position: -webkit-fixed;
+        position: fixed;
+        left: 2%;
+        top: 15%;
+        z-index: 2000;
+    }
+
+    @media (min-width: 1100px) {
+        #quiz-1 {
+            padding-left: 8rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #banner-wrapper {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 10%;
+        }
+
+        .lsc-acronym {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        .lsc-title {
+            font-size: 2rem;
+        }
+
+        .lsc-song-info {
+            font-size: 1.3rem;
+        }
+    }
+</style>
+<div id="header-wrapper">
+    <div class="bg-img-wrapper">
+        <img class="img-medium"
+            src="https://images.pexels.com/photos/9419229/pexels-photo-9419229.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            alt="" />
+    </div>
+
+    <div id="banner-wrapper">
+        <div class="banner-heading">
+            <h3 class="lsc-acronym"><span class="lsc">L</span>isten</h3>
+            <h3 class="lsc-acronym"><span class="lsc">S</span>ing</h3>
+            <h3 class="lsc-acronym"><span class="lsc">C</span>omplete</h3>
+        </div>
+    </div>
+    <div>
+        <h2 class="text-center lsc-title">Améliorer votre Anglais avec des chansons</h2>
+        <div class="container col-md-8">
+            <h3 class="pb-2 text-center lsc-song-info">Song : Breathless By Shayne Ward </h3>
+            <div class="container ">
+                <figure class="">
+                    <figcaption class="fs-4 py-3">
+                    </figcaption>
+                    <audio id="song-wrapper" controls>
+                        <source src="/songs/Breathless  Shayne Ward lyrics .WEBM.mp3" />
+                        Your browser does not support the
+                        <code>audio</code> element.
+                    </audio>
+                </figure>
+            </div>
+        </div>
+
+        <!-- listen Sing and Complete-->
+        <div class=" container col-md-8">
+            <div id="quiz-1">
+                <!-- 1 -->
+                <p class="text-justify fs-5">Play the song, listen and fill the gaps with the missing words from the
+                    lyrics</p>
+                <p class="text-justify fs-5"> <span class="text-danger">Attention : </span> <br> 1. Toutes les reponses
+                    sont
+                    en miniscule. <br> 2. Quand plus d'un mot manque, le
+                    nombre de mots manquants est indiqué par un chiffre suivi de mw dans le champ à remplir. <br>
+                    Exemple: 2 mw = 2 missing words</p>
+
+                <p class="text-justify fs-5">3. Cette indication <span class="repeat">X</span> signifie : le mot
+                    manquant
+                    ici a été déjà rempli
+                    dans
+                    le champ X.</p>
+
+                <p class="text-center bg-dark text-white py-2 fs-3">Lyrics with missing words</p>
+                <h4 class="py-3 text-center px-2  ms-2">Verse 1</h4>
+                <hr>
+                <div class="quizz-1-card quizlib-question">
+                    <div class="quizlib-question-title lsc-text mt-2 mb-3"><span class="number">01</span> If our love
+                        was a __1___.
+                    </div>
+                    <div class="quizlib-question-answers">
+                        <input type="text" placeholder="2 mw" name="q1" class="lsc-text-input">
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="quizz-1-card quizlib-question ">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">02</span> I would charge in
+                        and __2___ .
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" placeholder="2 mw" class="lsc-text-input" name="q2">
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="quizz-1-card quizlib-question ">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">03</span> On a __3__ baby,
+                        we would sail
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" class="lsc-text-input" name="q3">
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="quizz-1-card quizlib-question ">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">04</span> To an island where
+                        we'd say I do
+                        And __4__ babies they would look like you
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" placeholder="3 mw" class="lsc-text-input" name="q4">
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="quizz-1-card quizlib-question ">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">05</span> It'd be so
+                        beautiful __5__ true
+                        You don't even know how very special you are.
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input placeholder="3 mw" type="text" class="lsc-text-input" name="q5">
+                    </div>
+                </div>
+                <hr>
+                <h4 class="py-3 text-center px-2  ms-2">Chorus (Refrain)</h4>
+                <!-- 6 -->
+                <div class="quizz-1-card quizlib-question ">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">06</span> You leave me
+                        breathless
+                        You're __6__ my life
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input placeholder="3 mw" type="text" class="lsc-text-input" name="q6">
+                    </div>
+                </div>
+                <!-- 7 -->
+                <div class="quizz-1-card quizlib-question ">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">07</span> You leave me
+                        breathless
+                        I still __7__ that you're mine
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input placeholder="2 mw" type="text" class="lsc-text-input" name="q7">
+                    </div>
+                </div>
+                <!-- 8 -->
+                <div class="quizz-1-card quizlib-question ">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">08</span>You just __8__ one
+                        of my dreams
+                        So beautiful, you're leaving me breathless
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input placeholder="3 mw" type="text" class="lsc-text-input" name="q8">
+                    </div>
+                </div>
+                <hr>
+                <h4 class="py-3 text-center px-2  ms-2">Verse 2</h4>
+                <!-- 9 -->
+                <div class="quizz-1-card quizlib-question ">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">09</span>And if our love was
+                        a story book
+                        We __9__ the very first page
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" placeholder="3 mw" class="lsc-text-input" name="q9">
+                    </div>
+                </div>
+                <hr>
+                <!-- 10 -->
+                <div class="quizz-1-card quizlib-question">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">10</span> The last chapter
+                        would __10__
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" placeholder="2 mw" class="lsc-text-input" name="q10">
+                    </div>
+                </div>
+                <!-- 11 -->
+                <div class="quizz-1-card quizlib-question">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">11</span>
+                        How __11__ for the life we've made
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" placeholder="2 mw" class="lsc-text-input" name="q11">
+                    </div>
+                </div>
+                <!-- 12 -->
+                <div class="quizz-1-card quizlib-question">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">12</span>
+                        I And if we had babies they would have your eyes
+                        I would __12__ watching you give life
+                        You don't even know how very special you are
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" placeholder="2 mw" class="lsc-text-input" name="q12">
+                    </div>
+                </div>
+
+                <h4 class="py-3 text-center px-2  ms-2">Chorus (Refrain)</h4>
+                <!-- 13 -->
+                <div class="quizz-1-card quizlib-question">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">13</span>
+                        You must __13__ from heaven to earth to change me
+                        You're like an angel
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" placeholder="3 mw" class="lsc-text-input" name="q13">
+                    </div>
+                </div>
+                <!-- 14 -->
+                <div class="quizz-1-card quizlib-question">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">14</span>
+                        The thing that I feel __14___ love believe me
+                        You're something special
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" placeholder="3 mw" class="lsc-text-input" name="q14">
+                    </div>
+                </div>
+                <!-- 15 -->
+                <div class="quizz-1-card quizlib-question">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">15</span>
+                        I only hope that I'll one day deserve what __15__ me
+
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" placeholder="" class="lsc-text-input" name="q15">
+                    </div>
+                </div>
+                <!-- 16 -->
+                <div class="quizz-1-card quizlib-question">
+                    <div class="quizlib-question-title lsc-text mb-3"><span class="number">16</span>
+                        But __16__ do is try every day of my life
+                    </div>
+                    <div class="quizlib-question-answers ">
+                        <input type="text" placeholder="" class="lsc-text-input" name="q16">
+                    </div>
+                </div>
+
+                <hr>
+                <h4 class="py-3 text-center px-2  ms-2">Chorus (Refrain) x 2</h4>
+                <hr>
+
+                <button class="btn btn-primary ms-5 my-3" type="button" onclick="showResults(this.parentNode.id);">Check
+                    Answers</button>
+            </div>
+            <div id="quiz-result" class="quizz-1-card">
+                You Scored <span id="quiz-percent"></span>% - <span id="quiz-score"></span>/<span
+                    id="quiz-max-score"></span><br />
+            </div>
+        </div>

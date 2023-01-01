@@ -1,0 +1,189 @@
+<% layout('layouts/courseBoilerplate') %>
+
+<link href="/stylesheets/courses/showModule.css" rel="stylesheet" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+  rel="stylesheet" />
+
+<div data-aos="zoom-out" data-aos-delay="100" data-aos-duration="1800" class="header-wrapper">
+  <div class="bg-img-wrapper">
+    <img class="img-medium" src="<%= course.courseImageUrl %> " alt="" />
+  </div>
+  <div class="banner-wrapper">
+    <div class="d-flex align-items-center flex-column" style="width: 100vw">
+      <h1 class="banner-heading"><%= course.title %></h1>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Voir tous les modules
+      </button>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Les modules de ce cours
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ol>
+          <% for(let chapter of course.modules){ %>
+          <li class="module">
+            <a href="/courses/<%= course._id %>/modules/<%=chapter._id%>">
+              <%= chapter.title %></a>
+          </li>
+          <% } %>
+        </ol>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+          Quitter
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<p class="module-title-wrapper">
+  Module <%= module_number  %> : <%=
+  courseModule.title %>
+</p>
+<% if(moduleReveal) { %>
+<!-- Module content -->
+<section class="container col-md-8">
+  <!-- Objectif et structuration du module-->
+  <div class="my-5">
+
+    <a class="btn objectives d-block" data-bs-toggle="collapse" href="#objectif" role="button" aria-expanded="false"
+      aria-controls="collapseExample">
+      Cliquez pour voir les objectifs et structuration du module
+    </a>
+
+    <div class="collapse" id="objectif">
+      <div class="card card-body">
+        <p><%- courseModule.willLearnModule %></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cours video-->
+  <div class="video-wrapper" style="">
+
+    <h3 class="course-video-heading">
+      <span class="underline-section">Contenu en vidéos du module</span>
+    </h3>
+    <div class="d-flex flex-column justify-content-around align-items-center my-3">
+      <% for (video of courseModule.videoLinks) {%>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn mx-4 my-2 w-75 btn-outline-primary" data-bs-toggle="modal"
+        data-bs-target="#video-<%= courseModule.videoLinks.indexOf(video) %>">
+        <%= video.title %> / <%= video.lessonType %>
+      </button>
+      <%}%>
+    </div>
+    <% for (video of courseModule.videoLinks) {%>
+      <!-- Modal -->
+      <div class="modal fade" id="video-<%= courseModule.videoLinks.indexOf(video) %>" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                <%= video.title  %>
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div id="tv-container">
+                <div id="monitor">
+                  <div class="afrohk-TV">
+                    <h3 class="text-center afrohk-text mb-2 py-0">
+                      <span class="afrohk">AfroHK</span><span class="tv">Radar</span>
+                    </h3>
+                  </div>
+                  <div id="monitorscreen">
+                    <iframe id="vimeo-content" src="<%=video.engCourseLink %>" frameborder="0" width="100%"
+                      height="100%"
+                      allow="accelerometer; autoplay; clipboard-write; fullscreen; encrypted-media; gyroscope; picture-in-picture"
+                      allow="fullscreen" title=""></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                Quitter
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+
+    <!-- Explication supplementaire-->
+    <div class="my-3">
+      <div class="mb-3 mt-5">
+        <p class="d-flex justify-content-around">
+          <a class="btn moreLink mx-2 btn-primary" data-bs-toggle="collapse" href="#moreEx" role="button"
+            aria-expanded="false" aria-controls="collapseExample">
+            Cliquez pour des explication supplémentaires ou remarques
+          </a>
+          <!--more ressources -->
+          <a class="btn moreLink mx-2 btn-primary" data-bs-toggle="collapse" href="#moreRes" role="button"
+            aria-expanded="false" aria-controls="collapseExample">
+            Cliquez pour des ressources supplémentaires
+          </a>
+        </p>
+        <div class="collapse my-3" id="moreEx">
+          <div class="card card-body">
+            <p><%- courseModule.explanationText %></p>
+          </div>
+        </div>
+
+        <div class="collapse my-3" id="moreRes">
+          <div class="card card-body">
+            <p><%- courseModule.moreDetails %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-5">
+      <h3 class="about-course-heading rok">
+        <span class="underline-section"> Retour de Connaissance </span>
+      </h3>
+      <div class="assignment-wrapper">
+        <div class="row">
+          <% for ( assignment of courseModule.Assignment) {%>
+          <div class=" col-lg-6 px-2 my-3">
+            <div class="mx-2 assignment-card">
+              <h3 class="assignment-category"><%= assignment.category %></h3>
+              <h1 class="assignment-title"><%= assignment.title %></h1>
+              <hr>
+              <ul>
+                <%for (link of assignment.links ){%>
+                <li class="py-1"> <a class="fs-5 py-2" href=" <%= link %> ">Exercice de compréhension
+                    <%= assignment.links.indexOf(link) + 1 %></a>
+                </li>
+                <%}%>
+              </ul>
+             </div>
+        </div>
+        <%}%>
+            </div>
+          </div>
+
+        </div>
+</section>
+<% } else { %>
+<section class="not-available container col-10 col-md-6">
+  <p>Ce module sera disponible</p>
+  <p class="module-date"><%= displayRevealDate %></p>
+</section>
+<% } %>

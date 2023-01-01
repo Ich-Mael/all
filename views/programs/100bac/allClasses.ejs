@@ -1,0 +1,23 @@
+<% layout('layouts/100bacBoilerplate') %>
+<style>
+  html {
+    font-size: 90%;
+  }
+</style>
+
+<h3 class="text-center mt-5">Operation 100 % BAC toutes les Series</h3>
+<div class="col-md-8 container">
+  <div class="row">
+    <% for(let schoolClass of schoolClassesD) {%>
+    <div class="col-md-6 p-3">
+      <div class="p-3" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+        <h2><%= schoolClass.title %></h2>
+        <a href='/admindashboard/100bac/class/<%= schoolClass._id %>/subject/new' class="btn mx-2 btn-primary"> Add
+          Subject</a>
+        <a href="/admindashboard/100bac/class/<%= schoolClass._id %>/subjects" class="btn mx-2 btn-success"> View all
+          Subjects of this Class </a>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</div>

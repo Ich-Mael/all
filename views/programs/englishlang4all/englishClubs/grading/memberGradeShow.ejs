@@ -1,0 +1,199 @@
+<% layout('layouts/boilerplate') %>
+<style>
+  .title-wrapper {
+    background: #0f0c29;
+    color: white;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    padding: 1rem;
+  }
+</style>
+<div class="container col-lg-8 mt-3">
+  <div class="title-wrapper">
+    <h3 class="title text-center">Evaluation Results and Progress Tracking</h3>
+    <hr>
+    <h4 class="title text-center"><%= clubMember.clubMember.surname %> <%= clubMember.clubMember.name %></h4>
+  </div>
+  <% if(clubMember.clubMemberProgress.length > 0) {%>
+  <div class="my-4" style=" border: 1px solid rgb(33, 12, 15); border-radius: 4px;">
+
+    <h4 class="text-center py-3 mb-3" style="letter-spacing: 0.1rem; color: white; background: #1488CC;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #2B32B2, #1488CC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        ">Latest evaluation results </h4>
+    <div class="my-4 py-2 px-5">
+      <div class="d-flex justify-content-around">
+        <p class="fs-5">Evaluation Date:
+          <span class=" mx-2" style="color:rgb(94, 3, 116) ;">
+            <%= clubMember.clubMemberProgress[0].period.toDateString() %></span> </p>
+        <p class=" fs-5">Test Level: <span class="mx-2 p-2"
+            style="background-color: rgb(94, 3, 116); color: aliceblue; border-radius: 50%;">
+            <%= clubMember.clubMemberProgress[0].testLevel %></span></p>
+        <p class="fs-5"> Writing Test Results <span class="mx-2 p-2"
+            style="background-color: rgb(94, 3, 116); color: aliceblue; border-radius: 50%;"><%= clubMember.clubMemberProgress[0].testGrade %>%</span>
+        </p>
+      </div>
+
+      <div class="my-3" style="border: 1px solid black; border-radius: 5px;">
+        <h4 class="text-white text-center px-3 py-3"
+          style="background: #134E5E;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right, #71B280, #134E5E);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right, #71B280, #134E5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
+          Speaking Skills Evaluation Results</h4>
+        <table class="table fs-5 table-bordered table-hover">
+          <thead>
+            <tr style="background-color:rgb(194, 209, 194) ;">
+              <th scope="col">Skills</th>
+              <th scope="col">Structure</th>
+              <th scope="col">Pronunciation</th>
+              <th scope="col">Vocabulary</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Evaluation</th>
+              <td><%= clubMember.clubMemberProgress[0].structure %></td>
+              <td><%= clubMember.clubMemberProgress[0].pronunciation %></td>
+              <td><%= clubMember.clubMemberProgress[0].vocabulary %></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table fs-5 table-bordered table-hover">
+          <thead>
+            <tr style="background-color:rgb(194, 209, 194) ;">
+              <th scope="col">Skills</th>
+              <th scope="col">Comprehension</th>
+              <th scope="col">Fluency</th>
+              <th scope="col">Interaction</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Evaluation</th>
+              <td><%= clubMember.clubMemberProgress[0].comprehension %></td>
+              <td><%= clubMember.clubMemberProgress[0].fluency %></td>
+              <td><%= clubMember.clubMemberProgress[0].interaction %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="" style="border: 1px solid black; border-radius: 5px;">
+        <h4 class="text-white text-center py-3" style="background: #134E5E;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right, #71B280, #134E5E);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right, #71B280, #134E5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">Feedback and Recommendations
+        </h4>
+        <div class="p-3"><%- clubMember.clubMemberProgress[0].feedback %></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- View all results -->
+  <!-- Button trigger modal -->
+  <button type="button" class="btn my-4 btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#evaluations">
+    View all my evaluations results
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="evaluations" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Progress Tracking</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <% for (result of clubMember.clubMemberProgress){%>
+          <div class="my-4 py-2">
+            <div class="d-flex justify-content-around">
+              <p class="fs-5">Evaluation Date:
+                <span class=" mx-2" style="color:rgb(94, 3, 116) ;">
+                  <%= result.period.toDateString() %></span> </p>
+              <p class=" fs-5">Test Level: <span class="mx-2 p-2"
+                  style="background-color: rgb(94, 3, 116); color: aliceblue; border-radius: 50%;">
+                  <%= result.testLevel %></span></p>
+              <p class="fs-5"> Writing Test Results <span class="mx-2 p-2"
+                  style="background-color: rgb(94, 3, 116); color: aliceblue; border-radius: 50%;"><%= result.testGrade %>%</span>
+              </p>
+            </div>
+
+            <div class="my-3" style="border: 1px solid black; border-radius: 5px;">
+              <h4 class="text-white text-center px-3 py-3"
+                style="background: #134E5E;  /* fallback for old browsers */
+                        background: -webkit-linear-gradient(to right, #71B280, #134E5E);  /* Chrome 10-25, Safari 5.1-6 */
+                        background: linear-gradient(to right, #71B280, #134E5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
+                Speaking Skills Evaluation Results</h4>
+              <table class="table fs-5 table-bordered table-hover">
+                <thead>
+                  <tr style="background-color:rgb(194, 209, 194) ;">
+                    <th scope="col">Skills</th>
+                    <th scope="col">Structure</th>
+                    <th scope="col">Pronunciation</th>
+                    <th scope="col">Vocabulary</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Evaluation</th>
+                    <td><%= result.structure %></td>
+                    <td><%= result.pronunciation %></td>
+                    <td><%= result.vocabulary %></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table class="table fs-5 table-bordered table-hover">
+                <thead>
+                  <tr style="background-color:rgb(194, 209, 194) ;">
+                    <th scope="col">Skills</th>
+                    <th scope="col">Comprehension</th>
+                    <th scope="col">Fluency</th>
+                    <th scope="col">Interaction</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Evaluation</th>
+                    <td><%= result.comprehension %></td>
+                    <td><%= result.fluency %></td>
+                    <td><%= result.interaction %></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="" style="border: 1px solid black; border-radius: 5px;">
+              <h4 class="text-white text-center py-3" style="background: #134E5E;  /* fallback for old browsers */
+                        background: -webkit-linear-gradient(to right, #71B280, #134E5E);  /* Chrome 10-25, Safari 5.1-6 */
+                        background: linear-gradient(to right, #71B280, #134E5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        ">Feedback and Recommendations
+              </h4>
+              <div class="p-3"><%- result.feedback %></div>
+            </div>
+          </div>
+          <hr class="py-2">
+          <%}%>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%} else {%>
+          <img src="http://www.sulitest.org/files/source/logo%20test%20horiz%20bis.png?1574185700651"
+            class="img img-fluid" alt="">
+          <p class="tesxt-center my-5 fs-3">You have not taken the initial progress test yet. <br> Contact your English
+            Club leaders for all information about the initial test. <br>
+
+            <em class="text-primary">Once you take the test, the result will be available on your profile page within 2
+              days.</em> </p>
+          <%}%>
+</div>

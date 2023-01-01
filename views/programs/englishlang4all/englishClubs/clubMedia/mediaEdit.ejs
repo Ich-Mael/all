@@ -1,0 +1,45 @@
+<% layout('layouts/engClubBoilerplate') %>
+<!-- WORD Processor-->
+<script src="https://cdn.tiny.cloud/1/p06f8vxdpje8xosyvnq48z68vc7n479iauh5s2jk9zx30qg2/tinymce/5/tinymce.min.js"
+	referrerpolicy="origin"></script>
+</script>
+<script>
+	tinymce.init({
+		selector: '#mytextarea'
+	});
+</script>
+<style>
+	html {
+		font-size: 90%;
+	}
+</style>
+
+
+<h1 class="text-center my-5" style="color: blueviolet;"><%= club.acronym %> Board Members Dashboard</h1>
+<h3 class="text-center">All media</h3>
+<hr>
+<!-- Media of the english club -->
+<div class="container my-5 col-md-8">
+	<p>
+		<button class="btn btn-primary ms-2 me-5" type="button" data-bs-toggle="collapse" data-bs-target="#videoLesson"
+			aria-expanded="false" aria-controls="collapseExample">
+			Edit English Club video
+		</button>
+	</p>
+
+	<form
+		action="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/board_dashboard/clubMedia/<%= media.id %>?_method=PUT"
+		method="POST">
+		<div class="collapse" id="videoLesson">
+			<!-- Lesson title -->
+			<label class="form-label my-3" for="mediaTitle">Video Title</label>
+			<input type="text" class="form-control" name="mediaTitle" id="mediaTitle" value="<%= media.mediaTitle %>" />
+
+			<!-- Video Link  -->
+			<label class="form-label my-3" for="videoLink">Video Link</label>
+			<input type="text" class="form-control" name="videoLink" value="<%= media.videoLink %>" id="videoLink" />
+
+
+			<button class="btn my-3  mx-2 btn-outline-success" type="submit">Update Club Media</button>
+	</form>
+</div>

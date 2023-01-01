@@ -1,0 +1,249 @@
+<% layout('layouts/boilerplate') %>
+  <link href="/stylesheets/englishforAll/englishClubs/clubHome.css" rel="stylesheet" />
+  <!-- swiper-->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
+  <div class="pb-5">
+    <div id="banner">
+      <div class="bg-img-wrapper">
+        <img class="img-medium" src="<%= club.bannerImageUrlMedium %>" alt="" />
+      </div>
+      <div class="club-info">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="club-logos-wrapper">
+              <img class="club-logo img-thumbnail" src="<%=club.logoImageUrl%>" alt="" />
+            </div>
+          </div>
+          <div class="col-md-8">
+            <h1 class="club-name">
+              <%=club.name%>
+            </h1>
+            <p class="club-motto">
+              <%=club.motto %>
+            </p>
+            <div class="d-flex justify-content-center py-3">
+              <a class="btn btn-outline-primary mx-3 fs-5"
+                href="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>">Get in</a>
+
+              <a class="btn btn-primary mx-3 fs-5" href="#join-us">Join this Club</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team -->
+  <section id="team">
+    <h1 class="section-title">Meet Our Staff Members</h1>
+    <!-- Swiper -->
+    <div class="col-lg-10 container myTeamSwiper">
+      <div class="swiper-wrapper">
+        <% for(let i=0; i < club.boardMembers.length ; i++){ %>
+          <!--President-->
+          <div class="swiper-slide">
+            <div class="team-image-wrapper">
+              <img class="team-img img-fluid" src="<%= club.boardMembers[i].clubMember.imageUrl %>" alt="">
+              <div>
+                <div class="team-member-info">
+                  <h6 class="position">
+                    <%= club.boardMembers[i].position %>
+                  </h6>
+                  <div class="d-flex justifify-content-center ">
+                    <div class="team-position-line"></div>
+                  </div>
+                  <p class="team-member-name">
+                    <%= club.boardMembers[i].clubMember.name +" "+
+                club.boardMembers[i].clubMember.surname%></p>
+              <div class=" d-flex w-100 member-social justify-content-around">
+                      <a target="_blank" class="d-block" href="mailto:ismaelzerbo_18@outlook.com?"><i
+                          class="fa-solid fa-envelope"></i></a>
+
+                      <a target="_blank" class="d-block" href="https://www.linkedin.com/in/ismael-zerbo-0839a3174/"><i
+                          class="fa-brands fa-linkedin"></i></a>
+
+                      <a target="_blank" class="d-block" href="https://wa.me/22664350101"><i
+                          class="fa-brands fa-whatsapp"></i></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+      </div>
+      <%}%>
+    </div>
+    <div class="swiper-pagination"></div>
+    </div>
+    <!--
+  <hr>
+  <div class="d-flex py-3 justify-content-around">
+ Button trigger modal
+<button type="button" class="btn club-dean mx-2 btn-primary" data-bs-toggle="modal" data-bs-target="#mentor">
+  Mentor
+</button>
+<button type="button" class="btn club-dean mx-2 btn-primary" data-bs-toggle="modal" data-bs-target="#engCoach">
+English Coach
+</button>
+</div> -->
+
+    <!-- Modal 
+<div class="modal fade" id="mentor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Mentor</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <div class="row mx-2"  style="background: #6190E8;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      ">
+<div class="col-md-5 px-0">
+  <div class="dean-img-wrapper">
+    <img class="img-medium" src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHRlYWNoZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60" alt="" />
+    </div>
+  </div>
+  <div class="col-md-7">
+
+  </div>
+  </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+  </div>
+  </div>
+  </div>
+  </div>-->
+
+    <!-- Eng coach
+  <div class="modal fade" id="engCoach" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">English Coaches</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row mx-2"  style="background: #6190E8;  /* fallback for old browsers */
+          background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);  /* Chrome 10-25, Safari 5.1-6 */
+          background: linear-gradient(to right, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          ">
+    <div class="col-md-5 px-0">
+      <div class="dean-img-wrapper">
+        <img class="img-medium" src="https://images.unsplash.com/photo-1632678548683-b6c77b8e40bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8YmxhY2slMjB0ZWFjaGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="" />
+        </div>
+      </div>
+      <div class="col-md-7">
+    
+      </div>
+      </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>-->
+  </section>
+
+
+  <!-- English club rules -->
+  <section class="club-info">
+    <h1 class="section-title">About us</h1>
+    <div class="container">
+      <div id="tv-container">
+        <div id="monitor">
+          <div class="afrohk-TV">
+            <h3 class="text-center afrohk-text mb-2 py-0"><span class="afrohk">AfroHK</span><span
+                class="tv">Radar</span>
+            </h3>
+          </div>
+          <div id="monitorscreen">
+            <iframe id="vimeo-content" loading="lazy" width="100%" height="100%" src="<%= club.clubPresentationVideoUrl %>" title="YouTube
+      video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; fullscreen; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2 id="join-us" class="need-to-know">What you need to know before you join us</h2>
+    <div class="club-description">
+      <div class="container col-md-8 col-lg-6 col-sm-10 px-3 py-5">
+        <%-club.description%>
+      </div>
+    </div>
+  </section>
+
+  <!-- Event -->
+  <section id="Coming-Events" class="">
+    <h1 class="section-title">Upcoming Public Events</h1>
+    <% if (club.clubEvents.length !==0) {%>
+      <div class="container pt-5">
+        <div class="row mb-5">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="500">
+            <h2 class="event-title px-4">
+              <%= club.clubEvents[0].title %>
+            </h2>
+            <div>
+              <h4 class="event-summary">Know more</h4>
+              <div class="event-paragraph">
+                <%- club.clubEvents[0].aboutEvent %>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="event-img-wrapper" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
+              <img src=" <%= club.clubEvents[0].eventImgLink %>" class="img-fluid event-img" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="event-info-details">
+          <div class="container">
+            <h3 class="registration-info">Event Details</h3>
+            <div class="event-info-wrapper">
+              <h5 class="event-date"> <span class="start-date ">Date</span>
+                <%= days[club.clubEvents[0].date.getDay()] %>,
+                  <%=club.clubEvents[0].date.getDate()%>
+                    <%= months[club.clubEvents[0].date.getMonth()] %>
+                      <%=club.clubEvents[0].date.getFullYear()%>
+              </h5>
+              <h5 class="event-date"> <span class="start-date "> Time</span>
+                <%= club.clubEvents[0].time %>
+              </h5>
+              <h5 class="event-date"> <span class="start-date "> Venue</span>
+                <%= club.clubEvents[0].venue %>
+              </h5>
+              <h5 class="event-date"> <span class="start-date "> Entry</span>
+                <%= club.clubEvents[0].entry %>
+              </h5>
+
+            </div>
+            <p class="event-line"></p>
+          </div>
+        </div>
+      </div>
+      <% } %>
+  </section>
+
+  <!-- Mediatheque -->
+  <section>
+    <h1 class="section-title">Club Best Moments</h1>
+    <div class="container p-3">
+      <div class="gallery-container">
+        <% for(let i=0; i < 5 ; i++){ %>
+          <% if(club.clubGallery[i]){%>
+            <div class="gallery-card">
+              <img src="<%=club.clubGallery[i].imageLink%>">
+              <div class="card__head">
+                <%=club.clubGallery[i].imageTitle %>
+              </div>
+            </div>
+            <%}%>
+              <%}%>
+      </div>
+    </div>
+  </section>

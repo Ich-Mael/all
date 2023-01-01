@@ -1,0 +1,383 @@
+<% layout('layouts/boilerplate') %>
+
+<!-- WORD Processor-->
+<script src="https://cdn.tiny.cloud/1/p06f8vxdpje8xosyvnq48z68vc7n479iauh5s2jk9zx30qg2/tinymce/5/tinymce.min.js"
+  referrerpolicy="origin"></script>
+</script>
+<script>
+  tinymce.init({
+    selector: '.mytextarea',
+    plugins: "print link image lists advlist wordcount",
+    height: 300,
+    max_width: 500,
+    min_height: 300,
+    min_width: 400
+  });
+</script>
+
+<style>
+  html {
+    font-size: 90%;
+  }
+
+  .admin {
+    background: url(https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 56vh;
+
+  }
+
+  .admin:after {
+    content: '';
+    z-index: 1;
+    height: 56vh;
+    width: 100%;
+
+    background: rgba(18, 1, 36, 0.2);
+  }
+
+  .admin-text {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "Chivo", sans-serif;
+    text-shadow: 1px 1px 1px red;
+    font-size: 5rem;
+    z-index: 400;
+  }
+</style>
+
+<div class="admin d-flex justify-content-center align-items-center">
+  <h1 class="text-center admin-text py-2" style="color: rgb(235, 227, 237)">
+    Welcome to Admin Dashboard
+  </h1>
+</div>
+
+<div class="d-flex justify-content-around" style="padding: 8rem 0">
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1"
+    aria-expanded="false" aria-controls="collapseExample">
+    Managing Courses
+  </button>
+
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2"
+    aria-expanded="false" aria-controls="collapseExample">
+    English Clubs
+  </button>
+
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#pecp" aria-expanded="false"
+    aria-controls="collapseExample">
+    Personal English Coaching Program
+  </button>
+
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3"
+    aria-expanded="false" aria-controls="collapseExample">
+    Easy Maths
+  </button>
+
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4"
+    aria-expanded="false" aria-controls="collapseExample">
+    News
+  </button>
+</div>
+
+<!-- Courses -->
+<div class="collapse" id="collapse-1">
+  <div class="card card-body">
+    <div class="container col-md-8">
+      <h3 class="courses text-center mb-5">Managing Courses </h3>
+      <div class="d-flex my-3 justify-content-center">
+        <a class="mx-3 btn btn-success" href="/admindashboard/courses/new">Create a new course</a>
+        <a class="mx-3 btn btn-secondary" href="/admindashboard/courses">View all courses</a>
+        <a class="mx-3 btn btn-outline-success" href="/admindashboard/addstudent/new">Enroll student to a course</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- English clubs -->
+<div class="collapse" id="collapse-2">
+  <div class="card card-body">
+    <!-- Managing English Club -->
+    <div class="container col-md-10 my-5" style="background-color: rgb(255, 255, 255);">
+      <h1 class="text-primary text-center py-3">Natural English Clubs</h1>
+      <div class="d-flex flex-column align-items-center justify-content-around">
+        <div class="col-8 px-2" style="background-color: aliceblue; border: 1px solid black; border-radius: 5px;">
+          <form action="/admindashboard/newEnglishClubHub" method="POST">
+            <!-- Country -->
+            <div class="py-3 mb-2 ps-3">
+              <p class="my-3 fs-4 fw-bold">Select your Country</p>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="engHub[country]" id="Burkina-Faso"
+                  value="Burkina-Faso" required>
+                <label class="form-check-label" for="Niger">Burkina-Faso</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="engHub[country]" id="Niger" value="Niger" required>
+                <label class="form-check-label" for="Niger">Niger</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="engHub[country]" id="Togo" value="Togo" required>
+                <label class="form-check-label" for="Togo">Togo</label>
+              </div>
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="engHub[country]" id="Company" value="Côte d'Ivoire"
+                  required>
+                <label class="form-check-label" for="Côte d'Ivoire">Côte d'Ivoire</label>
+              </div>
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="engHub[country]" id="Benin" value="Professional"
+                  required>
+                <label class="form-check-label" for="Benin">Benin</label>
+              </div>
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="engHub[country]" id="Private" value="Cameroun"
+                  required>
+                <label class="form-check-label" for="Cameroun">Cameroun</label>
+              </div>
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="engHub[country]" id="Simple" value="Senegal"
+                  required>
+                <label class="form-check-label" for="Senegal">Senegal</label>
+              </div>
+            </div>
+
+            <!-- city -->
+            <label class="form-label my-2" for="club city"> City </label>
+            <input type="text" required class="form-control" name="engHub[cityName]" id="" value="" />
+
+            <!-- Focal point -->
+            <label class="form-label my-2" for="club city"> Focal Point </label>
+            <input type="text" required class="form-control" name="focalPoint" id="focalPoint" value="" />
+            <button type="submit" class="btn btn-primary my-3">Create a new hub</button>
+          </form>
+          <div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- PECP -->
+
+<!-- Add New Pecp Student Form -->
+<div class="collapse container  p-5" id="pecp" style="background-color: rgb(192, 198, 203); padding: 1rem 3rem;">
+
+  <h1 class="text-center">Add a new PECP Student</h1>
+  <form action="/admindashboard/pecp/student" method="POST">
+    <!-- New Member Username -->
+    <label class="form-label my-3" for="new-member">New PEPC student Username</label>
+    <input type="text" class="form-control" name="pecpUser" required id="" value="" />
+
+    <!-- New member Level -->
+    <label class="form-label my-3" for="new-member-level">New member level</label>
+    <select class="form-select" name="level" aria-label="Default select example">
+      <option selected value="A1 - Elementary">A1 Elementary</option>
+      <option value="A2 - Pre-Intermediate">A2 Pre-Intermediate</option>
+      <option value="B1 - Intermediate">B1 Intermediate</option>
+      <option value="B2 - Upper-Intermediate">B2 Upper-Intermediate</option>
+      <option value="C1 - Advanced">C1 Advanced</option>
+      <option value="C2 - Proficient">C2 Proficient</option>
+    </select>
+
+    <!-- Learning Goal -->
+    <label class="form-label my-3" for="Learning Goal">Learning Goal</label>
+    <input type="text" class="form-control" name="learningGoal" required id="" value="" />
+
+    <button class="btn my-3  me-2 btn-success" type="submit">Add New Student to PECP</button>
+  </form>
+
+  <div class="my-3" style="width: 100%; height:0.4rem;; background-color: black"></div>
+
+  <!-- Add New Pecp Coach Form -->
+  <h1 class="text-center">Add a Coach</h1>
+  <form action="/admindashboard/pecp/coach" method="POST">
+    <!-- New Member Username -->
+    <label class="form-label my-3" for="new-member">New PEPC coah Username</label>
+    <input type="text" class="form-control" name="pecpUser" required id="" value="" />
+
+    <!-- New member Level -->
+    <label class="form-label my-3" for="new-member-level">Coah level</label>
+    <select class="form-select" name="level" aria-label="Default select example">
+      <option selected value="A1 - Elementary">A1 Elementary</option>
+      <option value="A2 - Pre-Intermediate">A2 Pre-Intermediate</option>
+      <option value="B1 - Intermediate">B1 Intermediate</option>
+      <option value="B2 - Upper-Intermediate">B2 Upper-Intermediate</option>
+      <option value="C1 - Advanced">C1 Advanced</option>
+      <option value="C2 - Proficient">C2 Proficient</option>
+    </select>
+
+    <button class="btn my-3  me-2 btn-success" type="submit">Add New PECP Coach</button>
+  </form>
+
+  <!-- Assign a Pecp Coach to student -->
+  <div class="my-3" style="width: 100%; height:0.4rem;; background-color: black"></div>
+
+  <h1 class="text-center">Assign a coach to a student</h1>
+  <form action=" /admindashboard/pecp/coach/assignment" method="POST">
+    <!-- New Member Username -->
+    <label class="form-label my-3" for="new-member">PEPC coah Username</label>
+    <input type="text" class="form-control" name="coach" required id="" value="" />
+
+    <!-- New Member Username -->
+    <label class="form-label my-3" for="new-member">PEPC Student Username</label>
+    <input type="text" class="form-control" name="student" required id="" value="" />
+
+    <button class="btn my-3  me-2 btn-dark" type="submit">Proceed</button>
+  </form>
+
+</div>
+
+<!-- Easy Maths -->
+<div class="collapse" id="collapse-3">
+  <div class="card card-body">
+    <!-- Managing 100 bac program -->
+    <div class="container col-md-6 my-5" style="background-color: rgb(233, 229, 224);">
+      <h1 class="text-primary">Easy-Maths</h1>
+      <a class="btn btn-success" href="/admindashboard/100bac/series_and_classes">Voir toutes les series et les
+        classes</a>
+      <hr>
+
+      <h4 class="text-center">Creez une classe</h4>
+      <form action="/admindashboard/100bac/class" method="POST">
+        <!-- Serie General information -->
+
+        <select class="form-select mt-2" id="serie" class="form-control" required name="class[serie]"
+          aria-label="Default select example">
+          <option selected>Selectionnez la serie</option>
+          <option value="A">Serie A</option>
+          <option value="C">Serie C</option>
+          <option value="D">Serie D</option>
+          <option value="G2">Serie G2</option>
+          <option value="F">Serie F</option>
+          <option value="Collège">Collège</option>
+          <option value="Primaire">Primaire</option>
+        </select>
+
+
+        <select class="form-select mt-2" id="class_title" class="form-control" required name="class[title]"
+          aria-label="Default select example">
+          <option selected>Selectionnez la classe</option>
+          <option value="Seconde">Seconde</option>
+          <option value="Premiere">Premiere</option>
+          <option value="Terminale">Terminale</option>
+          <option value="Troisieme">Troisieme</option>
+          <option value="F">Quatrieme</option>
+          <option value="Cinquieme">Cinquieme</option>
+          <option value="Sixieme">Sixieme</option>
+        </select>
+
+        <label class="form-label mt-2" for="title">Image</label>
+        <input type="text" class="form-control" id="serieImage" name="class[serieImageUrl]" value="" />
+        <button type="submit" class="btn btn-outline-primary my-3">Create a new serie</button>
+      </form>
+
+      <!-- new high school student -->
+      <hr>
+      <h2 class="text-center">Create a new high-school student</h2>
+      <form action="/admindashboard/100bac/class/newHighschoolStudent" method="POST">
+        <!-- Serie General information -->
+        <label class="form-label" for="student_username">Student username</label>
+        <input type="text" class="form-control" id="student_username" name="student_username" value="" required />
+
+        <label class="form-label" for="school">School</label>
+        <input type="text" class="form-control" id="school" name="school" value="" required />
+
+
+        <select class="form-select mt-2" id="serie" class="form-control" required name="serie"
+          aria-label="Default select example">
+          <option selected>Selectionnez la serie</option>
+          <option value="A">Serie A</option>
+          <option value="C">Serie C</option>
+          <option value="D">Serie D</option>
+          <option value="G2">Serie G2</option>
+          <option value="F">Serie F</option>
+          <option value="Collège">Collège</option>
+          <option value="Primaire">Primaire</option>
+        </select>
+
+        <select class="form-select mt-2" id="class_title" class="form-control" required name="class"
+          aria-label="Default select example">
+          <option selected>Selectionnez la classe</option>
+          <option value="Seconde">Seconde</option>
+          <option value="Premiere">Premiere</option>
+          <option value="Terminale">Terminale</option>
+          <option value="Troisieme">Troisieme</option>
+          <option value="F">Quatrieme</option>
+          <option value="Cinquieme">Cinquieme</option>
+          <option value="Sixieme">Sixieme</option>
+        </select>
+
+        <button type="submit" class="btn btn-outline-primary my-3">Create a new high school student</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- news -->
+<div class="collapse" id="collapse-4">
+  <div class="card card-body">
+    <!-- News -->
+    <div class="container col-md-6 my-5">
+      <h1 class="text-primary">Posting a news</h1>
+      <a href="/admindashboard/all_news">Voir tous les articles</a>
+      <form action="/admindashboard/news" method="POST">
+        <div class="py-1">
+          <p>News Category</p>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="news[newsCategory]" id="English Club"
+              value="English Club" required>
+            <label class="form-check-label" for="Maths">English Club</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="news[newsCategory]" id="Maths" value="Maths" required>
+            <label class="form-check-label" for="Maths">Maths</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="news[newsCategory]" id="Company" value="Coding" required>
+            <label class="form-check-label" for="Coding">Coding</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="news[newsCategory]" id="English_Course"
+              value="English Course" required>
+            <label class="form-check-label" for="English course"> English course</label>
+          </div>
+
+
+        </div>
+        <!-- Article title -->
+        <label class="form-label fw-bold py-2" for="article-title">Article Title</label>
+        <input type="text" required class="form-control" name="news[title]" id="article_title" value="" />
+
+        <!-- Article image link -->
+        <label class="form-label fw-bold py-2" for="article-image-link">Article image link</label>
+        <input type="text" required class="form-control" name="news[newsImageUrl]" id="article_image" value="" />
+
+        <!-- Article summary -->
+        <label class="form-label fw-bold py-2" for="article-summary">Article Summary</label>
+        <input type="text" required class="form-control" name="news[newsSummary]" id="article_title" value="" />
+
+        <!-- Article summary -->
+        <label class="form-label fw-bold py-2" for="readTime">Estimated read time</label>
+        <input type="text" required class="form-control" name="news[readTime]" id="readTime" value="" />
+
+        <!-- Article content-->
+        <label class="form-label" for="description">Article Content </label>
+        <textarea class="form-control mytextarea" required name="news[newsContent]" id="news-content" cols="50"
+          rows="5">
+        </textarea>
+        <hr />
+        <button type="submit" class="btn btn-outline-primary my-3">Post news</button>
+      </form>
+    </div>
+  </div>
+</div>

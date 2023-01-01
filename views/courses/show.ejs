@@ -1,0 +1,149 @@
+<% layout('layouts/courseBoilerplate') %>
+<link href="/stylesheets/courses/showCourse.css" rel="stylesheet" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+  rel="stylesheet" />
+
+<div data-aos="zoom-out" data-aos-delay="100" data-aos-duration="1800" class="header-wrapper">
+  <div class="bg-img-wrapper">
+    <img class="img-medium" src="<%= course.courseImageUrl %> " alt="" />
+  </div>
+  <!-- <div class="banner-wrapper">
+    <div class="d-flex align-items-center flex-column" style="width: 100vw">
+      <h1 class="banner-heading"><%= course.title %></h1>
+      <p class="banner-paragraph"></p>
+    </div>
+  </div> -->
+</div>
+
+<!-- Current time-->
+<div class="session-wrapper">
+  <div class="courseSession">
+    <h1 class="banner-heading"><%= course.title %></h1>
+    <hr>
+    <p><span class="time-underline pt-1 mb-3"><%= currentTime %></span></p>
+    <p class="start-date">Debut de session: <%= start %></p>
+    <p class="end-date">Fin de session: <%= end %></p>
+  </div>
+  <div class="d-flex justify-content-center">
+    <p class="inline-block">
+      <% if(course.modules[0]) {%>
+      <a class="btn btn-outline-success px-2 fs-5 mx-2"
+        href="/courses/<%= course._id %>/modules/<%=course.modules[0]._id%>">Etudier</a>
+      <% } %>
+      <!-- Button trigger modal -->
+      <button type="button" class="mx-2 px-2 fs-5 btn btn-success" data-bs-toggle="modal" data-bs-target="#inscription">
+        S'inscrire
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade text-dark" id="inscription" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Centre de formation</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Tel: +22664350101
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quitter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </p>
+  </div>
+</div>
+
+<div class="intrustors-wrapper">
+  <h2 class="pt-3 text-center instructor-title">Instructeurs</h2>
+  <div class="d-flex justify-content-center py-1">
+    <div class="underline-1"></div>
+  </div>
+  <div class="d-flex justify-content-around mt-5">
+    <% for (let instructor of course.instructors){%>
+    <div class="col-md-6 px-2">
+      <div class="instructor-card">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="<%= instructor.imageUrl %>" alt="instructor-img" class="img-fluid img-thumbnail instructor-img" />
+          </div>
+          <div class="col-md-8">
+            <h3 class="instructor-name">
+              <%= instructor.surname %> <%= instructor.name %>
+            </h3>
+            <hr>
+            <p class="about-instructor"><%- instructor.about %></p>
+          </div>
+        </div>
+        <hr>
+        <!-- Mail -->
+        <a class="btn btn-outline-light btn-floating m-2" href="mailto:<%= instructor.email %>" target="_blank"
+          role="button" id="user_mail"><i class="fas fa-at"></i></a>
+        <!-- whatsapp -->
+        <a class="btn btn-outline-light btn-floating" href="<%=instructor.whatsAppLink %>" role="button" id="m-whatsapp"
+          target="_blank"><i class="fa fa-whatsapp"></i></a>
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-2" href="<%= instructor.facebookLink %>" id="facebook"
+          role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-2" href="<%= instructor.twitterLink %>" id="twitter"
+          target="_blank" role="button"><i class="fab fa-twitter"></i></a>
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-2" href="<%= instructor.linkedIn %>" target="_blank"
+          role="button" id="linkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <%}%>
+  </div>
+</div>
+
+<div class="about-course-wrapper col-lg-8 container">
+  <h3 class="about-course-heading">
+    <span class="underline-section"> A propos de ce cours</span>
+  </h3>
+  <%- course.description %>
+    <hr />
+
+    <!-- Learning Objectives -->
+    <h3 class="about-course-heading">
+      <span class="underline-section"> Objectifs d'apprentissage</span>
+    </h3>
+    <%- course.willLearn %>
+    <hr />
+
+    <!-- Requirements -->
+    <h3 class="about-course-heading">
+      <span class="underline-section"> Prérequis</span>
+    </h3>
+    <%- course.requirements %>
+    <hr />
+    <!-- Syllabus -->
+    <h3 class="about-course-heading">
+      <span class="underline-section"> Syllabus </span>
+    </h3>
+    <%- course.syllabusSummary %>
+    <p class="requirement text-primary">
+      Cliquez sur le module pour en savoir plus
+    </p>
+    <div class="mb-5">
+      <% for(let chapter of course.modules){%>
+      <p>
+        <a class="d-block my-4 module-link" type="button" data-bs-toggle="collapse"
+          data-bs-target="#module-<%=course.modules.indexOf(chapter)%>" aria-expanded="false"
+          aria-controls="collapseExample">
+          <i class="bi bi-vector-pen mx-3"></i> Module <%=
+        course.modules.indexOf(chapter) + 1 %> : <%= chapter.title %>
+        </a>
+      </p>
+      <div class="collapse" id="module-<%=course.modules.indexOf(chapter)%>">
+        <div class="card card-body"><%- chapter.willLearnModule %></div>
+      </div>
+      <% } %>
+    </div>
+  </div>

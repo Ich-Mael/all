@@ -1,0 +1,480 @@
+<% layout('layouts/pecpBoilerplate') %>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Chango&display=swap" rel="stylesheet" />
+  <link href="stylesheets/pecp/home.css" rel="stylesheet" />
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+
+  <!-- Series -->
+  <div class="banner-wrapper d-flex flex-column align-items-center justify-content-center">
+
+    <div class="d-flex flex-column  align-items-around justify-content-center">
+      <h1 class="banner-heading">Personal English Coaching Program</h1>
+      <!-- Button trigger modal -->
+      <div class="row">
+        <div class="col-sm-4 d-flex justify-content-center">
+
+          <a class="my-2 more text-white" data-bs-toggle="modal" data-bs-target="#more-pecp">
+            En Savoir Plus
+          </a>
+        </div>
+        <div class="col-sm-4 d-flex justify-content-center">
+          <a class="my-2 more  text-white" href="#tarifs">
+            Nos Tarifs
+          </a>
+        </div>
+        <div class="col-sm-4 d-flex justify-content-center">
+          <a class="my-2 more text-white" data-bs-toggle="modal" data-bs-target="#inscription">
+            Inscription
+          </a>
+        </div>
+        <!--
+        <div class="col-sm-3">
+          <a class="my-2  more" href="https://drive.google.com/file/d/1hwTWJumD3ncuNh1QqZx_659T4K01nMtJ/view?usp=share_link" target="_blank">
+            Guide de l'apprenant
+          </a>
+        </div>
+        -->
+
+      </div>
+
+      <!-- Modal for know more -->
+      <div class="modal fade" id="more-pecp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Personal English Coaching Program</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div id="tv-container">
+                <div id="monitor">
+                  <div class="afrohk-TV">
+                    <h3 class="text-center afrohk-text mb-2 py-0">
+                      <span class="afrohk">Afro</span><span class="tv"> Language Lab</span>
+                    </h3>
+                  </div>
+                  <div id="monitorscreen">
+                    <iframe id="vimeo-content" src="" frameborder="0" height="500px" width="1000px"
+                      allow="autoplay; fullscreen; picture-in-picture" allow="fullscreen"
+                      title="High-intensity Classes"></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Quitter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Inscription -->
+      <div class="modal fade" id="inscription" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Contactez-nous</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h1 class="text-center py-3 bg-dark text-white">PECP Program Director Contact</h1>
+              <hr>
+              <div class="d-flex  justify-content-around" style="background-color: white;">
+                <button id="" class="bg-white">
+                  <a id="" class=" fs-5" style="color: rgb(88, 7, 139);"
+                    href="mailto:afrohouseofknowledge@gmail.com?"><i class="fa mx-2 p-3 fa-envelope-o" id=""
+                      aria-hidden="true"></i><span>Mail</span></a>
+                </button>
+
+                <button id="" class="bg-white">
+                  <a id="" class="fs-5" href=" tel: +22653344444">
+                    <i class="fa p-3 mx-2 fa-phone" aria-hidden="true"></i><span>+226 53344444</span>
+                  </a>
+                </button>
+
+                <button id="" class="bg-white">
+                  <a id="" class="text-success  fs-5" style="text-decoration: none;" href="https://wa.me/22653344444"
+                    target="_blank">
+                    <i class="fa mx-2 p-3 fa-whatsapp" aria-hidden="true"></i>
+                    <span class="">WhatsApp</span></a>
+                </button>
+
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Quitter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% if(currentUser){%>
+      <% if (currentUser.isPecpStudent) {%>
+        <div class="my_pecp-wrapper">
+          <a href="" class="my_pecp mx-2"><i class="fa-solid mx-2 fa-chalkboard-user"></i>My English Coaching Space</a>
+        </div>
+        <%}%>
+          <%}%>
+  </div>
+  <div class="section-title container py-5">
+    <h2>Formule Entreprise</h2>
+    <p>À vous nos cadres d'entreprise</p>
+  </div>
+
+  <section class="testimonial_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="about_content">
+            <div class="background_layer"></div>
+            <div class="layer_content">
+              <div class="section_title">
+                <h5>Solution Pour Entreprise</h5>
+                <h2>Donner<strong>le sourire 😊 aux cadres</strong></h2>
+                <div class="heading_line"><span></span></div>
+                <p>Le <strong class="text-info">Personal English Coaching Program</strong> est la solution idéale pour
+                  accompagner les cadres d'entreprise, qui aimeraient communiquer en Anglais avec aisance </p>
+              </div>
+              <a href=" tel: +22653344444">Contactez-nous: (226) 53344444<i class="icofont-long-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="testimonial_box">
+            <div class="testimonial_container">
+              <div class="background_layer"></div>
+              <div class="layer_content">
+                <div class="testimonial_owlCarousel owl-carousel">
+                  <div class="testimonials">
+                    <div class="testimonial_content">
+                      <div class="testimonial_caption">
+                        <h6>Afifou Ouedraogo</h6>
+                        <span>CEO, H86</span>
+                      </div>
+                      <p>Afro Language Lab dispose d'une équipe de coach d'Anglais très talentueuse, dévouée, bien
+                        organisée et bien formée. J'ai été le plus satisfait de la qualité de la formation. Ils ont fait
+                        un excellent travail pour booster mon niveau d'Anglais.</p>
+                    </div>
+                    <div class="images_box">
+                      <div class="testimonial_img">
+                        <img class="img-center" src="/images/afize.jpg" alt="images not found">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="testimonials">
+                    <div class="testimonial_content">
+                      <div class="testimonial_caption">
+                        <h6>Robert Clarkson</h6>
+                        <span>CEO, Axura</span>
+                      </div>
+                      <p>The team at Tectxon industry is very talented, dedicated, well organized and knowledgeable. I
+                        was most satisfied with the quality of the workmanship. They did excellent work.</p>
+                    </div>
+                    <div class="images_box">
+                      <div class="testimonial_img">
+                        <img class="img-center"
+                          src="https://cdn.pixabay.com/photo/2017/09/21/19/06/woman-2773007_960_720.jpg"
+                          alt="images not found">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="testimonials">
+                    <div class="testimonial_content">
+                      <div class="testimonial_caption">
+                        <h6>Robert Clarkson</h6>
+                        <span>CEO, Axura</span>
+                      </div>
+                      <p>The team at Tectxon industry is very talented, dedicated, well organized and knowledgeable. I
+                        was most satisfied with the quality of the workmanship. They did excellent work.</p>
+                    </div>
+                    <div class="images_box">
+                      <div class="testimonial_img">
+                        <img class="img-center"
+                          src="https://cdn.pixabay.com/photo/2017/09/21/19/06/woman-2773007_960_720.jpg"
+                          alt="images not found">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- ======= Why Us Section ======= -->
+  
+    <section id="why-us" class="why-us" style="background-color: white;">
+      <div class="section-title container pt-5">
+        <h2>Faites-nous confiance</h2>
+        <p>Comment ça marche ?</p>
+      </div>
+      <div class="container-fluid" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-5 align-items-stretch video-box" data-aos="zoom-in" data-aos-delay="100">
+            <div class="d-flex justify-content-center align-items-center flex-column">
+            <div id="tv-container" class="mt-5" style="width:100%; height: 100%;">
+              <p style="margin: 2rem 1rem; font-size: 1.3rem; font-family: 'Meriweather', Times, serif; color: rgb(10, 10, 64); font-weight: 600; letter-spacing: 0.1rem;" class="text-center fst-italic">Yes! Everybody can speak English.</p>
+              <div id="monitor">
+                <div class="afrohk-TV">
+                  <h3 class="text-center afrohk-text mb-2 py-0">
+                    <span class="afrohk">Afro</span><span class="tv"> Language Lab</span>
+                  </h3>
+                </div>
+                <div id="monitorscreen">
+                  <iframe id="vimeo-content" src="" frameborder="0" height="500px" width="1000px"
+                    allow="autoplay; fullscreen; picture-in-picture" allow="fullscreen"
+                    title="High-intensity Classes"></iframe>
+                </div>
+              </div>
+            </div> 
+          </div>
+          </div>
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch"   data-aos="fade-up">
+            <div class="content">
+              <h3 class="">Opter pour le Personal Coaching English Program c'est </h3>
+              <p class="" class="py-2">
+                Choisir l'unique et idéale méthode qui vous convient pour vous surpasser et maitriser l'Anglais.
+              </p>
+            </div>
+
+            <div class="accordion-list">
+              <ul>
+                <li>
+                  <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> Identification de vos forces et lacunes <i class="fa-solid icon-show fa-chevron-up"></i><i class="fa-solid icon-close fa-chevron-down"></i></a>
+                  <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                    <p>
+                      Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> Un coach d'Anglais à votre disposition<i class="fa-solid icon-show fa-chevron-up"></i><i class="fa-solid icon-close fa-chevron-down"></i></a>
+                  <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                    <p>
+                      Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Un programme d'apprentissage souple et flexible <i class="fa-solid icon-show fa-chevron-up"></i><i class="fa-solid icon-close fa-chevron-down"></i></a>
+                  <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                    <p>
+                      Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                    </p>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+<section id="tarifs" class="">
+  <div class="section-title container py-5">
+    <h2>Coûts</h2>
+    <p>Découvrez nos tarifs</p>
+  </div>
+   <!-- Pricing -->
+   <div class="modal-body pricing-wrapper">
+    <div class="container">
+      <div class="grid">
+        <div class="card">
+          <h2 class="card_title">Basic</h2>
+          <p class="pricing">30.000 Fcfa<span class="small">/par mois</span></p>
+          <p>Minimum 6 mois</p>
+          <p>Ideal pour Débutant</p>
+          <p>Apprentissage à un rythme normal</p>
+          <hr>
+          <ul class="features">
+            <li>Anglais General</li>
+            <li>Accès au cours en ligne</li>
+            <li>2 Séances de cours / semaine</li>
+            <li>2 Séances de conversation / semaine</li>
+            <hr>
+            <p class="fst-italic">Bonus</p>
+            <li>Cv traduit en Anglais</li>
+          </ul>
+          <!-- <a href="#" class="cta_btn">Buy Now</a> -->
+        </div>
+        <div class="card">
+          <h2 class="card_title"> Pro </h2>
+          <p class="pricing">45.000 Fcfa<span class="small">/mois</span></p>
+          <p>Minimum 3 mois</p>
+          <p>Idéal pour Professionnel</p>
+          <p>Apprentissage à un rythme normal</p>
+          <hr>
+          <ul class="features">
+            <li>Anglais Technique</li>
+            <li>Accès au cours en ligne</li>
+            <li>2 Séances de cours / semaine</li>
+            <!-- <li>Accès au cours en ligne</li> -->
+            <li>2 Séances de conversation / semaine</li>
+            <hr>
+            <p class="fst-italic">Bonus</p>
+            <li>Cv traduit en Anglais</li>
+            <li>Préparation à l'interview d'embauche </li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2 class="card_title"> Full Option </h2>
+          <p class="pricing">60.000 Fcfa<span class="small">/mois</span></p>
+          <p>Minimum 4 mois</p>
+          <p>Idéal pour Professionnel Débutant</p>
+          <p>Apprentissage à un rythme intensif</p>
+          <hr>
+          <ul class="features">
+            <li>Anglais General et Technique</li>
+            <li>Accès au cours en ligne</li>
+            <li>4 Séances de cours / semaine</li>
+            <!-- <li>Accès au cours en ligne</li> -->
+            <li>4 Séances de conversation / semaine</li>
+            <hr>
+            <p class="fst-italic">Bonus</p>
+            <li>Cv traduit en Anglais</li>
+            <li>Préparation à l'interview d'embauche </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+  <!-- ======= Frequently Asked Questions Section ======= -->
+  <section id="faq" class="faq">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>F.A.Q</h2>
+        <p>Foire Aux Questions</p>
+      </div>
+
+      <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-5">
+          <i class="bx bx-help-circle"></i>
+          <h4>Non consectetur a erat nam at lectus urna duis?</h4>
+        </div>
+        <div class="col-lg-7">
+          <p>
+            Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida.
+            Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+          </p>
+        </div>
+      </div><!-- End F.A.Q Item-->
+
+      <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-5">
+          <i class="bx bx-help-circle"></i>
+          <h4>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h4>
+        </div>
+        <div class="col-lg-7">
+          <p>
+            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec
+            ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper
+            dignissim.
+          </p>
+        </div>
+      </div><!-- End F.A.Q Item-->
+
+      <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+        <div class="col-lg-5">
+          <i class="bx bx-help-circle"></i>
+          <h4>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?</h4>
+        </div>
+        <div class="col-lg-7">
+          <p>
+            Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum
+            integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt.
+            Lectus urna duis convallis convallis tellus.
+          </p>
+        </div>
+      </div><!-- End F.A.Q Item-->
+
+      <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+        <div class="col-lg-5">
+          <i class="bx bx-help-circle"></i>
+          <h4>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h4>
+        </div>
+        <div class="col-lg-7">
+          <p>
+            Aperiam itaque sit optio et deleniti eos nihil quidem cumque. Voluptas dolorum accusantium sunt sit enim.
+            Provident consequuntur quam aut reiciendis qui rerum dolorem sit odio. Repellat assumenda soluta sunt
+            pariatur error doloribus fuga.
+          </p>
+        </div>
+      </div><!-- End F.A.Q Item-->
+
+      <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="500">
+        <div class="col-lg-5">
+          <i class="bx bx-help-circle"></i>
+          <h4>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</h4>
+        </div>
+        <div class="col-lg-7">
+          <p>
+            Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel
+            risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis
+            blandit turpis cursus in
+          </p>
+        </div>
+      </div><!-- End F.A.Q Item-->
+
+    </div>
+  </section><!-- End Frequently Asked Questions Section -->
+
+
+  <!-- Google font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,400i,600,600i,700,700i,900">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i">
+
+
+  <!-- carousel -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+
+
+
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+  <script>$('.testimonial_owlCarousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      dots: false,
+      nav: true,
+      autoplay: false,
+      smartSpeed: 3000,
+      autoplayTimeout: 4000,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 1
+        },
+        1000: {
+          items: 1
+        }
+      }
+    })</script>
+  </body>
+
+  </html>

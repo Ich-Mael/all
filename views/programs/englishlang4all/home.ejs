@@ -1,0 +1,374 @@
+<% layout('layouts/boilerplate') %>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<link href="/stylesheets/englishforAll/home.css" rel="stylesheet" />
+<div data-aos="zoom-out" data-aos-delay="100" data-aos-duration="1800" class="header-wrapper">
+  <div class="bg-img-wrapper">
+    <img class="img-medium"
+      src="https://images.unsplash.com/photo-1627897495484-229b29feb0d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+      alt="" />
+  </div>
+  <div class="banner-wrapper">
+    <div class="d-flex align-items-center flex-column" style="width:100vw">
+      <h1 class="banner-heading">House Of English Lovers</h1>
+      <p class="banner-paragraph"><span class="p-3"
+          style="background-color: rgba(0, 0, 0, 0.349); display: inline-block;">Everybody can speak English</span></p>
+      <div class="account-wrapper">
+        <% if (!currentUser || currentUser === undefined) {%>
+        <a class="get-account" href="/register">Get Started Now</a>
+
+        <%} else { %>
+        <a class="check-programs" href="#program"> Our English Programs</a>
+        <%}%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Learn more -->
+<div class="program-presentation">
+  <p
+    class="main-program-description"
+    data-aos="zoom-in-up"
+    data-aos-offset="200"
+    data-aos-delay="150"
+    data-aos-duration="600"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+  >
+    <strong> House of English Lover </strong> est un programme d'apprentissage de la langue Anglaise, qui a pour but, de
+    permettre aux étudiants, professionnels et particuliers d'améliorer leur
+    niveau d'anglais. Apprendre, assimiler et maitriser juste ce qu'il faut
+    pour être opérationnel dans son domaine d'activité.
+  </p>
+  <!-- AfroHk Tv  -->
+  <!-- Button trigger modal -->
+  <div id="mission-wrapper" class ="d-flex
+  justify-content-center
+  align-items-center
+  flex-column">
+    <div
+      class="
+        mission
+      "
+      data-aos="zoom-in-down"
+      data-aos-offset="200"
+      data-aos-delay="150"
+      data-aos-duration="600"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+    >
+      <p class="mission-paragraph">
+        <strong>Notre mission </strong>est de vous amener à parler la langue
+        anglaise en toute confiance.
+      </p>
+     
+    </div>
+  </div>
+  
+</div>
+
+<h2 class="text-center py-5 know-more bg-dark text-white">Découvrez House of English Lovers</h2>
+<div class="modal-body">
+<div
+  id="tv-container"
+>
+  <div id="monitor">
+    <div class="afrohk-TV">
+      <h3 class="text-center afrohk-text mb-2 py-0">
+        <span class="afrohk">AfroHK</span
+        ><span class="tv">Radar</span>
+      </h3>
+    </div>
+    <div id="monitorscreen">
+      <iframe
+        id="vimeo-content"
+        src="https://www.youtube.com/embed/MGbCBxVdm5Y"
+        frameborder="0"
+        loading="lazy"
+        height="100%"
+        width="100%"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allow="fullscreen"
+        title="High-intensity Classes"
+      ></iframe>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- English programs -->
+<section  id="program" class="english-programs">
+  <h1 class="programs">Nos Programmes d'Anglais</h1>
+  <div class="program-section-wrapper ">
+    <div class="container">
+      <div class="row">
+        <!-- English clubs -->
+        <div
+          class="col-md-6 col-lg-4 mt-5 mb-2"
+        >
+          <div
+            class="
+              d-flex
+              mb-2
+              my-card-wrapper
+              justify-content-center
+              flex-column
+            "
+          >
+            <div class="my-card">
+              <div class="img-wrapper m-2">
+                <img
+                  class="program-image"
+                  src="https://res.cloudinary.com/afro-house-of-knowledge/image/upload/v1633194503/Afrohk/neci-8-rs_dd8xmz.jpg"
+                  alt="Club d'anglais"
+                />
+              </div>
+              <div  data-aos="zoom-in-down"
+              data-aos-offset="200"
+              data-aos-delay="150"
+              data-aos-duration="800"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true" class="card-body d-flex flex-column align-items-center">
+                <h3 class="program-name">Natural English Clubs</h3>
+                <p class="program-description">
+                  Un programme pour renforcer la capacité des clubs d'anglais
+                </p>
+                <button class="btn my-3 course-btn btn-default">
+                  <a href="/englishlang4all/clubs/home" class="course-link">En Savoir Plus</a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- English for everyone -->
+        <div
+          
+          class="col-md-6 col-lg-4 mt-5 mb-2"
+        >
+          <div
+            class="
+              d-flex
+              mb-2
+              my-card-wrapper
+              justify-content-center
+              flex-column
+            "
+          >
+            <div class="my-card">
+              <div class="img-wrapper m-2">
+                <img
+                  class="program-image"
+                  src="https://images.unsplash.com/photo-1627897495484-229b29feb0d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                  alt="Anglais pour tous"
+                />
+              </div>
+              <div data-aos="zoom-in-down"
+              data-aos-offset="200"
+              data-aos-delay="150"
+              data-aos-duration="800"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true" class="card-body d-flex flex-column align-items-center">
+                <h3 class="program-name">English for everyone</h3>
+                <p class="program-description">
+                  Un programme d'anglais général pour la communication en toute confiance
+                </p>
+                <button class="btn my-3 course-btn btn-default">
+                  <a href="/englishlang4everyone" class="course-link">En Savoir Plus</a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- English for profession -->
+        <div
+         
+          class="col-md-6 col-lg-4 mt-5 mb-2"
+        >
+          <div
+            class="
+              d-flex
+              mb-2
+              my-card-wrapper
+              justify-content-center
+              flex-column
+            "
+          >
+            <div class="my-card">
+              <div class="img-wrapper m-2">
+                <img
+                  class="program-image"
+                  src="https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                  alt="Card image cap"
+                />
+              </div>
+              <div  data-aos="zoom-in-down"
+              data-aos-offset="200"
+              data-aos-delay="150"
+              data-aos-duration="800"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true" class="card-body d-flex flex-column align-items-center">
+                <h3 class="program-name">English for Professional Purposes</h3>
+                <p class="program-description">
+                  Un programme d'anglais technique pour les metiers
+                </p>
+                <button class="btn my-3 course-btn btn-default">
+                  <a href="/englishlang4profession" class="course-link">En Savoir Plus</a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- English for Kids
+        <div
+          class="col-md-6 col-lg-4 mt-5 mb-2"
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="150"
+          data-aos-duration="800"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+        >
+          <div
+            class="
+              d-flex
+              mb-2
+              my-card-wrapper
+              justify-content-center
+              flex-column
+            "
+          >
+            <div class="my-card">
+              <div class="img-wrapper m-2">
+                <img
+                  class="program-image"
+                  src="https://images.unsplash.com/photo-1613186420419-868111e7ac07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1770&q=80"
+                  src="https://images.unsplash.com/photo-1592106680408-e7e63efbc7ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                  alt="English for kids"
+                />
+              </div>
+              <div class="card-body d-flex flex-column align-items-center">
+                <h3 class="program-name">English for kids</h3>
+                <p class="program-description">
+                  Apprendre l'anglais aux enfants en s'amusant
+                </p>
+                <button class="btn my-3 course-btn btn-default">
+                  <a href="#" class="course-link">En Savoir Plus</a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+ -->
+        <!-- English for illiterate 
+        <div
+          data-aos="zoom-in-up"
+          data-aos-offset="200"
+          data-aos-delay="150"
+          data-aos-duration="800"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          class="col-md-6 col-lg-4 mt-5 mb-2"
+        >
+          <div
+            class="
+              d-flex
+              mb-2
+              my-card-wrapper
+              justify-content-center
+              flex-column
+            "
+          >
+            <div class="my-card">
+              <div class="img-wrapper m-2">
+                <img
+                  class="program-image"
+                  src="https://images.pexels.com/photos/265076/pexels-photo-265076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                  alt="Anglais pour analphabète"
+                />
+              </div>
+              <div class="card-body d-flex flex-column align-items-center">
+                <h3 class="program-name">English for illiterate</h3>
+                <p class="program-description">
+                  Un programme d'anglais général pour analphabète
+                </p>
+                <button class="btn my-3 course-btn btn-default">
+                  <a href="#" class="course-link">En Savoir Plus</a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      -->
+       <!-- Event Driven lessons 
+        <div
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="150"
+          data-aos-duration="800"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          class="col-md-6 col-lg-4 mt-5 mb-2"
+        >
+          <div
+            class="
+              d-flex
+              mb-2
+              my-card-wrapper
+              justify-content-center
+              flex-column
+            "
+          >
+            <div class="my-card">
+              <div class="img-wrapper m-2">
+                <img
+                  class="program-image"
+                  src="https://images.pexels.com/photos/87651/earth-blue-planet-globe-planet-87651.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                  alt="Anglais d'actualite"
+                />
+              </div>
+              <div class="card-body d-flex flex-column align-items-center">
+                <h3 class="program-name">English in real world</h3>
+                <p class="program-description">
+                  Apprendre l'anglais avec les faits du monde réel
+                </p>
+                <button class="btn my-3 course-btn btn-default">
+                  <a href="#" class="course-link">En Savoir Plus</a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        -->
+        <!-- End Programmes section-->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- try free lesson section -->
+<section class="free-lesson-section">
+  <div
+    class="
+      free-lesson
+      d-flex
+      justify-content-center
+      align-items-center
+      flex-column
+    "
+  >
+    <p class="free-lesson-paragraph mb-3">
+      <span class="text-warning">Vous êtes dans l'hésitation ?</span> Essayez notre programme d’anglais
+      gratuit
+    </p>
+    <button class="btn my-5 px-3 py-2 effect01">
+      <a
+        href="#"
+        class="free-lesson-link text-center"
+        >Cours Gratuit</a
+      >
+    </button>
+  </div>
+</section>

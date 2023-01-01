@@ -1,0 +1,93 @@
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+.user-banner {
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    /* height: 30vh; */
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 254);
+    border: 3px solid purple;
+    border-radius: 5px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+
+
+.user-img{
+    width: 60%;
+    height: 60%;
+}
+.welcome-msg {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: start;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    /* font-family: "Kaushan Script", cursive; */
+    /* font-family: 'Paytone One', sans-serif; */
+    /* font-family: "Rye", cursive; */
+    /* font-family: 'Titan One', cursive; */
+    color: rgb(12, 78, 12);
+    /* font-family: "Nosifer", cursive; */
+}
+
+.quote {
+    margin: 2rem 1rem;
+    text-align: center;
+    font-family: "Rye", cursive;
+    font-size: 2.4rem;
+}
+
+.my-program {
+    text-align: center;
+    /* font-family: "Kaushan Script", cursive; */
+    font-family: 'Paytone One', sans-serif;
+    /* font-family: "Rye", cursive; */
+    /* font-family: 'Titan One', cursive; */
+    /* font-family: "Nosifer", cursive; */
+    font-size: 1.5rem;
+    padding: 2rem 2rem;
+    background-color: rgb(12, 78, 12);
+    color: aliceblue;
+}
+
+.program-wrapper {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin: 1rem 2rem;
+}
+
+.program-img-wrapper img {
+    height: 13rem;
+    width: 100%;
+}
+
+
+.pecp-coach {
+    background: url(https://images.pexels.com/photos/5685821/pexels-photo-5685821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center center;
+    position: relative;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 69vh;
+    position: relative;
+}
+
+.pecp-link-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,12 @@
+<% if(success && success.length){%>
+    <div role="alert"  class="alert alert-dismissible fade show m-0 alert-success">
+        <h1 class="flash text-center">  <%= success %></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<%}%>
+<% if(error && error.length){%>
+    <div role="alert" class="alert alert-dismissible m-0 fade show alert-danger">
+        <h1 class="flash text-center"><%= error %></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<%}%>

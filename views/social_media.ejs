@@ -1,0 +1,118 @@
+<% layout('layouts/boilerplate') %>
+<style>
+    .heading {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        padding: 3rem 1rem;
+        font-size: 1.6rem;
+        color: #261a2e;
+    }
+
+    .facebook-like,
+    .instagram-like,
+    .youtube-like {
+        margin: 1rem;
+        padding: 2rem;
+        border-radius: 4px;
+        border: 1px solid black;
+        font-size: 2rem;
+    }
+
+    .click {
+        color: #7f688e;
+        font-size: 1.2rem;
+        font-family: "Esteban";
+        font-family: "Titan One", cursive;
+        /* font-family: 'Chivo', sans-serif; */
+        /* font-family: 'Poppins', sans-serif; */
+        /* font-family: "Ultra", serif; */
+    }
+
+    .img-wrapper {
+        margin: 2rem;
+        padding: 1rem;
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+
+    .pages-info-wrapper {
+        margin-top: 2rem;
+    }
+
+    @media (max-width: 500px) {
+
+        .facebook-like,
+        .instagram-like,
+        .youtube-like {
+            margin: 1rem;
+            padding: 1rem;
+            border-radius: 4px;
+            border: 1px solid black;
+            font-size: 1rem;
+        }
+    }
+</style>
+<div class="container vh-100">
+    <h1 class="text-center heading">Pour beneficier gratuitement de cette offre, veuillez nous rejoindre sur
+        les reseaux sociaux</h1>
+    <div class="pages-info-wrapper">
+        <div class="row">
+            <!-- Facebook -->
+            <div class="col-lg-6">
+                <div class="img-wrapper">
+                    <i id="facebook" class="facebook-like fab fa-facebook-f"></i><a class="btn click btn-floating m-2"
+                        href="https://web.facebook.com/Afro-House-Of-Knowledge-104795908266730" role="button"
+                        target="_blank">Aimer
+                        notre page Facebook</a>
+                    <h1 class="btn d-block py-2 btn-primary"></h1>
+                </div>
+            </div>
+
+            <!-- Instagram -->
+            <div class="col-lg-6">
+                <div class="img-wrapper">
+                    <i class="fab fa-instagram instagram-like" id="instagram"></i>
+                    <a href="https://www.instagram.com/afro_h_k/" target="_blank" class="btn click m-2">Nous suivre sur
+                        Instagram</a>
+                    <h1 class="btn d-block py-2"
+                        style="background: #833ab4;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
+                    </h1>
+                </div>
+            </div>
+
+            <!--LinkedIn-->
+            <div class="col-lg-6 mt-5">
+                <div class="img-wrapper">
+                    <i id="linkedin" class="fa fa-linkedin youtube-like"></i>
+                    <a class="btn click btn-floating m-2"
+                        href="https://www.linkedin.com/company/afro-house-of-knowledge" role="button"
+                        target="_blank">Nous suivre sur LinkedIn</a>
+                    <h1 class="btn d-block py-2" style="
+            background: #457fca;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #5691c8, #457fca);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #5691c8, #457fca); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Youtube -->
+            <div class="col-lg-6 mt-5">
+                <div class="img-wrapper">
+                    <i id="youtube" class="fa fa-youtube youtube-like"></i>
+                    <a class="btn click btn-floating m-2"
+                        href="https://www.youtube.com/channel/UCoyOQOqSqRGjH8FrkvT4b0g" role="button"
+                        target="_blank">Souscrire à notre
+                        chaine
+                        Youttube</a>
+                    <h1 class="btn d-block py-2" style="background: #e52d27;  /* fallback for old browsers */
+                    background: -webkit-linear-gradient(to right, #b31217, #e52d27);  /* Chrome 10-25, Safari 5.1-6 */
+                    background: linear-gradient(to right, #b31217, #e52d27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                    ">
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,309 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  html {
+    box-sizing: border-box;
+    font-size: 92.5%;
+  }
+  
+  body {
+    margin: 0;
+    padding: auto;
+    font-family: "Roboto";
+  }
+
+/* banner section */
+.english-club-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .club-logos-wrapper {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .school-logo {
+    width: 150px;
+    height: 150px;
+    margin: 1.5rem;
+  }
+  
+  .logo-wrapper {
+    position: relative;
+  }
+  
+  .club-logo {
+    margin-top: 8rem;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 40vh;
+    perspective: 100rem;
+    background: #2b5876;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4e4376, #2b5876);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4e4376, #2b5876);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  }
+  
+  .bg-img-wrapper {
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.979);
+  }
+  
+  .bg-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    object-fit: cover;
+    animation: scale 25s;
+  }
+  
+ 
+  
+  @keyframes scale {
+    0% {
+      transform: scale(1.3);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .club-info {
+    padding: 2rem 0 0;
+  }
+  
+  @keyframes moveBanner {
+    0% {
+      transform: translateX(30rem) rotate(20deg);
+    }
+  
+    100% {
+      transform: translateY(0) rotate(0);
+      opacity: 1;
+    }
+  }
+  
+  .club-name {
+    color: #ffffffd7;
+    font-family: "Poppins", sans-serif;
+    /* font-family: "Kaushan Script", cursive; */
+    font-size: 3rem;
+    font-weight: 900;
+    opacity: 0;
+    padding: 0.5rem;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    text-shadow: 1px 2px 2px rgba(72, 13, 131, 0.89);
+    animation: moveBanner 2s 1.2s forwards;
+  }
+  
+  .club-motto {
+    font-size: 1.5rem;
+    text-align: center;
+    font-style: italic;
+    color: rgb(255, 255, 255);
+    margin: 2rem 0;
+    font-family: "Noto Sans", sans-serif;
+    line-height: 3rem;
+    letter-spacing: 0.1rem;
+    opacity: 0;
+    animation: moveBanner 1.5s 1.5s forwards;
+  }
+
+   .wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 2px solid rgb(64, 63, 63);
+  }
+  
+  
+  .main-controls {
+    padding: 0.5rem 0;
+  }
+  
+  canvas {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  #buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  #buttons button {
+    font-size: 1rem;
+    padding: 1rem;
+    width: calc(50% - 1rem);
+  }
+  
+  .record-btn {
+    font-size: 1rem;
+   
+    text-align: center;
+    color: white;
+    border: none;
+    transition: all 0.2s;
+    padding: 0.5rem;
+  }
+  
+  .record {
+    background: #0088cc;
+  }
+  
+  .stop{
+    background: #cc004e;
+  }
+  
+  .record-btn:hover, .record-btn:focus {
+    box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 1);
+    background: rgb(2, 26, 36);
+  }
+  
+  .record-btn:active {
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.5);
+    transform: translateY(2px);
+  }
+  
+  
+  /* Make the clips use as much space as possible, and
+   * also show a scrollbar when there are too many clips to show
+   * in the available space */
+  .sound-clips {
+    flex: 1;
+    overflow: auto;
+  }
+  
+  section, article {
+    display: block;
+  }
+  
+  .clip {
+    padding-bottom: 1rem;
+  }
+  
+  audio {
+    width: 100%;
+    display: block;
+    margin: 1rem auto 0.5rem;
+  }
+  
+  .clip p {
+    display: inline-block;
+    font-size: 1rem;
+  }
+  
+  .clip button {
+    font-size: 1rem;
+    float: right;
+  }
+  
+  button.delete {
+    background: rgb(159, 14, 14);
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: #efefef;
+    transition: all 0.8s;
+  }
+
+  button.delete:hover {
+    background: rgb(227, 22, 22);
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: #efefef;
+  }
+  
+  /* Checkbox hack to control information box display */
+  
+  label {
+    font-size: 3rem;
+    position: absolute;
+    top: 2px;
+    right: 3px;
+    z-index: 5;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 10px;
+  }
+  
+  input[type=checkbox] {
+     position: absolute;
+     top: -100px;
+  }
+  
+  aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+    transition: 0.3s all ease-out;
+    background-color: #efefef;
+    padding: 1rem;
+  }
+  
+  aside p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+  }
+  
+  aside a {
+    color: #666;
+  }
+  
+  /* Toggled State of information box */
+  input[type=checkbox]:checked ~ aside {
+    transform: translateX(0);
+  }
+  
+  /* Cursor when clip name is clicked over */
+  
+  .clip p {
+    cursor: pointer;
+  }
+  
+ 
+  @media (max-width: 900px) {
+    html{
+       font-size: 85%;
+    } 
+     } 
+@media (max-width: 650px) {
+ html{
+    font-size: 65%;
+ } 
+  }
+    

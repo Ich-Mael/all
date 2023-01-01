@@ -1,0 +1,63 @@
+<% layout('layouts/engClubBoilerplate') %>
+<style>
+	html {
+		font-size: 80%;
+	}
+</style>
+<div class="container col-md-8">
+	<h1 class="text-center my-5" style="color: blueviolet;"><%= club.acronym %> Board Members Dashboard</h1>
+	<h3 class="text-center">All Articles</h3>
+	<div class="row">
+		<% for(let article of club.articles ){ %>
+		<div class="col-md-6 col-lg-4">
+			<div class="card my-4">
+				<img src="<%= article.articleImage %>" class="card-img-top img-thumbnail" alt="">
+				<div class="card-body">
+					<h5 class="card-title news-title"><%= article.title %></h5>
+					<p class="card-text news-summary"><%= article.articleSummary %></p>
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-small
+				  btn-primary" data-bs-toggle="modal" data-bs-target="#N<%= article._id %>">
+						Read more
+					</button>
+					<a href="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/board_dashboard/articles/<%= article._id%>/edit"
+						class="btn btn-outline-success"> Edit </a>
+					<form
+						action="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/board_dashboard/articles/<%= article._id%>?_method=DELETE"
+						class="d-inline" method="POST"><button class="btn btn-outline-danger">Delete</button></form>
+					<!-- Modal -->
+					<div class="modal fade" id="N<%= article._id %>" tabindex="-1" aria-labelledby="exampleModalLabel"
+						aria-hidden="true">
+						<div class="modal-dialog modal-lg
+				    modal-fullscreen-md-down">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">
+										<%= article.title %>
+									</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal"
+										aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<div>
+										<%- article.articleContent%>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn
+					  btn-danger" data-bs-dismiss="modal">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<p class="card-text"><small
+							class="text-muted"><%= article.postedAT.toISOString().split('T')[0] %></small><em
+							class="mx-3">By
+							<%= article.articleAuthor %></em></p>
+				</div>
+			</div>
+		</div>
+		<% } %>
+	</div>
+</div>

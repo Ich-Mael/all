@@ -1,0 +1,325 @@
+<% layout('layouts/boilerplate') %>
+<link href="/stylesheets/englishforAll/englishClubs/home.css" rel="stylesheet" />
+<style>
+  .hub-country-banner {
+    background: linear-gradient(to bottom,
+        rgba(39, 49, 51, 0.714),
+        rgba(38, 44, 44, 0.574),
+        rgba(56, 66, 66, 0.554),
+        rgba(42, 45, 46, 0.67)),
+      url("https://corporate.yourtravelgroup.co.uk/wp-content/uploads/2017/01/blog-image.png") top center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    min-height: 60vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  .hub-country {
+    color: rgb(252, 252, 252);
+    text-shadow: 1px 2px 3px black;
+    font-size: 10rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .club-type-list {
+    background-color: aliceblue;
+    padding: 1rem 2rem;
+    /* height: 2.3rem; */
+  }
+
+  .clubs-card {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border-radius: 5px;
+    margin-top: 5rem;
+    padding: 0 2rem;
+  }
+
+  .type-of-club {
+    margin: 1rem 0 0;
+    color: #f0f5f4;
+    z-index: 300;
+    display: inline-block;
+    text-align: start;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 1.2rem;
+    background-color: #057c5e;
+    border: 1px solid rgb(255, 255, 255);
+    font-weight: 600;
+    border-radius: 5px;
+    letter-spacing: 0.2rem;
+    font-size: 1.3rem;
+  }
+
+  .afrohk-club {
+    background-color: #185a9d;
+  }
+
+
+  @media (max-width: 1200px) {
+    .type-of-club {
+      font-size: 2rem;
+    }
+
+    .line-1 {
+      width: 2rem;
+    }
+
+    .line-2 {
+      width: 15rem;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .type-of-club {
+      font-size: 2rem;
+    }
+
+    .line-1 {
+      width: 2rem;
+    }
+
+    .line-2 {
+      width: 10rem;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .hub-country {
+      font-size: 8rem;
+    }
+
+    .type-of-club {
+      font-size: 1.5rem;
+    }
+
+    .line-1 {
+      width: 2rem;
+
+    }
+
+    .line-2 {
+      width: 8rem;
+    }
+  }
+
+  @media (max-width: 798px) {
+    .line-1 {
+      display: none;
+    }
+
+    .line-2 {
+      display: none;
+    }
+  }
+
+  @media (max-width: 698px) {
+    .hub-country {
+      font-size: 6rem;
+    }
+
+    .line-1 {
+      display: none;
+    }
+
+    .type-of-club {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .line-2 {
+      display: none;
+    }
+  }
+
+  @media (max-width: 530px) {
+    .hub-country {
+      font-size: 4rem;
+    }
+
+    .type-of-club {
+      font-size: 1.2rem;
+    }
+
+
+  }
+
+  @media (max-width: 350px) {
+    .hub-country {
+      font-size: 2.4rem;
+    }
+    
+    .type-of-club {
+      font-size: 1rem;
+    }
+  }
+</style>
+<!-- banner-->
+<div class="hub-country-banner d-flex justify-content-center align-items-center">
+  <h2 class="hub-country"> <%= hubCountry %> </h2>
+</div>
+
+<div class="univ-eng-clubs">
+  <div class="cards-wrapper">
+    <h3 class="univ-eng-club-title">
+      <span class="underline"></span>English Club Hubs <span class="underline"></span>
+    </h3>
+    <h4 class="text-center mb-5">Cliquez la ville pour voir les clubs disponibles</h4>
+
+    <div class="d-flex justify-content-around align-items-center py-5" style="background: #43cea2;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #185a9d, #43cea2);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #185a9d, #43cea2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      ">
+      <% for (let hub of countryHubs){%>
+      <p>
+        <button class="btn btn-lg btn-dark" type="button" data-bs-toggle="collapse"
+          data-bs-target="#N-<%= hub.cityName %>" aria-expanded="false" aria-controls="collapseExample">
+          <%= hub.cityName %>
+        </button>
+      </p>
+      <%}%>
+      </div>
+
+      <% for (let hub of countryHubs){%>
+      <div class="collapse" id="N-<%= hub.cityName %>">
+        <div class="card card-body">
+          <%if(currentUser && currentUser.role==="admin" ){%>
+          <div class="d-flex justify-content-center">
+            <a class="btn px-4 btn-outline-success fs-4"
+              href="/englishlang4all/clubs/<%= hub.cityName %>/<%= hub._id %>/club/new">Create a new
+              English club
+              for
+              this hub</a>
+          </div>
+          <%}%>
+
+          <!-- nav -->
+          <div class="club-type-list d-flex flex-wrap justify-content-around">
+            <a href="#highS" class="fs-5 px-3 py-2 inline-block">High School</a>
+            <a href="#univ" class="fs-5 px-3 py-2 inline-block">University</a>
+            <a href="#comp" class="fs-5 px-3 py-2 inline-block">Company</a>
+            <a href="#pro" class="fs-5 px-3 py-2 inline-block">Professional</a>
+            <a href="#other" class="fs-5 px-3 py-2 inline-block">Private Clubs</a>
+          </div>
+          <!-- nav -->
+    <!-- Special English Club -->
+    <div class="container clubs-card ">
+      <h4 class="type-of-club afrohk-club">Special English Clubs </h4>
+      <p class="fst-italic my-3 px-2 text-primary fs-6 ">Les clubs spéciaux sont mises en place par AfroHK pour atteindre des objectifs spécifiques bien définis </p>
+  <div class="row pb-5">
+  <% for(let Club of hub.clubs.Simple){%>
+          <div class="col-md-6 col-lg-4 my-3">
+            <div class="eng-club-details afrohk-club-details pb-3">
+              <h2 class="institution inst-afrohk"><%= Club.instituition %></h2>
+              <div class="eng-clubs-description">
+                <h3 class="eng-club-name"><%= Club.name %></h3>
+                <p class="definition"></p>
+                <p class="found-date inline-block me-3">Since <%= Club.foundDate %></p> <a class="inline-block"
+                    href="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id%>/club/<%= Club.id%>/home">Learn
+                    more</a>
+              </div>
+            </div>
+          </div>
+          <%}%>
+  </div>
+<hr>
+ </div>
+          <!-- High school -->
+          <div class="container clubs-card">
+            <!-- University English Club -->
+             <h4 class="type-of-club">High-School English Clubs</h4>
+         <div class="row pb-5">
+         <% for(let Club of hub.clubs.High_school){%>
+          <div class="col-md-6 col-lg-4 my-5">
+            <div class="eng-club-details">
+              <h2 class="institution"><%= Club.instituition %></h2>
+              <div class="eng-clubs-description">
+                <h3 class="eng-club-name"><%= Club.name %></h3>
+                <p class="definition"></p>
+                <p class="found-date">Since <%= Club.foundDate %> <a class="ms-4"
+                    href="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id%>/club/<%= Club.id%>/home">Learn
+                    more</a></p>
+              </div>
+            </div>
+          </div>
+          <%}%>
+         </div>
+       <hr>
+        </div>
+
+          <!-- university -->
+          <div class="container clubs-card ">
+             <!-- University English Club -->
+              <h4 class="type-of-club">University English Clubs</h4>
+          <div class="row pb-5">
+          <% for(let Club of hub.clubs.University){%>
+          <div class="col-md-6 col-lg-4 my-5">
+            <div class="eng-club-details">
+              <h2 class="institution"><%= Club.instituition %></h2>
+              <div class="eng-clubs-description">
+                <h3 class="eng-club-name"><%= Club.name %></h3>
+                <p class="definition"></p>
+                <p class="found-date">Since <%= Club.foundDate %> <a class="ms-4"
+                    href="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id%>/club/<%= Club.id%>/home">Learn
+                    more</a></p>
+              </div>
+            </div>
+          </div>
+          <%}%>
+          </div>
+       <hr>
+        </div>
+
+          <!-- Company -->
+          <div class="container clubs-card ">
+            <!-- University English Club -->
+             <h4 class="type-of-club">Company English Clubs</h4>
+         <div class="row pb-5">
+         <% for(let Club of hub.clubs.Company){%>
+          <div class="col-md-6 col-lg-4 my-5">
+            <div class="eng-club-details">
+              <h2 class="institution"><%= Club.instituition %></h2>
+              <div class="eng-clubs-description">
+                <h3 class="eng-club-name"><%= Club.name %></h3>
+                <p class="definition"></p>
+                <p class="found-date">Since <%= Club.foundDate %> <a class="ms-4"
+                    href="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id%>/club/<%= Club.id%>/home">Learn
+                    more</a></p>
+              </div>
+            </div>
+          </div>
+          <%}%>
+         </div>
+       <hr>
+        </div>
+
+          <!-- Professional -->
+         <div class="container clubs-card ">
+           <h4 class="type-of-club">Professional English Clubs</h4>
+       <div class="row pb-5">
+       <% for(let Club of hub.clubs.Professional){%>
+          <div class="col-md-6 col-lg-4 my-5">
+            <div class="eng-club-details">
+              <h2 class="institution"><%= Club.instituition %></h2>
+              <div class="eng-clubs-description">
+                <h3 class="eng-club-name"><%= Club.name %></h3>
+                <p class="definition"></p>
+                <p class="found-date">Since <%= Club.foundDate %> <a class="ms-4"
+                    href="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id%>/club/<%= Club.id%>/home">Learn
+                    more</a></p>
+              </div>
+            </div>
+          </div>
+          <%}%>
+       </div>
+     <hr>
+      </div>
+
+      
+      </div>
+    </div>
+    <%}%>
+        </div>
+      </div>

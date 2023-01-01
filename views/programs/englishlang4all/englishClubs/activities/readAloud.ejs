@@ -1,0 +1,265 @@
+<% layout('layouts/engClubBoilerplate') %>
+<link href="/stylesheets/englishforAll/englishClubs/readAloud.css" rel="stylesheet" />
+ <div id="banner">
+  
+  <div class="club-info">
+   <h1 class="club-name">
+    <%=club.name%>
+   </h1>
+   <p class="club-motto">
+    <%=club.motto %>
+   </p>
+   <h2 style="background-color: rgb(6, 6, 107); color:#ffffff; text-align:center;" class="py-2">Read Aloud</h2>
+
+  </div>
+  <div class="bg-img-wrapper">
+   <img class="img-medium" src="https://images.pexels.com/photos/1200240/pexels-photo-1200240.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
+ </div> 
+ </div>
+
+ <div class="container col-lg-8 col-md-8">
+  <div class="col-md-10 container pt-4">
+   <%-readAloudExercise.readingText %>
+  </div>
+  <!-- Recording -->
+  <div class="wrapper">
+   <header>
+    <h5>Record Yourself</h5>
+   </header>
+
+   <section class="main-controls">
+    <canvas class="visualizer" height="60px"></canvas>
+    <div id="buttons">
+     <button class="record-btn record"><i class="fa-solid mx-3 fa-microphone"></i>Record</button>
+     <button class="record-btn stop"><i class="fa-regular mx-3 fa-circle-stop"></i>Stop</button>
+    </div>
+   </section>
+
+   <section class="sound-clips">
+
+
+   </section>
+
+  </div>
+
+
+
+  <div class="py-3 mt-5">
+   <p class="fst-italic fs-6">We highly recommed you to use Cambridge Dictionary to learn more about a word.
+    <br> <a href="https://dictionary.cambridge.org/dictionary/">Click Here to access Cambridge Online
+     Dictionary</a>
+   </p>
+  </div>
+<div class="row mb-5">
+  <div class="container col-md-6">
+   <h5 class="" style="color: rgb(6, 51, 147);">Slow Reading</h5>
+   <iframe width="100%" height="150" scrolling="no" frameborder="no" allow="autoplay"
+    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1366032289%3Fsecret_token%3Ds-HUw6lvo8si1&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+   <div
+    style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+    <a href="https://soundcloud.com/ismael-zerbo-726062774" title="AfroHK" target="_blank"
+     style="color:#ffffff; border: 1px solid rgb(74, 10, 212); border-radius: 5px; font-weight: bolder; padding: 0.5rem; background-color: #080364; text-decoration: none;">Natural
+     English Clubs</a> · <a
+     href="https://soundcloud.com/ismael-zerbo-726062774/test-1-0622-donald-ouedraogo/s-HUw6lvo8si1"
+     title="Slow Reading" target="_blank" style="color: #690505; text-decoration: none;">Slow Reading</a>
+   </div>
+  </div>
+
+  <div class="container col-md-6">
+   <h5 class="" style="color: rgb(2, 87, 66);">Normal Reading</h5>
+   <iframe width="100%" height="150" scrolling="no" frameborder="no" allow="autoplay"
+    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1366032289%3Fsecret_token%3Ds-HUw6lvo8si1&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+   <div
+    style="font-size: 10px; color: #720808;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+    <a href="https://soundcloud.com/ismael-zerbo-726062774" title="AfroHK" target="_blank"
+     style="color:  #ffffff; border: 1px solid rgb(74, 10, 212); border-radius: 5px; font-weight: bolder; padding: 0.5rem; background-color: #080364; text-decoration: none;">Natural
+     English Clubs</a> · <a
+     href="https://soundcloud.com/ismael-zerbo-726062774/test-1-0622-donald-ouedraogo/s-HUw6lvo8si1"
+     title="Normal Reading" target="_blank" style="color: #031e5d; text-decoration: none;">Normal reading
+     Reading</a>
+   </div>
+  </div>
+ </div>
+ </div>
+
+
+ <script>
+  // set up basic variables for app
+
+const record = document.querySelector('.record');
+const stop = document.querySelector('.stop');
+const soundClips = document.querySelector('.sound-clips');
+const canvas = document.querySelector('.visualizer');
+const mainSection = document.querySelector('.main-controls');
+
+// disable stop button while not recording
+
+stop.disabled = true;
+
+// visualiser setup - create web audio api context and canvas
+
+let audioCtx;
+const canvasCtx = canvas.getContext("2d");
+
+//main block for doing the audio recording
+
+if (navigator.mediaDevices.getUserMedia) {
+console.log('getUserMedia supported.');
+
+const constraints = { audio: true };
+let chunks = [];
+
+let onSuccess = function(stream) {
+  const mediaRecorder = new MediaRecorder(stream);
+
+  visualize(stream);
+
+  record.onclick = function() {
+    mediaRecorder.start();
+    console.log(mediaRecorder.state);
+    console.log("recorder started");
+    record.style.background = "red";
+
+    stop.disabled = false;
+    record.disabled = true;
+  }
+
+  stop.onclick = function() {
+    mediaRecorder.stop();
+    console.log(mediaRecorder.state);
+    console.log("recorder stopped");
+    record.style.background = "";
+    record.style.color = "";
+    // mediaRecorder.requestData();
+
+    stop.disabled = true;
+    record.disabled = false;
+  }
+
+  mediaRecorder.onstop = function(e) {
+    console.log("data available after MediaRecorder.stop() called.");
+
+    const clipName = prompt('Enter a name for your sound clip?','My unnamed clip');
+
+    const clipContainer = document.createElement('article');
+    const clipLabel = document.createElement('p');
+    const audio = document.createElement('audio');
+    const deleteButton = document.createElement('button');
+
+    clipContainer.classList.add('clip');
+    audio.setAttribute('controls', '');
+    deleteButton.textContent = 'Delete';
+    deleteButton.className = 'delete';
+
+    if(clipName === null) {
+      clipLabel.textContent = 'My unnamed clip';
+    } else {
+      clipLabel.textContent = clipName;
+    }
+
+    clipContainer.appendChild(audio);
+    clipContainer.appendChild(clipLabel);
+    clipContainer.appendChild(deleteButton);
+    soundClips.appendChild(clipContainer);
+
+    audio.controls = true;
+    const blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
+    chunks = [];
+    const audioURL = window.URL.createObjectURL(blob);
+    audio.src = audioURL;
+    console.log("recorder stopped");
+
+    deleteButton.onclick = function(e) {
+      e.target.closest(".clip").remove();
+    }
+
+    clipLabel.onclick = function() {
+      const existingName = clipLabel.textContent;
+      const newClipName = prompt('Enter a new name for your sound clip?');
+      if(newClipName === null) {
+        clipLabel.textContent = existingName;
+      } else {
+        clipLabel.textContent = newClipName;
+      }
+    }
+  }
+
+  mediaRecorder.ondataavailable = function(e) {
+    chunks.push(e.data);
+  }
+}
+
+let onError = function(err) {
+  console.log('The following error occured: ' + err);
+}
+
+navigator.mediaDevices.getUserMedia(constraints).then(onSuccess, onError);
+
+} else {
+ console.log('getUserMedia not supported on your browser!');
+}
+
+function visualize(stream) {
+if(!audioCtx) {
+  audioCtx = new AudioContext();
+}
+
+const source = audioCtx.createMediaStreamSource(stream);
+
+const analyser = audioCtx.createAnalyser();
+analyser.fftSize = 2048;
+const bufferLength = analyser.frequencyBinCount;
+const dataArray = new Uint8Array(bufferLength);
+
+source.connect(analyser);
+//analyser.connect(audioCtx.destination);
+
+draw()
+
+function draw() {
+  const WIDTH = canvas.width
+  const HEIGHT = canvas.height;
+
+  requestAnimationFrame(draw);
+
+  analyser.getByteTimeDomainData(dataArray);
+
+  canvasCtx.fillStyle = 'rgb(200, 200, 200)';
+  canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
+
+  canvasCtx.lineWidth = 2;
+  canvasCtx.strokeStyle = 'rgb(0, 0, 0)';
+
+  canvasCtx.beginPath();
+
+  let sliceWidth = WIDTH * 1.0 / bufferLength;
+  let x = 0;
+
+
+  for(let i = 0; i < bufferLength; i++) {
+
+    let v = dataArray[i] / 128.0;
+    let y = v * HEIGHT/2;
+
+    if(i === 0) {
+      canvasCtx.moveTo(x, y);
+    } else {
+      canvasCtx.lineTo(x, y);
+    }
+
+    x += sliceWidth;
+  }
+
+  canvasCtx.lineTo(canvas.width, canvas.height/2);
+  canvasCtx.stroke();
+
+}
+}
+
+window.onresize = function() {
+canvas.width = mainSection.offsetWidth;
+}
+
+window.onresize();
+
+</script>

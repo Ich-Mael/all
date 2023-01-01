@@ -1,0 +1,927 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-size: 90%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+a:focus,
+a:active:focus,
+a.active:focus {
+  outline: none !important;
+  outline-style: none;
+}
+
+
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.currentTime {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 2rem;
+  padding: 1rem 1.5rem;
+  text-transform: capitalize;
+  color: wheat;
+  background-color: #272626;
+  text-align: center;
+}
+
+.time-underline {
+  border-bottom: 4px solid rgb(241, 238, 238);
+}
+
+.flash-container {
+  width: 40%;
+  font-family: "Roboto"serif;
+  height: 2rem;
+  padding: 0.5rem;
+  letter-spacing: 0.1rem;
+  z-index: 300;
+}
+
+.flash {
+  font-size: 1rem;
+}
+
+/* Navbar */
+.logo-navbar {
+  opacity: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.logo-display {
+  display: none;
+}
+
+nav {
+  z-index: 300;
+  padding: 0.3rem 0 !important;
+  background-color: #e1dde4;
+  /* background-color: transparent; */
+  /* background-color: #000; */
+  /* position: absolute !important; */
+  /* top: 0; */
+  /* left: 0; */
+  /* right: 0; */
+  font-family: "Roboto"serif;
+}
+
+.navbar-top {}
+
+.nav-display {
+  opacity: 1;
+}
+
+.brand {
+  font-size: 1.2rem;
+  display: inline-block;
+  color: #4d0db4;
+}
+
+#brand-name {
+  color: rgba(255, 250, 240, 0.9);
+  /* font-family: 'Albril Fatface', cursive; */
+  font-family: "Esteban";
+  font-family: "Titan One", cursive;
+  /* font-family: 'Chivo', sans-serif; */
+  /* font-family: 'Poppins', sans-serif; */
+  /* font-family: "Ultra", serif; */
+  width: 5rem;
+  height: 5rem;
+  margin: 0 0.7rem;
+  /* text-shadow: 0.2rem 0.1rem 0.2rem rgba(34, 24, 67, 0.8); */
+}
+
+
+.myNav-link {
+  font-size: 1.1rem;
+  padding: 0 0 0.4rem 0;
+  font-family: "Roboto"serif;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  text-transform: capitalize;
+  color: rgba(32, 31, 31, 0.9) !important;
+  font-weight: 500;
+  transition: all 0.4s !important;
+}
+
+.myNav-link:hover {
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1.5px solid rgb(111, 9, 121);
+  color: rgb(113, 16, 143) !important;
+}
+
+.nav-link-connexion {
+  text-align: center;
+  font-family: "Roboto"serif;
+  padding: 0.3rem 1rem;
+  border-radius: 5px;
+  color: rgb(243, 239, 237);
+  border: 1px solid rgb(243, 241, 241);
+  text-decoration: none;
+  background-color: rgb(138, 30, 201);
+}
+
+.nav-link-connexion:hover {
+  background-color: transparent;
+  background-color: rgb(250, 245, 245);
+  text-decoration: none;
+  border: 2px solid rgb(109, 5, 109);
+  color: rgba(130, 14, 165, 0.925);
+}
+
+.profile-link {
+  font-family: "Roboto"serif;
+  text-decoration: none;
+  font-size: 1rem;
+  color: rgb(20, 19, 18);
+}
+
+profile-link:hover {
+  text-decoration: none;
+  color: rgb(31, 28, 27);
+}
+
+.afro {
+  letter-spacing: 0.2rem;
+  color: rgb(43, 42, 42);
+}
+
+.hk {
+  letter-spacing: 0.2rem;
+  color: rgb(117, 13, 177);
+}
+
+afro-shadow {
+  color: rgb(43, 42, 42);
+}
+
+hk-shadow {
+  color: orangered;
+}
+
+#user {
+  text-transform: capitalize;
+  font-family: "Roboto"serif;
+  font-size: 1.5rem;
+}
+
+.user-shadow {
+  color: azure;
+  text-transform: capitalize;
+}
+
+.dropdown-menu {
+  border: 2px solid black;
+  background-color: rgb(245, 245, 245);
+}
+
+.dropdown-item {
+  font-size: 1rem;
+  color: #272626;
+  font-family: "Roboto"serif;
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.dropdown-item:hover {
+  background-color: rgb(99, 10, 151);
+  color: whitesmoke;
+}
+
+/* End Navbar */
+
+/* End Navbar*/
+
+/* Got to top link */
+.top-link {
+  background-color: rgb(252, 252, 252);
+  color: #ad5389;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  border-radius: 2px;
+  line-height: 3rem;
+  font-size: 2rem;
+  position: fixed;
+  text-decoration: none;
+  right: 3%;
+  bottom: 2%;
+  visibility: hidden;
+  display: none;
+  opacity: 0;
+  z-index: 99;
+}
+
+.top-btn-display {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+
+.top-link:hover {
+  text-decoration: none;
+  color: rgb(19, 18, 18);
+}
+
+/* TV Screen */
+
+#tv-container {
+  max-width: 1024px;
+  margin: auto;
+}
+
+#monitor {
+  background: #000;
+  position: relative;
+  border-top: 3px solid #888;
+  margin: 5%;
+  padding: 0.5% 2% 4% 2%;
+  border-radius: 10px;
+  border-bottom-left-radius: 50% 2%;
+  border-bottom-right-radius: 50% 2%;
+  transition: margin-right 1s;
+}
+
+#monitor:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 3%;
+  left: 36%;
+  height: 0.5%;
+  width: 28%;
+  background: #ddd;
+  border-radius: 50%;
+  box-shadow: 0 0 3px 0 white;
+}
+
+#monitorscreen {
+  position: relative;
+  background-color: #777;
+  background-size: cover;
+  background-position: top center;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  overflow: hidden;
+}
+
+.afrohk-text {
+  font-size: 1.2rem;
+  font-family: "Kaushan Script", cursive;
+}
+
+.afrohk {
+  letter-spacing: 0.2rem;
+  color: white;
+}
+
+.tv {
+  letter-spacing: 0.2rem;
+  color: rgb(191, 17, 235);
+}
+
+#vimeo-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0;
+}
+
+@media all and (min-width: 560px) {
+  #monitor {
+    -webkit-animation: tvflicker 0.2s infinite alternate;
+    -moz-animation: tvflicker 0.5s infinite alternate;
+    -o-animation: tvflicker 0.5s infinite alternate;
+    animation: tvflicker 0.5s infinite alternate;
+  }
+
+  @-webkit-keyframes tvflicker {
+    0% {
+      box-shadow: 0 0 100px 0 rgba(200, 235, 255, 0.4);
+    }
+
+    100% {
+      box-shadow: 0 0 95px 0 rgba(200, 230, 255, 0.45);
+    }
+  }
+
+  @-moz-keyframes tvflicker {
+    0% {
+      box-shadow: 0 0 100px 0 rgba(225, 235, 255, 0.4);
+    }
+
+    100% {
+      box-shadow: 0 0 60px 0 rgba(200, 220, 255, 0.6);
+    }
+  }
+
+  @-o-keyframes tvflicker {
+    0% {
+      box-shadow: 0 0 100px 0 rgba(225, 235, 255, 0.4);
+    }
+
+    100% {
+      box-shadow: 0 0 60px 0 rgba(200, 220, 255, 0.6);
+    }
+  }
+
+  @keyframes tvflicker {
+    0% {
+      box-shadow: 0 0 100px 0 rgba(225, 235, 255, 0.4);
+    }
+
+    100% {
+      box-shadow: 0 0 60px 0 rgba(200, 220, 255, 0.6);
+    }
+  }
+}
+
+/* Breadcrumbs */
+
+.breadcrumb {
+  /*centering*/
+  display: inline-block;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  border-radius: 5px;
+  /*Lets add the numbers for each link using CSS counters. flag is the name of the counter. to be defined using counter-reset in the parent element of the links*/
+  /* counter-reset: flag;  */
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  outline: none;
+  display: block;
+  font-family: "Merriweather Sans", arial, verdana;
+  float: left;
+  font-size: 0.9rem;
+  line-height: 36px;
+  color: white;
+  /*need more margin on the left of links to accomodate the numbers*/
+  padding: 0 10px 0 30px;
+  background: #666;
+  background: linear-gradient(#666, #333);
+  position: relative;
+}
+
+/*since the first link does not have a triangle before it we can reduce the left padding to make it look consistent with other links*/
+.breadcrumb a:first-child {
+  padding-left: 20px;
+  /*to match with the parent's radius*/
+}
+
+.breadcrumb a:first-child:before {
+  left: 14px;
+}
+
+.breadcrumb a:last-child {
+  border-radius: 0 5px 5px 0;
+  /*this was to prevent glitches on hover*/
+  padding-right: 20px;
+}
+
+/*hover/active styles*/
+.breadcrumb a.active,
+.breadcrumb a:hover {
+  background: #333;
+  background: linear-gradient(#333, #000);
+}
+
+.breadcrumb a.active:after,
+.breadcrumb a:hover:after {
+  background: #333;
+  background: linear-gradient(135deg, #333, #000);
+}
+
+/*adding the arrows for the breadcrumbs using rotated pseudo elements*/
+.breadcrumb a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -18px;
+  /*half of square's length*/
+  /*same dimension as the line-height of .breadcrumb a */
+  width: 36px;
+  height: 36px;
+  /*as you see the rotated square takes a larger height. which makes it tough to position it properly. So we are going to scale it down so that the diagonals become equal to the line-height of the link. We scale it to 70.7% because if square's: 
+	length = 1; diagonal = (1^2 + 1^2)^0.5 = 1.414 (pythagoras theorem)
+	if diagonal required = 1; length = 1/1.414 = 0.707*/
+  transform: scale(0.707) rotate(45deg);
+  /*we need to prevent the arrows from getting buried under the next link*/
+  z-index: 1;
+  /*background same as links but the gradient will be rotated to compensate with the transform applied*/
+  background: #666;
+  background: linear-gradient(135deg, #666, #333);
+  /*stylish arrow design using box shadow*/
+  box-shadow: 2px -2px 0 2px rgba(0, 0, 0, 0.4),
+    3px -3px 0 2px rgba(255, 255, 255, 0.1);
+  /*
+		5px - for rounded arrows and 
+		50px - to prevent hover glitches on the border created using shadows*/
+  border-radius: 0 5px 0 50px;
+}
+
+/*we dont need an arrow after the last link*/
+.breadcrumb a:last-child:after {
+  content: none;
+}
+
+/*we will use the :before element to show numbers*/
+
+.flat a,
+.flat a:after {
+  background: white;
+  color: black;
+  transition: all 0.5s;
+}
+
+.flat a:before {
+  background: white;
+  box-shadow: 0 0 0 1px #ccc;
+}
+
+.flat a:hover,
+.flat a.active,
+.flat a:hover:after,
+.flat a.active:after {
+  background: #9eeb62;
+}
+
+/*--------------------------------------------------------------
+/* footer 
+============================================================*/
+.header-text {
+  color: #0a0a0a;
+  font-family: "Kaushan Script", cursive;
+  font-family: "Chivo", sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+}
+.svg-logo{
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+.footer-hk {
+  color: rgba(109, 12, 148, 0.993);
+}
+
+#footer {
+  /* text-align: center; */
+  color: #b9d5e2;
+  background: #141E30;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  min-height: fit-content;
+  /* background-color: #E1DDE4; */
+
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.afrohk-footer {
+  color: #f5f5f7;
+  font-family: "Kaushan Script", cursive;
+  font-size: 3.5rem;
+  text-shadow: 0px 4px 3px rgba(231, 46, 21, 0.4),
+    1px 2px 8px rgba(245, 46, 12, 0.5), 1px 2px 3px rgba(245, 25, 9, 0.3);
+  font-weight: 500;
+}
+
+.brand-section {
+  background-color: rgb(244, 247, 248);
+}
+
+.logo-footer-wrapper {
+  animation: anim2 2s infinite alternate;
+}
+
+.motto-footer {
+  font-family: "Chango", cursive;
+  color: #282929c2;
+  font-size: 1.5rem;
+}
+
+#first-name-input,
+#last-name-input,
+#email-input {
+  width: 100%;
+}
+
+#call-manager {
+  width: 100%;
+  font-size: 1.2rem;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+#call-manager-2 {
+  width: 100%;
+  font-size: 1rem;
+  text-align: start;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+#call-manager-3 {
+  width: 100%;
+  font-size: 1rem;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+#call-manager-link-1 {
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.5s;
+}
+
+#call-manager-link-2 {
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.5s;
+}
+
+#call-manager-link-3 {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #1e90eebb;
+  transition: all 0.5s;
+}
+
+.network {
+  color: #ffffff;
+}
+
+#send-mail {
+  color: #f1e5ec;
+  transition: all 0.5s;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+#send-mail:hover {
+  color: #e9c707;
+  text-decoration: none;
+}
+
+.call:hover,
+.call:hover,
+.call:hover {
+  text-decoration: none;
+  background-color: #000;
+  font-size: 1.1rem;
+}
+
+.contact-us {
+  border: 0.5px solid rgba(161, 115, 198, 0.233);
+  box-shadow: rgba(118, 96, 131, 0.25) 0px 50px 100px -20px,
+    rgba(87, 109, 162, 0.3) 0px 30px 60px -30px,
+    rgba(78, 113, 148, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 5px;
+}
+
+#cont-ns {
+  font-size: 1rem;
+}
+
+.footer-links-header {
+  color: rgba(22, 145, 246, 0.925);
+  text-shadow: 1px 1px 0px rgb(58, 6, 100);
+  font-size: 1.3rem;
+  /* text-transform: uppercase; */
+  font-family: "Chivo", sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.13rem;
+}
+
+.useful-links {
+  text-decoration: none;
+  color: #ffffffb2;
+  font-size: 1.1rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding: 0.5rem 0;
+  margin: 1.5rem 0;
+  transition: all 0.5s;
+}
+
+.useful-links:hover {
+  border-bottom: 2px solid rgb(43, 101, 226);
+  color: #2ac7fc;
+}
+
+/* social media */
+#facebook,
+#youtube,
+#instagram,
+#linkedin,
+#twitter,
+#user_mail,
+#m-whatsapp {
+  transition: all 1s;
+}
+
+#user_mail {
+  color: rebeccapurple;
+  background-color: rgb(149, 151, 153);
+}
+
+#m-whatsapp {
+  color: rgb(253, 253, 253);
+  background-color: rgb(4, 161, 38);
+}
+
+#facebook {
+  color: rgb(245, 239, 239);
+  background-color: rgb(9, 103, 192);
+}
+
+#linkedIn {
+  color: rgb(245, 239, 239);
+  background-color: #0e76a8;
+}
+
+#youtube {
+  color: rgb(245, 239, 239);
+  background-color: rgb(241, 65, 21);
+}
+
+#linkedin {
+  color: rgb(245, 239, 239);
+  background-color: #0e76a8;
+}
+
+#instagram {
+  color: rgb(245, 239, 239);
+  background: #833ab4;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,
+      #fcb045,
+      #fd1d1d,
+      #833ab4);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+      #fcb045,
+      #fd1d1d,
+      #833ab4);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#twitter {
+  color: rgb(245, 239, 239);
+  background: #56ccf2;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,
+      #2f80ed,
+      #56ccf2);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+      #2f80ed,
+      #56ccf2);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/*hover links */
+#user_mail:hover {
+  color: rgb(250, 249, 249);
+  transform: rotate(360deg);
+  background-color: rgb(53, 56, 59);
+}
+
+#m-whatsapp:hover {
+  color: rgb(49, 189, 6);
+  transform: rotate(360deg);
+  background-color: rgb(217, 220, 223);
+}
+
+#facebook:hover {
+  color: rgb(245, 239, 239);
+  transform: rotate(360deg);
+  background-color: rgb(9, 103, 192);
+}
+
+#linkedin:hover {
+  color: rgb(245, 239, 239);
+  transform: rotate(360deg);
+  background-color: #0e76a8;
+}
+
+#youtube:hover {
+  color: rgb(245, 239, 239);
+  transform: rotate(360deg);
+  background-color: rgb(241, 65, 21);
+}
+
+#instagram:hover {
+  color: rgb(245, 239, 239);
+  transform: rotate(360deg);
+  background: #833ab4;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,
+      #fcb045,
+      #fd1d1d,
+      #833ab4);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+      #fcb045,
+      #fd1d1d,
+      #833ab4);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#twitter:hover {
+  color: rgb(245, 239, 239);
+  transform: rotate(360deg);
+  background: #56ccf2;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,
+      #2f80ed,
+      #56ccf2);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+      #2f80ed,
+      #56ccf2);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* End social media */
+
+@keyframes anim2 {
+  0% {
+    transform: translateY(4px);
+  }
+
+  100% {
+    transform: translateY(-4px);
+  }
+}
+
+.made-by {
+  width: 100%;
+  margin: 0;
+  background: #6441A5;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2a0845, #6441A5);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2a0845, #6441A5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   
+
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: rgba(255, 255, 255, 0.815);
+}
+
+.copyright-text {
+  padding: 0.2rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.creator {
+  font-size: 1rem;
+  padding: 0.5rem 0 0.2rem;
+}
+
+.creator i {
+  color: tomato;
+  font-size: 1rem;
+}
+
+.creator span {
+  font-family: "Kaushan Script", cursive;
+  color: #fdfcfde1;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0.3rem;
+  text-shadow: 1px 2px 3px black, 2px 3px 4px black;
+}
+
+/* End footer */
+
+/* responsive */
+@media (max-width: 1200px) {
+  .header-text {
+    font-size: 3rem;
+  }
+
+  .motto-footer {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 990px) {
+  .header-text {
+    font-size: 2.5rem;
+  }
+
+  .footer-links-header{
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .nav-link {
+    display: flex;
+    justify-content: center;
+  }
+
+  .flash-container {
+    width: 80%;
+  }
+
+  .motto-footer {
+    font-size: 1rem;
+  }
+
+  .top-link {
+    right: 5%;
+    bottom: 5%;
+  }
+}
+
+@media (max-width: 800px) {
+  .logo-footer {
+    width: 150px;
+    height: 200px;
+  }
+
+  #brand-name {
+    font-size: 2rem;
+  }
+
+  .motto-footer {
+    font-size: 0.8rem;
+  }
+
+  .logo-navbar {
+    display: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+  #footer {
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+  }
+
+  .footer-links-header{
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+
+}
+
+@media (max-width: 450px) {
+  .footer-links-header {
+    font-size: 1rem;
+  }
+
+  .brand {
+    font-size: 1rem;
+  }
+
+  html {
+    font-size: 90%;
+  }
+
+  .useful-links {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .brand {
+    font-size: 0.8rem;
+  }
+}

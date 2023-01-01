@@ -1,0 +1,1185 @@
+<% layout('layouts/engClubBoilerplate') %>
+  <link href="/stylesheets/englishforAll/englishClubs/show.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script type="text/javascript" src="/javascripts/quiz_scripts/quizlib.1.0.1.min.js"></script>
+  <script type="text/javascript" src="/javascripts/quiz_scripts/main.js"></script>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/quiz_stylesheet/quizlib.min.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/quiz_stylesheet/stylesheet.css" media="screen">
+  <!-- WORD Processor-->
+  <script src="https://cdn.tiny.cloud/1/p06f8vxdpje8xosyvnq48z68vc7n479iauh5s2jk9zx30qg2/tinymce/5/tinymce.min.js"
+    referrerpolicy="origin"></script>
+  </script>
+  <script>
+    tinymce.init({
+      selector: '#mytextarea'
+    });
+  </script>
+
+
+
+
+  <!-- Banner section -->
+  <div class="">
+    <div id="banner">
+      <!-- <div class="bg-img-wrapper">
+        <img class="img-medium" src="<%= club.bannerImageUrlMedium %>" alt="" />
+      </div> -->
+      <div class="club-info">
+        <h1 class="club-name">
+          <%=club.name%>
+        </h1>
+        <p class="club-motto">
+          <%=club.motto %>
+        </p>
+        <a href="/englishlang4all/clubs/<%=club._id%>/member/<%= clubMemberInfo._id%>/myprogress" class="my-progress">My
+          progress</a>
+      </div>
+    </div>
+
+    <div class="">
+      <div class="english-club-info">
+        <!-- <div class="club-logos-wrapper"> -->
+        <!-- <img class="school-logo img-thumbnail" src="<%= club.instituitionLogoUrl %> " alt="" /> -->
+        <!-- <img class="club-logo img-thumbnail" src="<%=club.logoImageUrl%>" alt="" /> -->
+        <!-- </div> -->
+        <!-- <div class="social-links mb-1"> -->
+        <!-- Social media -->
+        <!-- <h3 class="social-links-header" class="mb-4"> -->
+        <!-- Join us on social media -->
+        <!-- </h3> -->
+        <!-- <div class="social-media-icons"> -->
+        <!-- Facebook -->
+        <!-- <a class="btn btn-outline-light btn-floating m-2" href="" id="facebook" role="button" target="_blank"><i -->
+        <!-- class="engclub-sm-icon fab fa-facebook-f"></i></a> -->
+
+        <!-- Twitter -->
+        <!-- <a class="btn btn-outline-light btn-floating m-2" href="#!" id="twitter" target="_blank" role="button"><i
+              class="engclub-sm-icon fab fa-twitter"></i></a>-->
+
+        <!-- Google -->
+        <!-- <a
+			  class="btn btn-outline-light btn-floating m-2"
+			  href="#!"
+			  target="_blank"
+			  role="button"
+			  ><i class="fab fa-google"></i
+			></a> -->
+
+        <!-- Instagram -->
+        <!-- <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button" id="instagram" target="_blank"><i -->
+        <!-- class="engclub-sm-icon fab fa-instagram"></i></a> -->
+
+        <!-- Linkedin -->
+        <!-- <a
+          class="btn btn-outline-light btn-floating m-2"
+          href="#!"
+          target="_blank"
+          role="button"
+          id="linkedIn"
+          ><i class="engclub-sm-icon fab fa-linkedin-in"></i
+        ></a> -->
+        <!-- Youtube -->
+        <!-- <a class="btn btn-outline-light btn-floating m-2" href="" role="button" id="youtube" target="_blank"><i -->
+        <!-- class="engclub-sm-icon bi bi-youtube"></i></a> -->
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- nav section -->
+  <ul id="activities" class="english-club-nav nav py-3
+        justify-content-around">
+    <div style="height: 0.2rem; width: 100%; background-color: #080364;"></div>
+    <li class="nav-item">
+      <a class="nav-link engClub-nav-link active" aria-current="page" href="#news-wrapper">News</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link engClub-nav-link" href="#lesson-wrapper">Lessons</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link engClub-nav-link" href="#weekly-activities-wrapper">Weekly
+        Practice</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link engClub-nav-link" href="#lsc-section">LSC</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link engClub-nav-link" href="#media-wrapper">Live Practice Challenges</a>
+    </li>
+    <div style="height: 0.2rem; width: 100%; background-color: #080364;"></div>
+  </ul>
+
+  <!-- board section 
+<h1 class="common-heading">
+  <span class="underline"></span>Board Members<span class="underline"></span>
+</h1>
+<div class="customer-section">
+  <div class="container">-->
+  <!-- Button trigger modal
+    <div class="d-flex flex-column justifify-content-center
+    align-items-center">
+      <button type="button" class="btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <h1 class="align-self-center year"> <span style="color:rgb(246, 249, 250);"><%= club.name %></span></h1>
+        <hr>
+        <h2 class="py-1">Board Members <br> Year 2022-2023</h2>
+      </button>
+    </div> -->
+  <!-- Modal -->
+  <!--
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Board Members</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="customers-cards" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner" id="board-members-wrapper">
+                <div class="carousel-item active">
+                  <div>
+                    <div class="logo-wrapper">
+                      <img class="club-logo img-thumbnail" src="<%=club.logoImageUrl%>" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <% for(let i=0; i <club.boardMembers.length ; i++){ %>
+                <div class="carousel-item">
+                  <div class="carousel-caption">
+                    <div class="py-3">
+                      <div class="">
+                        <div class="">
+                          <img class="img-fluid" src="<%= club.boardMembers[i].imageUrl %>" />
+                        </div>
+                        <div class="">
+                          <div id="image-caption" class="">
+                            <h3 class="position mb-2">
+                              <%= positions[i] %>
+                            </h3>
+                            <hr>
+                            <h4 class="member-name">
+                              <%=
+                                      club.boardMembers[i].name +" "+
+                                      club.boardMembers[i].surname%>
+                            </h4>
+                            <p>
+                              <%= club.boardMembers[i].about%>
+                            </p>
+                            <hr>
+                            -->
+  <!-- Social media
+                            <div class="social-media-icons align-self-center"> -->
+  <!-- Mail 
+                              <a class="btn btn-outline-light btn-floating m-2"
+                                href="mailto:<%= club.boardMembers[i].email %>" target="_blank" role="button"
+                                id="user_mail"><i class="fas fa-at"></i></a>-->
+  <!-- Facebook -->
+  <!-- <a class="btn btn-outline-light btn-floating" href="<%=
+                                    club.boardMembers[i].facebookLink %>" id="m-facebook" role="button" target="_blank"><i
+                      class="engclub-sm-icon fab fa-facebook-f"></i></a -->
+  <!-- Twitter -->
+  <!-- <a class="btn btn-outline-light btn-floating" href="<%= 
+                                    club.boardMembers[i].twitterLink %>" id="m-twitter" target="_blank" role="button"><i
+                      class="engclub-sm-icon fab fa-twitter"></i></a-->
+  <!--  Linkedin 
+                              <a class="btn btn-outline-light btn-floating" href="<%=
+                                    club.boardMembers[i].linkedIn%>" target="_blank" role="button" id="m-linkedIn"><i
+                                  class="engclub-sm-icon fab fa-linkedin-in"></i></a>-->
+  <!-- whatsapp 
+                              <a class="btn btn-outline-light btn-floating" href="<%=
+                                    club.boardMembers[i].whatsAppLink %>" role="button" id="m-whatsapp"
+                                target="_blank"><i class="engclub-sm-icon fa fa-whatsapp"></i></a>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% } %>
+              </div>
+              <a class="carousel-control-prev" href="#customers-cards" data-bs-slide="prev">
+                <i class="fas carousel-button fa-arrow-left"></i>
+              </a>
+              <a class="carousel-control-next" href="#customers-cards" data-bs-slide="next">
+                <i class="fas carousel-button fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+-->
+
+
+  <!-- Clubs Activities -->
+  <h1 class="common-heading">
+    <span class="underline"></span>English Club Activities<span class="underline"></span>
+  </h1>
+  <div class="main-content-wrapper">
+    <div class="container p-2 current-activity">
+      <h1 class="current-activity-heading"><span>Upcoming Events of the week</span></h1>
+      <div class="container my-5">
+        <div class="row">
+          <div class="col-md">
+            <div class="px-2 my-3 activity-card">
+              <h3 class="card-title weekly-activity py-2">English Club Meeting</h3>
+              <div class="d-flex weekly-content justify-content-center ps-2 flex-column align-items-start">
+                <h4 class="activity-date fs-4">
+                  <%= days[club.weeklyMeeting[0].meetingDate.getDay()] %>,
+                    <%=club.weeklyMeeting[0].meetingDate.getDate()%>
+                      <%= months[club.weeklyMeeting[0].meetingDate.getMonth()] %>
+                        <%=club.weeklyMeeting[0].meetingDate.getFullYear()%>
+                </h4>
+                <h4 class="activity-place fs-4"> <span class="fw-bold text-danger"><i
+                      class="fas me-2 fa-map-marker-alt"></i>Venue : </span>
+                  <%=club.weeklyMeeting[0].venue %>
+                </h4>
+                <h4 class="activity-time fs-4"> <span class="fw-bold text-danger"><i class="fas me-2 fa-clock"></i>Time:
+                  </span>
+                  <%=club.weeklyMeeting[0].meetingTime %>
+                </h4>
+              </div>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn mx-4 my-2
+                                                      btn-outline-success" data-bs-toggle="modal"
+                data-bs-target="#wec">
+                Learn more
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="wec" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg
+                                                        modal-fullscreen-md-down">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h6 class="modal-title" id="exampleModalLabel">
+                        Agenda
+                      </h6>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p class="fs-4">
+                        <%- club.weeklyMeeting[0].about %>
+                      </p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn
+                                                              btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="px-2 my-3 activity-card">
+              <h3 class="card-title weekly-activity py-2">Online Debates</h3>
+              <div class="weekly-content ps-2 fs-4">
+                <p class="m-3"> <span class="">Topic 1 </span><br>
+                  <span class="text-success fw-bold">
+                    <%=club.onlineDebates[0].topicOne %>
+                  </span>
+                  <br>
+                  <span class="">
+                    <%= days[club.onlineDebates[0].debateDateOne.getDay()]%>,
+                      <%=club.onlineDebates[0].debateDateOne.getDate()%>
+                        <%= months[club.onlineDebates[0].debateDateOne.getMonth()]%>
+                          <%=club.onlineDebates[0].debateDateOne.getFullYear()%>
+                  </span> At
+                  <span class="">
+                    <%=club.onlineDebates[0].debateTimeOne%>
+                  </span>
+                </p>
+                <hr>
+                <p class="m-3"><span class="">Topic 2 </span>
+                  <br>
+                  <span class="text-success fw-bold">
+                    <%=club.onlineDebates[0].topicTwo%>
+                  </span>
+                  <br>
+                  <span class="">
+                    <%= days[club.onlineDebates[0].debateDateTwo.getDay()]%>,
+                      <%=club.onlineDebates[0].debateDateTwo.getDate()%>
+                        <%= months[club.onlineDebates[0].debateDateTwo.getMonth()]%>
+                          <%=club.onlineDebates[0].debateDateTwo.getFullYear()%>
+                  </span> At <span class="">
+                    <%=club.onlineDebates[0].debateTimeTwo%>
+                  </span>
+                </p>
+              </div>
+
+              <!-- Button trigger modal -->
+              <button type="button" class="btn mx-4 my-2 btn-outline-success" data-bs-toggle="modal"
+                data-bs-target="#oed">
+                Learn more
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="oed" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg
+                                                        modal-fullscreen-md-down">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">
+                        Online English Debates
+                      </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>
+                        <%- club.onlineDebates[0].aboutTopic %>
+                      </p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container  col-lg-10">
+      <div class="activities-wrapper py-3">
+        <!-- Daily vocabulary -->
+        <section class="">
+          <h1 class="daily-vocabulary-title">Daily Vocabulary</h1>
+          <div class="row mb-5">
+            <div class="col-md-6">
+              <div class="daily-content">
+                <div class="card m-2">
+                  <div class="card-header text-center word-day">
+                    <h4 class="fw-bold py-1">Word of the day </h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="card-title word-day-title py-2 fs-4">
+                      <p>
+                        <%= club.dailyVocab[0].wordOfDay.word %>
+                      </p>
+                    </div>
+                    <p class="card-text word-day-meaning fs-4"><span class="fw-bold">Meaning : </span>
+                      <%= club.dailyVocab[0].wordOfDay.wordMeaning %>
+                    </p>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                      data-bs-target="#wod-1">
+                      Understand better with examples
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="wod-1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog modal-lg
+                                  modal-fullscreen-md-down">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title " id="exampleModalLabel">
+                              Understand better with examples
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <h3>Sentence examples for the WOD</h3>
+                            <p class="fs-3">
+                              <%- club.dailyVocab[0].wordOfDay.learnMoreWord %>
+                            </p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn
+                                        btn-danger" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="daily-content">
+                <div class="card m-2">
+                  <div class="card-header text-center idiom-day">
+                    <h4 class="fw-bold">Idiom of the day</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="card-title idioms-title fs-4 py-2">
+                      <p class="">
+                        <%= club.dailyVocab[0].IdiomDay.idiom %>
+                      </p>
+                    </div>
+                    <p class="card-text word-day-meaning fs-4"><span class="fw-bold">Meaning : </span>
+                      <%= club.dailyVocab[0].IdiomDay.idiomMeaning %>
+                    </p>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                      data-bs-target="#wod-2">
+                      Understand better with examples
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="wod-2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog modal-lg
+                                  modal-fullscreen-md-down">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title " id="exampleModalLabel">
+                              Understand better with examples
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <h3>Sentence examples for the IOD</h3>
+                            <p class="fs-3">
+                              <%- club.dailyVocab[0].IdiomDay.learnMoreIdiom %>
+                            </p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn
+                                        btn-danger" data-bs-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section id="news-wrapper" class="my-5">
+          <h1 class="activity-heading">News</h1>
+          <div class="d-flex justifify-content-center">
+            <div class="container">
+              <div class="row">
+                <% for(let i=0; i < 3 ; i++){ %>
+                  <div class="col-md-6 col-lg-4">
+                    <div class="card news-card">
+                      <img src="<%= club.articles[i].articleImage %>" class="card-img-top img-thumbnail" alt="">
+                      <div class="card-body">
+                        <h5 class="card-title news-title">
+                          <%=club.articles[i].title %>
+                        </h5>
+                        <p class="card-text news-summary">
+                          <%= club.articles[i].articleSummary %>
+                        </p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-small
+                                      btn-primary" data-bs-toggle="modal"
+                          data-bs-target="#N<%= club.articles[i]._id %>">
+                          Read more
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="N<%= club.articles[i]._id %>" tabindex="-1"
+                          aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg
+                                        modal-fullscreen-md-down">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">
+                                  <%= club.articles[i].title %>
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                  aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <div>
+                                  <%- club.articles[i].articleContent%>
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn
+                                              btn-danger" data-bs-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <hr>
+                        <p class="card-text"><small class="text-muted">
+                            <%= days[club.articles[i].postedAT.getDay()] %>,
+                              <%=club.articles[i].postedAT.getDate()%>
+                                <%= months[club.articles[i].postedAT.getMonth()] %>
+                                  <%=club.articles[i].postedAT.getFullYear()%>
+                          </small><em class="mx-3"> <br>
+                            By
+                            <%= club.articles[i].articleAuthor %>
+                          </em></p>
+                      </div>
+                    </div>
+                  </div>
+                  <% } %>
+              </div>
+            </div>
+        </section>
+
+        <!-- Lessons section -->
+        <section id="lesson-wrapper" class="my-5">
+          <h1 class="activity-heading">Weekly Lessons</h1>
+          <div class="container">
+            <div class="lesson-links">
+              <div class="row">
+                <% for(i=0; i < 2 ; i++){ %>
+                  <div class="col-md-6">
+                    <div class="lesson-wrapper my-3">
+                      <h4 class="week-lesson-title">
+                        <%= club.weeklyVideoLesson[i].lessonTitle %>
+                      </h4>
+                      <p class="">
+                        <%- club.weeklyVideoLesson[i].lessonSummary%>
+                      </p>
+                      <button type="button" class="btn ms-2 video-btn btn-outline-primary" data-bs-toggle="modal"
+                        data-bs-target="#lesson-1-vid-<%=i%>">
+                        Click to watch the lesson
+                      </button>
+                    </div>
+                  </div>
+                  <%}%>
+              </div>
+              <% for(i=0; i < 2 ; i++){ %>
+                <!-- Modal  for video -->
+                <div class="modal fade" id="lesson-1-vid-<%=i%>" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title text-primary" id="exampleModalLabel">
+                          <%= club.weeklyVideoLesson[i].lessonTitle %>
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div id="tv-container">
+                          <div id="monitor">
+                            <div class="afrohk-TV">
+                              <h3 class="text-center afrohk-text mb-2 py-0"><span class="afrohk">AfroHK</span><span
+                                  class="tv">Radar</span>
+                              </h3>
+                            </div>
+                            <div id="monitorscreen">
+                              <iframe id="vimeo-content" loading="lazy" src="<%= club.weeklyVideoLesson[i].videoLink %>"
+                                title="YouTube video player" frameborder="0" height="100%" width="100%"
+                                allow="accelerometer; accelerometer; autoplay; clipboard-write; fullscreen; encrypted-media; gyroscope; picture-in-picture"
+                                allow="fullscreen" title="High-intensity Classes"></iframe>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <%}%>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Weekly activities section -->
+        <section id="weekly-activities-wrapper" class="my-5">
+          <h1 class="activity-heading">Weekly Practice</h1>
+          <div class="accordion my-5" id="accordionExample">
+
+            <!-- Grammar -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
+                  Grammar
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="row">
+                    <%for(i=0; i < 2 ; i++){%>
+                      <% if(club.grammarExercise[i]){%>
+                        <div class="col-md-4">
+                          <div class="exercise-wrapper">
+                            <p
+                              style="background-color: green; border-radius:5px; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+                              Level
+                              <%= club.grammarExercise[i].level %>
+                            </p>
+                            <a class="d-inline-block m-2 fs-5" target="_blank"
+                              href="<%= club.grammarExercise[i].exerciseLink %>">
+                              <%= club.grammarExercise[i].exerciseTitle %>
+                            </a>
+                            <hr>
+                            <p><a class="d-inline-block m-2 fs-5" target="_blank"
+                                href="<%= club.grammarExercise[i].exerciseCorrectionLink %>">
+                                <i class="mx-3 bi bi-file-play"></i>Answers in Video </a></p>
+
+                          </div>
+                        </div>
+                        <%}%>
+                          <%}%>
+
+                  </div>
+                  <!--  <div id="quiz-result" class="quizz-1-card">
+                  You Scored <span id="quiz-percent"></span>% - <span id="quiz-score"></span>/<span id="quiz-max-score"></span><br/>
+              </div>
+
+              <div id="quiz-1">
+                  <h3 class="pb-2 text-center">Quiz 1: Simple Past Vs Present Perfect</h3>
+                  <div class="quizz-1-card quizlib-question">
+                      <div class="quizlib-question-title">1. Yesterday, I __(to go)___ to my aunt's.</div>
+                      <div class="quizlib-question-answers">
+                          <input type="text" name="q1">
+                      </div>
+                  </div>
+                  <div class="quizz-1-card quizlib-question">
+                      <div class="quizlib-question-title">2. I __(not see)__ Michael yet, I hope he will be on time.</div>
+                      <div class="quizlib-question-answers">
+                          <ul>
+                              <li><label><input type="radio" name="q2" value="a"> didn't</label></li>
+                              <li><label><input type="radio" name="q2" value="b"> haven't seen</label></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <button class="btn btn-primary my-3" type="button" onclick="showResults(this.parentNode.id);">Check Answers</button>
+              </div>
+              <a href="/englishlang4all/Clubs/<%= club._id %>/grammar">Take the Global Grammar Challenge Test</a>-->
+                </div>
+              </div>
+            </div>
+
+            <!-- Vocabulary -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Vocabulary Builder
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="row">
+                    <%for(i=0; i < 2 ; i++){%>
+                      <% if(club.vocabularyExercise[i]){%>
+                        <div class="col-md-4">
+                          <div class="exercise-wrapper">
+                            <p
+                              style="background-color: rgb(45, 157, 237); border-radius:5px; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+                              Level
+                              <%= club.vocabularyExercise[i].level %>
+                            </p>
+                            <a class="d-inline-block m-2 fs-5" target="_blank"
+                              href="<%= club.vocabularyExercise[i].exerciseLink %>">
+                              <%= club.vocabularyExercise[i].exerciseTitle %>
+                            </a>
+                            <hr>
+                            <p><a class="d-inline-block m-2 fs-5" target="_blank"
+                                href="<%= club.vocabularyExercise[i].exerciseCorrectionLink %>">
+                                <i class="mx-3 bi bi-file-play"></i>Answers in Video </a></p>
+
+                          </div>
+                        </div>
+                        <%}%>
+                          <%}%>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Listening -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Listening Challenge
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="row">
+                    <%for(i=0; i < 2 ; i++){%>
+                      <% if(club.listeningExercise[i]){%>
+                        <div class="col-md-4">
+                          <div class="exercise-wrapper">
+                            <p
+                              style="background-color: rgb(45, 96, 237); border-radius:5px; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+                              Level
+                              <%= club.listeningExercise[i].level %>
+                            </p>
+                            <a class="d-inline-block m-2 fs-5" target="_blank"
+                              href="<%= club.listeningExercise[i].exerciseLink %>">
+                              <%= club.listeningExercise[i].exerciseTitle %>
+                            </a>
+                            <hr>
+                            <p><a class="d-inline-block m-2 fs-5" target="_blank"
+                                href="<%= club.listeningExercise[i].exerciseCorrectionLink %>">
+                                <i class="mx-3 bi bi-file-play"></i>Answers in Video </a></p>
+
+                          </div>
+                        </div>
+                        <%}%>
+                          <%}%>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Reading Comprehension-->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Reading Comprehension
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="row">
+                    <%for(i=0; i < 2 ; i++){%>
+                      <% if(club.readingComprehensionExercise[i]){%>
+                        <div class="col-md-4">
+                          <div class="exercise-wrapper">
+                            <p
+                              style="background-color: rgb(91, 9, 180); border-radius:5px; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+                              Level
+                              <%= club.readingComprehensionExercise[i].level %>
+                            </p>
+                            <a class="d-inline-block m-2 fs-5" target="_blank"
+                              href="<%= club.readingComprehensionExercise[i].exerciseLink %>">
+                              <%= club.readingComprehensionExercise[i].exerciseTitle %>
+                            </a>
+                            <hr>
+                            <p><a class="d-inline-block m-2 fs-5" target="_blank"
+                                href="<%= club.readingComprehensionExercise[i].exerciseCorrectionLink %>">
+                                <i class="mx-3 bi bi-file-play"></i>Answers in Video </a></p>
+
+                          </div>
+                        </div>
+                        <%}%>
+                          <%}%>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Whatching Comprehension-->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFour">
+                  Watching Comprehension
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="row">
+                    <%for(i=0; i < 2 ; i++){%>
+                      <% if(club.watchingComprehensionExercise[i]){%>
+                        <div class="col-md-4">
+                          <div class="exercise-wrapper">
+                            <p
+                              style="background-color: rgb(4, 95, 93); border-radius:5px; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+                              Level
+                              <%= club.readingComprehensionExercise[i].level %>
+                            </p>
+                            <a class="d-inline-block m-2 fs-5" target="_blank"
+                              href="<%= club.watchingComprehensionExercise[i].exerciseLink %>">
+                              <%= club.watchingComprehensionExercise[i].exerciseTitle %>
+                            </a>
+                            <hr>
+                            <p>
+                              <a class="d-inline-block m-2 fs-5" target="_blank"
+                                href="<%= club.watchingComprehensionExercise[i].exerciseCorrectionLink %>">
+                                <i class="mx-3 bi bi-file-play"></i>Answers in Video </a>
+                            </p>
+
+                          </div>
+                        </div>
+                        <%}%>
+                          <%}%>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Read aloud -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseFour">
+                  Read Aloud
+                </button>
+              </h2>
+              <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="row">
+                    <%for(i=0; i < 4 ; i++){%>
+                      <% if(club.readAloudExercise[i]){%>
+                        <div class="col-md-4">
+                          <div class="exercise-wrapper">
+                            <p
+                              style="background-color: rgb(120, 9, 180); border-radius:5px; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">Reading Aloud - 
+                              Level
+                              <%= club.readAloudExercise[i].level %>
+                            </p>
+                            <a class="d-inline-block m-2 readAloud-title" target="_blank"
+                              href="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/readAloud/<%= club.readAloudExercise[i]._id %>"><%= club.readAloudExercise[i].exerciseTitle %>
+                            </a>
+
+                          </div>
+                        </div>
+                        <%}%>
+                          <%}%>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+             <!-- Dictation 
+             <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSeven">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseFour">
+                  Dictation
+                </button>
+              </h2>
+              <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="row">
+                    <%for(i=0; i < 2 ; i++){%>
+                      <% if(club.dictationExercise[i]){%>
+                        <div class="col-md-4">
+                          <div class="exercise-wrapper">
+                            <p
+                              style="background-color: rgb(180, 9, 95); border-radius:5px; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+                              Level
+                              <%= club.dictationExercise[i].level %>
+                            </p>
+                            <a class="d-inline-block m-2 fs-5" target="_blank"
+                              href="<%= club.dictationExercise[i].exerciseLink %>">
+                              <%= club.dictationExercise[i].exerciseTitle %>
+                            </a>
+                            <hr>
+                            <p>
+                              <a class="d-inline-block m-2 fs-5" target="_blank"
+                                href="<%= club.dictationExercise[i].exerciseCorrectionLink %>">
+                                <i class="mx-3 bi bi-file-play"></i>Answers in Video </a>
+                            </p>
+
+                          </div>
+                        </div>
+                        <%}%>
+                          <%}%>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          -->
+          </div>
+        </section>
+
+        <!-- LSC -->
+        <section id="lsc-section" class="my-5">
+          <h1 class="activity-heading">Listen Sing and Complete</h1>
+          <div class="song-list-wrapper">
+            <h4 class="song-list">Songs are a fun and good way to improve listening, fluency and more. LSC is designed to help you become a better English Speaker.</h4>
+            <hr>
+            <p class="py-3 px-4 fs-5"><span class="fw-bold"> Instructions:</span> Click on the song to try the
+              LSC
+              challenge</p>
+
+            <div class="row">
+              <%for(i=0; i < 4 ; i++){%>
+                <% if(club.LSC[i]){%>
+                  <div class="col-md-4">
+                    <div class="exercise-wrapper">
+                      <p
+                        style="background-color: rgb(47, 72, 47); border-radius:5px; text-align: center; font-size: 14px;  color:aliceblue; padding: 5px;"><i class="fa-solid fa-music mx-3"></i>Song for Level <%= club.LSC[i].level %>
+                      </p>
+                      <a class="d-inline-block m-2 readAloud-title" target="_blank"
+                        href="<%= club.LSC[i].exerciseLink %>"><%= club.LSC[i].exerciseTitle %>
+                      </a>
+
+                    </div>
+                  </div>
+                  <%}%>
+                    <%}%>
+
+            </div>
+          </div>
+        </section>
+
+
+        <!-- leaders -->
+        <section id="top-stories-wrapper" class="my-5">
+          <h1 class="activity-heading mb-5">Leaders of the Month</h1>
+          <div class="row">
+            <!-- Female leader of the month-->
+            <div class="col-md student-OM">
+              <div class="leaders-card">
+                <div class="card-header text-center
+                                  student-month">
+                  Female leader
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="som-img-wrapper col-lg-4">
+                      <img src="<%= club.workersOfMonth[0].studentOfMonth.imageUrl %>" alt="" class="img-thumbnail">
+                    </div>
+                    <div class="col-lg-8">
+                      <h5 class="leader-name text-center">
+                        <%= club.workersOfMonth[0].studentOfMonth.fullname %>
+                      </h5>
+                      <hr>
+                      <p class="card-text leader-occupation">
+                        <%= club.workersOfMonth[0].studentOfMonth.reasons %>
+                      </p>
+                    </div>
+                  </div>
+                  <button type="button" class="btn student-month-btn w-100" data-bs-toggle="modal"
+                    data-bs-target="#som">
+                    Learn more about the FLOM
+                  </button>
+
+                  <div class="modal fade" id="som" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg
+                                      modal-fullscreen-md-down">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">
+                            All about the Female leader of the Month</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <%- club.workersOfMonth[0].studentOfMonth.about %>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn
+                                            btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Male leader of the month-->
+            <div class="col-md instructor-OM">
+              <div class="leaders-card">
+                <div class="card-header text-center
+                                  instructor-month">
+                  Male leader
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="som-img-wrapper col-lg-4">
+                      <img src="<%= club.workersOfMonth[0].instructorOfMonth.imageUrl %>" alt="" class="img-thumbnail">
+                    </div>
+                    <div class="col-lg-8">
+                      <h5 class="leader-name text-center  ">
+                        <%= club.workersOfMonth[0].instructorOfMonth.fullname%>
+                      </h5>
+                      <hr>
+                      <p class="card-text leader-occupation">
+                        <%= club.workersOfMonth[0].instructorOfMonth.reasons %>
+                      </p>
+                    </div>
+                  </div>
+
+                  <button type="button" class="btn w-100 
+            instructor-month-btn" data-bs-toggle="modal" data-bs-target="#iom">
+                    Learn more about the MLOM
+                  </button>
+
+                  <div class="modal fade" id="iom" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg
+                                      modal-fullscreen-md-down">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">
+                            All about Male leader of the month
+                          </h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <%- club.workersOfMonth[0].instructorOfMonth.about %>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn
+                                            btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Media section -->
+        <section id="top-stories-wrapper">
+          <h1 class="activity-heading">Live Practice Challenges</h1>
+          <div class="row mt-4">
+            <% for(let i=0 ; i < 2 ; i++){ %>
+              <div class="col-md-6 my-3">
+                <div class="media-card py-1">
+                  <!--  <div class="card-body"> -->
+                  <div id="tv-container">
+                    <div id="monitor">
+                      <div class="afrohk-TV">
+                        <h3 class="text-center afrohk-text mb-2 py-0"><span class="afrohk">AfroHK</span><span
+                            class="tv">Radar</span>
+                        </h3>
+                      </div>
+                      <div id="monitorscreen">
+                        <iframe id="vimeo-content" width="100%" height="100%" src="<%= club.media[i].videoLink %>"
+                          title="YouTube video player" frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; fullscreen; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="video-details-wrapper m-0">
+                    <h5 class="text-center">
+                      <%= club.media[i].mediaTitle %>
+                    </h5>
+                  </div>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn mx-2 my-2 btn-outline-primary" data-bs-toggle="modal"
+                    data-bs-target='#mediaComment<%= club.media[i]._id%>'>Leave your feeling 🙃
+                  </button>
+                  <!-- Modal -->
+                  <div class="modal fade" id='mediaComment<%= club.media[i]._id%>' tabindex="-1"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Club members' feeling</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form
+                            action="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/clubMedia/<%= club.media[i]._id %>/comment"
+                            method="POST">
+                            <fieldset id="stars" class="starability-heart mb-1">
+                              <!-- <legend>Rating</legend> -->
+                              <input type="radio" id="no-rate<%= club.media[i]._id %>" class="input-no-rate"
+                                name="review[rating]" value="0" checked aria-label="No rating." />
+                              <input type="radio" id="first-of-rate1<%= club.media[i]._id %>" name="review[rating]"
+                                value="1" />
+                              <label for="first-rate1<%= club.media[i]._id %>" title="Terrible">1
+                                star</label>
+                              <input type="radio" id="first-rate2<%= club.media[i]._id %>" name="review[rating]"
+                                value="2" />
+                              <label for="first-rate2<%= club.media[i]._id %>" title="Not good">2
+                                stars</label>
+                              <input type="radio" id="first-rate3<%= club.media[i]._id %>" name="review[rating]"
+                                value="3" />
+                              <label for="first-rate3<%= club.media[i]._id %>" title="Average">3
+                                stars</label>
+                              <input type="radio" id="first-rate4<%= club.media[i]._id %>" name="review[rating]"
+                                value="4" />
+                              <label for="first-rate4<%= club.media[i]._id %>" title="Very good">4
+                                stars</label>
+                              <input type="radio" id="first-rate5<%= club.media[i]._id %>" name="review[rating]"
+                                value="5" />
+                              <label for="first-rate5<%= club.media[i]._id %>" title="Amazing">5
+                                stars</label>
+                            </fieldset>
+                            <div class="form-floating">
+                              <textarea class="form-control" name="review[text]" placeholder="Leave a comment here"
+                                id="floatingTextarea" style="height: 70px" required></textarea>
+                              <label for="floatingTextarea">Leave a comment</label>
+                            </div>
+                            <button class="btn btn-outline-primary my-3">Post Comment</button>
+                          </form>
+                          <!-- all comments -->
+                          <hr>
+
+                          <h5 class="text-center py-3 mb-3" style="color:white; background: #8E2DE2;  /* fallback for old browsers */
+                  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+                  background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                  ;
+                      ">Previous Comments</h5>
+                          <% for (let review of club.media[i].mediaComments){%>
+                            <div class="card comment-card mb-3 ">
+                              <div class="p-2 d-flex justifify-content-center">
+                                <div class="p-2"><span class="rounded"><img class="img-thumbnail"
+                                      src="<%= review.author.imageUrl %>" alt="user" width="80"></span>
+                                </div>
+                                <div class="w-100 align-self-center">
+                                  <h6>
+                                    <%= review.author.username %> <span class="card-text mx-2"><small
+                                          class="text-muted fst-italic">
+                                          <%= days[review.createdAt.getDay()] %>,
+                                            <%=review.createdAt.getDate()%>
+                                              <%= months[review.createdAt.getMonth()] %>
+                                                <%=review.createdAt.getFullYear()%>
+                                        </small> </span>
+                                  </h6>
+                                  <p class="starability-result" data-rating="<%=review.rating%>">
+                                    Rated:
+                                    <%= review.rating %> stars
+                                  </p>
+                                </div>
+                              </div>
+                              <p class="comment-text mx-3">
+                                <%= review.text %>
+                              </p>
+                            </div>
+                            <% } %>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% } %>
+        </section>
+      </div>
+    </div>
+  </div>
+
+ 

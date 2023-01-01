@@ -1,0 +1,456 @@
+<% layout('layouts/boilerplate') %>
+
+
+<style>
+    html {
+        font-size: 90%;
+    }
+
+    .wrapper {
+        background: url("https://www.goatsontheroad.com/wp-content/uploads/2020/02/online-english-lesson-plan.jpg");
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-position: center center;
+        height: 56vh;
+    }
+
+    .eng-title {
+        color: rgb(58, 57, 56);
+        text-transform: uppercase;
+        text-align: center;
+        padding: 3rem 0;
+        font-size: 2rem;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .card-wrapper {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        margin: 0 1rem;
+        border-radius: 0.3rem;
+    }
+
+    .card-wrapper img {
+        height: 15rem;
+        width: 100%;
+    }
+
+    .level {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 1rem 0;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+    }
+
+    .level-spc {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: rgb(255, 255, 255);
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    .beg {
+        background: #007991;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #007991, rgb(66, 141, 119)6, #007991);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #007991, #2b6352, #007991);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    .int {
+        background: #4568DC;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #4568DC, #79487a, #4568DC);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #4568DC, #613a63, #4568DC);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    .adv {
+        background: #C04848;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #480048, #C04848);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #480048, #C04848);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    .inscription {
+        background-color: #a19ea1;
+        color: rgb(255, 255, 255);
+        padding: 1rem auto;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .phone {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 1.3rem;
+    }
+</style>
+<div class="wrapper">
+</div>
+<h1 class="eng-title">Anglais Pour tous les niveaux</h1>
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card-wrapper">
+                <img class="img-fluid img-thumbnail"
+                    src="https://hh-certificates.sgp1.digitaloceanspaces.com/blog/wp-content/uploads/2020/05/12111240/Teach-English-To-Beginners.jpg"
+                    alt="">
+                <h3 class="level beg">Débutant</h3>
+                <!-- Button trigger modal -->
+                <button type="button" class="mb-2 mx-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#beg">
+                    En savoir plus
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="beg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered  modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Anglais pour tous</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="tv-container">
+                                    <div id="monitor">
+                                        <div class="afrohk-TV">
+                                            <h3 class="text-center afrohk-text mb-2 py-0">
+                                                <span class="afrohk">AfroHK</span><span class="tv">Radar</span>
+                                            </h3>
+                                        </div>
+                                        <div id="monitorscreen">
+                                            <iframe id="vimeo-content"
+                                                src="https://player.vimeo.com/video/675654851?h=749c808189"
+                                                frameborder="0" height="500px" width="1000px"
+                                                allow="autoplay; fullscreen; picture-in-picture" allow="fullscreen"
+                                                title="High-intensity Classes"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- <a href="" class="mb-2 mx-2 btn btn-outline-success">Témoignage</a> -->
+                <a href="" class="mb-2 mx-2 btn btn-outline-success">Etudier</a>
+                <a class="mb-2 mx-2 btn btn-outline-secondary" data-bs-toggle="collapse" href="#contact-a" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    S'inscrire
+                </a>
+                <div class="collapse" id="contact-a">
+                    <div class="card card-body">
+                        <h4 class="text-center inscription"> Contactez </h4>
+                        <p class="phone"> +226 53344444 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-wrapper">
+                <img class="img-fluid img-thumbnail"
+                    src="https://heritageinstitute.in/wp-content/uploads/2019/01/Pre-Intermediate-English.png" alt="">
+                <h3 class="level int">Intermediare</h3>
+                <!-- Button trigger modal -->
+                <button type="button" class="mb-2 mx-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#int">
+                    En savoir plus
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="int" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered  modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Anglais pour tous</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="tv-container">
+                                    <div id="monitor">
+                                        <div class="afrohk-TV">
+                                            <h3 class="text-center afrohk-text mb-2 py-0">
+                                                <span class="afrohk">AfroHK</span><span class="tv">Radar</span>
+                                            </h3>
+                                        </div>
+                                        <div id="monitorscreen">
+                                            <iframe id="vimeo-content"
+                                                src="https://player.vimeo.com/video/675654851?h=749c808189"
+                                                frameborder="0" height="500px" width="1000px"
+                                                allow="autoplay; fullscreen; picture-in-picture" allow="fullscreen"
+                                                title="High-intensity Classes"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- <a href="" class="mb-2 mx-2 btn btn-outline-success">Témoignage</a> -->
+                <a href="" class="mb-2 mx-2 btn btn-outline-success">Etudier</a>
+                <a class="mb-2 mx-2 btn btn-outline-secondary" data-bs-toggle="collapse" href="#contact-b" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    S'inscrire
+                </a>
+                <div class="collapse" id="contact-b">
+                    <div class="card card-body">
+                        <h4 class="text-center inscription"> Contactez </h4>
+                        <p class="phone"> +226 53344444 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-wrapper">
+                <img class="img-fluid img-thumbnail" src="https://www.ohipopo.org/my_media/2020/05/ENGLISH-AL.jpg"
+                    alt="">
+                <h3 class="level adv">Avancé</h3>
+                <!-- Button trigger modal -->
+                <button type="button" class="mb-2 mx-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#adv">
+                    En savoir plus
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="adv" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered  modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Anglais pour tous</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="tv-container">
+                                    <div id="monitor">
+                                        <div class="afrohk-TV">
+                                            <h3 class="text-center afrohk-text mb-2 py-0">
+                                                <span class="afrohk">AfroHK</span><span class="tv">Radar</span>
+                                            </h3>
+                                        </div>
+                                        <div id="monitorscreen">
+                                            <iframe id="vimeo-content"
+                                                src="https://player.vimeo.com/video/675654851?h=749c808189"
+                                                frameborder="0" height="500px" width="1000px"
+                                                allow="autoplay; fullscreen; picture-in-picture" allow="fullscreen"
+                                                title="High-intensity Classes"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- <a href="" class="mb-2 mx-2 btn btn-outline-success">Témoignage</a> -->
+                <a href="" class="mb-2 mx-2 btn btn-outline-success">Etudier</a>
+                <a class="mb-2 mx-2 btn btn-outline-secondary" data-bs-toggle="collapse" href="#contact-c" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    S'inscrire
+                </a>
+                <div class="collapse" id="contact-c">
+                    <div class="card card-body">
+                        <h4 class="text-center inscription"> Contactez </h4>
+                        <p class="phone"> +226 53344444 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<h1 class="eng-title">Cours Spéciaux</h1>
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card-wrapper">
+                <img class="img-fluid img-thumbnail"
+                    src="https://eliteoverseaseducation.com/wp-content/uploads/2015/07/cover-english.png" alt="">
+                <h3 class="level-spc beg">Spoken English Class</h3>
+                <!-- Button trigger modal -->
+                <button type="button" class="mb-2 mx-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#com">
+                    En savoir plus
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="com" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered  modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Anglais pour tous</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="tv-container">
+                                    <div id="monitor">
+                                        <div class="afrohk-TV">
+                                            <h3 class="text-center afrohk-text mb-2 py-0">
+                                                <span class="afrohk">AfroHK</span><span class="tv">Radar</span>
+                                            </h3>
+                                        </div>
+                                        <div id="monitorscreen">
+                                            <iframe id="vimeo-content"
+                                                src="https://player.vimeo.com/video/675654851?h=749c808189"
+                                                frameborder="0" height="500px" width="1000px"
+                                                allow="autoplay; fullscreen; picture-in-picture" allow="fullscreen"
+                                                title="High-intensity Classes"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- <a href="" class="mb-2 mx-2 btn btn-outline-success">Témoignage</a> -->
+                <a href="/courses/623718438647dd001645161b" class="mb-2 mx-2 btn btn-outline-success">Etudier</a>
+                <a class="mb-2 mx-2 btn btn-outline-secondary" data-bs-toggle="collapse" href="#contact-0" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    S'inscrire
+                </a>
+                <div class="collapse" id="contact-0">
+                    <div class="card card-body">
+                        <h4 class="text-center inscription"> Contactez </h4>
+                        <p class="phone"> +226 53344444 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-wrapper">
+                <img class="img-fluid img-thumbnail"
+                    src="https://www.englishreservoir.com/wp-content/uploads/2021/10/1-1-1024x576.png" alt="">
+                <h3 class="level-spc int">English Pronunciation Class</h3>
+                <!-- Button trigger modal -->
+                <button type="button" class="mb-2 mx-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#pro">
+                    En savoir plus
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="pro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered  modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Anglais pour tous</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="tv-container">
+                                    <div id="monitor">
+                                        <div class="afrohk-TV">
+                                            <h3 class="text-center afrohk-text mb-2 py-0">
+                                                <span class="afrohk">AfroHK</span><span class="tv">Radar</span>
+                                            </h3>
+                                        </div>
+                                        <div id="monitorscreen">
+                                            <iframe id="vimeo-content"
+                                                src="https://player.vimeo.com/video/675654851?h=749c808189"
+                                                frameborder="0" height="500px" width="1000px"
+                                                allow="autoplay; fullscreen; picture-in-picture" allow="fullscreen"
+                                                title="High-intensity Classes"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- <a href="" class="mb-2 mx-2 btn btn-outline-success">Témoignage</a> -->
+                <a href="" class="mb-2 mx-2 btn btn-outline-success">Etudier</a>
+                <a class="mb-2 mx-2 btn btn-outline-secondary" data-bs-toggle="collapse" href="#contact-1" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    S'inscrire
+                </a>
+                <div class="collapse" id="contact-1">
+                    <div class="card card-body">
+                        <h4 class="text-center inscription"> Contactez </h4>
+                        <p class="phone"> +226 53344444 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-wrapper">
+                <img class="img-fluid img-thumbnail"
+                    src="https://thumbs.dreamstime.com/b/creative-writing-storytelling-education-concept-opened-book-school-study-learning-subject-book-review-summary-vector-icon-flat-123626764.jpg"
+                    alt="">
+                <h3 class="level-spc adv">English Writting Class</h3>
+                <!-- Button trigger modal -->
+                <button type="button" class="mb-2 mx-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#wri">
+                    En savoir plus
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="wri" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered  modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Anglais pour tous</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="tv-container">
+                                    <div id="monitor">
+                                        <div class="afrohk-TV">
+                                            <h3 class="text-center afrohk-text mb-2 py-0">
+                                                <span class="afrohk">AfroHK</span><span class="tv">Radar</span>
+                                            </h3>
+                                        </div>
+                                        <div id="monitorscreen">
+                                            <iframe id="vimeo-content"
+                                                src="https://player.vimeo.com/video/675654851?h=749c808189"
+                                                frameborder="0" height="500px" width="1000px"
+                                                allow="autoplay; fullscreen; picture-in-picture" allow="fullscreen"
+                                                title="High-intensity Classes"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- <a href="" class="mb-2 mx-2 btn btn-outline-success">Témoignage</a> -->
+                <a href="" class="mb-2 mx-2 btn btn-outline-success">Etudier</a>
+                <a class="mb-2 mx-2 btn btn-outline-secondary" data-bs-toggle="collapse" href="#contact-2" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    S'inscrire
+                </a>
+                <div class="collapse" id="contact-2">
+                    <div class="card card-body">
+                        <h4 class="text-center inscription"> Contactez </h4>
+                        <p class="phone"> +226 53344444 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

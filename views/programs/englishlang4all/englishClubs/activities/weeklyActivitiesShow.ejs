@@ -1,0 +1,188 @@
+<% layout('layouts/engClubBoilerplate') %>
+<style>
+  html {
+    font-size: 80%;
+  }
+</style>
+<div class="container col-md-10">
+  <h1 class="text-center my-5" style="color: blueviolet;"><%= club.acronym %> Board Members Dashboard</h1>
+  <h3 class="text-center py-5 d-inline-block">All Weekly Activities </h3>
+  <div class="row">
+    <% for(let weeklyActivity of club.weeklyActivity){ %>
+      <div class="border py-5 m-2 border-secondary">
+    <div class=" row">
+      <!-- Weekly Vocabulary -->
+      <div class="col">
+        <div class="card m-2">
+          <div class="card-header text-center word-day">
+            Vocabulary Cookies
+          </div>
+          <div class="card-body">
+            <h3 class="card-title word-day-title py-2"><span class="fw-bold">Word :</span>
+              <%= weeklyActivity.wordOfDay.word %> </h3>
+            <p class="card-text word-day-meaning"><span class="fw-bold">Meaning : </span>
+              <%= weeklyActivity.wordOfDay.wordMeaning %>
+            </p>
+            <hr>
+            <h3 class="card-title idioms-title py-2"><span class="fw-bold">Idioms :
+                <%= weeklyActivity.IdiomDay.idiom %> </span>
+            </h3>
+            <p class="card-text word-day-meaning"><span class="fw-bold">Meaning : </span>
+              <%= weeklyActivity.IdiomDay.idiomMeaning %>
+            </p>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#wod-1">
+              Practice with examples
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="wod-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg
+                                    modal-fullscreen-md-down">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Practice with examples
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p> <%- weeklyActivity.wordOfDay.learnMoreWord %>
+                    </p>
+                    <hr>
+                    <p> <%- weeklyActivity.IdiomDay.learnMoreIdiom %> </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn
+                                          btn-danger" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- weekly meetings -->
+      <div class="col">
+        <div class="card m-2">
+          <div class="card-header text-center">
+            Weekly English Club Meeting
+          </div>
+          <div class="card-body">
+            <h4 class="activity-date">
+              <%= days[weeklyActivity.englishClubMeeting.meetingDate.getDay()] %>,
+              <%= weeklyActivity.englishClubMeeting.meetingDate.getDate()%>
+              <%= months[weeklyActivity.englishClubMeeting.meetingDate.getMonth()] %>
+              <%= weeklyActivity.englishClubMeeting.meetingDate.getFullYear()%>
+            </h4>
+            <h4 class="activity-place"> <span class="fw-bold text-danger"><i
+                  class="fas me-2 fa-map-marker-alt"></i>Venue:</span>
+              <%=weeklyActivity.englishClubMeeting.venue %> </h4>
+            <h4 class="activity-time"> <span class="fw-bold text-danger"><i class="fas me-2 fa-clock"></i>Time:
+              </span> <%=weeklyActivity.englishClubMeeting.meetingTime %>
+            </h4>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn mt-2
+                                  btn-outline-success" data-bs-toggle="modal" data-bs-target="#wec">
+              Learn more about the WEC
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="wec" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg
+                                    modal-fullscreen-md-down">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Weekly English Club Meeting Agenda
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p> <%- weeklyActivity.englishClubMeeting.about %>
+                    </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn
+                                          btn-danger" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Online debate-->
+      <div class="col">
+        <div class="card m-2">
+          <div class="card-header text-center">
+            Online Debates
+          </div>
+          <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"> <span class="">Topic 1
+                :</span><br>
+              <span class="text-success fw-bold"><%=weeklyActivity.OnlineDebate.topicOne %></span> <br>
+              <span class="">
+                <%= days[weeklyActivity.OnlineDebate.debateDateOne.getDay()]%>,
+                <%=weeklyActivity.OnlineDebate.debateDateOne.getDate()%>
+                <%= months[weeklyActivity.OnlineDebate.debateDateOne.getMonth()]%>
+                <%=weeklyActivity.OnlineDebate.debateDateOne.getFullYear()%></span>
+              <br>
+              <span class="fw-bold"><%=weeklyActivity.OnlineDebate.debateTimeOne%></span>
+            </li>
+            <li class="list-group-item"><span class="">Topic 2 :</span>
+              <br>
+              <span class="text-success fw-bold"><%=weeklyActivity.OnlineDebate.topicTwo%></span>
+              <br>
+              <span class=""> <%= days[weeklyActivity.OnlineDebate.debateDateTwo.getDay()]%>,
+                <%= weeklyActivity.OnlineDebate.debateDateTwo.getDate()%>
+                <%= months[weeklyActivity.OnlineDebate.debateDateTwo.getMonth()]%>
+                <%= weeklyActivity.OnlineDebate.debateDateTwo.getFullYear()%>
+              </span>
+              <br>
+              <span class=""> <%= weeklyActivity.OnlineDebate.debateTimeTwo %></span>
+            </li>
+          </ul>
+
+          <!-- Button trigger modal -->
+          <button type="button" class="btn mt-2
+                                btn-outline-success" data-bs-toggle="modal" data-bs-target="#oed">
+            Learn more
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="oed" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg
+                                  modal-fullscreen-md-down">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Online English Debates
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    <%- weeklyActivity.OnlineDebate.aboutTopic %>
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      
+    </div>
+    <a class="text-center btn btn btn-primary fs-5 py-1 mt-3 fw-bold"
+      href="/english/clubs/<%=club._id%>/board_dashboard/weeklyActivities/<%= weeklyActivity._id%>/edit">Update
+      weekly Activity info</a>
+    </div>
+    <% } %>
+  </div>
+</div>

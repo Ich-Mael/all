@@ -1,0 +1,16 @@
+<% layout('layouts/100bacBoilerplate') %>
+
+<h1 class="text-center py-3 text-primary">Operation 100% BAC</h1>
+<!--  -->
+<div class="container col-md-6 my-5">
+	<h2 class="text-center py-3">Add new chapter to <%= subject.title %> <%= schoolClass.title %> </h2>
+	<form action="/admindashboard/100bac/class/<%= schoolClass._id %>/subject/<%= subject.id %>/chapter" method="POST">
+		<!-- Serie General information -->
+		<label class="form-label" for="title">Chapter title</label>
+		<input type="text" class="form-control" id="chapter-title" name="chapter[title]" value="" />
+
+		<label class="form-label mt-4" for="title">Image Url </label>
+		<input type="text" class="form-control" id="chapter-image" name="chapter[chapterImageUrl]" value="" />
+		<button type="submit" class="btn btn-outline-primary my-3">Create a new chapter</button>
+	</form>
+</div>

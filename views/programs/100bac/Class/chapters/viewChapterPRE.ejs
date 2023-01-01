@@ -1,0 +1,365 @@
+<% layout('layouts/100bacBoilerplate') %>
+<style>
+    html {
+        font-family: "Times New Roman", Times, serif;
+    }
+
+    .chapter-heading {
+        background:
+            url("https://cdn3.vectorstock.com/i/1000x1000/24/97/premium-access-badge-golden-label-design-vector-15362497.jpg") center no-repeat;
+        background-size: cover;
+        height: 40vh;
+    }
+
+    .exo-link {
+        font-size: 1.4rem;
+        letter-spacing: 0.123rem;
+        padding: 0.5rem 1rem;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .ex-link {
+        font-size: 1.3rem;
+        text-decoration: none;
+        letter-spacing: 0.123rem;
+        color: blueviolet;
+        padding: 0.5rem 1rem;
+    }
+
+    .subject {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: rgb(72, 26, 116);
+    }
+
+    .heading {
+        color: rgb(72, 26, 116);
+        font-size: 1.5rem;
+        padding: 1rem 0.5rem;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        letter-spacing: 0.13rem;
+    }
+
+    .chapter {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .course-card {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .content-title {
+        font-size: 1.4rem;
+        color: rgb(7, 114, 114);
+        font-weight: 500;
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        padding: 2rem auto;
+    }
+
+    @media (max-width: 750px) {
+        html {
+            font-size: 80%;
+        }
+    }
+
+    @media (max-width: 350px) {
+        html {
+            font-size: 60%;
+        }
+    }
+</style>
+
+<div class="
+    chapter-heading
+    d-flex
+    flex-column
+    align-items-center
+    justify-content-evenly
+  ">
+
+</div>
+<div class="d-flex justify-content-around py-3" style="background-color: blanchedalmond;">
+    <h3 class="text-center subject">
+        <%= subject.title %> <%= schoolClass.title %>
+    </h3>
+    <h3 class="chapter">
+        Chapitre <%= subject.chapitres.indexOf(chapter._id)+ 1 %>: <%= chapter.title
+    %>
+    </h3>
+</div>
+<h3 class="my-3 pb-3 text-center heading" style="border-bottom: 2px solid rgb(82, 4, 105);"> Contenus avancés pour une
+    compréhension plus approfondie
+</h3>
+
+<!-- CIAM appro-->
+<div class="d-flex ms-5 py-5">
+    <button class="btn exo-link video-btn btn-success mx-2 my-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#CIAM_app" aria-expanded="false" aria-controls="collapseExample">
+        CIAM Exercices d'approfondissement
+    </button>
+</div>
+<div class="collapse" id="CIAM_app">
+    <div class="card card-body">
+        <div class="container">
+            <div class="row mt-4 mb-5">
+                <% for(const [i, content] of chapter.CIAM_Premium.entries()){%>
+                <div class="col-md-4">
+                    <div class="course-card m-3 py-3">
+                        <h3 class="content-title px-2"><span style="font-weight: bolder;">Exercice <%= i + 1%></span>:
+                            <%= content.title %></h3>
+                        <!-- Button trigger modal -->
+                        <div class="d-flex justify-content-evenly ">
+                            <a target="_blank" class="btn mt-3 btn-primary"
+                                href="https://drive.google.com/file/d/10Cf2Sa-0_44FpHthchIfa9BIi0oA2MC8/view?usp=sharing"><i
+                                    class="fa-solid mx-2 fa-pen-clip"></i>Essayer</a>
+                            <a type="button" class="btn mt-3 text-center btn-outline-primary" data-bs-toggle="modal"
+                                data-bs-target="#N<%= content._id %>">
+                                Correction en video
+                            </a>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="N<%= content._id %>" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel"><%= content.title %></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div id="tv-container">
+                                            <div id="monitor">
+                                                <div class="afrohk-TV">
+                                                    <h3 class="text-center afrohk-text mb-2 py-0">
+                                                        <span class="afrohk">AfroHK</span><span class="tv">Radar</span>
+                                                    </h3>
+                                                </div>
+                                                <div id="monitorscreen">
+                                                    <iframe id="vimeo-content" src="<%= content.correctionVideoLink %>"
+                                                        frameborder="0" height="500px" width="1000px"
+                                                        allow="autoplay; fullscreen; picture-in-picture"
+                                                        allow="fullscreen" title="High-intensity Classes"></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Quitter</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+<!-- Autres bouquins -->
+<div class="d-flex  ms-5 py-5">
+
+    <button class="btn  exo-link video-btn btn-outline-success mx-2 my-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#otherbooks" aria-expanded="false" aria-controls="collapseExample">
+        Sujets d'autres livres de Maths
+    </button>
+</div>
+<div class="collapse" id="otherbooks">
+    <div class="card card-body">
+        <div class="container">
+            <div class="row mt-4 mb-5">
+                <% for(const [i, content] of chapter.advanceExercise.entries()){%>
+                <div class="col-md-4">
+                    <div class="course-card m-3 py-3">
+                        <h3 class="content-title px-2"><span style="font-weight: bolder;">Exercice <%= i + 1%></span>:
+                            <%= content.title %></h3>
+                        <!-- Button trigger modal -->
+                        <div class="d-flex justify-content-evenly ">
+                            <a class="btn mt-3 btn-primary" href=""><i class="fa-solid mx-2 fa-pen-clip"></i>Essayer</a>
+                            <a type="button" class="btn d-block mt-3  text-center btn-outline-primary"
+                                data-bs-toggle="modal" data-bs-target="#N<%= content._id %>">
+                                Correction Video
+                            </a>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="N<%= content._id %>" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel"><%= content.title %></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div id="tv-container">
+                                            <div id="monitor">
+                                                <div class="afrohk-TV">
+                                                    <h3 class="text-center afrohk-text mb-2 py-0">
+                                                        <span class="afrohk">AfroHK</span><span class="tv">Radar</span>
+                                                    </h3>
+                                                </div>
+                                                <div id="monitorscreen">
+                                                    <iframe id="vimeo-content" src="<%= content.correctionVideoLink %>"
+                                                        frameborder="0" height="500px" width="1000px"
+                                                        allow="autoplay; fullscreen; picture-in-picture"
+                                                        allow="fullscreen" title="High-intensity Classes"></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Quitter</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+<!-- National Exams -->
+<div class="d-flex ms-5 py-5">
+    <button class="btn exo-link video-btn btn-primary mx-2 my-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#nationalExam" aria-expanded="false" aria-controls="collapseExample">
+        Sujets des examens nationaux
+    </button>
+</div>
+<div class="collapse" id="nationalExam">
+    <div class="card card-body">
+        <div class="container">
+            <div class="row mt-4 mb-5">
+                <% for(const [i, content] of chapter.nationalExams.entries()){%>
+                <div class="col-md-4">
+                    <div class="course-card m-3 py-3">
+                        <h3 class="content-title px-2"><span style="font-weight: bolder;">Exercice
+                                <%= i + 1%></span>:
+                            <%= content.title %></h3>
+                        <!-- Button trigger modal -->
+                        <div class="d-flex justify-content-evenly ">
+                            <a class="btn mt-3 btn-primary" href=""><i class="fa-solid mx-2 fa-pen-clip"></i>Essayer</a>
+                            <a type="button" class="btn d-block mt-3  text-center btn-outline-primary"
+                                data-bs-toggle="modal" data-bs-target="#N<%= content._id %>">
+                                Correction en video
+                            </a>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="N<%= content._id %>" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel"><%= content.title %></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div id="tv-container">
+                                            <div id="monitor">
+                                                <div class="afrohk-TV">
+                                                    <h3 class="text-center afrohk-text mb-2 py-0">
+                                                        <span class="afrohk">AfroHK</span><span class="tv">Radar</span>
+                                                    </h3>
+                                                </div>
+                                                <div id="monitorscreen">
+                                                    <iframe id="vimeo-content" src="<%= content.correctionVideoLink %>"
+                                                        frameborder="0" height="500px" width="1000px"
+                                                        allow="autoplay; fullscreen; picture-in-picture"
+                                                        allow="fullscreen" title="High-intensity Classes"></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Quitter</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+<!-- School  Exams -->
+<div class="d-flex ms-5 py-5">
+    <button class="btn  exo-link video-btn btn-outline-primary mx-2 my-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#schoolexams" aria-expanded="false" aria-controls="collapseExample">
+        Sujet des meilleurs Etablissements
+    </button>
+</div>
+<div class="collapse" id="schoolexams">
+    <div class="card card-body">
+        <div class="container">
+            <div class="row mt-4 mb-5">
+                <% for(const [i, content] of chapter.schoolExams.entries()){%>
+                <div class="col-md-4">
+                    <div class="course-card m-3 py-3">
+                        <h3 class="content-title px-2"><span style="font-weight: bolder;">Exercice
+                                <%= i + 1%></span>:
+                            <%= content.title %></h3>
+                        <!-- Button trigger modal -->
+                        <div class="d-flex justify-content-evenly ">
+                            <a class="btn mt-3 btn-primary" href=""><i class="fa-solid mx-2 fa-pen-clip"></i>Essayer</a>
+                            <a type="button" class="btn d-block mt-3 text-center btn-outline-primary"
+                                data-bs-toggle="modal" data-bs-target="#N<%= content._id %>">
+                                Correction video
+                            </a>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="N<%= content._id %>" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel"><%= content.title %></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div id="tv-container">
+                                            <div id="monitor">
+                                                <div class="afrohk-TV">
+                                                    <h3 class="text-center afrohk-text mb-2 py-0">
+                                                        <span class="afrohk">AfroHK</span><span class="tv">Radar</span>
+                                                    </h3>
+                                                </div>
+                                                <div id="monitorscreen">
+                                                    <iframe id="vimeo-content" src="<%= content.correctionVideoLink %>"
+                                                        frameborder="0" height="500px" width="1000px"
+                                                        allow="autoplay; fullscreen; picture-in-picture"
+                                                        allow="fullscreen" title="High-intensity Classes"></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Quitter</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
