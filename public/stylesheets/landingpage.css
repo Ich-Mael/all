@@ -1728,12 +1728,14 @@ customers-cards:before {
 }
 .svg-logo{
   border: 1px solid white;
+  width: 80%;
+  height: 80%;
   border-radius: 5px;
   background-color: white;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 }
 .footer-hk {
-  color: rgba(109, 12, 148, 0.993);
+  color: rgba(66, 5, 132, 0.993);
 }
 
 #footer {
