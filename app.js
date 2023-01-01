@@ -203,6 +203,7 @@ app.all("*", (req, res, next) => {
 });
 
 //error handling
+
 app.use((err, req, res, next) => {
     const {
         statusCode = 500
