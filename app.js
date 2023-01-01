@@ -134,11 +134,8 @@ app.get("/e444", catchAsync(async (req, res) => {
 
 // Language Lab  home page
 app.get("/", catchAsync(async (req, res) => {
-    let all_articles = await news.find({});
-    all_articles = all_articles.reverse();
-    res.render("all_home", {
-        all_articles
-    });
+
+    res.render("all_home")
 }));
 
 
