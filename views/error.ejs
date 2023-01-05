@@ -4,10 +4,7 @@
       <div class="alert alert-danger" role="alert">
         <h4 class="alert-heading text-center">
           Erreur : Veuillez ressayer!!!
-
         </h4>
-        <h4 class="alert-heading text-center"><%=err.message%></h4>
-        <p><%= err.stack %></p>
         <% if (process.env.NODE_ENV !== "production") { %>
         <h4 class="alert-heading text-center"><%=err.message%></h4>
         <p><%= err.stack %></p>

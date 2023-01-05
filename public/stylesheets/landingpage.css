@@ -70,6 +70,7 @@ section {
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
   color: #0f2f57;
+  color: #5000c8;
 }
 
 
@@ -676,7 +677,7 @@ transition: all 0.3s;
 
 .top-link {
   background-color: rgb(252, 252, 252);
-  color: #ad5389;
+  color: #2f0578;
   width: 3rem;
   height: 3rem;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
@@ -1719,359 +1720,179 @@ customers-cards:before {
 /*--------------------------------------------------------------
 /* footer 
 ============================================================*/
-.header-text {
-  color: #0a0a0a;
-  font-family: "Kaushan Script", cursive;
-  font-family: "Chivo", sans-serif;
-  font-size: 4rem;
-  font-weight: 900;
-}
 .svg-logo{
-  border: 1px solid white;
-  width: 60%;
-  height: 60%;
-  border-radius: 5px;
-  background-color: white;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
-}
-.footer-hk {
-  color: rgba(66, 5, 132, 0.993);
+  width: 80%;
+  height: 80%;
 }
 
-#footer {
-  /* text-align: center; */
-  color: #b9d5e2;
-  background: #141E30;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
-  min-height: fit-content;
-  /* background-color: #E1DDE4; */
-
-  font-family: "Poppins", sans-serif;
-  overflow-x: hidden;
-}
-
-.afrohk-footer {
-  color: #f5f5f7;
-  font-family: "Kaushan Script", cursive;
-  font-size: 3.5rem;
-  text-shadow: 0px 4px 3px rgba(231, 46, 21, 0.4),
-    1px 2px 8px rgba(245, 46, 12, 0.5), 1px 2px 3px rgba(245, 25, 9, 0.3);
-  font-weight: 500;
-}
-
-.brand-section {
-  background-color: rgb(244, 247, 248);
-}
-
-.logo-footer-wrapper {
-  animation: anim2 2s infinite alternate;
-}
-
-.motto-footer {
-  font-family: "Chango", cursive;
-  color: #282929c2;
-  font-size: 1.5rem;
-}
-
-#first-name-input,
-#last-name-input,
-#email-input {
+.top-footer-line{
+  background-color: #5000c8;
   width: 100%;
 }
 
-#call-manager {
-  width: 100%;
-  font-size: 1.2rem;
-  background: none;
-  outline: none;
-  border: none;
-}
-
-#call-manager-2 {
-  width: 100%;
-  font-size: 1rem;
-  text-align: start;
-  background: none;
-  outline: none;
-  border: none;
-}
-
-#call-manager-3 {
-  width: 100%;
-  font-size: 1rem;
-  background: none;
-  outline: none;
-  border: none;
-}
-
-#call-manager-link-1 {
-  text-decoration: none;
-  font-size: 1rem;
-  transition: all 0.5s;
-}
-
-#call-manager-link-2 {
-  text-decoration: none;
-  font-size: 1rem;
-  transition: all 0.5s;
-}
-
-#call-manager-link-3 {
-  text-decoration: none;
-  font-size: 1rem;
-  color: #1e90eebb;
-  transition: all 0.5s;
-}
-
-.network {
+.top-footer-line > p{
+  text-align: center;
+  position: relative;
+  background-color: #5000c8;
+  font-size: 2rem;
+  line-height: 35px;
+  font-family: 'Playfair Display', serif;
   color: #ffffff;
-}
-
-#send-mail {
-  color: #f1e5ec;
-  transition: all 0.5s;
-  font-size: 1rem;
-  text-decoration: none;
-}
-
-#send-mail:hover {
-  color: #e9c707;
-  text-decoration: none;
-}
-
-.call:hover,
-.call:hover,
-.call:hover {
-  text-decoration: none;
-  background-color: #000;
-  font-size: 1.1rem;
-}
-
-.contact-us {
-  border: 0.5px solid rgba(161, 115, 198, 0.233);
-  box-shadow: rgba(118, 96, 131, 0.25) 0px 50px 100px -20px,
-    rgba(87, 109, 162, 0.3) 0px 30px 60px -30px,
-    rgba(78, 113, 148, 0.35) 0px -2px 6px 0px inset;
-    border-radius: 5px;
-}
-
-#cont-ns {
-  font-size: 1rem;
-}
-
-.footer-links-header {
-  color: rgba(22, 145, 246, 0.925);
-  text-shadow: 1px 1px 0px rgb(58, 6, 100);
-  font-size: 1.3rem;
-  /* text-transform: uppercase; */
-  font-family: "Chivo", sans-serif;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding: 1.5rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.13rem;
+  margin-bottom: 27px; 
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    outline: none;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-footer{
+  position: relative;
+  background: #ffffff;
+}
+
+.footer-content{
+  position: relative;
+  padding: 35px 0px 50px 0px;
+}
+.footer-content:before{
+  position: absolute;
+  content: '';
+  background: url();
+  width: 744px;
+  height: 365px;
+  top: 50px;
+  right: 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation-name: float-bob;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-name: float-bob;
+  -webkit-animation-duration: 30s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: float-bob;
+  -moz-animation-duration: 30s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: float-bob;
+  -ms-animation-duration: 30s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  -o-animation-name: float-bob;
+  -o-animation-duration: 30s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-timing-function: linear;
 }
 
 
-.useful-links {
-  text-decoration: none;
-  color: #ffffffb2;
-  font-size: 1.1rem;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  padding: 0.5rem 0;
-  margin: 1.5rem 0;
-  transition: all 0.5s;
+.footer-column, .footer-widget{
+display: flex;
+flex-direction: column;
+justify-content: center;
 }
 
-.useful-links:hover {
-  border-bottom: 2px solid rgb(43, 101, 226);
-  color: #2ac7fc;
+.footer-content .logo-widget{
+  position: relative;
+  margin-top: -5px;
 }
 
-/* social media */
-#facebook,
-#youtube,
-#instagram,
-#linkedin,
-#twitter,
-#user_mail,
-#m-whatsapp {
-  transition: all 1s;
+ .footer-social, .whatsApp{
+margin: 30px 0;
 }
-
-#user_mail {
-  color: rebeccapurple;
-  background-color: rgb(149, 151, 153);
+.footer-content  .footer-social li{
+  position: relative;
+  display: inline-block;
+  margin-right: 9px;
 }
-
-#m-whatsapp {
-  color: rgb(253, 253, 253);
-  background-color: rgb(4, 161, 38);
+.footer-content  .footer-social li:last-child{
+  margin-right: 0px;
 }
-
-#facebook {
-  color: rgb(245, 239, 239);
-  background-color: rgb(9, 103, 192);
+.footer-content  .footer-social li a{
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  background: #d2d6e0;
+  color: #17181a;
+  text-align: center;
+  border-radius: 50%;
 }
-
-#linkedIn {
-  color: rgb(245, 239, 239);
-  background-color: #0e76a8;
+.footer-content  .footer-social li a:hover{
+  color: #ffffff;
+  background: #5806c5;
 }
-
-#youtube {
-  color: rgb(245, 239, 239);
-  background-color: rgb(241, 65, 21);
+.footer-content .logo-widget .logo-box{
+  margin-bottom: 25px;
 }
-
-#linkedin {
-  color: rgb(245, 239, 239);
-  background-color: #0e76a8;
+.footer-content .logo-widget .text p{
+  color: #9ea0a9;
+  margin-bottom: 32px;
 }
-
-#instagram {
-  color: rgb(245, 239, 239);
-  background: #833ab4;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right,
-      #fcb045,
-      #fd1d1d,
-      #833ab4);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right,
-      #fcb045,
-      #fd1d1d,
-      #833ab4);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.footer-content .footer-title{
+  position: relative;
+  font-size: 24px;
+  line-height: 35px;
+  font-family: 'Playfair Display', serif;
+  color: #4c07ad;
+  font-weight: 700;
+  margin-bottom: 27px;
 }
-
-#twitter {
-  color: rgb(245, 239, 239);
-  background: #56ccf2;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right,
-      #2f80ed,
-      #56ccf2);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right,
-      #2f80ed,
-      #56ccf2);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.footer-content .service-widget .list li{
+  display: block;
+  margin-bottom: 12px;
 }
-
-/*hover links */
-#user_mail:hover {
-  color: rgb(250, 249, 249);
-  transform: rotate(360deg);
-  background-color: rgb(53, 56, 59);
+.footer-content .service-widget .list li a{
+  position: relative;
+  display: inline-block;
+  color: #1e1f21;
 }
-
-#m-whatsapp:hover {
-  color: rgb(49, 189, 6);
-  transform: rotate(360deg);
-  background-color: rgb(217, 220, 223);
+.footer-content .service-widget .list li a:hover{
+  color: #470585;
 }
-
-#facebook:hover {
-  color: rgb(245, 239, 239);
-  transform: rotate(360deg);
-  background-color: rgb(9, 103, 192);
+.footer-content .contact-widget p{
+  color: #9ea0a9;
+  margin-bottom: 15px;
 }
-
-#linkedin:hover {
-  color: rgb(245, 239, 239);
-  transform: rotate(360deg);
-  background-color: #0e76a8;
-}
-
-#youtube:hover {
-  color: rgb(245, 239, 239);
-  transform: rotate(360deg);
-  background-color: rgb(241, 65, 21);
-}
-
-#instagram:hover {
-  color: rgb(245, 239, 239);
-  transform: rotate(360deg);
-  background: #833ab4;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right,
-      #fcb045,
-      #fd1d1d,
-      #833ab4);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right,
-      #fcb045,
-      #fd1d1d,
-      #833ab4);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-#twitter:hover {
-  color: rgb(245, 239, 239);
-  transform: rotate(360deg);
-  background: #56ccf2;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right,
-      #2f80ed,
-      #56ccf2);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right,
-      #2f80ed,
-      #56ccf2);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-/* End social media */
-
-@keyframes anim2 {
-  0% {
-    transform: translateY(4px);
-  }
-
-  100% {
-    transform: translateY(-4px);
-  }
-}
-
-.made-by {
-  width: 100%;
-  margin: 0;
-  background: #6441A5;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2a0845, #6441A5);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2a0845, #6441A5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.footer-content .contact-widget{
   
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: rgba(255, 255, 255, 0.815);
+}
+.footer-content .contact-widget .footer-title{
+  margin-bottom: 29px;
 }
 
-.copyright-text {
-  padding: 0.2rem 1rem;
-  font-size: 0.8rem;
-  font-weight: 400;
+/** footer-bottom **/
+
+.footer-bottom{
+  background-color: #5000c8;
+  padding: 20px 0px;
+  margin-bottom: 0;
 }
 
-.creator {
-  font-size: 1rem;
-  padding: 0.5rem 0 0.2rem;
+.copyright{
+  color: rgb(203, 214, 221);
+  text-align: center;
 }
 
-.creator i {
-  color: tomato;
-  font-size: 1rem;
-}
 
-.creator span {
-  font-family: "Kaushan Script", cursive;
-  color: #fdfcfde1;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: 0 0.3rem;
-  text-shadow: 1px 2px 3px black, 2px 3px 4px black;
-}
 
-/* End footer */
+
+
+
+
+
+
+
 
 /* responsive */
 @media (max-width: 1200px) {
@@ -2170,6 +1991,14 @@ customers-cards:before {
 }
 
 /* End footer */
+
+
+
+
+
+
+
+
 
 /* animations */
 /*=========================Responsiveness ===========================*/
