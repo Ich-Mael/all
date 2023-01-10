@@ -29,7 +29,7 @@ const {
 } = require("../middlewares/courseController");
 
 // register a user form
-router.get("/register", isLoggedIn, checkRoles("admin"), (req, res) => {
+router.get("/register", (req, res) => {
   res.render("user/register");
 });
 
@@ -57,7 +57,7 @@ router.post("/register", catchAsync(async (req, res) => {
     username,
   });
 
-  const registeredUser = await User.register(user, password);
+const registeredUser = await User.register(user, password);
 new_user_mail = registeredUser.email;
 req.flash("success", "Le nouveau compte a été créé avec success");
 res.render("user/welcome", {new_user_mail});
@@ -93,10 +93,12 @@ router.get(
     let user = await User.findOne({email: req.params.new_user_mail});
     // let firstName = req.user.surname.split(" ")[0];
     if (process.env.NODE_ENV === "production") {
-      url = "https://www.afrohk.com/user/verifyemail?token=" + token;
+      url = "https://www.afrolanguagelab.com/user/verifyemail?token=" + token;
     } else {
-      url = "http://localhost:3000/user/verifyemail?token=" + token;
+      url = "http://localhost:5000/user/verifyemail?token=" + token;
     }
+
+    console.log(url);
     // send an email for verification
     await new Emailer(user, url).sendVerifyEmail();
 
@@ -215,9 +217,9 @@ router.post("/reset-password", catchAsync(async (req, res) => {
     let url;
     // let firstName = userData.surname.split(" ")[0];
     if (process.env.NODE_ENV === "production") {
-      url = "https://www.afrohk.com/userPassworLost/reset-password?token=" + token;
+      url = "https://www.afrolanguagelab.com/userPassworLost/reset-password?token=" + token;
     } else {
-      url = "http://localhost:3000/userPassworLost/reset-password?token=" + token;
+      url = "http://localhost:5000/userPassworLost/reset-password?token=" + token;
     }
     // send an email for verification
     await new Emailer(userData, url).sendPasswordReset()
