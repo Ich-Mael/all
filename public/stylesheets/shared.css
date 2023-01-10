@@ -147,15 +147,20 @@ nav {
 }
 
 .profile-link {
-  font-family: "Roboto"serif;
+  font-family: "Roboto";
   text-decoration: none;
   font-size: 1rem;
-  color: rgb(20, 19, 18);
+  color: rgb(237, 237, 237);
+  /* padding: 0.5rem 1rem; */
+  border-radius: 3px;
+  background-color: rgb(7, 3, 85);
+  transition: all 0.3s;
 }
 
-profile-link:hover {
+.profile-link:hover {
   text-decoration: none;
-  color: rgb(31, 28, 27);
+  background-color: rgb(53, 5, 151);
+  color: white;
 }
 
 .afro {

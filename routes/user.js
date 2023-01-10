@@ -34,7 +34,7 @@ router.get("/register", (req, res) => {
 });
 
 // register user to DB
-router.post("/register", catchAsync(async (req, res) => {
+router.post("/register", isLoggedIn, checkRoles("account-manager", "super-admin"), catchAsync(async (req, res) => {
 
   const {
     name,

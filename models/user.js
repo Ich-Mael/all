@@ -53,6 +53,7 @@ const userSchema = new Schema({
     default: "user",
     enum: [
       "user",
+      "account-manager",
       "admin",
       "super-admin",
       "english-club-bm",

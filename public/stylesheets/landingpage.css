@@ -183,7 +183,7 @@ nav {
   text-decoration: none;
   font-size: 1rem;
   color: rgb(237, 237, 237);
-  padding: 0.5rem 1rem;
+  /* padding: 0.5rem 1rem; */
   background-color: rgb(59, 3, 85);
 }
 
