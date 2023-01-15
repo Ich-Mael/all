@@ -50,10 +50,9 @@ module.exports.showModule = async (req, res) => {
 
   course = await Course.findById(req.params.course_id).populate("modules", "title")
 
-  console.log(courseModule);
-
   let moduleReveal = DateUtil.revealTime(courseModule.revealDate);
   displayRevealDate = DateUtil.localTime(courseModule.revealDate);
+
   res.render("courses/course_modules/showModule", {
     courseModule,
     course,

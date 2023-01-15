@@ -116,13 +116,13 @@
         <% if (!currentUser || currentUser==null) {%>
         <a class="nav-link-connexion me-2 my-2" href="/login">Connexion</a>
         <%} else { %>
-        <h3 id="user" class="px-2 align-self-center">
-          <a class="profile-link" href="/user/<%= currentUser._id%>">
-            <i class="bi bi-person-circle"></i>
-            <%=currentUser.username%>
-          </a>
-        </h3>
-        <a class="nav-link my-1 btn btn-outline-danger" href="/logout">Deconnexion</a>
+          <h3 id="user" class="my-1 mx-2 align-self-center">
+            <a class="profile-link btn" href="/user/<%= currentUser._id%>">
+              <i class="bi bi-person-circle"></i>
+              <%=currentUser.username%>
+            </a>
+          </h3>
+          <a class="my-1 mx-2 btn btn-danger text-white" href="/logout">Deconnexion</a>
         <%}%>
       </div>
     </div>

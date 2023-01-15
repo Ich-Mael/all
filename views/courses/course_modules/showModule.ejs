@@ -53,7 +53,9 @@
   Module <%= module_number  %> : <%=
   courseModule.title %>
 </p>
-<% if(moduleReveal) { %>
+
+
+<!-- <% if(moduleReveal) { %> -->
 <!-- Module content -->
 <section class="container col-md-8">
   <!-- Objectif et structuration du module-->
@@ -181,9 +183,9 @@
 
         </div>
 </section>
-<% } else { %>
+<!-- <% } else { %> -->
 <section class="not-available container col-10 col-md-6">
   <p>Ce module sera disponible</p>
   <p class="module-date"><%= displayRevealDate %></p>
 </section>
-<% } %>
+<!-- <% } %> -->

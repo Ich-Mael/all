@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const passportLocalMongoose = require("passport-local-mongoose");
 const Schema = mongoose.Schema;
+const moment = require('moment'); // require
 
 const userSchema = new Schema({
   name: {
@@ -181,22 +182,37 @@ const userSchema = new Schema({
   ownedPrograms: [],
 
   // courses
+  specialProgram: [{
+    courseTitle: String,
+
+    startDate: {
+      type: Date,
+      default: Date.now()
+    },
+
+    endDate: {
+      type: Date,
+      default: moment().add(1, 'M')
+    }
+
+  },],
+
   coursesGiven: [{
     type: Schema.Types.ObjectId,
     ref: "Course",
-  }, ],
+  },],
 
   coursesTaken: [{
     type: Schema.Types.ObjectId,
     ref: "Course",
-  }, ],
+  },],
 
   //grades
   grades: [
     [{
       type: Schema.Types.ObjectId,
       ref: "course",
-    }, ],
+    },],
   ],
 }, {
   timestamps: true

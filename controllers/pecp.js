@@ -1,5 +1,11 @@
 const User = require("../models/user");
-
+const {
+    Course,
+    EngCourseVideo,
+    Module,
+    Evaluation,
+    Grade
+} = require("../models/courses");
 const {
     pecpStudent,
     pecpCoach,
@@ -86,11 +92,22 @@ module.exports.addNewPecpCoach = async (req, res) => {
 module.exports.pecpStudentDashboard = async (req, res) => {
     const student = await pecpStudent.findById(req.params.pecpStudent_id).populate("pecpStudentProgress").populate("assignedCoach").populate("pecpStudentConvFeedback").populate("myCv");
 
-    const user = await User.findById(req.params.user_id).populate("coursesTaken")
+    const user = await User.findById(req.params.user_id)
+
+    let studentSpecial_courses = [];
+    
+    for(course_Data of user.specialProgram){
+        const course = await Course.findOne({
+            title: course_Data.courseTitle
+          });
+
+          studentSpecial_courses.push(course);
+    }
 
     res.render("programs/pecp/myPecpSpace", {
         student,
-        user
+        user,
+        studentSpecial_courses
     })
 }
 

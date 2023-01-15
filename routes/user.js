@@ -29,12 +29,12 @@ const {
 } = require("../middlewares/courseController");
 
 // register a user form
-router.get("/register", (req, res) => {
+router.get("/register", isLoggedIn, checkRoles(["account-manager", "admin", "super-admin"]), (req, res) => {
   res.render("user/register");
 });
 
 // register user to DB
-router.post("/register", isLoggedIn, checkRoles("account-manager", "super-admin"), catchAsync(async (req, res) => {
+router.post("/register", isLoggedIn, checkRoles( ["account-manager", "admin", "super-admin"]), catchAsync(async (req, res) => {
 
   const {
     name,
@@ -351,8 +351,14 @@ router.post(
   catchAsync(async (req, res) => {
     const {
       courseTitle,
+      startDate,
+      endDate,
       student
     } = req.body;
+
+    const student_course_data = {
+      courseTitle, startDate, endDate
+    }
 
     const user = await User.findOne({
       username: student
@@ -361,10 +367,12 @@ router.post(
       title: courseTitle
     });
 
+    
+
     course.students.push(user);
     await course.save();
 
-    user.coursesTaken.push(course);
+    user.specialProgram.push(student_course_data);
     await user.save();
 
     res.send("user successfully registered for the course");

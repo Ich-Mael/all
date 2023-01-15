@@ -5,15 +5,26 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
 	rel="stylesheet">
-<div class="container my-5">
-	<div class="col-md-8">
+<div class="container d-flex justify-content-center my-5">
+	<div class="col-md-6">
 		<h1 class="text-center">Adding student to a course</h1>
 		<form action="/addstudent" method="POST">
 			<label class="form-label my-3" for="course">Course Title</label>
 			<input class="form-control" type="text" name="courseTitle" placeholder="">
 			<label class="form-label my-3" for="student">Add Student</label>
 			<input class="form-control" type="text" name="student" placeholder="">
-			<button type="submit">Submit</button>
+			<hr>
+			<div class="row">
+				<div class="col-md-6">
+					<label class="form-label my-3" for="student">Start Date</label>
+					<input class="form-control" type="date" name="startDate" placeholder="">
+				</div>
+				<div class="col-md-6">
+					<label class="form-label my-3" for="student">End Date</label>
+					<input class="form-control" type="date" name="endDate" placeholder="">
+				</div>
+			</div>
+			<button class="btn btn-primary mt-4" type="submit">Submit</button>
 		</form>
 	</div>
 </div>

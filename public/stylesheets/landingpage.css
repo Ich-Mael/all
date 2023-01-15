@@ -38,6 +38,8 @@ section {
 }
 
 .section-title {
+  z-index: 200;
+  position: relative;
   padding-bottom: 40px;
 }
 
@@ -257,6 +259,7 @@ nav {
   height: 100%;
   overflow: hidden;
   background: url('https://www.saleshacker.com/wp-content/uploads/2021/02/RFP-opportunities-2048x1307.jpg') no-repeat center center/cover;
+  
 }
 
 .video-container video {
@@ -393,12 +396,9 @@ transition: all 0.3s;
   padding: 1rem;
   letter-spacing: 0.1rem;
   text-align: center;
-  background: #ad5389;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #3c1053, #ad5389);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #3c1053, #ad5389);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #4776E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
   color: rgb(247, 245, 243);
   font-family: "Roboto", sans-serif;
   font-family: "Poppins", sans-serif;
@@ -426,12 +426,9 @@ transition: all 0.3s;
   text-align: center;
   font-size: 1rem;
   margin: 1rem 0 3rem 1rem;
-  background: #ad5389;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #3c1053, #ad5389, #3c1053);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #3c1053, #ad5389, #3c1053);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #4776E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
   color: rgb(247, 245, 243);
   font-family: "Poppins", sans-serif;
   font-weight: 700;
@@ -446,6 +443,89 @@ transition: all 0.3s;
 
 
 
+.mission{
+  background: #4776E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+
+
+.circle{
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  animation: ripple 15s infinite;
+  box-shadow: 0px 0px 1px 0px #508fb9;
+}
+
+.small{
+  width: 200px;
+  height: 200px;
+  left: -100px;
+  bottom: -100px;
+}
+
+.medium{
+  width: 400px;
+  height: 400px;
+  left: -200px;
+  bottom: -200px;
+}
+
+.large{
+  width: 600px;
+  height: 600px;
+  left: -300px;
+  bottom: -300px;
+}
+
+.xlarge{
+  width: 800px;
+  height: 800px;
+  left: -400px;
+  bottom: -400px;
+}
+
+.xxlarge{
+  width: 1000px;
+  height: 1000px;
+  left: -500px;
+  bottom: -500px;
+}
+
+.shade1{
+  opacity: 0.2;
+}
+.shade2{
+  opacity: 0.5;
+}
+
+.shade3{
+  opacity: 0.7;
+}
+
+.shade4{
+  opacity: 0.8;
+}
+
+.shade5{
+  opacity: 0.9;
+}
+
+@keyframes ripple{
+  0%{
+    transform: scale(0.8);
+  }
+  
+  50%{
+    transform: scale(1.2);
+  }
+  
+  100%{
+    transform: scale(0.8);
+  }
+}
 
 
 
@@ -793,6 +873,7 @@ transition: all 0.3s;
 .study {
   font-family: "Ultra", serif;
   color: rgba(114, 8, 167, 0.952);
+  font-family: "Chango";
   font-size: 2.5rem;
   text-shadow: 1px 1px 1px rgb(255, 255, 255);
   position: relative;
@@ -816,9 +897,11 @@ transition: all 0.3s;
 
 .word-slider>li {
   font-family: "Ultra", serif;
-  color: rgb(247, 101, 10);
+  font-family: "Chango";
+  color: rgb(231, 223, 252);
   text-shadow: 1px 2px 1px black;
   text-align: center;
+  letter-spacing: 0.2rem;
   font-size: 2.5rem;
   -webkit-animation: word-slider 8s ease-in-out infinite;
   -moz-animation: word-slider 8s ease-in-out infinite;
@@ -1232,10 +1315,10 @@ customers-cards:before {
 .customer-paragraph-1 {
   font-size: 1.3rem;
   /* line-height: 1.5rem; */
-  color: #240536;
+  color: #7209af;
   font-family: "Chivo", sans-serif;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  text-transform: uppercase;
+  font-family: cursive;
+  /* text-transform: uppercase; */
   text-align: start;
   font-weight: 700;
   letter-spacing: 0.1rem;
@@ -1248,18 +1331,18 @@ customers-cards:before {
   z-index: 10;
   padding: 2rem 5rem;
   font-family: "Roboto", sans-serif;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Esteban";
   font-size: 1rem;
   text-align: start;
   letter-spacing: 0.1rem;
-  font-weight: 400;
+  /* font-weight: 400; */
   font-size: 1.2rem;
   color: rgba(39, 45, 51, 0.897);
   line-height: 2.5rem;
 }
 
 .customer-job {
-  color: rgb(25, 19, 28);
+  color: rgb(62, 54, 66);
   text-align: start;
 }
 
@@ -1311,12 +1394,11 @@ customers-cards:before {
 
 #image-caption {
   font-style: normal;
-  font-size: 1.3rem;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.2rem;
   padding: 1rem 0 0.4rem;
   text-align: start;
-  font-weight: 700;
-  color: rgb(136, 6, 165);
+  /* font-weight: 700; */
+  color: rgb(81, 9, 157);
   margin-top: 1rem;
   /* text-shadow: 1px 2px 3px black; */
 }
@@ -1340,7 +1422,7 @@ customers-cards:before {
 }
 
 .carousel-button {
-  background-color: rgb(172, 9, 226);
+  background-color: rgb(81, 9, 157);
   border-radius: 50%;
   color: rgb(255, 255, 255);
   margin: 0 1rem;
@@ -1457,7 +1539,7 @@ customers-cards:before {
 
 .tv {
   letter-spacing: 0.2rem;
-  color: rgb(204, 0, 255);
+  color: rgb(81, 9, 157);
 }
 
 #vimeo-content {

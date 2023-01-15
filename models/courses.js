@@ -8,6 +8,11 @@ const courseSchema = new Schema({
     required: true,
   },
 
+  typeOfCourse:{
+    type: String,
+    enum:["Special-program", "Distance-learning", "Self-paced"],
+  },
+
   isActive: {
     type: Boolean,
     default: false

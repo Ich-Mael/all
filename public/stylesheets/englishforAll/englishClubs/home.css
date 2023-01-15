@@ -59,7 +59,7 @@ body {
   text-align: center;
   height: 1rem;
   margin: 0 1rem;
-  background-color: rgb(147, 7, 165);
+  background-color: rgb(57, 7, 165);
 }
 
 .eng-club-details:hover {
@@ -74,7 +74,8 @@ body {
   text-align: center;
   padding: 3rem 0;
   font-family: "Chivo", sans-serif;
-  font-weight: 700;
+  color: rgb(57, 7, 165);
+  font-weight: 600;
 }
 
 .eng-club-details {

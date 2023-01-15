@@ -10,22 +10,22 @@
   <div class="bg-img-wrapper">
     <img class="img-medium" src="<%= course.courseImageUrl %> " alt="" />
   </div>
-  <!-- <div class="banner-wrapper">
+  <div class="banner-wrapper">
     <div class="d-flex align-items-center flex-column" style="width: 100vw">
       <h1 class="banner-heading"><%= course.title %></h1>
       <p class="banner-paragraph"></p>
     </div>
-  </div> -->
+  </div> 
 </div>
 
 <!-- Current time-->
 <div class="session-wrapper">
   <div class="courseSession">
-    <h1 class="banner-heading"><%= course.title %></h1>
-    <hr>
-    <p><span class="time-underline pt-1 mb-3"><%= currentTime %></span></p>
-    <p class="start-date">Debut de session: <%= start %></p>
-    <p class="end-date">Fin de session: <%= end %></p>
+    <!-- <h1 class="banner-heading"><%= course.title %></h1> -->
+    <!-- <hr> -->
+    <p><span class="pt-1 mb-3"><%= currentTime %></span></p>
+    <!-- <p class="start-date">Debut de session: <%= start %></p> -->
+    <!-- <p class="end-date">Fin de session: <%= end %></p> -->
   </div>
   <div class="d-flex justify-content-center">
     <p class="inline-block">
@@ -34,24 +34,47 @@
         href="/courses/<%= course._id %>/modules/<%=course.modules[0]._id%>">Etudier</a>
       <% } %>
       <!-- Button trigger modal -->
-      <button type="button" class="mx-2 px-2 fs-5 btn btn-success" data-bs-toggle="modal" data-bs-target="#inscription">
+      <button type="button" class="mx-2 px-2 fs-5 btn btn-primary" data-bs-toggle="modal" data-bs-target="#inscription">
         S'inscrire
       </button>
 
       <!-- Modal -->
       <div class="modal fade text-dark" id="inscription" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Centre de formation</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Contactez-nous</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              Tel: +22664350101
+              <h4 class="text-center py-3 bg-primary text-white">Service Commercial Afro Language Lab</h4>
+              <hr>
+              <div class="d-flex flex-wrap justify-content-around" style="background-color: white;">
+
+                <button id="" class="bg-white">
+                  <a id="" class=" fs-5" style="color: rgb(88, 7, 139);"
+                    href="mailto:afrohouseofknowledge@gmail.com?"><i class="fa mx-2 p-3 fa-envelope-o" id=""
+                      aria-hidden="true"></i><span>afrohouseofknowledge@gmail.com</span></a>
+                </button>
+
+                <button id="" class="bg-white">
+                  <a id="" class="fs-5" href=" tel: +22653344444">
+                    <i class="fa p-3 mx-2 fa-phone" aria-hidden="true"></i><span>+226 53344444</span>
+                  </a>
+                </button>
+
+                <button id="" class="bg-white">
+                  <a id="" class="text-success  fs-5" style="text-decoration: none;" href="https://wa.me/22653344444"
+                    target="_blank">
+                    <i class="fa mx-2 p-3 fa-whatsapp" aria-hidden="true"></i>
+                    <span class="">(226) 53344444</span></a>
+                </button>
+
+              </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quitter</button>
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Quitter</button>
             </div>
           </div>
         </div>
@@ -69,7 +92,7 @@
     <% for (let instructor of course.instructors){%>
     <div class="col-md-6 px-2">
       <div class="instructor-card">
-        <div class="row">
+        <div class="row mb-3">
           <div class="col-md-4">
             <img src="<%= instructor.imageUrl %>" alt="instructor-img" class="img-fluid img-thumbnail instructor-img" />
           </div>
@@ -77,25 +100,23 @@
             <h3 class="instructor-name">
               <%= instructor.surname %> <%= instructor.name %>
             </h3>
-            <hr>
             <p class="about-instructor"><%- instructor.about %></p>
           </div>
         </div>
-        <hr>
         <!-- Mail -->
-        <a class="btn btn-outline-light btn-floating m-2" href="mailto:<%= instructor.email %>" target="_blank"
+        <a class="btn instructor-social-icon btn-floating m-2" href="mailto:<%= instructor.email %>" target="_blank"
           role="button" id="user_mail"><i class="fas fa-at"></i></a>
         <!-- whatsapp -->
-        <a class="btn btn-outline-light btn-floating" href="<%=instructor.whatsAppLink %>" role="button" id="m-whatsapp"
+        <a class="btn  instructor-social-icon btn-floating m-2" href="<%=instructor.whatsAppLink %>" role="button" id="m-whatsapp"
           target="_blank"><i class="fa fa-whatsapp"></i></a>
         <!-- Facebook -->
-        <a class="btn btn-outline-light btn-floating m-2" href="<%= instructor.facebookLink %>" id="facebook"
+        <a class="btn instructor-social-icon btn-floating m-2" href="<%= instructor.facebookLink %>" id="facebook"
           role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <!-- Twitter -->
-        <a class="btn btn-outline-light btn-floating m-2" href="<%= instructor.twitterLink %>" id="twitter"
+        <a class="btn  instructor-social-icon btn-floating m-2" href="<%= instructor.twitterLink %>" id="twitter"
           target="_blank" role="button"><i class="fab fa-twitter"></i></a>
         <!-- Linkedin -->
-        <a class="btn btn-outline-light btn-floating m-2" href="<%= instructor.linkedIn %>" target="_blank"
+        <a class="btn  instructor-social-icon btn-floating m-2" href="<%= instructor.linkedIn %>" target="_blank"
           role="button" id="linkedIn"><i class="fab fa-linkedin-in"></i></a>
       </div>
     </div>
