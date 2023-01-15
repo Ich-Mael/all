@@ -9,12 +9,12 @@ a {
 
 html {
   box-sizing: border-box;
+  overflow: hidden;
   font-size: 90%;
 }
 
 body {
   margin: 0;
-  /* overflow-x: hidden; */
   padding: auto;
   background: #ffffff;
   font-family: "Roboto";
@@ -369,6 +369,7 @@ transition: all 0.3s;
 
 #apropos {
   margin-bottom: 2rem;
+  overflow: hidden;
 }
 
 .videos-header {
@@ -441,15 +442,12 @@ transition: all 0.3s;
   border: 2px solid black;
 }
 
-
-
 .mission{
   background: #4776E6;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   
 }
-
 
 .circle{
   position: absolute;
@@ -2610,6 +2608,49 @@ display: none;
     font-size: 2rem;
   }
 
+  .xxlarge{
+    display: none;
+  }
+
+  .medium{
+    width: 300px;
+    height: 300px;
+    left: -100px;
+    bottom: -100px;
+  }
+  
+  .large{
+    width: 500px;
+    height: 500px;
+    left: -200px;
+    bottom: -200px;
+  }
+  
+  .xlarge{
+    width: 700px;
+    height: 700px;
+    left: -300px;
+    bottom: -300px;
+  }
+  
+ 
+  
+
+  
+  @keyframes ripple{
+    0%{
+      transform: scale(0.6);
+    }
+    
+    50%{
+      transform: scale(1.0);
+    }
+    
+    100%{
+      transform: scale(0.6);
+    }
+  }
+   
 
   .afrohk-title {
     font-size: 4rem;
@@ -2618,6 +2659,7 @@ display: none;
   .flash {
     font-size: 0.6rem;
   }
+
 
   .check-programs,
   .get-account {
@@ -2655,13 +2697,16 @@ display: none;
 
 }
 
-@media (max-width: 450px) {
+@media (max-width: 460px) {
   .slider ul {
     display: flex;
     padding: 0;
     animation: cambio 50s infinite linear;
   }
 
+  .xlarge{
+    display: none;
+  }
   html {
     font-size: 90%;
   }
@@ -2673,8 +2718,6 @@ display: none;
   .slogan {
     font-size: 1.6rem;
   }
-
-
 
   #banner-wrapper {
     z-index: 2;
