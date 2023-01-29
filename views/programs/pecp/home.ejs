@@ -118,7 +118,7 @@
     <% if(currentUser){%>
       <% if (currentUser.isPecpStudent) {%>
         <div class="my_pecp-wrapper">
-          <a href="" class="my_pecp mx-2"><i class="fa-solid mx-2 fa-chalkboard-user"></i>My English Coaching Space</a>
+          <a href="/user/<%=currentUser._id%>/pecpStudentDashboard/<%=currentUser.pecpStudent_id%>" class="my_pecp mx-2"><i class="fa-solid mx-2 fa-chalkboard-user"></i>My English Coaching Space</a>
         </div>
         <%}%>
           <%}%>
