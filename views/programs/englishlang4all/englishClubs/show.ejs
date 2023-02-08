@@ -5,17 +5,24 @@
   <script type="text/javascript" src="/javascripts/quiz_scripts/main.js"></script>
   <link rel="stylesheet" type="text/css" href="/stylesheets/quiz_stylesheet/quizlib.min.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/stylesheets/quiz_stylesheet/stylesheet.css" media="screen">
+
   <!-- WORD Processor-->
   <script src="https://cdn.tiny.cloud/1/p06f8vxdpje8xosyvnq48z68vc7n479iauh5s2jk9zx30qg2/tinymce/5/tinymce.min.js"
     referrerpolicy="origin"></script>
-  </script>
+
   <script>
     tinymce.init({
-      selector: '#mytextarea'
+      selector: '.mytextarea',
+      height: 200,
+      relative_urls: false,
+      remove_script_host: false,
+      toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+      plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+      max_width: 500,
+      min_height: 300,
+      min_width: 400
     });
   </script>
-
-
 
 
   <!-- Banner section -->
@@ -617,15 +624,13 @@
                     <%for(i=0; i < 2 ; i++){%>
                       <% if(club.grammarExercise[i]){%>
                         <div class="col-md-4">
-                          <div class="exercise-wrapper">
-                            <p
-                              style="background-color: green; border-radius:5px; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
-                              Level
-                              <%= club.grammarExercise[i].level %>
-                            </p>
-                            <a class="d-inline-block m-2 fs-5" target="_blank"
-                              href="<%= club.grammarExercise[i].exerciseLink %>">
+                          <div class="sp-card">
+                            <a class="d-block m-2 fs-5" target="_blank"
+                            href="<%= club.grammarExercise[i].exerciseLink %>">
+                            <span class="p-2 mx-2"
+                          style="background-color: rgb(4, 44, 146); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;"><%= club.grammarExercise[i].level %></span>
                               <%= club.grammarExercise[i].exerciseTitle %>
+                            </p>
                             </a>
                             <hr>
                             <p><a class="d-inline-block m-2 fs-5" target="_blank"
@@ -681,22 +686,17 @@
                     <%for(i=0; i < 2 ; i++){%>
                       <% if(club.vocabularyExercise[i]){%>
                         <div class="col-md-4">
+                          <a class="d-block exo-link m-2" target="_blank"
+                          href="<%= club.vocabularyExercise[i].exerciseLink %>">
                           <div class="exercise-wrapper">
-                            <p
-                              style="background-color: rgb(45, 157, 237); border-radius:5px; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
-                              Level
-                              <%= club.vocabularyExercise[i].level %>
-                            </p>
-                            <a class="d-inline-block m-2 fs-5" target="_blank"
-                              href="<%= club.vocabularyExercise[i].exerciseLink %>">
+                            <p class="pb-3">
+                            <span class="p-2 mx-2"
+                                  style="background-color: rgb(4, 44, 146); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+                              <%= club.vocabularyExercise[i].level %></span>
                               <%= club.vocabularyExercise[i].exerciseTitle %>
-                            </a>
-                            <hr>
-                            <p><a class="d-inline-block m-2 fs-5" target="_blank"
-                                href="<%= club.vocabularyExercise[i].exerciseCorrectionLink %>">
-                                <i class="mx-3 bi bi-file-play"></i>Answers in Video </a></p>
-
+                            </p>
                           </div>
+                        </a>
                         </div>
                         <%}%>
                           <%}%>
@@ -722,22 +722,20 @@
                     <%for(i=0; i < 2 ; i++){%>
                       <% if(club.listeningExercise[i]){%>
                         <div class="col-md-4">
-                          <div class="exercise-wrapper">
-                            <p
-                              style="background-color: rgb(45, 96, 237); border-radius:5px; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
-                              Level
-                              <%= club.listeningExercise[i].level %>
-                            </p>
-                            <a class="d-inline-block m-2 fs-5" target="_blank"
-                              href="<%= club.listeningExercise[i].exerciseLink %>">
-                              <%= club.listeningExercise[i].exerciseTitle %>
-                            </a>
-                            <hr>
-                            <p><a class="d-inline-block m-2 fs-5" target="_blank"
-                                href="<%= club.listeningExercise[i].exerciseCorrectionLink %>">
-                                <i class="mx-3 bi bi-file-play"></i>Answers in Video </a></p>
+                          <a class="d-block exo-link m-2 " target="_blank"
+                            href="<%= club.listeningExercise[i].exerciseLink %>">
+                            <div class="exercise-wrapper">
+                              <p class="pb-3">
+                                <span class="p-2 mx-2"
+                                  style="background-color: rgb(4, 44, 146); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+                                  <%= club.listeningExercise[i].level %>
+                                </span>
 
-                          </div>
+                                <%= club.listeningExercise[i].exerciseTitle %>
+                              </p>
+
+                            </div>
+                          </a>
                         </div>
                         <%}%>
                           <%}%>
@@ -763,15 +761,15 @@
                     <%for(i=0; i < 2 ; i++){%>
                       <% if(club.readingComprehensionExercise[i]){%>
                         <div class="col-md-4">
-                          <div class="exercise-wrapper">
-                            <p
-                              style="background-color: rgb(91, 9, 180); border-radius:5px; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
-                              Level
-                              <%= club.readingComprehensionExercise[i].level %>
-                            </p>
-                            <a class="d-inline-block m-2 fs-5" target="_blank"
+                          <div class="sp-card">
+                            <a class="d-block m-2 fs-5" target="_blank"
                               href="<%= club.readingComprehensionExercise[i].exerciseLink %>">
+                              <span class="p-2 mx-2"
+                                style="background-color: rgb(9, 49, 180); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+                                <%= club.readingComprehensionExercise[i].level %>
+                              </span>
                               <%= club.readingComprehensionExercise[i].exerciseTitle %>
+                                </p>
                             </a>
                             <hr>
                             <p><a class="d-inline-block m-2 fs-5" target="_blank"
@@ -804,15 +802,17 @@
                     <%for(i=0; i < 2 ; i++){%>
                       <% if(club.watchingComprehensionExercise[i]){%>
                         <div class="col-md-4">
-                          <div class="exercise-wrapper">
-                            <p
-                              style="background-color: rgb(4, 95, 93); border-radius:5px; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
-                              Level
-                              <%= club.readingComprehensionExercise[i].level %>
-                            </p>
-                            <a class="d-inline-block m-2 fs-5" target="_blank"
+
+                          <div class="sp-card">
+                            <a class="d-block fs-5 m-2" target="_blank"
                               href="<%= club.watchingComprehensionExercise[i].exerciseLink %>">
-                              <%= club.watchingComprehensionExercise[i].exerciseTitle %>
+                              <p>
+                                <span class="p-2 mx-2"
+                                  style="background-color: rgb(9, 49, 180); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+                                  <%= club.readingComprehensionExercise[i].level %>
+                                </span>
+                                <%= club.watchingComprehensionExercise[i].exerciseTitle %>
+                              </p>
                             </a>
                             <hr>
                             <p>
@@ -847,17 +847,18 @@
                     <%for(i=0; i < 4 ; i++){%>
                       <% if(club.readAloudExercise[i]){%>
                         <div class="col-md-4">
-                          <div class="exercise-wrapper">
-                            <p
-                              style="background-color: rgb(120, 9, 180); border-radius:5px; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">Reading Aloud - 
-                              Level
-                              <%= club.readAloudExercise[i].level %>
-                            </p>
-                            <a class="d-inline-block m-2 readAloud-title" target="_blank"
-                              href="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/readAloud/<%= club.readAloudExercise[i]._id %>"><%= club.readAloudExercise[i].exerciseTitle %>
-                            </a>
-
-                          </div>
+                          <a class="d-block m-2 exo-link readAloud-title" target="_blank"
+                            href="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/readAloud/<%= club.readAloudExercise[i]._id %>">
+                            <div class="exercise-wrapper">
+                              <p class="pb-3">
+                                <span class="p-2 mx-2"
+                                  style="background-color: rgb(83, 9, 180); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+                                  <%= club.readAloudExercise[i].level %>
+                                </span>
+                                <%= club.readAloudExercise[i].exerciseTitle %>
+                              </p>
+                            </div>
+                          </a>
                         </div>
                         <%}%>
                           <%}%>
@@ -868,8 +869,8 @@
               </div>
             </div>
 
-             <!-- Dictation 
-             <div class="accordion-item">
+            <!-- Dictation -->
+            <div class="accordion-item">
               <h2 class="accordion-header" id="headingSeven">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseFour">
@@ -883,24 +884,26 @@
                     <%for(i=0; i < 2 ; i++){%>
                       <% if(club.dictationExercise[i]){%>
                         <div class="col-md-4">
-                          <div class="exercise-wrapper">
-                            <p
-                              style="background-color: rgb(180, 9, 95); border-radius:5px; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
-                              Level
-                              <%= club.dictationExercise[i].level %>
-                            </p>
-                            <a class="d-inline-block m-2 fs-5" target="_blank"
-                              href="<%= club.dictationExercise[i].exerciseLink %>">
-                              <%= club.dictationExercise[i].exerciseTitle %>
-                            </a>
-                            <hr>
-                            <p>
-                              <a class="d-inline-block m-2 fs-5" target="_blank"
+                          <a class="d-block m-2 exo-link " target="_blank"
+                            href="<%= club.dictationExercise[i].exerciseLink %>">
+                            <div class="exercise-wrapper">
+                              <p class="pb-3">
+                                <span class="p-2 mx-2"
+                                  style="background-color: rgb(180, 9, 95); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+
+                                  <%= club.dictationExercise[i].level %>
+                                </span>
+
+                                <%= club.dictationExercise[i].exerciseTitle %>
+                              </p>
+                              <!-- <p>
+                             <a class="d-inline-block m-2 fs-5" target="_blank" 
                                 href="<%= club.dictationExercise[i].exerciseCorrectionLink %>">
                                 <i class="mx-3 bi bi-file-play"></i>Answers in Video </a>
-                            </p>
+                            </p>-->
 
-                          </div>
+                            </div>
+                          </a>
                         </div>
                         <%}%>
                           <%}%>
@@ -910,7 +913,7 @@
                 </div>
               </div>
             </div>
-          -->
+
           </div>
         </section>
 
@@ -918,7 +921,8 @@
         <section id="lsc-section" class="my-5">
           <h1 class="activity-heading">Listen Sing and Complete</h1>
           <div class="song-list-wrapper">
-            <h4 class="song-list">Songs are a fun and good way to improve listening, fluency and more. LSC is designed to help you become a better English Speaker.</h4>
+            <h4 class="song-list">Songs are a fun and good way to improve listening, fluency and more. LSC is designed
+              to help you become a better English Speaker.</h4>
             <hr>
             <p class="py-3 px-4 fs-5"><span class="fw-bold"> Instructions:</span> Click on the song to try the
               LSC
@@ -930,10 +934,12 @@
                   <div class="col-md-4">
                     <div class="exercise-wrapper">
                       <p
-                        style="background-color: rgb(47, 72, 47); border-radius:5px; text-align: center; font-size: 14px;  color:aliceblue; padding: 5px;"><i class="fa-solid fa-music mx-3"></i>Song for Level <%= club.LSC[i].level %>
+                        style="background-color: rgb(47, 72, 47); border-radius:5px; text-align: center; font-size: 14px;  color:aliceblue; padding: 5px;">
+                        <i class="fa-solid fa-music mx-3"></i>Song for Level <%= club.LSC[i].level %>
                       </p>
                       <a class="d-inline-block m-2 readAloud-title" target="_blank"
-                        href="<%= club.LSC[i].exerciseLink %>"><%= club.LSC[i].exerciseTitle %>
+                        href="<%= club.LSC[i].exerciseLink %>">
+                        <%= club.LSC[i].exerciseTitle %>
                       </a>
 
                     </div>
@@ -944,7 +950,6 @@
             </div>
           </div>
         </section>
-
 
         <!-- leaders -->
         <section id="top-stories-wrapper" class="my-5">
@@ -1181,5 +1186,3 @@
       </div>
     </div>
   </div>
-
- 

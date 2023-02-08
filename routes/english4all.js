@@ -435,7 +435,7 @@ router.post(
   catchAsync(engClub.postWeeklyPractice)
 );
 
-//View all lessons
+//read aloud
 router.get(
   "/englishlang4all/clubs/:city/hub/:hub_id/club/:club_id/readAloud/:readAloud_id",
   isLoggedIn,
