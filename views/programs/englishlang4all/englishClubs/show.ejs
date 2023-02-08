@@ -241,21 +241,23 @@
           <div class="col-md">
             <div class="px-2 my-3 activity-card">
               <h3 class="card-title weekly-activity py-2">English Club Meeting</h3>
-              <div class="d-flex weekly-content justify-content-center ps-2 flex-column align-items-start">
-                <h4 class="activity-date fs-4">
+              <div class="d-flex meet weekly-content justify-content-center ps-0 flex-column align-items-start">
+                <div class="d-flex w-100 meeting-info flex-wrap justify-content-around align-items-center">
+                <h4 class="activity-date">
                   <%= days[club.weeklyMeeting[0].meetingDate.getDay()] %>,
                     <%=club.weeklyMeeting[0].meetingDate.getDate()%>
                       <%= months[club.weeklyMeeting[0].meetingDate.getMonth()] %>
                         <%=club.weeklyMeeting[0].meetingDate.getFullYear()%>
                 </h4>
-                <h4 class="activity-place fs-4"> <span class="fw-bold text-danger"><i
+                <h4 class="activity-place"> <span class="fw-bold text-primary"><i
                       class="fas me-2 fa-map-marker-alt"></i>Venue : </span>
                   <%=club.weeklyMeeting[0].venue %>
                 </h4>
-                <h4 class="activity-time fs-4"> <span class="fw-bold text-danger"><i class="fas me-2 fa-clock"></i>Time:
+                <h4 class="activity-time"> <span class="fw-bold text-primary"><i class="fas me-2 fa-clock"></i>Time:
                   </span>
                   <%=club.weeklyMeeting[0].meetingTime %>
                 </h4>
+              </div>
               </div>
               <!-- Button trigger modal -->
               <button type="button" class="btn mx-4 my-2
@@ -291,40 +293,43 @@
           </div>
           <div class="col-md">
             <div class="px-2 my-3 activity-card">
+              
               <h3 class="card-title weekly-activity py-2">Online Debates</h3>
-              <div class="weekly-content ps-2 fs-4">
-                <p class="m-3"> <span class="">Topic 1 </span><br>
-                  <span class="text-success fw-bold">
+              <div class="d-flex online-deb flex-column align-items-start">
+              <div class="weekly-content ps-2 fs-5">
+                <p class="px-2 mt-2"> <span class="me-2 text-white">Topic 1 </span>  <span class="fs-6">
+                  <%= days[club.onlineDebates[0].debateDateOne.getDay()]%>,
+                    <%=club.onlineDebates[0].debateDateOne.getDate()%>
+                      <%= months[club.onlineDebates[0].debateDateOne.getMonth()]%>
+                        <%=club.onlineDebates[0].debateDateOne.getFullYear()%>
+                </span> At
+                <span class="fs-6">
+                  <%=club.onlineDebates[0].debateTimeOne%>
+                </span> 
+              </p> 
+                  <p class=" debate-topic px-2">
                     <%=club.onlineDebates[0].topicOne %>
-                  </span>
-                  <br>
-                  <span class="">
-                    <%= days[club.onlineDebates[0].debateDateOne.getDay()]%>,
-                      <%=club.onlineDebates[0].debateDateOne.getDate()%>
-                        <%= months[club.onlineDebates[0].debateDateOne.getMonth()]%>
-                          <%=club.onlineDebates[0].debateDateOne.getFullYear()%>
-                  </span> At
-                  <span class="">
-                    <%=club.onlineDebates[0].debateTimeOne%>
-                  </span>
-                </p>
+                  </p> 
+                 
+               
                 <hr>
-                <p class="m-3"><span class="">Topic 2 </span>
-                  <br>
-                  <span class="text-success fw-bold">
+                <p class="px-2"><span class="text-white me-2">Topic 2 </span> <span class="fs-6">
+                  <%= days[club.onlineDebates[0].debateDateTwo.getDay()]%>,
+                    <%=club.onlineDebates[0].debateDateTwo.getDate()%>
+                      <%= months[club.onlineDebates[0].debateDateTwo.getMonth()]%>
+                        <%=club.onlineDebates[0].debateDateTwo.getFullYear()%>
+                </span> At <span class="fs-6">
+                  <%=club.onlineDebates[0].debateTimeTwo%>
+                </span>
+              </p>
+                  <p class="debate-topic px-2">
                     <%=club.onlineDebates[0].topicTwo%>
-                  </span>
-                  <br>
-                  <span class="">
-                    <%= days[club.onlineDebates[0].debateDateTwo.getDay()]%>,
-                      <%=club.onlineDebates[0].debateDateTwo.getDate()%>
-                        <%= months[club.onlineDebates[0].debateDateTwo.getMonth()]%>
-                          <%=club.onlineDebates[0].debateDateTwo.getFullYear()%>
-                  </span> At <span class="">
-                    <%=club.onlineDebates[0].debateTimeTwo%>
-                  </span>
-                </p>
+                  </p>
+                  
+                 
+               
               </div>
+</div>
 
               <!-- Button trigger modal -->
               <button type="button" class="btn mx-4 my-2 btn-outline-success" data-bs-toggle="modal"

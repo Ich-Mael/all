@@ -515,6 +515,7 @@ customers-cards:before {
   overflow-y: hidden;
 }
 
+
 .member-info-wrapper {}
 
 .member-info {}
@@ -707,24 +708,49 @@ customers-cards:before {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.activity-date {
-  font-size: 1rem;
-}
+
 
 .weekly-activity {
   color: #0e76a8;
   text-align: center;
+  letter-spacing: 0.2rem;
   padding: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.activity-place {
+.activity-place,.activity-date,.activity-time {
   font-size: 1rem;
-  padding: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1rem 0;
 }
 
-.activity-time {
-  font-size: 1rem;
-  padding: 0 1rem;
+
+.meet{
+  background: url('https://biz30.timedoctor.com/images/2021/04/employee-accountability-template.jpg') no-repeat center center/cover;
+}
+
+.meet:after {
+  content: '';
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: rgba(33, 4, 46, 0.606);
+}
+
+.meeting-info{
+  background-color: #cfcceba6;
+}
+
+.online-deb{
+  background: #2980b9;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2c3e50, #2980b9);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color: rgb(59, 135, 242);
+  
+}
+.debate-topic{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(181, 186, 206);
 }
 
 .accordion-header button {
