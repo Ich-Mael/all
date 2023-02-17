@@ -426,6 +426,7 @@ const progressTrackSchema = new Schema({
     required: true,
     enum: [
       "Not Sufficient",
+      "Acceptable",
       "Sufficient",
       "Good",
       "Very Good",
@@ -438,6 +439,7 @@ const progressTrackSchema = new Schema({
     required: true,
     enum: [
       "Not Sufficient",
+      "Acceptable",
       "Sufficient",
       "Good",
       "Very Good",
@@ -451,6 +453,7 @@ const progressTrackSchema = new Schema({
     required: true,
     enum: [
       "Not Sufficient",
+      "Acceptable",
       "Sufficient",
       "Good",
       "Very Good",
@@ -463,6 +466,7 @@ const progressTrackSchema = new Schema({
     required: true,
     enum: [
       "Not Sufficient",
+      "Acceptable",
       "Sufficient",
       "Good",
       "Very Good",
@@ -475,6 +479,7 @@ const progressTrackSchema = new Schema({
     required: true,
     enum: [
       "Not Sufficient",
+      "Acceptable",
       "Sufficient",
       "Good",
       "Very Good",
@@ -487,6 +492,7 @@ const progressTrackSchema = new Schema({
     required: true,
     enum: [
       "Not Sufficient",
+      "Acceptable",
       "Sufficient",
       "Good",
       "Very Good",

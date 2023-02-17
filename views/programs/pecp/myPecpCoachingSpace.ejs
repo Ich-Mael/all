@@ -226,6 +226,7 @@
              <label class="form-label my-3" for="structure">Structure</label>
              <select class="form-select" name="grade[structure]" aria-label="Default select example">
               <option selected value="Not Sufficient">Not Sufficient</option>
+                            <option value="Acceptable">Acceptable</option>
               <option value="Sufficient">Sufficient</option>
               <option value="Good">Good</option>
               <option value="Very Good">Very Good</option>
@@ -238,6 +239,7 @@
              <label class="form-label my-3" for="pronunciation">Pronunciation</label>
              <select class="form-select" name="grade[pronunciation]" aria-label="Default select example">
               <option selected value="Not Sufficient">Not Sufficient</option>
+              <option value="Acceptable">Acceptable</option>
               <option value="Sufficient">Sufficient</option>
               <option value="Good">Good</option>
               <option value="Very Good">Very Good</option>
@@ -251,6 +253,7 @@
 
              <select class="form-select" name="grade[fluency]" aria-label="Default select example">
               <option selected value="Not Sufficient">Not Sufficient</option>
+                            <option value="Acceptable">Acceptable</option>
               <option value="Sufficient">Sufficient</option>
               <option value="Good">Good</option>
               <option value="Very Good">Very Good</option>
@@ -264,6 +267,7 @@
 
              <select class="form-select" name="grade[vocabulary]" aria-label="Default select example">
               <option selected value="Not Sufficient">Not Sufficient</option>
+                            <option value="Acceptable">Acceptable</option>
               <option value="Sufficient">Sufficient</option>
               <option value="Good">Good</option>
               <option value="Very Good">Very Good</option>
@@ -277,6 +281,7 @@
 
              <select class="form-select" name="grade[comprehension]" aria-label="Default select example">
               <option selected value="Not Sufficient">Not Sufficient</option>
+                            <option value="Acceptable">Acceptable</option>
               <option value="Sufficient">Sufficient</option>
               <option value="Good">Good</option>
               <option value="Very Good">Very Good</option>
@@ -290,6 +295,7 @@
 
              <select class="form-select" name="grade[interaction]" aria-label="Default select example">
               <option selected value="Not Sufficient">Not Sufficient</option>
+                            <option value="Acceptable">Acceptable</option>
               <option value="Sufficient">Sufficient</option>
               <option value="Good">Good</option>
               <option value="Very Good">Very Good</option>
@@ -306,7 +312,7 @@
            <!-- Testee feedback -->
            <textarea type="text" class="form-control mytextarea"
             placeholder="What are the Strenghs and Weaknesses of the testee ?  What are your recommendations for continuous improvement "
-            name="grade[feedback]" value="" id="feedback"></textarea>
+            name="grade[feedback]" value="" required id="feedback"></textarea>
           </div>
 
           <button type="submit" class="btn mb-5 btn-lg btn-primary"> Submit Grade </button>

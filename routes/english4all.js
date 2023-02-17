@@ -107,7 +107,6 @@ router.get(
 router.get(
   "/englishlang4all/clubs/:city/hub/:hub_id/club/:club_id",
   isLoggedIn,
-  isVerified,
   checkEnglishClubMembership,
   catchAsync(engClub.showEnglishClub)
 );
@@ -241,7 +240,6 @@ router.post(
 router.get(
   "/englishlang4all/clubs/:city/hub/:hub_id/club/:club_id/member/:member_id/grade",
   isLoggedIn,
-  isVerified,
   checkRoles("admin"),
   catchAsync(engClub.memberGradeForm)
 );
@@ -254,11 +252,11 @@ router.post(
   catchAsync(engClub.memberGrade)
 );
 
+// show member grade
 router.get(
   "/englishlang4all/clubs/:club_id/member/:member_id/myprogress",
   isLoggedIn,
   isVerified,
-
   catchAsync(engClub.showMemberGrade)
 );
 
