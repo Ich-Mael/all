@@ -26,20 +26,38 @@
 
 
   <!-- Banner section -->
-  <div class="">
-    <div id="banner">
-      <!-- <div class="bg-img-wrapper">
-        <img class="img-medium" src="<%= club.bannerImageUrlMedium %>" alt="" />
-      </div> -->
-      <div class="club-info">
-        <h1 class="club-name">
-          <%=club.name%>
-        </h1>
-        <p class="club-motto">
-          <%=club.motto %>
-        </p>
-        <a href="/englishlang4all/clubs/<%=club._id%>/member/<%= clubMemberInfo._id%>/myprogress" class="my-progress">My
-          progress</a>
+  <div id="banner">
+    <div class="row">
+      <div class="col-md-4">
+        <img class="logo img-fluid" src="<%=club.logoImageUrl%>" alt="" />
+      </div>
+      <div class="col-md-8">
+        <div class="club-info">
+          <h1 class="club-name">
+            <%=club.name%>
+          </h1>
+          <p class="club-motto">
+            <%=club.motto %>
+          </p>
+          <p class="pb-2">
+            <span class="connect"> Connect with us  </span>
+            <!-- Facebook -->
+            <a class="btn btn-floating m-2" href="" id="m-facebook" role="button" target="_blank"><i
+                class="engclub-sm-icon fab fa-facebook-f"></i></a>
+            <!-- Instagram -->
+            <a class="btn btn-floating m-2" href="#!" role="button" id="m-instagram" target="_blank"><i
+                class="engclub-sm-icon fab fa-instagram"></i></a>
+            <!-- Youtube -->
+            <a class="btn btn-floating m-2" href="" role="button" id="m-youtube" target="_blank"><i
+                class="engclub-sm-icon bi bi-youtube"></i></a>
+          </p>
+          <p>
+            <a href="/englishlang4all/clubs/<%=club._id%>/member/<%= clubMemberInfo._id%>/myprogress"
+              class="my-progress">My English Learning
+              progress</a>
+          </p>
+        </div>
+
       </div>
     </div>
 
@@ -231,7 +249,7 @@
 
   <!-- Clubs Activities -->
   <h1 class="common-heading">
-    <span class="underline"></span>English Club Activities<span class="underline"></span>
+    <span class="underline"></span>English Learning Activities<span class="underline"></span>
   </h1>
   <div class="main-content-wrapper">
     <div class="container p-2 current-activity">
@@ -243,21 +261,21 @@
               <h3 class="card-title weekly-activity py-2">English Club Meeting</h3>
               <div class="d-flex meet weekly-content justify-content-center ps-0 flex-column align-items-start">
                 <div class="d-flex w-100 meeting-info flex-wrap justify-content-around align-items-center">
-                <h4 class="activity-date">
-                  <%= days[club.weeklyMeeting[0].meetingDate.getDay()] %>,
-                    <%=club.weeklyMeeting[0].meetingDate.getDate()%>
-                      <%= months[club.weeklyMeeting[0].meetingDate.getMonth()] %>
-                        <%=club.weeklyMeeting[0].meetingDate.getFullYear()%>
-                </h4>
-                <h4 class="activity-place"> <span class="fw-bold text-primary"><i
-                      class="fas me-2 fa-map-marker-alt"></i>Venue : </span>
-                  <%=club.weeklyMeeting[0].venue %>
-                </h4>
-                <h4 class="activity-time"> <span class="fw-bold text-primary"><i class="fas me-2 fa-clock"></i>Time:
-                  </span>
-                  <%=club.weeklyMeeting[0].meetingTime %>
-                </h4>
-              </div>
+                  <h4 class="activity-date">
+                    <%= days[club.weeklyMeeting[0].meetingDate.getDay()] %>,
+                      <%=club.weeklyMeeting[0].meetingDate.getDate()%>
+                        <%= months[club.weeklyMeeting[0].meetingDate.getMonth()] %>
+                          <%=club.weeklyMeeting[0].meetingDate.getFullYear()%>
+                  </h4>
+                  <h4 class="activity-place"> <span class="fw-bold text-primary"><i
+                        class="fas me-2 fa-map-marker-alt"></i>Venue : </span>
+                    <%=club.weeklyMeeting[0].venue %>
+                  </h4>
+                  <h4 class="activity-time"> <span class="fw-bold text-primary"><i class="fas me-2 fa-clock"></i>Time:
+                    </span>
+                    <%=club.weeklyMeeting[0].meetingTime %>
+                  </h4>
+                </div>
               </div>
               <!-- Button trigger modal -->
               <button type="button" class="btn mx-4 my-2
@@ -293,43 +311,43 @@
           </div>
           <div class="col-md">
             <div class="px-2 my-3 activity-card">
-              
+
               <h3 class="card-title weekly-activity py-2">Online Debates</h3>
               <div class="d-flex online-deb flex-column align-items-start">
-              <div class="weekly-content ps-2 fs-5">
-                <p class="px-2 mt-2"> <span class="me-2 text-white">Topic 1 </span>  <span class="fs-6">
-                  <%= days[club.onlineDebates[0].debateDateOne.getDay()]%>,
-                    <%=club.onlineDebates[0].debateDateOne.getDate()%>
-                      <%= months[club.onlineDebates[0].debateDateOne.getMonth()]%>
-                        <%=club.onlineDebates[0].debateDateOne.getFullYear()%>
-                </span> At
-                <span class="fs-6">
-                  <%=club.onlineDebates[0].debateTimeOne%>
-                </span> 
-              </p> 
+                <div class="weekly-content ps-2 fs-5">
+                  <p class="px-2 mt-2"> <span class="me-2 text-white">Topic 1 </span> <span class="fs-6">
+                      <%= days[club.onlineDebates[0].debateDateOne.getDay()]%>,
+                        <%=club.onlineDebates[0].debateDateOne.getDate()%>
+                          <%= months[club.onlineDebates[0].debateDateOne.getMonth()]%>
+                            <%=club.onlineDebates[0].debateDateOne.getFullYear()%>
+                    </span> At
+                    <span class="fs-6">
+                      <%=club.onlineDebates[0].debateTimeOne%>
+                    </span>
+                  </p>
                   <p class=" debate-topic px-2">
                     <%=club.onlineDebates[0].topicOne %>
-                  </p> 
-                 
-               
-                <hr>
-                <p class="px-2"><span class="text-white me-2">Topic 2 </span> <span class="fs-6">
-                  <%= days[club.onlineDebates[0].debateDateTwo.getDay()]%>,
-                    <%=club.onlineDebates[0].debateDateTwo.getDate()%>
-                      <%= months[club.onlineDebates[0].debateDateTwo.getMonth()]%>
-                        <%=club.onlineDebates[0].debateDateTwo.getFullYear()%>
-                </span> At <span class="fs-6">
-                  <%=club.onlineDebates[0].debateTimeTwo%>
-                </span>
-              </p>
+                  </p>
+
+
+                  <hr>
+                  <p class="px-2"><span class="text-white me-2">Topic 2 </span> <span class="fs-6">
+                      <%= days[club.onlineDebates[0].debateDateTwo.getDay()]%>,
+                        <%=club.onlineDebates[0].debateDateTwo.getDate()%>
+                          <%= months[club.onlineDebates[0].debateDateTwo.getMonth()]%>
+                            <%=club.onlineDebates[0].debateDateTwo.getFullYear()%>
+                    </span> At <span class="fs-6">
+                      <%=club.onlineDebates[0].debateTimeTwo%>
+                    </span>
+                  </p>
                   <p class="debate-topic px-2">
                     <%=club.onlineDebates[0].topicTwo%>
                   </p>
-                  
-                 
-               
+
+
+
+                </div>
               </div>
-</div>
 
               <!-- Button trigger modal -->
               <button type="button" class="btn mx-4 my-2 btn-outline-success" data-bs-toggle="modal"
@@ -377,15 +395,15 @@
               <div class="daily-content">
                 <div class="card m-2">
                   <div class="card-header text-center word-day">
-                    <h4 class="fw-bold py-1">Word of the day </h4>
+                    <h4 class="fw-bold ">Word of the day </h4>
                   </div>
                   <div class="card-body">
-                    <div class="card-title word-day-title py-2 fs-4">
-                      <p>
+                    
+                      <p class="card-title word-day-title">
                         <%= club.dailyVocab[0].wordOfDay.word %>
                       </p>
-                    </div>
-                    <p class="card-text word-day-meaning fs-4"><span class="fw-bold">Meaning : </span>
+                    
+                    <p class="card-text word-day-meaning fs-5"><span class="fw-bold">Meaning : </span>
                       <%= club.dailyVocab[0].wordOfDay.wordMeaning %>
                     </p>
                     <!-- Button trigger modal -->
@@ -407,7 +425,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
-                            <h3>Sentence examples for the WOD</h3>
+                            <p class="fst-italic">Click on the links to learn more</p>
                             <p class="fs-3">
                               <%- club.dailyVocab[0].wordOfDay.learnMoreWord %>
                             </p>
@@ -430,12 +448,10 @@
                     <h4 class="fw-bold">Idiom of the day</h4>
                   </div>
                   <div class="card-body">
-                    <div class="card-title idioms-title fs-4 py-2">
-                      <p class="">
+                      <p class="card-title idioms-title">
                         <%= club.dailyVocab[0].IdiomDay.idiom %>
                       </p>
-                    </div>
-                    <p class="card-text word-day-meaning fs-4"><span class="fw-bold">Meaning : </span>
+                    <p class="card-text word-day-meaning fs-5"><span class="fw-bold">Meaning : </span>
                       <%= club.dailyVocab[0].IdiomDay.idiomMeaning %>
                     </p>
                     <!-- Button trigger modal -->
@@ -631,11 +647,13 @@
                         <div class="col-md-4">
                           <div class="sp-card">
                             <a class="d-block m-2 fs-5" target="_blank"
-                            href="<%= club.grammarExercise[i].exerciseLink %>">
-                            <span class="p-2 mx-2"
-                          style="background-color: rgb(4, 44, 146); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;"><%= club.grammarExercise[i].level %></span>
+                              href="<%= club.grammarExercise[i].exerciseLink %>">
+                              <span class="p-2 mx-2"
+                                style="background-color: rgb(4, 44, 146); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+                                <%= club.grammarExercise[i].level %>
+                              </span>
                               <%= club.grammarExercise[i].exerciseTitle %>
-                            </p>
+                                </p>
                             </a>
                             <hr>
                             <p><a class="d-inline-block m-2 fs-5" target="_blank"
@@ -692,16 +710,17 @@
                       <% if(club.vocabularyExercise[i]){%>
                         <div class="col-md-4">
                           <a class="d-block exo-link m-2" target="_blank"
-                          href="<%= club.vocabularyExercise[i].exerciseLink %>">
-                          <div class="exercise-wrapper">
-                            <p class="pb-3">
-                            <span class="p-2 mx-2"
+                            href="<%= club.vocabularyExercise[i].exerciseLink %>">
+                            <div class="exercise-wrapper">
+                              <p class="pb-3">
+                                <span class="p-2 mx-2"
                                   style="background-color: rgb(4, 44, 146); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
-                              <%= club.vocabularyExercise[i].level %></span>
-                              <%= club.vocabularyExercise[i].exerciseTitle %>
-                            </p>
-                          </div>
-                        </a>
+                                  <%= club.vocabularyExercise[i].level %>
+                                </span>
+                                <%= club.vocabularyExercise[i].exerciseTitle %>
+                              </p>
+                            </div>
+                          </a>
                         </div>
                         <%}%>
                           <%}%>

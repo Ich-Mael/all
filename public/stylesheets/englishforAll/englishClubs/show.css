@@ -22,8 +22,8 @@ body {
 .english-club-info {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  align-items: flex-start;
+  justify-content: space-evenly;
 }
 
 .club-logos-wrapper {
@@ -49,21 +49,16 @@ body {
 }
 
 #banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  position: relative;
+  background: #1c92d2;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f2fcfe, #1c92d2);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f2fcfe, #1c92d2);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   overflow: hidden;
   height: 40vh;
   perspective: 100rem;
-  background: #2b5876;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #4e4376, #2b5876);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #4e4376, #2b5876);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
 .bg-img-wrapper {
@@ -81,7 +76,7 @@ body {
   animation: scale 25s;
 }
 
-section{
+section {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
   border: 4px solid rgb(6, 100, 201);
   border-radius: 5px;
@@ -97,9 +92,6 @@ section{
   }
 }
 
-.club-info {
-  padding: 2rem 0 0;
-}
 
 @keyframes moveBanner {
   0% {
@@ -112,23 +104,29 @@ section{
   }
 }
 
+.club-info {
+  margin-left: 4rem;
+  padding: 2rem 1rem;
+}
+
+
 .club-name {
-  color: #ffffffd7;
+  color: #0f45a2b9;
   font-family: "Poppins", sans-serif;
   /* font-family: "Kaushan Script", cursive; */
-  font-size: 5rem;
-  font-weight: 900;
+  font-size: 4rem;
+  font-weight: 700;
   opacity: 0;
-  text-align: center;
+  /* text-align: center; */
   letter-spacing: 0.1rem;
-  text-shadow: 1px 2px 2px rgba(72, 13, 131, 0.89);
+  text-shadow: 1px 1px 1px rgba(29, 2, 55, 0.89);
   animation: moveBanner 2s 1.2s forwards;
 }
 
 .club-motto {
   font-size: 1.5rem;
-  text-align: center;
-  color: rgb(255, 255, 255);
+  /* text-align: center; */
+  color: rgba(27, 1, 53, 0.805);
   margin: 2rem 0;
   font-family: "Noto Sans", sans-serif;
   line-height: 3rem;
@@ -138,15 +136,33 @@ section{
 }
 
 .my-progress {
-  color: rgb(43, 3, 92);
+  color: rgb(238, 238, 238);
   padding: 1rem 1.5rem;
-  margin: 0 1rem;
+  margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  background-color: #00d2ff;
+  background: #1A2980;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #015174, #1A2980);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #015174, #1A2980);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   border: 1px solid whitesmoke;
   border-radius: 5px;
+  transition: all 0.1s;
+}
+
+.my-progress:hover, .my-progress:focus {
+  color: #e2e6e9;
+  font-size: larger;
+}
+
+.connect {
+  font-size: 1.3rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #007991;
 }
 
 /* social media icons */
@@ -189,7 +205,7 @@ section{
   text-align: center;
   height: 1rem;
   margin: 0 1rem;
-  background-color: rgb(87, 4, 126);
+  background-color: rgb(41, 4, 126);
 }
 
 .common-heading {
@@ -199,7 +215,7 @@ section{
   text-align: center;
   background-color: aliceblue;
   padding: 3rem 0;
-  color: rebeccapurple;
+  color: rgb(41, 4, 126);
 }
 
 /* boad members section */
@@ -462,13 +478,12 @@ customers-cards:before {
 }
 
 .activity-heading {
-  background: #5f2c82;
+  background: #1e3c72;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #5f2c82, #49a09d, #5f2c82);
+  background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #5f2c82, #49a09d, #5f2c82);
+  background: linear-gradient(to right, #2a5298, #1e3c72);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
   font-size: 2rem;
   letter-spacing: 0.2rem;
   font-family: "Chivo", sans-serif;
@@ -488,7 +503,13 @@ customers-cards:before {
   padding: 2rem 1rem;
   letter-spacing: 0.2rem;
   border-radius: 3px;
-  background-color: #2f80ed;
+  background: #1e3c72;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2a5298, #1e3c72);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-size: 2rem;
   color: #fff;
   text-align: center;
 }
@@ -678,7 +699,7 @@ customers-cards:before {
 
 .daily-vocabulary-title {
   text-align: center;
-  background-color: #0082c8;
+  background-color: #04134bcb;
   font-size: 2rem;
   padding: 2rem 0.5rem;
   font-family: "Chivo", sans-serif;
@@ -686,14 +707,16 @@ customers-cards:before {
   color: #ffffff;
 }
 
-.word-day-title {
-  color: blue;
+.word-day-title ,.idioms-title{
+  color: rgb(17, 3, 98);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  
 }
-
-.idioms-title {
-  color: #0e76a8;
+.word-day-meaning{
+  min-height: 7rem;
 }
-
 
 
 .incomming-activities {
@@ -709,7 +732,6 @@ customers-cards:before {
 }
 
 
-
 .weekly-activity {
   color: #0e76a8;
   text-align: center;
@@ -718,14 +740,14 @@ customers-cards:before {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.activity-place,.activity-date,.activity-time {
+.activity-place, .activity-date, .activity-time {
   font-size: 1rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 1rem 0;
 }
 
 
-.meet{
+.meet {
   background: url('https://biz30.timedoctor.com/images/2021/04/employee-accountability-template.jpg') no-repeat center center/cover;
 }
 
@@ -737,18 +759,22 @@ customers-cards:before {
   background: rgba(33, 4, 46, 0.606);
 }
 
-.meeting-info{
+.meeting-info {
   background-color: #cfcceba6;
 }
 
-.online-deb{
-  background: #2980b9;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #2c3e50, #2980b9);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-color: rgb(59, 135, 242);
-  
+.online-deb {
+  background: #2980b9;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2c3e50, #2980b9);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2c3e50, #2980b9);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: rgb(59, 135, 242);
+
 }
-.debate-topic{
+
+.debate-topic {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: rgb(181, 186, 206);
 }
@@ -764,42 +790,43 @@ color: rgb(59, 135, 242);
   padding: 1rem 2rem 0;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
-#weekly-activities-wrapper button:hover{
+
+#weekly-activities-wrapper button:hover {
   background-color: #007991;
   color: white;
 
 }
 
-.readAloud-title{
+.readAloud-title {
   line-height: 3rem;
 }
 
-.exo-link{
+.exo-link {
   font-size: 1.2rem;
   transition: all 0.2s;
 }
 
-.exercise-wrapper{
-  transition: all 0.2s; 
+.exercise-wrapper {
+  transition: all 0.2s;
   border-radius: 5px;
 }
 
-.sp-card{
+.sp-card {
   padding: 1rem 2rem 0;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   border-radius: 5px;
   transition: all 0.2s;
 }
 
-.sp-card:hover{
+.sp-card:hover {
   border: 2px solid rgb(32, 3, 94);
 }
 
-.exo-link:hover .exercise-wrapper{
+.exo-link:hover .exercise-wrapper {
   background-color: #007991;
 }
 
-.exo-link:hover{
+.exo-link:hover {
   color: white;
 }
 
@@ -1311,5 +1338,3 @@ screen and (min-resolution: 192dpi) {
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-
-

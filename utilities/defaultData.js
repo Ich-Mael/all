@@ -54,30 +54,30 @@ defaultArticleData = {
 //Weekly Activity
 const dailyVocabData = {
   wordOfDay: {
-    word: "New English word",
+    word: "Resilience",
 
-    wordMeaning: "Just a new word",
+    wordMeaning: "The ability to be happy, successful, etc. again after something difficult or bad has happened. Reference Cambridge Dictionary",
 
-    learnMoreWord: "New English Club",
+    learnMoreWord: "Example 1: Having a place that's theirs alone and that doesn't necessarily involve their mom or dad helps kids build resilience and problem-solving skills.",
   },
 
   IdiomDay: {
-    idiom: "New English Idiom",
+    idiom: "To cost an arm and a leg",
 
-    idiomMeaning: "Just a new idiomatic expression.",
+    idiomMeaning: "Something is very expensive",
 
-    learnMoreIdiom: "",
+    learnMoreIdiom: "Example 1: Fuel these days costs and arm and a leg.",
   },
 };
 
 const clubMeetingData = {
   meetingDate: Date.now(),
 
-  venue: "ROOM 4",
+  venue: "Afro Language Lab",
 
   meetingTime: "15:00",
 
-  about: "Importance of English",
+  about: "Climate Change",
 };
 
 const onlineDebateData = {

@@ -24,15 +24,11 @@ const userRoutes = require("./routes/user");
 const newsRoutes = require("./routes/news");
 const commentRoutes = require("./routes/comment");
 const courseRoutes = require("./routes/course");
-const xpaxRoutes = require("./routes/xpaxetudiant");
-const cmathRoutes = require("./routes/cmath");
-const bacRoutes = require("./routes/100bac");
 const englishRoutes = require("./routes/english4all");
 const pecpRoutes = require("./routes/pecp");
 const english4EveroneRoutes = require("./routes/english4everyone");
 const english4ProfessionRoutes = require("./routes/english4profession");
 const grammarCP = require("./routes/grammarCheckPoint");
-const fasopreunariatRoutes = require("./routes/fasopreunariat");
 
 const path = require("path");
 const passport = require("passport");
@@ -163,20 +159,12 @@ app.use("/", userRoutes);
 //courses routes
 app.use("/", courseRoutes);
 
-//100% BAC routes
-app.use("/", bacRoutes);
 
 //comments routes
 app.use("/", commentRoutes);
 
 //comments routes
 app.use("/", newsRoutes);
-
-//xpax routes
-app.use("/", xpaxRoutes);
-
-//cmath routes
-app.use("/", cmathRoutes);
 
 
 // english for everybody routes
@@ -194,9 +182,6 @@ app.use("/", grammarCP);
 
 // English for professions
 app.use("/", english4ProfessionRoutes);
-
-// Fasopreunariat routes
-app.use("/", fasopreunariatRoutes);
 
 app.all("*", (req, res, next) => {
     next(new ExpressError("Page not found", 404));

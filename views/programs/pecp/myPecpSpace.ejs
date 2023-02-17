@@ -1,5 +1,9 @@
 <% layout('layouts/pecpBoilerplate') %>
   <style>
+    html {
+      font-size: 80%;
+    }
+
     body {
       font-family: Georgia, 'Times New Roman', Times, serif;
     }
@@ -12,6 +16,7 @@
 
     .pecs {
       padding: 2rem 5rem;
+      text-align: center;
       font-family: 'Rye', cursive;
       color: rgb(13, 87, 152);
     }
@@ -19,7 +24,7 @@
     .lg-heading {
 
       color: rgb(13, 87, 152);
-      font-size: 1.3rem;
+      font-size: 1.4rem;
 
       text-align: center;
     }
@@ -63,21 +68,39 @@
       font-family: "Paytone One", sans-serif;
       font-size: 1.8rem;
       background-color: blueviolet;
+      background: #1A2980;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #26D0CE, #1A2980);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #26D0CE, #1A2980);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
       color: white;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 1.2rem 1rem;
     }
 
     .course-wrapper {
-      border: 3px solid rgb(43, 73, 226);
+      border: 3px solid #1A2980;
       border-radius: 5px;
+    }
+
+    .course-link-wrapper{
+      border-radius: 5px;
+      border: 2px solid white;
+      background: #1A2980;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to left, #26a0d0, #1A2980);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to left, #26a0d0, #1A2980);
     }
 
     .course-link {
       color: white;
+     
       text-decoration: none;
       font-size: 1.3rem;
-      padding: 2rem 1rem;
+      padding: 1.3rem 2rem;
       transition: all 0.3s;
     }
 
@@ -176,7 +199,8 @@
 
   <div class="container  mb-5 d-flex flex-column align-items-center">
     <!-- Button trigger modal -->
-    <a type="button" class="btn btn-success" href="https://drive.google.com/file/d/1hwTWJumD3ncuNh1QqZx_659T4K01nMtJ/view?usp=share_link" target="_blank">
+    <a type="button" class="btn btn-success"
+      href="https://drive.google.com/file/d/1hwTWJumD3ncuNh1QqZx_659T4K01nMtJ/view?usp=share_link" target="_blank">
       Guide de l'apprenant (PECP)
     </a>
   </div>
@@ -191,7 +215,7 @@
             <div class="img-wrapper">
               <img src="<%=course.courseImageUrl %>" class="img-fluid img-thumbnail mt-2 " class="" alt="">
             </div>
-            <p class="my-3 py-3 bg-primary">
+            <p class="my-3 py-3 course-link-wrapper">
               <a href="/courses/<%= course._id %>" target="_blank" class="course-link">
                 <%= course.title %>
               </a>

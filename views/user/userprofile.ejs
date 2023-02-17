@@ -17,23 +17,11 @@
   </div>
  </div>
 
- <p class="quote">Le savoir est une arme</p>
+ <p class="quote">« One language sets you in a corridor for life. Two languages open every door along the way » <br>
+ <strong>—> Frank Smith – Ecrivain canadien</strong>  <br>
+  « Une langue vous place dans un couloir pour la vie. Deux langues vous ouvrent toutes les portes le long du chemin ».</p>
  <h2 class="my-program">Mes programmes</h2>
  <div class="row container mx-5 my-5">
-  <div class="col-md-4">
-   <% if (currentUser.isHighSchoolStudent) {%>
-    <div class="program-wrapper">
-     <div class="program-img-wrapper">
-      <img
-       src="https://www.careersportal.co.za/sites/default/files/styles/amp_1200x675_16_9/public/images/Terrique%20Faro/Maths_1.jpg?itok=tO4eBhoE"
-       class="img-fluid" alt="">
-      <a class="btn my-3 ms-3 btn-outline-success"
-       href="/user/<%=currentUser._id%>/highschoolDashboard/<%=currentUser.highSchool_id%>">Easy-Maths</a>
-      <%}%>
-     </div>
-    </div>
-  </div>
-
   <div class="col-md-4">
    <% if (currentUser.isPecpStudent) {%>
     <div class="program-wrapper">
