@@ -16,7 +16,7 @@ body {
   margin: 0;
   padding: auto;
   background: #ffffff;
-  font-family: "Roboto";
+  font-family: "Roboto" sans-serif;
 }
 
 /* preloader */
