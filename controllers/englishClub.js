@@ -537,6 +537,7 @@ module.exports.readAloud = async (req, res)=>{
     const club = await englishClubs.findById(club_id); 
     const readAloudExercise = await englishWeeklyExercises.findById(req.params.readAloud_id); 
 
+
     res.render("programs/englishlang4all/englishClubs/activities/readAloud", {
         club,
         readAloudExercise,

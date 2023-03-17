@@ -21,10 +21,11 @@
   <div class="col-md-10 container pt-4">
    <%-readAloudExercise.readingText %>
   </div>
+
   <!-- Recording -->
-  <div class="wrapper">
+  <div class="wrapper mt-5 d-flex justify-content-around">
    <header>
-    <h5>Record Yourself</h5>
+    <h5>Read and record yourself</h5>
    </header>
 
    <section class="main-controls">
@@ -36,12 +37,8 @@
    </section>
 
    <section class="sound-clips">
-
-
    </section>
-
   </div>
-
 
 
   <div class="py-3 mt-5">
@@ -51,33 +48,19 @@
    </p>
   </div>
 <div class="row mb-5">
+
+  <!-- Slow reading -->
   <div class="container col-md-6">
    <h5 class="" style="color: rgb(6, 51, 147);">Slow Reading</h5>
    <iframe width="100%" height="150" scrolling="no" frameborder="no" allow="autoplay"
-    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1366032289%3Fsecret_token%3Ds-HUw6lvo8si1&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-   <div
-    style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-    <a href="https://soundcloud.com/ismael-zerbo-726062774" title="AfroHK" target="_blank"
-     style="color:#ffffff; border: 1px solid rgb(74, 10, 212); border-radius: 5px; font-weight: bolder; padding: 0.5rem; background-color: #080364; text-decoration: none;">Natural
-     English Clubs</a> · <a
-     href="https://soundcloud.com/ismael-zerbo-726062774/test-1-0622-donald-ouedraogo/s-HUw6lvo8si1"
-     title="Slow Reading" target="_blank" style="color: #690505; text-decoration: none;">Slow Reading</a>
-   </div>
+    src="<%=readAloudExercise.slowReadingLink %>"></iframe>
   </div>
 
+  <!-- normal reading -->
   <div class="container col-md-6">
    <h5 class="" style="color: rgb(2, 87, 66);">Normal Reading</h5>
    <iframe width="100%" height="150" scrolling="no" frameborder="no" allow="autoplay"
-    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1366032289%3Fsecret_token%3Ds-HUw6lvo8si1&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-   <div
-    style="font-size: 10px; color: #720808;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-    <a href="https://soundcloud.com/ismael-zerbo-726062774" title="AfroHK" target="_blank"
-     style="color:  #ffffff; border: 1px solid rgb(74, 10, 212); border-radius: 5px; font-weight: bolder; padding: 0.5rem; background-color: #080364; text-decoration: none;">Natural
-     English Clubs</a> · <a
-     href="https://soundcloud.com/ismael-zerbo-726062774/test-1-0622-donald-ouedraogo/s-HUw6lvo8si1"
-     title="Normal Reading" target="_blank" style="color: #031e5d; text-decoration: none;">Normal reading
-     Reading</a>
-   </div>
+    src="<%=readAloudExercise.normalReadingLink %>"></iframe>
   </div>
  </div>
  </div>

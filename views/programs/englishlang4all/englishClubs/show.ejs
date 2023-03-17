@@ -473,7 +473,6 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
-                            <h3>Sentence examples for the IOD</h3>
                             <p class="fs-3">
                               <%- club.dailyVocab[0].IdiomDay.learnMoreIdiom %>
                             </p>
@@ -649,17 +648,18 @@
                             <a class="d-block m-2 fs-5" target="_blank"
                               href="<%= club.grammarExercise[i].exerciseLink %>">
                               <span class="p-2 mx-2"
-                                style="background-color: rgb(4, 44, 146); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+                                style="background-color: rgb(4, 44, 146); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue;">
                                 <%= club.grammarExercise[i].level %>
                               </span>
                               <%= club.grammarExercise[i].exerciseTitle %>
                                 </p>
                             </a>
+                            <!--
                             <hr>
                             <p><a class="d-inline-block m-2 fs-5" target="_blank"
                                 href="<%= club.grammarExercise[i].exerciseCorrectionLink %>">
                                 <i class="mx-3 bi bi-file-play"></i>Answers in Video </a></p>
-
+                            -->
                           </div>
                         </div>
                         <%}%>
@@ -714,7 +714,7 @@
                             <div class="exercise-wrapper">
                               <p class="pb-3">
                                 <span class="p-2 mx-2"
-                                  style="background-color: rgb(4, 44, 146); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+                                  style="background-color: rgb(4, 44, 146); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue;">
                                   <%= club.vocabularyExercise[i].level %>
                                 </span>
                                 <%= club.vocabularyExercise[i].exerciseTitle %>
@@ -751,7 +751,7 @@
                             <div class="exercise-wrapper">
                               <p class="pb-3">
                                 <span class="p-2 mx-2"
-                                  style="background-color: rgb(4, 44, 146); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+                                  style="background-color: rgb(4, 44, 146); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue;">
                                   <%= club.listeningExercise[i].level %>
                                 </span>
 
@@ -789,17 +789,18 @@
                             <a class="d-block m-2 fs-5" target="_blank"
                               href="<%= club.readingComprehensionExercise[i].exerciseLink %>">
                               <span class="p-2 mx-2"
-                                style="background-color: rgb(9, 49, 180); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+                                style="background-color: rgb(9, 49, 180); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue;">
                                 <%= club.readingComprehensionExercise[i].level %>
                               </span>
                               <%= club.readingComprehensionExercise[i].exerciseTitle %>
                                 </p>
                             </a>
+                            <!--
                             <hr>
                             <p><a class="d-inline-block m-2 fs-5" target="_blank"
                                 href="<%= club.readingComprehensionExercise[i].exerciseCorrectionLink %>">
                                 <i class="mx-3 bi bi-file-play"></i>Answers in Video </a></p>
-
+-->
                           </div>
                         </div>
                         <%}%>
@@ -832,19 +833,20 @@
                               href="<%= club.watchingComprehensionExercise[i].exerciseLink %>">
                               <p>
                                 <span class="p-2 mx-2"
-                                  style="background-color: rgb(9, 49, 180); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+                                  style="background-color: rgb(9, 49, 180); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue;">
                                   <%= club.readingComprehensionExercise[i].level %>
                                 </span>
                                 <%= club.watchingComprehensionExercise[i].exerciseTitle %>
                               </p>
                             </a>
+<!--
                             <hr>
                             <p>
                               <a class="d-inline-block m-2 fs-5" target="_blank"
                                 href="<%= club.watchingComprehensionExercise[i].exerciseCorrectionLink %>">
                                 <i class="mx-3 bi bi-file-play"></i>Answers in Video </a>
                             </p>
-
+-->
                           </div>
                         </div>
                         <%}%>
@@ -876,7 +878,7 @@
                             <div class="exercise-wrapper">
                               <p class="pb-3">
                                 <span class="p-2 mx-2"
-                                  style="background-color: rgb(83, 9, 180); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+                                  style="background-color: rgb(83, 9, 180); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue;">
                                   <%= club.readAloudExercise[i].level %>
                                 </span>
                                 <%= club.readAloudExercise[i].exerciseTitle %>
@@ -913,7 +915,7 @@
                             <div class="exercise-wrapper">
                               <p class="pb-3">
                                 <span class="p-2 mx-2"
-                                  style="background-color: rgb(180, 9, 95); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue; padding: 5px;">
+                                  style="background-color: rgb(180, 9, 95); border-radius:50%; text-align: center;font-size: 14px;  color:aliceblue;">
 
                                   <%= club.dictationExercise[i].level %>
                                 </span>
