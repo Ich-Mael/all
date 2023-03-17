@@ -436,7 +436,7 @@ router.get(
   "/englishlang4all/clubs/:city/hub/:hub_id/club/:club_id/readAloud/:readAloud_id",
   isLoggedIn,
   isVerified,
-  checkEnglishBoardMembership,
+  checkEnglishClubMembership,
   catchAsync(engClub.readAloud)
 );
 
