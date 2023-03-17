@@ -159,6 +159,8 @@
                   <%= student.learningGoal %>
                 </p>
               </div>
+
+             <!-- Upcomming conversation Info  --> 
               <div class="col-md-3 latest-call-info">
                 <% if( student.pecpStudentConvFeedback.length !==0) {%>
                   <div class="px-2 py-2">
@@ -191,7 +193,7 @@
                                 <%= student.pecpStudentConvFeedback[0].callTime %>
                               </span>
                             </p>
-                            <a class="btn btn-primary" href="<%= conv.callLinkInfo %>">Start the Call</a>
+                            <a class="btn btn-primary" href="<%= student.pecpStudentConvFeedback[0].callLinkInfo %>">Start the Call</a>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
