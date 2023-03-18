@@ -958,14 +958,14 @@
               <%for(i=0; i < 4 ; i++){%>
                 <% if(club.LSC[i]){%>
                   <div class="col-md-4">
-                    <div class="exercise-wrapper">
-                      <p
-                        style="background-color: rgb(47, 72, 47); border-radius:5px; text-align: center; font-size: 14px;  color:aliceblue; padding: 5px;">
-                        <i class="fa-solid fa-music mx-3"></i>Song for Level <%= club.LSC[i].level %>
+                    <div class="exercise-wrapper pb-2">
+                      <p style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 1.1rem; color: #4A00E0;"
+                        >
+                        <i class="fa-solid fa-music mx-3"></i><%= club.LSC[i].exerciseTitle %>
                       </p>
-                      <a class="d-inline-block m-2 readAloud-title" target="_blank"
+                      <a style="background-color: rgb(53, 44, 232); border-radius:5px; text-align: center; font-size: 14px;  color:aliceblue;" class="d-block m-2 px-2 readAloud-title" target="_blank"
                         href="<%= club.LSC[i].exerciseLink %>">
-                        <%= club.LSC[i].exerciseTitle %>
+                        Click here to try it 
                       </a>
 
                     </div>
