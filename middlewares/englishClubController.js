@@ -28,7 +28,7 @@ module.exports.checkEnglishClubMembership = catchAsync(async (req, res, next) =>
     })
 
     if (checkingMember) {
-        if (englishClub.members.includes(checkingMember._id) || req.user.role == "admin" || req.user.role == "english-club-admin") {
+        if (englishClub.members.includes(checkingMember._id) || req.user.role == "admin" || req.user.role == "account-manager") {
             next();
         } else {
             req.flash("error", "Vous n’êtes pas membre de ce club d’Anglais");
@@ -49,7 +49,7 @@ module.exports.checkEnglishBoardMembership = catchAsync(async (req, res, next) =
     const englishClub = await englishClubs.findById(club_id);
     if (
         englishClub.boardMembers.indexOf(req.user._id) > -1 ||
-        req.user.role == "admin" || req.user.role == "english-club-admin"
+        req.user.role == "admin" || req.user.role == "account-manager"
     ) {
         next();
     } else {
