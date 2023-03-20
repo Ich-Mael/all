@@ -153,7 +153,7 @@ router.post(
   "/admindashboard/englishlang4all/clubs/:city/hub/:hub_id/club/:club_id/new_member",
   isLoggedIn,
   isVerified,
-  checkRoles("admin"),
+  checkRoles(["admin", "account-manager"]),
   catchAsync(async (req, res) => {
     const {
       newMember,

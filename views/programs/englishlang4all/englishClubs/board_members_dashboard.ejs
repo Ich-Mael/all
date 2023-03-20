@@ -23,6 +23,95 @@
   <a class="btn btn-outline-warning mx-3 fs-5"
     href="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/home">Club home page</a>
 </div>
+
+<% if(currentUser.role === "account-manager"){%>
+  <!-- Admin  -->
+  <div class="container my-5 p-3 col-md-8" style="background-color: aliceblue;">
+    <h4 class="text-center py-4">Handling Club Members</h4>
+    <div class="d-flex justify-content-around">
+      <p>
+        <button class="btn btn-primary ms-2 me-5" type="button" data-bs-toggle="collapse" data-bs-target="#new-member"
+          aria-expanded="false" aria-controls="collapseExample">
+          Add new member
+        </button>
+  
+        <button class="btn btn-primary ms-2 me-5" type="button" data-bs-toggle="collapse" data-bs-target="#new-boardM"
+          aria-expanded="false" aria-controls="collapseExample">
+          Add new board member
+        </button>
+  
+        <button class="btn btn-success ms-2 me-5" type="button" data-bs-toggle="collapse" data-bs-target="#club_info"
+          aria-expanded="false" aria-controls="collapseExample">
+          Update Club Info
+        </button>
+      </p>
+    </div>
+  
+    <!-- Add New Member Form -->
+    <div class="collapse  p-5" id="new-member" style="background-color: rgb(192, 198, 203);">
+      <form
+        action="/admindashboard/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/new_member"
+        method="POST">
+        <!-- New Member Username -->
+        <label class="form-label my-3" for="new-member">New Member Username</label>
+        <input type="text" class="form-control" name="newMember" required id="" value="" />
+  
+        <!-- New member Level -->
+        <label class="form-label my-3" for="new-member-level">New member level</label>
+        <select class="form-select" name="level" aria-label="Default select example">
+          <option selected value="A1 - Elementary">A1 Elementary</option>
+          <option value="A2 - Pre-Intermediate">A2 Pre-Intermediate</option>
+          <option value="B1 - Intermediate">B1 Intermediate</option>
+          <option value="B2 - Upper-Intermediate">B2 Upper-Intermediate</option>
+          <option value="C1 - Advanced">C1 Advanced</option>
+          <option value="C2 - Proficient">C2 Proficient</option>
+        </select>
+  
+        <button class="btn my-3  me-2 btn-success" type="submit">Add</button>
+      </form>
+    </div>
+  
+    <!-- Add board Member Form -->
+    <div class="collapse  p-5" id="new-boardM" style="background-color: rgb(201, 192, 203);">
+      <form
+        action="/admindashboard/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/new_board_member"
+        method="POST">
+        <!-- New Member Username -->
+        <label class="form-label my-3" for="new-member">New Board Member Username</label>
+        <input type="text" class="form-control" name="newBoardMember" required id="" value="" />
+  
+        <!-- New Member Username -->
+        <label class="form-label my-3" for="new-member">New Board Member Position</label>
+        <input type="text" class="form-control" name="position" required id="" value="" />
+  
+        <button class="btn my-3  me-2 btn-success" type="submit">Create a new board position</button>
+      </form>
+    </div>
+  
+    <!-- Update club info  -->
+    <div class="collapse  p-5" id="club_info" style="background-color: rgb(192, 198, 203);">
+      <form action="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/info?_method=PUT"
+        method="POST">
+        <!-- Family picture -->
+        <label class="form-label my-3" for="family_picture">Family Picture</label>
+        <input type="text" class="form-control" name="familyPictureUrl" required id=""
+          value="<%= club.bannerImageUrlMedium %>" />
+  
+        <!-- Club Presentation video -->
+        <label class="form-label my-3" for="family_picture">Club Presentation video</label>
+        <input type="text" class="form-control" name="clubPresentationVideoUrl" required id=""
+          value="<%= club.clubPresentationVideoUrl %>" />
+        <!-- Club Description -->
+        <label class="form-label my-3" for="english Club description">Club Description</label>
+        <textarea type="text" class="form-control mytextarea" name="englishClubDescription" value=""
+          id=""><%= club.description %></textarea>
+  
+        <button class="btn my-3  me-2 btn-success" type="submit">Add</button>
+      </form>
+    </div>
+  </div>
+  <%}%>
+
 <% if(currentUser.role === "admin"){%>
 <!-- Admin  -->
 <div class="container my-5 p-3 col-md-8" style="background-color: aliceblue;">
