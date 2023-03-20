@@ -1800,8 +1800,18 @@ customers-cards:before {
 /* footer 
 ============================================================*/
 .svg-logo{
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
+}
+.text{
+  align-self: center;
+}
+
+.footer-slogan{
+  font-family: 'Playfair Display', serif;
+  color:  #5806c5;
+  
+  font-size: 1.2rem;
 }
 
 .top-footer-line{
@@ -1874,10 +1884,11 @@ ul {
 }
 
 
-.footer-column, .footer-widget{
+.footer-column,  .logo-widget .footer-widget{
 display: flex;
 flex-direction: column;
-justify-content: center;
+justify-content: start;
+align-items: first baseline;
 }
 
 .footer-content .logo-widget{
@@ -1892,6 +1903,7 @@ margin: 30px 0;
   position: relative;
   display: inline-block;
   margin-right: 9px;
+  margin-top: 7px;
 }
 .footer-content  .footer-social li:last-child{
   margin-right: 0px;
@@ -1902,8 +1914,6 @@ margin: 30px 0;
   width: 42px;
   height: 42px;
   line-height: 42px;
-  background: #d2d6e0;
-  color: #17181a;
   text-align: center;
   border-radius: 50%;
 }
@@ -1915,7 +1925,6 @@ margin: 30px 0;
   margin-bottom: 25px;
 }
 .footer-content .logo-widget .text p{
-  color: #9ea0a9;
   margin-bottom: 32px;
 }
 .footer-content .footer-title{
@@ -1950,6 +1959,46 @@ margin: 30px 0;
   margin-bottom: 29px;
 }
 
+#m-facebook {
+  color: rgb(245, 239, 239);
+  background-color: rgb(9, 103, 192);
+}
+
+#m-instagram {
+  color: rgb(245, 239, 239);
+  background: #833ab4;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient (to right, #fcb045, #fd1d1d, #833ab4);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#m-linkedIn {
+  color: rgb(245, 239, 239);
+  background-color: #0e76a8;
+}
+
+#m-whatsapp {
+  background-color: rgb(29, 199, 29);
+  color: rgb(245, 239, 239);
+}
+
+#m-youtube {
+  color: rgb(245, 239, 239);
+  background-color: rgb(241, 65, 21);
+}
+
+#m-facebook:hover,
+#m-youtube:hover,
+#m-instagram:hover,
+#m-linkedIn:hover,
+#m-whatsapp:hover,
+#m-twitter:hover,
+#user_mail:hover {
+  transform: scale(1.1);
+}
+
 /** footer-bottom **/
 
 .footer-bottom{
@@ -1963,6 +2012,22 @@ margin: 30px 0;
   text-align: center;
 }
 
+/* footer responsive */
+@media (max-width: 767px) {
+  .footer-slogan {
+font-size: 1.2rem;
+  }
+
+  
+
+  @media (max-width: 578px) {
+    .footer-slogan {
+  font-size: 1rem;
+    }
+
+ 
+    
+}
 
 
 
