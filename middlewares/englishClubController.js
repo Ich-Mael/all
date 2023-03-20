@@ -27,12 +27,19 @@ module.exports.checkEnglishClubMembership = catchAsync(async (req, res, next) =>
         clubMember: req.user._id
     })
 
-    if (englishClub.members.includes(checkingMember._id) || req.user.role == "admin" || req.user.role == "english-club-admin") {
-        next();
+    if (checkingMember) {
+        if (englishClub.members.includes(checkingMember._id) || req.user.role == "admin" || req.user.role == "english-club-admin") {
+            next();
+        } else {
+            req.flash("error", "Vous n’êtes pas membre de ce club d’Anglais");
+            res.redirect(`back`);
+        }
     } else {
-        req.flash("error", "Vous n’êtes pas membre de ce club d’Anglais");
+        req.flash("error", "Vous n’avez pas le statut de membre de club d'Anglais. Contactez-nous");
         res.redirect(`back`);
     }
+
+
 });
 
 module.exports.checkEnglishBoardMembership = catchAsync(async (req, res, next) => {

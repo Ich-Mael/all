@@ -64,7 +64,7 @@
       <li class="nav-item active">
         <a class="nav-link m-0" id="drop-down-contact" href="#activities"><span class="myNav-link">Activities</span></a>
       </li>
-      <% if (currentUser.role === "admin" || currentUser.role === "englishClub-boardMember") {%>
+      <% if (currentUser.role === "admin" || currentUser.role === "account-manager") {%>
       <li class="nav-item">
         <a class="nav-link me-2"
           href="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/board_dashboard"><span
