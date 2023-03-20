@@ -98,7 +98,6 @@ router.get(
       url = "http://localhost:5000/user/verifyemail?token=" + token;
     }
 
-    console.log(url);
     // send an email for verification
     await new Emailer(user, url).sendVerifyEmail();
 
@@ -143,6 +142,8 @@ router.get("/user/verifyemail", async (req, res) => {
         }
       });
       */
+    }else{
+      res.render("user/account_already_activated")
     }
   };
 });
