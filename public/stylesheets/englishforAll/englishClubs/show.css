@@ -707,14 +707,15 @@ customers-cards:before {
   color: #ffffff;
 }
 
-.word-day-title ,.idioms-title{
+.word-day-title, .idioms-title {
   color: rgb(17, 3, 98);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 500;
   font-size: 1.3rem;
-  
+
 }
-.word-day-meaning{
+
+.word-day-meaning {
   min-height: 7rem;
 }
 
@@ -891,6 +892,8 @@ customers-cards:before {
 
 .comment-text {
   font-size: 1rem;
+  padding: 2rem 1rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /* Weekly lesson */

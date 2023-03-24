@@ -388,17 +388,30 @@
                 club.members[i].clubMember.name +" "+
                 club.members[i].clubMember.surname%></td>
               <td><%=
-                club.members[i].level %>
-                <% if(currentUser.role === "admin"){%>
-                <a href="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/member/<%=club.members[i]._id %>/grade"
-                  class="btn btn-warning">Grade this member</a>
-                <%}%>
+                club.members[i].level %> 
               </td>
+             
               <% if(club.members[i].isMuted){%>
-              <td><a href="" class="btn mx-2 btn-success">Unmute this member</a>
+              <td>
+                <form class="d-inline-block" action="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/member/<%=club.members[i]._id %>/unmute_member" method="POST"> <button class="btn btn-primary" type="s
+                "><i class="fa-solid px-2 fa-comment"></i></i></button>
+              </form>
+                <% if(currentUser.role === "admin"){%>
+                  <a href="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/member/<%=club.members[i]._id %>/grade"
+                    class="btn btn-warning">Grade</a>
+                    <form class="d-inline-block" action="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/member/<%=club.members[i]._id %>/remove_member" method="POST"> <button class="btn btn-danger" type="s
+                      ">Remove<i class="fa-solid px-2 fa-person-walking-dashed-line-arrow-right"></i></button> </form>
+                  <%}%> 
               </td>
               <%}else{%>
-              <td> <a href="" class="btn mx-2 btn-danger">Mute this member</a></td>s
+              <td> <form class="d-inline-block" action="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/member/<%=club.members[i]._id %>/mute_member" method="POST"> <button class="btn btn-danger" type="s
+                "><i class="fa-solid px-2 fa-comment-slash"></i></button>
+                 <% if(currentUser.role === "admin"){%>
+                <a href="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/member/<%=club.members[i]._id %>/grade"
+                  class="btn btn-warning">Grade</a>
+                  <form class="d-inline-block" action="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/member/<%=club.members[i]._id %>/remove_member" method="POST"> <button class="btn btn-danger" type="s
+                    ">Remove<i class="fa-solid px-2 fa-person-walking-dashed-line-arrow-right"></i></button> </form>
+                <%}%> </td>
               <%}%>
             </tr>
             <%}%>

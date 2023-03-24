@@ -33,6 +33,17 @@ const {
   englishClubs,
 } = require("../models/englishClub");
 
+
+// helper functions
+function removeItemOnce(arr, value) {
+  var index = arr.indexOf(value);
+  if (index > -1) {
+    arr.splice(index, 1);
+  }
+  return arr;
+}
+
+
 //english for everybody
 router.get("/englishlang4all", (req, res) => {
   res.render("programs/englishlang4all/home");
@@ -141,9 +152,9 @@ router.get(
 
     res.render(
       "programs/englishlang4all/englishClubs/board_members_dashboard", {
-        hub,
-        club
-      }
+      hub,
+      club
+    }
     );
   })
 );
@@ -170,6 +181,7 @@ router.post(
     const checkingMember = await englishClubMember.findOne({
       clubMember: user._id
     })
+
     if (!checkingMember) {
       const newEngClubMember = new englishClubMember({
         clubMember: user._id,
@@ -194,6 +206,70 @@ router.post(
 
   })
 );
+
+// Removing a member from the club 
+router.post(
+  "/englishlang4all/clubs/:city/hub/:hub_id/club/:club_id/member/:member_id/remove_member",
+  isLoggedIn,
+  isVerified,
+  checkRoles(["admin", "account-manager"]),
+  catchAsync(async (req, res) => {
+
+    // Find the club
+    englishClub = await englishClubs.findById(req.params.club_id);
+
+    //Removing the member
+    removeItemOnce(englishClub.members, req.params.member_id);
+
+    await englishClub.save();
+    res.send("Member successfuly removed!!");
+  }));
+
+// mute member
+router.post(
+  "/englishlang4all/clubs/:city/hub/:hub_id/club/:club_id/member/:member_id/mute_member",
+  isLoggedIn,
+  isVerified,
+  checkRoles(["admin", "account-manager"]),
+  catchAsync(async (req, res) => {
+
+    // Find the Club
+    // englishClub = await englishClubs.findById(req.params.club_id);
+    const member = await englishClubMember.findById(req.params.member_id);
+
+    if (member) {
+      member.isMuted = true;
+    } else {
+      res.send("Member not found!");
+    }
+
+    await member.save();
+
+    res.send("This member sucessfully muted!")
+  }));
+
+// unmute member
+router.post(
+  "/englishlang4all/clubs/:city/hub/:hub_id/club/:club_id/member/:member_id/unmute_member",
+  isLoggedIn,
+  isVerified,
+  checkRoles(["admin", "account-manager"]),
+  catchAsync(async (req, res) => {
+
+    // englishClub = await englishClubs.findById(req.params.club_id);
+    const member = await englishClubMember.findById(req.params.member_id);
+
+    if (member) {
+      member.isMuted = false;
+    } else {
+      res.send("Member not found!");
+    }
+
+    await member.save();
+
+    res.send("This member sucessfully unmuted!")
+  }));
+
 
 //new board member
 router.post(
@@ -442,9 +518,6 @@ router.get(
 
 
 
-
-
-
 //=====================================
 //
 //             Workers of the Months
@@ -537,8 +610,13 @@ router.post(
   catchAsync(engClub.postComment)
 );
 
-
-
+// delete english comment route
+router.post(
+  "/englishlang4all/clubs/:city/hub/:hub_id/club/:club_id/clubMedia/:media_id/comment/:comment_id/delete_comment",
+  isLoggedIn, isVerified,
+  checkEnglishClubMembership,
+  catchAsync(engClub.deleteComment)
+);
 
 
 
@@ -547,6 +625,7 @@ router.post(
  *               Song Challenges
  *
  * ================================================ */
+
 router.get(
   "/englishlang4all/lsc/song-1",
   catchAsync(async (req, res) => {
@@ -592,8 +671,8 @@ router.get(
 
     res.render(
       "programs/englishlang4all/englishClubs/clubQuiz/grammarQuiz.ejs", {
-        club
-      }
+      club
+    }
     );
   })
 );

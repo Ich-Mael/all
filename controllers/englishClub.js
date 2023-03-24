@@ -54,6 +54,17 @@ function addEngClub(club) {
     }
 }
 
+
+// helper functions
+function removeItemOnce(arr, value) {
+    var index = arr.indexOf(value);
+    if (index > -1) {
+        arr.splice(index, 1);
+    }
+    return arr;
+}
+
+
 async function addBoardMember(boardUsername, clubname, position) {
     boardUsername = req.body;
     const englishClub = englishClubs.findOne({
@@ -209,7 +220,7 @@ module.exports.showEnglishClub = async (req, res) => {
         .populate("dictationExercise")
         .populate("onlineDebates");
 
-        // console.log(club.description);
+    // console.log(club.description);
 
     res.render("programs/englishlang4all/englishClubs/show", {
         club,
@@ -317,8 +328,8 @@ module.exports.updateArticle = async (req, res) => {
     const hub = await englishClubHub.findById(req.params.hub_id);
     const article = await englishClubArticles.findByIdAndUpdate(
         req.params.article_id, {
-            ...req.body.englishClubArticle,
-        }
+        ...req.body.englishClubArticle,
+    }
     );
 
     await article.save();
@@ -432,9 +443,9 @@ module.exports.allLessons = async (req, res) => {
         .populate("weeklyVideoLesson");
     res.render(
         "programs/englishlang4all/englishClubs/videoLessons/videoLessonsShow", {
-            club,
-            hub,
-        }
+        club,
+        hub,
+    }
     );
 };
 
@@ -447,10 +458,10 @@ module.exports.editLessonForm = async (req, res) => {
 
     res.render(
         "programs/englishlang4all/englishClubs/videoLessons/weeklyLessonEdit", {
-            videoLesson,
-            club,
-            hub
-        }
+        videoLesson,
+        club,
+        hub
+    }
     );
 };
 
@@ -461,8 +472,8 @@ module.exports.updateLesson = async (req, res) => {
 
     const videoLesson = await englishWeeklyLessons.findByIdAndUpdate(
         req.params.lesson_id, {
-            ...req.body.weeklyLesson,
-        }
+        ...req.body.weeklyLesson,
+    }
     );
 
     await videoLesson.save();
@@ -529,13 +540,13 @@ module.exports.postWeeklyPractice = async (req, res) => {
     res.send("New exercise posted");
 }
 
-module.exports.readAloud = async (req, res)=>{
+module.exports.readAloud = async (req, res) => {
     const club_id = req.params.club_id;
     const city = req.params.city;
     const hub = await englishClubHub.findById(req.params.hub_id);
 
-    const club = await englishClubs.findById(club_id); 
-    const readAloudExercise = await englishWeeklyExercises.findById(req.params.readAloud_id); 
+    const club = await englishClubs.findById(club_id);
+    const readAloudExercise = await englishWeeklyExercises.findById(req.params.readAloud_id);
 
 
     res.render("programs/englishlang4all/englishClubs/activities/readAloud", {
@@ -609,13 +620,13 @@ module.exports.updateLeadersOM = async (req, res) => {
     const hub_id = req.params.hub_id;
     const leader = await englishClubWorkersOfMonth.findByIdAndUpdate(
         req.params.leader_id, {
-            studentOfMonth: {
-                ...req.body.studentOfMonth,
-            },
-            instructorOfMonth: {
-                ...req.body.instructorOfMonth,
-            },
-        }
+        studentOfMonth: {
+            ...req.body.studentOfMonth,
+        },
+        instructorOfMonth: {
+            ...req.body.instructorOfMonth,
+        },
+    }
     );
     leader.save();
 
@@ -703,6 +714,21 @@ module.exports.postComment = async (req, res) => {
     res.redirect(`/englishlang4all/clubs/${city}/hub/${hub_id}/club/${club_id}`);
 }
 
+module.exports.deleteComment = async (req, res) => {
+    const club_id = req.params.club_id;
+    const city = req.params.city;
+    const hub_id = req.params.hub_id;
+    const media = await englishClubMedia.findById(req.params.media_id);
+
+
+    removeItemOnce(media.mediaComments, req.params.comment_id);
+
+    await Review.findByIdAndDelete(req.params.comment_id);
+
+    req.flash("success", `Comment successfully deleted`);
+    res.redirect(`/englishlang4all/clubs/${city}/hub/${hub_id}/club/${club_id}`);
+}
+
 
 ///==========================================
 //      Grading a new member
@@ -732,10 +758,6 @@ module.exports.memberGrade = async (req, res) => {
     member.clubMemberProgress.unshift(memberGrade._id);
 
     await member.save();
-
-    console.log("*********");
-    console.log(req.params.member_id);
-
 
     res.send("English member has been successfully graded");
 }

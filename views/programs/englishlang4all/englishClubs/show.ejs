@@ -40,7 +40,7 @@
             <%=club.motto %>
           </p>
           <p class="pb-2">
-            <span class="connect"> Connect with us  </span>
+            <span class="connect"> Connect with us </span>
             <!-- Facebook -->
             <a class="btn btn-floating m-2" href="" id="m-facebook" role="button" target="_blank"><i
                 class="engclub-sm-icon fab fa-facebook-f"></i></a>
@@ -398,11 +398,11 @@
                     <h4 class="fw-bold ">Word of the day </h4>
                   </div>
                   <div class="card-body">
-                    
-                      <p class="card-title word-day-title">
-                        <%= club.dailyVocab[0].wordOfDay.word %>
-                      </p>
-                    
+
+                    <p class="card-title word-day-title">
+                      <%= club.dailyVocab[0].wordOfDay.word %>
+                    </p>
+
                     <p class="card-text word-day-meaning fs-5"><span class="fw-bold">Meaning : </span>
                       <%= club.dailyVocab[0].wordOfDay.wordMeaning %>
                     </p>
@@ -448,9 +448,9 @@
                     <h4 class="fw-bold">Idiom of the day</h4>
                   </div>
                   <div class="card-body">
-                      <p class="card-title idioms-title">
-                        <%= club.dailyVocab[0].IdiomDay.idiom %>
-                      </p>
+                    <p class="card-title idioms-title">
+                      <%= club.dailyVocab[0].IdiomDay.idiom %>
+                    </p>
                     <p class="card-text word-day-meaning fs-5"><span class="fw-bold">Meaning : </span>
                       <%= club.dailyVocab[0].IdiomDay.idiomMeaning %>
                     </p>
@@ -839,7 +839,7 @@
                                 <%= club.watchingComprehensionExercise[i].exerciseTitle %>
                               </p>
                             </a>
-<!--
+                            <!--
                             <hr>
                             <p>
                               <a class="d-inline-block m-2 fs-5" target="_blank"
@@ -959,13 +959,14 @@
                 <% if(club.LSC[i]){%>
                   <div class="col-md-4">
                     <div class="exercise-wrapper pb-2">
-                      <p style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 1.1rem; color: #4A00E0;"
-                        >
-                        <i class="fa-solid fa-music mx-3"></i><%= club.LSC[i].exerciseTitle %>
+                      <p
+                        style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 1.1rem; color: #4A00E0;">
+                        <i class="fa-solid fa-music mx-3"></i>
+                        <%= club.LSC[i].exerciseTitle %>
                       </p>
-                      <a style="background-color: rgb(53, 44, 232); border-radius:5px; text-align: center; font-size: 14px;  color:aliceblue;" class="d-block m-2 px-2 readAloud-title" target="_blank"
-                        href="<%= club.LSC[i].exerciseLink %>">
-                        Click here to try it 
+                      <a style="background-color: rgb(53, 44, 232); border-radius:5px; text-align: center; font-size: 14px;  color:aliceblue;"
+                        class="d-block m-2 px-2 readAloud-title" target="_blank" href="<%= club.LSC[i].exerciseLink %>">
+                        Click here to try it
                       </a>
 
                     </div>
@@ -1114,10 +1115,13 @@
                       <%= club.media[i].mediaTitle %>
                     </h5>
                   </div>
+
+
                   <!-- Button trigger modal -->
                   <button type="button" class="btn mx-2 my-2 btn-outline-primary" data-bs-toggle="modal"
                     data-bs-target='#mediaComment<%= club.media[i]._id%>'>Leave your feeling 🙃
                   </button>
+
                   <!-- Modal -->
                   <div class="modal fade" id='mediaComment<%= club.media[i]._id%>' tabindex="-1"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -1127,80 +1131,93 @@
                           <h5 class="modal-title" id="exampleModalLabel">Club members' feeling</h5>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                          <form
-                            action="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/clubMedia/<%= club.media[i]._id %>/comment"
-                            method="POST">
-                            <fieldset id="stars" class="starability-heart mb-1">
-                              <!-- <legend>Rating</legend> -->
-                              <input type="radio" id="no-rate<%= club.media[i]._id %>" class="input-no-rate"
-                                name="review[rating]" value="0" checked aria-label="No rating." />
-                              <input type="radio" id="first-of-rate1<%= club.media[i]._id %>" name="review[rating]"
-                                value="1" />
-                              <label for="first-rate1<%= club.media[i]._id %>" title="Terrible">1
-                                star</label>
-                              <input type="radio" id="first-rate2<%= club.media[i]._id %>" name="review[rating]"
-                                value="2" />
-                              <label for="first-rate2<%= club.media[i]._id %>" title="Not good">2
-                                stars</label>
-                              <input type="radio" id="first-rate3<%= club.media[i]._id %>" name="review[rating]"
-                                value="3" />
-                              <label for="first-rate3<%= club.media[i]._id %>" title="Average">3
-                                stars</label>
-                              <input type="radio" id="first-rate4<%= club.media[i]._id %>" name="review[rating]"
-                                value="4" />
-                              <label for="first-rate4<%= club.media[i]._id %>" title="Very good">4
-                                stars</label>
-                              <input type="radio" id="first-rate5<%= club.media[i]._id %>" name="review[rating]"
-                                value="5" />
-                              <label for="first-rate5<%= club.media[i]._id %>" title="Amazing">5
-                                stars</label>
-                            </fieldset>
-                            <div class="form-floating">
-                              <textarea class="form-control" name="review[text]" placeholder="Leave a comment here"
-                                id="floatingTextarea" style="height: 70px" required></textarea>
-                              <label for="floatingTextarea">Leave a comment</label>
-                            </div>
-                            <button class="btn btn-outline-primary my-3">Post Comment</button>
-                          </form>
-                          <!-- all comments -->
-                          <hr>
 
-                          <h5 class="text-center py-3 mb-3" style="color:white; background: #8E2DE2;  /* fallback for old browsers */
+                        <div class="modal-body">
+                          <% if(clubMemberInfo.isMuted){%>
+                            <p class="fst-italic text-danger fs-5"> You are muted. You are not allowed to comment</p>
+                            <%}else{%>
+                              <form
+                                action="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/clubMedia/<%= club.media[i]._id %>/comment"
+                                method="POST">
+                                <fieldset id="stars" class="starability-heart mb-1">
+                                  <!-- <legend>Rating</legend> -->
+                                  <input type="radio" id="no-rate<%= club.media[i]._id %>" class="input-no-rate"
+                                    name="review[rating]" value="0" checked aria-label="No rating." />
+                                  <input type="radio" id="first-of-rate1<%= club.media[i]._id %>" name="review[rating]"
+                                    value="1" />
+                                  <label for="first-rate1<%= club.media[i]._id %>" title="Terrible">1
+                                    star</label>
+                                  <input type="radio" id="first-rate2<%= club.media[i]._id %>" name="review[rating]"
+                                    value="2" />
+                                  <label for="first-rate2<%= club.media[i]._id %>" title="Not good">2
+                                    stars</label>
+                                  <input type="radio" id="first-rate3<%= club.media[i]._id %>" name="review[rating]"
+                                    value="3" />
+                                  <label for="first-rate3<%= club.media[i]._id %>" title="Average">3
+                                    stars</label>
+                                  <input type="radio" id="first-rate4<%= club.media[i]._id %>" name="review[rating]"
+                                    value="4" />
+                                  <label for="first-rate4<%= club.media[i]._id %>" title="Very good">4
+                                    stars</label>
+                                  <input type="radio" id="first-rate5<%= club.media[i]._id %>" name="review[rating]"
+                                    value="5" />
+                                  <label for="first-rate5<%= club.media[i]._id %>" title="Amazing">5
+                                    stars</label>
+                                </fieldset>
+                                <div class="form-floating">
+                                  <textarea class="form-control" name="review[text]" placeholder="Leave a comment here"
+                                    id="floatingTextarea" style="height: 70px" required></textarea>
+                                  <label for="floatingTextarea">Leave a comment</label>
+                                </div>
+                                <button class="btn btn-outline-primary my-3">Post Comment</button>
+                              </form>
+                              <%}%>
+
+                <!-- all comments -->
+                                <hr>
+                                <h5 class="text-center py-3 mb-3" style="color:white; background: #8E2DE2;  /* fallback for old browsers */
                   background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
                   background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
                   ;
                       ">Previous Comments</h5>
-                          <% for (let review of club.media[i].mediaComments){%>
-                            <div class="card comment-card mb-3 ">
-                              <div class="p-2 d-flex justifify-content-center">
-                                <div class="p-2"><span class="rounded"><img class="img-thumbnail"
-                                      src="<%= review.author.imageUrl %>" alt="user" width="80"></span>
-                                </div>
-                                <div class="w-100 align-self-center">
-                                  <h6>
-                                    <%= review.author.username %> <span class="card-text mx-2"><small
-                                          class="text-muted fst-italic">
-                                          <%= days[review.createdAt.getDay()] %>,
-                                            <%=review.createdAt.getDate()%>
-                                              <%= months[review.createdAt.getMonth()] %>
-                                                <%=review.createdAt.getFullYear()%>
-                                        </small> </span>
-                                  </h6>
-                                  <p class="starability-result" data-rating="<%=review.rating%>">
-                                    Rated:
-                                    <%= review.rating %> stars
-                                  </p>
-                                </div>
-                              </div>
-                              <p class="comment-text mx-3">
-                                <%= review.text %>
-                              </p>
-                            </div>
-                            <% } %>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                              </div>
+                                <% for (let review of club.media[i].mediaComments){%>
+                                  <div class="row comment-card mb-3">
+                                    <div class="p-2 col-lg-4 d-flex justify-content-start">
+                                      <div class="p-2"><span class="rounded"><img class="img-thumbnail"
+                                            src="<%= review.author.imageUrl %>" alt="user" width="80"></span>
+                                      </div>
+                                      <div class="w-50 align-self-center">
+                                        <h6>
+                                          <%= review.author.username %> <span class="card-text mx-2"><small
+                                                class="text-muted fst-italic">
+                                                <%= days[review.createdAt.getDay()] %>,
+                                                  <%=review.createdAt.getDate()%>
+                                                    <%= months[review.createdAt.getMonth()] %>
+                                                      <%=review.createdAt.getFullYear()%>
+                                              </small> </span>
+                                        </h6>
+                                        <p class="starability-result" data-rating="<%=review.rating%>">
+                                          Rated:
+                                          <%= review.rating %> stars
+                                        </p>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <p class="comment-text">
+                                        <%= review.text %>
+                                      </p>
+                                      <%if(currentUser.role === "admin"){%>
+                                        <form
+                                action="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/clubMedia/<%= club.media[i]._id %>/comment/<%=review._id%>/delete_comment"
+                                method="POST" class="my-1"><button class="btn btn-sm fs-6 btn-danger" type="submit"><i class="fa-solid px-2 fa-trash-can"></i>Delete Comment</button></form> 
+                                      <%}%>
+                                    </div>
+                                  </div>
+                                  <% } %>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-danger"
+                                        data-bs-dismiss="modal">Close</button>
+                                    </div>
                         </div>
                       </div>
                     </div>
