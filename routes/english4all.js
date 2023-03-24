@@ -201,7 +201,7 @@ router.post(
 
       await englishClub.save();
       req.flash("success", `${user.username} is successfully added to this English club`);
-      res.send("new english club member added");
+      res.redirect('back');
     }
 
   })

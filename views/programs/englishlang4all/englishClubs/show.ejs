@@ -28,7 +28,7 @@
   <!-- Banner section -->
   <div id="banner">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">
         <img class="logo img-fluid" src="<%=club.logoImageUrl%>" alt="" />
       </div>
       <div class="col-md-8">
@@ -1209,7 +1209,7 @@
                                       <%if(currentUser.role === "admin"){%>
                                         <form
                                 action="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/clubMedia/<%= club.media[i]._id %>/comment/<%=review._id%>/delete_comment"
-                                method="POST" class="my-1"><button class="btn btn-sm fs-6 btn-danger" type="submit"><i class="fa-solid px-2 fa-trash-can"></i>Delete Comment</button></form> 
+                                method="POST" class=""><button class="btn btn-sm fs-6 btn-danger" type="submit"><i class="fa-solid px-2 fa-trash-can"></i>Delete Comment</button></form> 
                                       <%}%>
                                     </div>
                                   </div>
