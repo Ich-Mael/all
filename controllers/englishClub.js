@@ -749,7 +749,7 @@ module.exports.memberGradeForm = async (req, res) => {
 
 module.exports.memberGrade = async (req, res) => {
 
-    const member = await englishClubMember.findById(req.params.member_id);
+    const member = await englishClubMember.findOne({clubMember: req.params.member_id});
 
     const memberGrade = new progressTrack(req.body.grade);
 

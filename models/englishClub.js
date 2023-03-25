@@ -418,7 +418,6 @@ const progressTrackSchema = new Schema({
 
   feedback: {
     type: String,
-    required: true,
   },
 
   structure: {
