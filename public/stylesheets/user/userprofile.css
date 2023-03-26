@@ -1,6 +1,7 @@
-html{
+html {
     font-size: 80%;
 }
+
 body {
     background-color: rgb(255, 255, 255);
 }
@@ -20,12 +21,11 @@ body {
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
-
-
-.user-img{
+.user-img {
     width: 60%;
     height: 60%;
 }
+
 .welcome-msg {
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: start;
@@ -42,7 +42,7 @@ body {
 .quote {
     margin: 2rem 1rem;
     text-align: center;
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.4rem;
 }
 
@@ -55,22 +55,53 @@ body {
     /* font-family: "Nosifer", cursive; */
     font-size: 1.5rem;
     padding: 2rem 2rem;
-    background-color: rgb(12, 78, 12);
+    background-color: rgb(19, 87, 130);
     color: aliceblue;
+}
+
+.nep {
+    font-family: "Rye", cursive;
+    padding: 1rem 3rem 0 1rem;
+    font-size: 1.3rem;
+    color: rgb(4, 96, 167);
+}
+
+.my-clubs {
+    /* padding: 1rem 3rem 0 1rem; */
+    margin: 0 1rem;
+}
+
+.club-name {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    margin: 1rem 0;
+    padding: 1rem 0.5rem;
+    background-color: rgb(4, 92, 164);
+    color: aliceblue;
+    transition: all 0.3s;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.club-name:hover, .club-name:focus {
+    color: rgb(11, 98, 174);
+    background-color: aliceblue;
+    border: 2px solid rgb(11, 98, 174); 
 }
 
 .program-wrapper {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     border-radius: 5px;
     padding: 0.5rem;
-    margin: 1rem 2rem;
+    margin: 1rem 5rem 4rem;
+    padding: 1rem 1rem;
 }
 
 .program-img-wrapper img {
-    height: 13rem;
+    /* height: 20rem; */
     width: 100%;
 }
-
 
 .pecp-coach {
     background: url(https://images.pexels.com/photos/5685821/pexels-photo-5685821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);

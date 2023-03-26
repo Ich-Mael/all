@@ -138,6 +138,7 @@ module.exports.createEnglishClub = async (req, res) => {
 
     englishClub.boardMembers.push(newEngClubMember._id);
     englishClub.members.push(newEngClubMember._id);
+    englishClub.hub = hub._id;
 
     await englishClub.save();
 

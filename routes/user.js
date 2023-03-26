@@ -9,8 +9,11 @@ const User = require("../models/user");
 const accountToken = require("../models/accountTokens");
 const resetAccountToken = require("../models/resetAccountToken");
 const {
-  englishClubs
+  englishClubMember,
+  englishClubHub,
+  englishClubs,
 } = require("../models/englishClub");
+
 const catchAsync = require("../utilities/catchAsync");
 
 const {
@@ -34,7 +37,7 @@ router.get("/register", isLoggedIn, checkRoles(["account-manager", "admin", "sup
 });
 
 // register user to DB
-router.post("/register", isLoggedIn, checkRoles( ["account-manager", "admin", "super-admin"]), catchAsync(async (req, res) => {
+router.post("/register", isLoggedIn, checkRoles(["account-manager", "admin", "super-admin"]), catchAsync(async (req, res) => {
 
   const {
     name,
@@ -46,7 +49,7 @@ router.post("/register", isLoggedIn, checkRoles( ["account-manager", "admin", "s
     gender,
     password
   } =
-  req.body;
+    req.body;
   const user = new User({
     name,
     surname,
@@ -57,23 +60,23 @@ router.post("/register", isLoggedIn, checkRoles( ["account-manager", "admin", "s
     username,
   });
 
-const registeredUser = await User.register(user, password);
-new_user_mail = registeredUser.email;
-req.flash("success", "Le nouveau compte a été créé avec success");
-res.render("user/welcome", {new_user_mail});
-/*
-  await req.login(registeredUser, async (err) => {
-    if (err) {
-      res.send("Something Went Wrong");
-    } else {
-      const redirectUrl = (await req.session.returnTo) || "/";
-      delete req.session.returnTo;
-      // req.flash("success", "Votre compte a été créé avec success");
-      res.render("user/welcome");
-    }
-    
-  });
-  */
+  const registeredUser = await User.register(user, password);
+  new_user_mail = registeredUser.email;
+  req.flash("success", "Le nouveau compte a été créé avec success");
+  res.render("user/welcome", { new_user_mail });
+  /*
+    await req.login(registeredUser, async (err) => {
+      if (err) {
+        res.send("Something Went Wrong");
+      } else {
+        const redirectUrl = (await req.session.returnTo) || "/";
+        delete req.session.returnTo;
+        // req.flash("success", "Votre compte a été créé avec success");
+        res.render("user/welcome");
+      }
+      
+    });
+    */
 }));
 
 //sending activation mail
@@ -90,7 +93,7 @@ router.get(
     }).save();
 
     let url;
-    let user = await User.findOne({email: req.params.new_user_mail});
+    let user = await User.findOne({ email: req.params.new_user_mail });
     // let firstName = req.user.surname.split(" ")[0];
     if (process.env.NODE_ENV === "production") {
       url = "https://www.afrolanguagelab.com/user/verifyemail?token=" + token;
@@ -130,19 +133,19 @@ router.get("/user/verifyemail", async (req, res) => {
         token: token
       });
 
-      res.render("user/account_verified", {userData});
-/*
-      await req.login(userData, (err) => {
-        if (err) {
-          res.render("errorpage");
-        } else {
-          // const redirectUrl = (await req.session.returnTo) || "/";
-          // delete req.session.returnTo;
-          res.render("user/account_verified", {userData});
-        }
-      });
-      */
-    }else{
+      res.render("user/account_verified", { userData });
+      /*
+            await req.login(userData, (err) => {
+              if (err) {
+                res.render("errorpage");
+              } else {
+                // const redirectUrl = (await req.session.returnTo) || "/";
+                // delete req.session.returnTo;
+                res.render("user/account_verified", {userData});
+              }
+            });
+            */
+    } else {
       res.render("user/account_already_activated")
     }
   };
@@ -311,8 +314,17 @@ router.get(
     const user = await User.findById(id)
       .populate("coursesTaken")
       .populate("coursesGiven");
+
+      let memberEngClubs;
+    if (user.isClubMember) {
+      clubMember = await englishClubMember.findById(user.clubMember_id).populate("memberEnglishClubs");
+    }else{
+      console.log("member not found");
+    }
+
     res.render("user/userprofile", {
-      user
+      user,
+      clubMember
     });
   })
 );
@@ -368,7 +380,7 @@ router.post(
       title: courseTitle
     });
 
-    
+
 
     course.students.push(user);
     await course.save();

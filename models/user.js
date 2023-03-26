@@ -104,6 +104,18 @@ const userSchema = new Schema({
     default: "",
   },
 
+// is English club memebers
+isClubMember: {
+  type: Boolean,
+  default: false,
+},
+
+clubMember_id: {
+  type: String,
+  trim: true,
+  default: "",
+},
+
   // pecp student
   isPecpStudent: {
     type: Boolean,
@@ -116,7 +128,7 @@ const userSchema = new Schema({
     default: "",
   },
 
-  // pecp student
+  // pecp coach
   isPecpCoach: {
     type: Boolean,
     default: false,
@@ -127,7 +139,6 @@ const userSchema = new Schema({
     trim: true,
     default: "",
   },
-
 
   //Home Teacher
   isHomeTeacher: {

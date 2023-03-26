@@ -176,33 +176,54 @@ router.post(
 
 
     // create a new english club member
-    englishClub = await englishClubs.findById(req.params.club_id);
+    const englishClub = await englishClubs.findById(req.params.club_id);
 
     const checkingMember = await englishClubMember.findOne({
       clubMember: user._id
     })
 
-    if (!checkingMember) {
-      const newEngClubMember = new englishClubMember({
-        clubMember: user._id,
-        level
-      });
-      await newEngClubMember.save();
-    } else {
-      newEngClubMember = checkingMember;
+    try{
+      if (!checkingMember) {
+        const newEngClubMember = new englishClubMember({
+          clubMember: user._id,
+          level
+        });
+
+        user.clubMember_id = newEngClubMember._id;
+
+        await newEngClubMember.save();
+        await user.save();
+      } else {
+        newEngClubMember = checkingMember;
+      }
+    }catch(err){
+      res.send ("Something went wrong");
+      console.log(err);
     }
 
-    if (englishClub.members.includes(newEngClubMember._id)) {
-      req.flash("error", `${user.username} is already a member of this English club`);
-      res.redirect('back');
-    } else {
+  
+    try {
+      if (englishClub.members.includes(newEngClubMember._id)) {
+        req.flash("error", `${user.username} is already a member of this English club`);
+        res.redirect('back');
+      } else {
+  
+        englishClub.members.push(newEngClubMember._id);
+        newEngClubMember.memberEnglishClubs.push(englishClub._id);
 
-      englishClub.members.push(newEngClubMember._id);
+        await englishClub.save();
+        await newEngClubMember.save();
 
-      await englishClub.save();
-      req.flash("success", `${user.username} is successfully added to this English club`);
-      res.redirect('back');
+        req.flash("success", `${user.username} is successfully added to this English club`);
+        res.redirect('back');
+      }
     }
+    catch(err) {
+      res.send ("Something went wrong here");
+      console.log(err);
+    }
+
+    
 
   })
 );
@@ -216,12 +237,19 @@ router.post(
   catchAsync(async (req, res) => {
 
     // Find the club
-    englishClub = await englishClubs.findById(req.params.club_id);
+    const englishClub = await englishClubs.findById(req.params.club_id);
 
-    //Removing the member
+    // Find Club member
+    const clubMember = await englishClubMember.findById(req.params.member_id);
+
+    // Removing the member
     removeItemOnce(englishClub.members, req.params.member_id);
 
+    removeItemOnce(clubMember.memberEnglishClubs, englishClub._id);
+
+
     await englishClub.save();
+    await clubMember.save();
     res.send("Member successfuly removed!!");
   }));
 

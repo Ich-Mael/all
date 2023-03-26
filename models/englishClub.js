@@ -12,6 +12,10 @@ const englishClubSchema = new Schema({
     trim: true,
   },
 
+  hub: {
+    type: String,
+  },
+
   clubType: {
     type: String,
     required: true,
@@ -142,99 +146,99 @@ const englishClubSchema = new Schema({
   englishCoach: [{
     type: Schema.Types.ObjectId,
     ref: "User",
-  }, ],
+  },],
 
   clubEvents: [{
     type: Schema.Types.ObjectId,
     ref: "Event",
-  }, ],
+  },],
 
   boardMembers: [{
     type: Schema.Types.ObjectId,
     ref: "EnglishClubMember",
-  }, ],
+  },],
 
   members: [{
     type: Schema.Types.ObjectId,
     ref: "EnglishClubMember",
-  }, ],
+  },],
 
   workersOfMonth: [{
     type: Schema.Types.ObjectId,
     ref: "EnglishClubWorkersOfMonth",
-  }, ],
+  },],
 
   articles: [{
     type: Schema.Types.ObjectId,
     ref: "EnglishClubArticle",
-  }, ],
+  },],
 
   dailyVocab: [{
     type: Schema.Types.ObjectId,
     ref: "DailyVocabulary",
-  }, ],
+  },],
 
   weeklyMeeting: [{
     type: Schema.Types.ObjectId,
     ref: "ClubMeeting",
-  }, ],
+  },],
 
   onlineDebates: [{
     type: Schema.Types.ObjectId,
     ref: "OnlineDebate",
-  }, ],
+  },],
 
   weeklyVideoLesson: [{
     type: Schema.Types.ObjectId,
     ref: "EnglishWeeklyLessons",
-  }, ],
+  },],
 
   media: [{
     type: Schema.Types.ObjectId,
     ref: "EnglishClubMedia",
-  }, ],
+  },],
 
   // English Club Exercise
   grammarExercise: [{
     type: Schema.Types.ObjectId,
     ref: "EnglishWeeklyExercises",
-  }, ],
+  },],
 
   vocabularyExercise: [{
     type: Schema.Types.ObjectId,
     ref: "EnglishWeeklyExercises",
-  }, ],
+  },],
 
   LSC: [{
     type: Schema.Types.ObjectId,
     ref: "EnglishWeeklyExercises",
-  }, ],
+  },],
 
 
   readingComprehensionExercise: [{
     type: Schema.Types.ObjectId,
     ref: "EnglishWeeklyExercises",
-  }, ],
+  },],
 
   listeningExercise: [{
     type: Schema.Types.ObjectId,
     ref: "EnglishWeeklyExercises",
-  }, ],
+  },],
 
   watchingComprehensionExercise: [{
     type: Schema.Types.ObjectId,
     ref: "EnglishWeeklyExercises",
-  }, ],
+  },],
 
   readAloudExercise: [{
     type: Schema.Types.ObjectId,
     ref: "EnglishWeeklyExercises",
-  }, ],
+  },],
 
   dictationExercise: [{
     type: Schema.Types.ObjectId,
     ref: "EnglishWeeklyExercises",
-  }, ],
+  },],
 
 }, {
   timestamps: true,
@@ -369,7 +373,7 @@ const englishClubMemberSchema = new Schema({
   mediaComments: [{
     type: Schema.Types.ObjectId,
     ref: "Comment",
-  }, ],
+  },],
 
   isMuted: {
     type: Boolean,
@@ -414,6 +418,10 @@ const progressTrackSchema = new Schema({
     type: Date,
     default: Date.now(),
     required: true,
+  },
+
+  typeOfEnglish: {
+    type: String,
   },
 
   feedback: {
@@ -661,15 +669,15 @@ const weeklyExerciseSchema = new Schema({
     type: String,
   },
 
-  readingText:{
+  readingText: {
     type: String,
   },
 
-  slowReadingLink:{
+  slowReadingLink: {
 
   },
 
-  normalReadingLink:{
+  normalReadingLink: {
 
   },
 
@@ -775,7 +783,7 @@ const englishClubMediaSchema = new Schema({
   mediaComments: [{
     type: Schema.Types.ObjectId,
     ref: "Comment",
-  }, ],
+  },],
 }, {
   timestamps: true,
 });
