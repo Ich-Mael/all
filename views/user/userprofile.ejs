@@ -13,7 +13,7 @@
       </div>
       <div class="col-md-3">
         <a href="/reset-password" class="btn btn-outline-danger my-3">Reinitialiser mon mot de passe</a>
-        <% if (currentUser.role="account-manager" ) {%>
+        <% if (currentUser.role === "account-manager" ) {%>
           <a href="/register" class="btn btn-outline-primary my-3">Creation de compte</a>
           <% } %>
       </div>
