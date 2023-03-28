@@ -29,26 +29,26 @@
   <div class="container my-5 p-3 col-md-8" style="background-color: aliceblue;">
     <h4 class="text-center py-4">Handling Club Members</h4>
     <div class="d-flex justify-content-around">
-      <p>
-        <button class="btn btn-primary ms-2 me-5" type="button" data-bs-toggle="collapse" data-bs-target="#new-member"
+      
+        <button class="btn btn-primary  my-2  ms-2 me-5" type="button" data-bs-toggle="collapse" data-bs-target="#new-member"
           aria-expanded="false" aria-controls="collapseExample">
           Add new member
         </button>
   
-        <button class="btn btn-primary ms-2 me-5" type="button" data-bs-toggle="collapse" data-bs-target="#new-boardM"
+        <button class="btn btn-primary  my-2  ms-2 me-5" type="button" data-bs-toggle="collapse" data-bs-target="#new-boardM"
           aria-expanded="false" aria-controls="collapseExample">
           Add new board member
         </button>
   
-        <button class="btn btn-success ms-2 me-5" type="button" data-bs-toggle="collapse" data-bs-target="#club_info"
+        <button class="btn btn-success  my-2  ms-2 me-5" type="button" data-bs-toggle="collapse" data-bs-target="#club_info"
           aria-expanded="false" aria-controls="collapseExample">
           Update Club Info
         </button>
-      </p>
+      
     </div>
   
     <!-- Add New Member Form -->
-    <div class="collapse  p-5" id="new-member" style="background-color: rgb(192, 198, 203);">
+    <div class="collapse p-5" id="new-member" style="background-color: rgb(192, 198, 203);">
       <form
         action="/admindashboard/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/new_member"
         method="POST">

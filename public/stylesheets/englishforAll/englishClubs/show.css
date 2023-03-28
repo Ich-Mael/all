@@ -943,12 +943,16 @@ customers-cards:before {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .underline {
     width: 5rem;
     height: 0.8rem;
   }
 
+  .word-day-meaning {
+    min-height: auto;
+  }
+  
   .news-summary {
     font-size: 1rem;
     height: auto;
@@ -959,7 +963,7 @@ customers-cards:before {
   }
 
   html {
-    font-size: 82.5%;
+    font-size: 92.5%;
   }
 }
 
@@ -975,8 +979,7 @@ customers-cards:before {
 
   .club-motto {
     font-size: 1.5rem;
-    text-align: center;
-    color: rgb(255, 255, 255);
+    color: rgb(48, 5, 109);
     margin: 2rem 0;
     font-family: "Noto Sans", sans-serif;
     line-height: 3rem;

@@ -424,7 +424,7 @@
                             </h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
-                          <div class="modal-body">
+                          <div class="modal-body px-5">
                             <p class="fst-italic">Click on the links to learn more</p>
                             <p class="fs-3">
                               <%- club.dailyVocab[0].wordOfDay.learnMoreWord %>
@@ -472,7 +472,7 @@
                             </h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
-                          <div class="modal-body">
+                          <div class="modal-body  px-5">
                             <p class="fs-3">
                               <%- club.dailyVocab[0].IdiomDay.learnMoreIdiom %>
                             </p>
@@ -957,7 +957,7 @@
             <div class="row">
               <%for(i=0; i < 4 ; i++){%>
                 <% if(club.LSC[i]){%>
-                  <div class="col-md-4">
+                  <div class="col-md-6 col-lg-4">
                     <div class="exercise-wrapper pb-2">
                       <p
                         style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 1.1rem; color: #4A00E0;">
@@ -966,7 +966,7 @@
                       </p>
                       <a style="background-color: rgb(53, 44, 232); border-radius:5px; text-align: center; font-size: 14px;  color:aliceblue;"
                         class="d-block m-2 px-2 readAloud-title" target="_blank" href="<%= club.LSC[i].exerciseLink %>">
-                        Click here to try it
+                        Try it
                       </a>
 
                     </div>
@@ -1091,7 +1091,7 @@
           <h1 class="activity-heading">Live Practice Challenges</h1>
           <div class="row mt-4">
             <% for(let i=0 ; i < 2 ; i++){ %>
-              <div class="col-md-6 my-3">
+              <div class="col-lg-6 my-3">
                 <div class="media-card py-1">
                   <!--  <div class="card-body"> -->
                   <div id="tv-container">
