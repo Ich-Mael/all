@@ -192,6 +192,7 @@ router.post(
         user.clubMember_id = newEngClubMember._id;
 
         await newEngClubMember.save();
+        user.isClubMember = true;
         await user.save();
       } else {
         newEngClubMember = checkingMember;
