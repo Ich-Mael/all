@@ -16,7 +16,7 @@ body {
   margin: 0;
   padding: auto;
   background: #ffffff;
-  font-family: "Roboto" sans-serif;
+  font-family: "Roboto"sans-serif;
 }
 
 /* preloader */
@@ -112,7 +112,8 @@ nav {
   font-family: "Roboto";
   font-family: Georgia, "Times New Roman", Times, serif;
 }
-.mobile-nav{
+
+.mobile-nav {
   display: none;
 }
 
@@ -261,7 +262,7 @@ nav {
   height: 100%;
   overflow: hidden;
   background: url('https://www.saleshacker.com/wp-content/uploads/2021/02/RFP-opportunities-2048x1307.jpg') no-repeat center center/cover;
-  
+
 }
 
 .video-container video {
@@ -282,7 +283,7 @@ nav {
   top: 0;
   left: 0;
   background: rgba(33, 4, 46, 0.606);
-  
+
   position: absolute;
 }
 
@@ -347,7 +348,7 @@ nav {
   box-shadow: 2px 19px 31px rgba(0, 0, 0, 0.2);
   font-weight: bold;
   font-size: 16px;
-transition: all 0.3s;
+  transition: all 0.3s;
   border: 0;
   user-select: none;
   -webkit-user-select: none;
@@ -360,7 +361,7 @@ transition: all 0.3s;
   color: rgb(255, 255, 255);
   background-color: #0d26b4;
   transform: scale(1.05);
-  
+
   /* background-color: floralwhite; */
 }
 
@@ -399,9 +400,12 @@ transition: all 0.3s;
   padding: 1rem;
   letter-spacing: 0.1rem;
   text-align: center;
-  background: #4776E6;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+  background: #4776E6;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8E54E9, #4776E6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: rgb(247, 245, 243);
   font-family: "Roboto", sans-serif;
   font-family: "Poppins", sans-serif;
@@ -429,9 +433,12 @@ transition: all 0.3s;
   text-align: center;
   font-size: 1rem;
   margin: 1rem 0 3rem 1rem;
-  background: #4776E6;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+  background: #4776E6;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8E54E9, #4776E6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: rgb(247, 245, 243);
   font-family: "Poppins", sans-serif;
   font-weight: 700;
@@ -444,14 +451,17 @@ transition: all 0.3s;
   border: 2px solid black;
 }
 
-.mission{
-  background: #4776E6;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+.mission {
+  background: #4776E6;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8E54E9, #4776E6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
-.circle{
+.circle {
   position: absolute;
   border-radius: 50%;
   background: white;
@@ -459,70 +469,71 @@ transition: all 0.3s;
   box-shadow: 0px 0px 1px 0px #508fb9;
 }
 
-.small{
+.small {
   width: 200px;
   height: 200px;
   left: -100px;
   bottom: -100px;
 }
 
-.medium{
+.medium {
   width: 400px;
   height: 400px;
   left: -200px;
   bottom: -200px;
 }
 
-.large{
+.large {
   width: 600px;
   height: 600px;
   left: -300px;
   bottom: -300px;
 }
 
-.xlarge{
+.xlarge {
   width: 800px;
   height: 800px;
   left: -400px;
   bottom: -400px;
 }
 
-.xxlarge{
+.xxlarge {
   width: 1000px;
   height: 1000px;
   left: -500px;
   bottom: -500px;
 }
 
-.shade1{
+.shade1 {
   opacity: 0.2;
 }
-.shade2{
+
+.shade2 {
   opacity: 0.5;
 }
 
-.shade3{
+.shade3 {
   opacity: 0.7;
 }
 
-.shade4{
+.shade4 {
   opacity: 0.8;
 }
 
-.shade5{
+.shade5 {
   opacity: 0.9;
 }
 
-@keyframes ripple{
-  0%{
+@keyframes ripple {
+  0% {
     transform: scale(0.8);
   }
-  
-  50%{
+
+  50% {
     transform: scale(1.2);
   }
-  
-  100%{
+
+  100% {
     transform: scale(0.8);
   }
 }
@@ -1068,7 +1079,7 @@ transition: all 0.3s;
   height: 280px;
   object-fit: cover;
   overflow: hidden;
-  
+
 }
 
 .image-wrapper {
@@ -1083,7 +1094,7 @@ transition: all 0.3s;
 
 .sponsored-program-card {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  
+
 }
 
 .program-name {
@@ -1128,7 +1139,7 @@ transition: all 0.3s;
   background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 2rem;
-  border-radius: 5px; 
+  border-radius: 5px;
   color: rgb(245, 235, 235);
   text-shadow: 1px 2px 1px black;
   transition: all 1s;
@@ -1136,7 +1147,7 @@ transition: all 0.3s;
 
 
 .new-program-wrapper {
-margin-top: 4rem; 
+  margin-top: 4rem;
 
 }
 
@@ -1145,7 +1156,7 @@ margin-top: 4rem;
 }
 
 
-.course-btn{
+.course-btn {
   all: unset;
   width: 100px;
   height: 30px;
@@ -1212,7 +1223,7 @@ margin-top: 4rem;
   transform: translate(0, 5%);
 }
 
-.course-btn:hover{
+.course-btn:hover {
   color: #f0f0f0;
 }
 
@@ -1802,27 +1813,28 @@ customers-cards:before {
 /*--------------------------------------------------------------
 /* footer 
 ============================================================*/
-.svg-logo{
+.svg-logo {
   width: 70%;
   height: 70%;
 }
-.text{
+
+.text {
   align-self: center;
 }
 
-.footer-slogan{
+.footer-slogan {
   font-family: 'Playfair Display', serif;
-  color:  #5806c5;
-  
+  color: #5806c5;
+
   font-size: 1.2rem;
 }
 
-.top-footer-line{
+.top-footer-line {
   background-color: #5000c8;
   width: 100%;
 }
 
-.top-footer-line > p{
+.top-footer-line>p {
   text-align: center;
   position: relative;
   background-color: #5000c8;
@@ -1832,29 +1844,31 @@ customers-cards:before {
   color: #ffffff;
   padding: 2rem 1rem;
   font-weight: 700;
-  margin-bottom: 27px; 
+  margin-bottom: 27px;
 }
 
 a, a:hover, a:focus, a:active {
-    text-decoration: none;
-    outline: none;
-}
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  text-decoration: none;
+  outline: none;
 }
 
-.main-footer{
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-footer {
   position: relative;
   background: #ffffff;
 }
 
-.footer-content{
+.footer-content {
   position: relative;
   padding: 35px 0px 50px 0px;
 }
-.footer-content:before{
+
+.footer-content:before {
   position: absolute;
   content: '';
   background: url();
@@ -1887,31 +1901,34 @@ ul {
 }
 
 
-.footer-column,  .logo-widget .footer-widget{
-display: flex;
-flex-direction: column;
-justify-content: start;
-align-items: first baseline;
+.footer-column, .logo-widget .footer-widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: first baseline;
 }
 
-.footer-content .logo-widget{
+.footer-content .logo-widget {
   position: relative;
   margin-top: -5px;
 }
 
- .footer-social, .whatsApp{
-margin: 30px 0;
+.footer-social, .whatsApp {
+  margin: 30px 0;
 }
-.footer-content  .footer-social li{
+
+.footer-content .footer-social li {
   position: relative;
   display: inline-block;
   margin-right: 9px;
   margin-top: 7px;
 }
-.footer-content  .footer-social li:last-child{
+
+.footer-content .footer-social li:last-child {
   margin-right: 0px;
 }
-.footer-content  .footer-social li a{
+
+.footer-content .footer-social li a {
   position: relative;
   display: inline-block;
   width: 42px;
@@ -1920,17 +1937,21 @@ margin: 30px 0;
   text-align: center;
   border-radius: 50%;
 }
-.footer-content  .footer-social li a:hover{
+
+.footer-content .footer-social li a:hover {
   color: #ffffff;
   background: #5806c5;
 }
-.footer-content .logo-widget .logo-box{
+
+.footer-content .logo-widget .logo-box {
   margin-bottom: 25px;
 }
-.footer-content .logo-widget .text p{
+
+.footer-content .logo-widget .text p {
   margin-bottom: 32px;
 }
-.footer-content .footer-title{
+
+.footer-content .footer-title {
   position: relative;
   font-size: 24px;
   line-height: 35px;
@@ -1939,26 +1960,30 @@ margin: 30px 0;
   font-weight: 700;
   margin-bottom: 27px;
 }
-.footer-content .service-widget .list li{
+
+.footer-content .service-widget .list li {
   display: block;
   margin-bottom: 12px;
 }
-.footer-content .service-widget .list li a{
+
+.footer-content .service-widget .list li a {
   position: relative;
   display: inline-block;
   color: #1e1f21;
 }
-.footer-content .service-widget .list li a:hover{
+
+.footer-content .service-widget .list li a:hover {
   color: #470585;
 }
-.footer-content .contact-widget p{
+
+.footer-content .contact-widget p {
   color: #9ea0a9;
   margin-bottom: 15px;
 }
-.footer-content .contact-widget{
-  
-}
-.footer-content .contact-widget .footer-title{
+
+.footer-content .contact-widget {}
+
+.footer-content .contact-widget .footer-title {
   margin-bottom: 29px;
 }
 
@@ -2004,13 +2029,13 @@ margin: 30px 0;
 
 /** footer-bottom **/
 
-.footer-bottom{
+.footer-bottom {
   background-color: #5000c8;
   padding: 20px 0px;
   margin-bottom: 0;
 }
 
-.copyright{
+.copyright {
   color: rgb(203, 214, 221);
   text-align: center;
 }
@@ -2018,961 +2043,968 @@ margin: 30px 0;
 /* footer responsive */
 @media (max-width: 767px) {
   .footer-slogan {
-font-size: 1.2rem;
+    font-size: 1.2rem;
   }
 
-  
+
 
   @media (max-width: 578px) {
     .footer-slogan {
-  font-size: 1rem;
+      font-size: 1rem;
     }
 
-    
-}
 
-
-
-/* responsive */
-@media (max-width: 1200px) {
-  .header-text {
-    font-size: 3rem;
-  }
-
-  .motto-footer {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 991px) {
-  .header-text {
-    font-size: 2.5rem;
-  }
-
-  .mobile-nav{
-    display: block;
-  }
-
-  .nav-link {
-    display: flex;
-    justify-content: center;
-  }
-
-  .flash-container {
-    width: 80%;
-  }
-
-  .motto-footer {
-    font-size: 1rem;
-  }
-
-  .top-link {
-    right: 5%;
-    bottom: 5%;
-  }
-}
-
-@media (max-width: 800px) {
-  .logo-footer {
-    width: 150px;
-    height: 200px;
-  }
-
-  #brand-name {
-    font-size: 2rem;
-  }
-
-  .motto-footer {
-    font-size: 0.8rem;
-  }
-
-  .logo-navbar {
-    display: none;
-  }
-}
-
-
-@media (max-width: 768px) {
-  #footer {
-    background: -webkit-linear-gradient(to top,
-        #412388,
-        #556497,
-        #ffffff);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top,
-        #412388,
-        #556497,
-        #ffffff);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
-
-}
-
-@media (max-width: 450px) {
-  .footer-links-header {
-    font-size: 1rem;
-    margin-top: 1rem;
-  }
-
-  .brand {
-    font-size: 1rem;
-  }
-
-  html {
-    font-size: 90%;
-  }
-
-  .useful-links {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 350px) {
-  .brand {
-    font-size: 0.8rem;
-  }
-}
-
-/* End footer */
-
-
-
-
-
-
-
-
-
-/* animations */
-/*=========================Responsiveness ===========================*/
-@media (max-width: 1400px) {
-
-  .program-description {
-    line-height: 3rem;
-    height: 13rem;
-  }
-
-  .news-text {
-    padding-top: 1rem;
-    height: 15rem;
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 1200px) {
-
-  .learn-with-us,
-  .why-afrohk,
-  .partners,
-  .clients,
-  .about,
-  .services {
-    font-size: 2.6rem;
-    margin: 0;
-    padding: 3rem 0;
-  }
-
-  #banner-wrapper {
-    z-index: 2;
-    top: 25%;
-    left: 10%;
-  }
-
-  .afrohk-title {
-    font-size: 5rem;
-  }
-
-  .header-text {
-    font-size: 3rem;
-  }
-
-  .flash-container {
-    z-index: 2;
-    top: 17%;
-    left: 50%;
-  }
-
-  .flash {
-    font-size: 1rem;
-  }
-
-  .new-program {
-    font-family: "Chivo", sans-serif;
-    font-family: "Chango";
-    font-size: 1.5rem;
-    color: rgb(245, 235, 235);
-    text-shadow: 1px 2px 1px black;
-    transition: all 1s;
-    padding-bottom: 0.5rem;
-  }
-
-  .news-text {
-    padding-top: 1rem;
-    font-size: 1.2rem;
-  }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-
-@media (max-width: 1100px) {
-  .top-footer-line > p{
-    font-size: 1.5rem;
-  }
-
-  .news-text {
-    padding-top: 1rem;
-    height: 17rem;
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 992px) {
-  nav {}
-
-  .nav-link {
-    display: flex;
-    justify-content: center;
-  }
-  .footer-links-header{
-    font-size: 1rem;
-    margin-top: 1rem;
-  }
-
-  .more-btn {
-    font-size: 1rem;
-    padding: 1rem 1.4rem;
-  }
-
-
-  .check-programs,
-  .get-account {
-    width: 25rem;
-    display: inline;
-    font-size: 0.8rem;
-  }
-
-
-  .account-wrapper {
-    width: 100%;
-  }
-
-  #banner-wrapper {
-    z-index: 2;
-    top: 20%;
-    left: 10%;
-  }
-
-  .flash-container {
-    z-index: 2;
-    top: 15%;
-    left: 50%;
-  }
-
-  .banner-heading {
-    padding-left: 4rem;
-  }
-
-  .banner-paragraph {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-
-
-  .header-text {
-    font-size: 2.5rem;
-  }
-
-  .motto-footer {
-    font-size: 1rem;
-  }
-
-
-
-  .program-description {
-    line-height: 3rem;
-    height: 10rem;
-  }
-
-  .news-img {
-    height: auto;
-  }
-
-  .news-content-wrapper {
-    padding: 1rem 2rem;
-  }
-
-  .news-text {
-    font-size: 1.2rem;
-    height: auto;
-  }
-
-
-@media (max-width: 905px) {
-
-  .check-programs,
-  .get-account {
-    width: 25rem;
-    display: inline;
-    font-size: 0.8rem;
-  }
-
-  .new-program-wrapper{
-    margin-top: 12rem;
-  }
-}
-  #brand-name {
-    font-size: 2rem;
-  }
-
-  .flash-container {
-    width: 100%;
-  }
-
-  .my-card-wrapper {
-    margin: 0 0.2rem;
-  }
-
-  .account-wrapper {
-    width: 100%;
-  }
-
-  #sky-wrapper {
-    height: 90vh;
-  }
-
-  .learn-with-us,
-  .partners,
-  .clients,
-  .about,
-  .services {
-    font-size: 2.3rem;
-    padding: 1rem;
-  }
-
-  #monitor {
-    margin: 2%;
   }
 
-  .motto {
-    font-size: 1.5rem;
-  }
-
-  .header-text {
-    /* font-size: 2.6rem; */
-  }
-
-  .common-header {
-    margin-bottom: 2rem;
-  }
-
-  .customer-section {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .learn-section {
-    height: 50vh;
-    padding: 1rem;
-    background-color: whitesmoke;
-    margin-bottom: 1rem;
-  }
-
-  .study {
-    font-size: 2.5rem;
-  }
-
-  .word-slider>li {
-    font-size: 1.8rem;
-  }
-
-  .testimony-text {
-    font-size: 1rem;
-    margin: 2rem 2rem 4rem;
-  }
-
-  .knowledge-quote {
-    font-size: 2rem;
-  }
-
-  .mission {
-    /* background-color: whitesmoke; */
-    margin-top: 3rem;
-  }
-
-  .common-heading {
-    margin: 5rem 0 0.8rem 0;
-    font-size: 2rem;
-    text-align: center;
-    letter-spacing: 0.2rem;
-  }
-
-  .customers-paragraph {
-    font-size: 1rem;
-    width: 50%;
-    margin: 2rem auto 4rem;
-    text-align: center;
-  }
-
-  .customer-image {
-    width: 10rem;
-    height: 12rem;
-    margin-left: -0.6rem;
-    box-shadow: 0.2rem 0.2rem 2rem 0.5rem rgba(0, 0, 0, 0.678);
-  }
-
-  .customers-card {
-    /* background-color:#ddd; */
-    width: 30rem;
-    margin-top: 2rem;
-  }
-
-  .slider ul {
-    display: flex;
-    padding: 0;
-    animation: cambio 30s infinite linear;
-  }
-
-  .news-text {
-
-    height: auto;
-  }
-
-  .header-text {
-    font-size: 2rem;
-  }
-
-  .motto-footer {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 800px) {
-  .logo-footer {
-    width: 150px;
-    height: 200px;
-  }
-
-  #banner-wrapper {
-    z-index: 2;
-    top: 30%;
-    left: 15%;
-  }
-
-  .banner-heading {
-    font-size: 2.5rem;
-    line-height: 3rem;
-    /* width: 60%; */
-  }
-
-  .banner-paragraph {
-    font-size: 1.5rem;
-    width: 60%;
-    line-height: 2.8rem;
-  }
-
-  .check-programs,
-  .get-account {
-    width: 20rem;
-    display: inline;
-    font-size: 1rem;
-  }
-
-  .account-wrapper {
-    width: 100%;
-    margin: 5rem 0 0;
-  }
-
-  .video-container video{
-display: none;
-  }
-
-  .new-program-wrapper {
-    margin-bottom: 4rem;
-  }
-
-  .new-program {
-    font-size: 1.5rem;
-    text-transform: capitalize;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-  }
-
-  .header-text {
-    /* font-size: 3rem; */
-  }
-
-  .news-text {
-
-    height: auto;
-  }
-}
-
-@media (max-width: 780px) {
-  .news-text {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    font-size: 1.2rem;
-    height: auto;
-  }
- 
-
-  .afrohk-title {
-    font-size: 5rem;
-  }
-
-  .slogan {
-    font-size: 1.5rem;
-    padding-bottom: 1rem;
-  }
-
-}
-
-
-
-@media (max-width: 768px) {
-  #footer {
-    background: #141E30;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-  }
-
-  .slogan {
-    font-size: 1.5rem;
-  }
-
-  .footer-links-header{
-    font-size: 1rem;
-
-  }
-
-  .more-btn {
-    font-size: 1rem;
-  }
-
-  .accessibility-text {
-    font-size: 1.8rem;
-  }
-}
-
-/* Extra small devices (phones, 600px and down) */
-@media (max-width: 700px) {
-  .video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: url('https://images.pexels.com/photos/7550293/pexels-photo-7550293.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500') no-repeat center center/cover;
-  }
-  
-  
-
-  .afrohk-footer,
-  .header-text {
-    font-size: 3rem;
-  }
-
-  .course-link {
-    color: #fcfbfa;
-    font-size: 0.8rem;
-  }
-
-  .logo-navbar {}
-
-  #banner-wrapper {
-    z-index: 2;
-    top: 25%;
-    left: 15%;
-  }
-
-  .banner-heading {
-    font-size: 2rem;
-    line-height: 3rem;
-  }
-
-  .banner-paragraph {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  .check-programs,
-  .get-account {
-    width: 20rem;
-    display: inline;
-    font-size: 1rem;
-  }
-
-  .account-wrapper {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
 
-  .header-text {
-    font-size: 2rem;
-  }
-
-  .account-wrapper {}
-
-  #sky-wrapper {
-    position: relative;
-  }
-
-  .program-name {
-    font-weight: 700;
-    font-size: 1.2rem;
-  }
-
-  .program-description {
-    font-size: 1.2em;
-    font-weight: 400;
-    height: auto;
-  }
-
-  .learn-with-us,
-  .why-afrohk,
-  .partners,
-  .clients,
-  .about,
-  .services {
-    font-size: 2rem;
-    padding: 1rem;
-  }
-
-  .slider ul {
-    display: flex;
-    padding: 0;
-    animation: cambio 40s infinite linear;
-  }
-
-  .card-img-top {
-    display: none;
-  }
-
-  .learn-section,
-  .learn-line-top,
-  .learn-line-bottom {
-    display: none;
-  }
-
-  .new-program-wrapper{
-    margin-top: 2rem;
-  }
-
-  .study {
-    font-size: 2rem;
-  }
-
-  .word-slider>li {
-    font-size: 1.2rem;
-  }
-
-  .motto-footer {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 600px) {
-
-  .afrohk-footer,
-  .header-text {
-    font-size: 2rem;
-  }
-
-  .xxlarge{
-    display: none;
-  }
-
-  .medium{
-    width: 300px;
-    height: 300px;
-    left: -100px;
-    bottom: -100px;
-  }
-  
-  .large{
-    width: 500px;
-    height: 500px;
-    left: -200px;
-    bottom: -200px;
-  }
-  
-  .xlarge{
-    width: 700px;
-    height: 700px;
-    left: -300px;
-    bottom: -300px;
-  }
-  
- 
-  
 
-  
-  @keyframes ripple{
-    0%{
-      transform: scale(0.6);
+  /* responsive */
+  @media (max-width: 1200px) {
+    .header-text {
+      font-size: 3rem;
     }
-    
-    50%{
-      transform: scale(1.0);
-    }
-    
-    100%{
-      transform: scale(0.6);
+
+    .motto-footer {
+      font-size: 1.2rem;
     }
   }
-   
 
-  .afrohk-title {
-    font-size: 4rem;
+  @media (max-width: 991px) {
+    .header-text {
+      font-size: 2.5rem;
+    }
+
+    .mobile-nav {
+      display: block;
+    }
+
+    .desktop-nav {
+      display: none;
+    }
+
+    .nav-link {
+      display: flex;
+      justify-content: center;
+    }
+
+    .flash-container {
+      width: 80%;
+    }
+
+    .motto-footer {
+      font-size: 1rem;
+    }
+
+    .top-link {
+      right: 5%;
+      bottom: 5%;
+    }
   }
 
-  .flash {
-    font-size: 0.6rem;
-  }
+  @media (max-width: 800px) {
+    .logo-footer {
+      width: 150px;
+      height: 200px;
+    }
 
+    #brand-name {
+      font-size: 2rem;
+    }
 
-  .check-programs,
-  .get-account {
-    width: 20rem;
-    display: inline;
-    /* font-size: 0.5rem; */
-  }
+    .motto-footer {
+      font-size: 0.8rem;
+    }
 
-  .presentation-heading {
-    letter-spacing: 0.1rem;
-    font-size: 1.2rem;
-  }
-
-  .presentation-paragraph {
-    letter-spacing: 0.1rem;
-    font-size: 1rem;
-    line-height: 2rem;
-  }
-
-  .learn-section {
-    height: 30vh;
-    padding: 1rem;
-    background-color: whitesmoke;
-    margin-bottom: 1rem;
-  }
-
-  .study {
-    font-size: 1.5rem;
-  }
-
-  .word-slider>li {
-    font-size: 1.3rem;
-  }
-
-
-}
-
-@media (max-width: 460px) {
-  .slider ul {
-    display: flex;
-    padding: 0;
-    animation: cambio 50s infinite linear;
-  }
-
-  .xlarge{
-    display: none;
-  }
-  html {
-    font-size: 90%;
-  }
-
-  .afrohk-title {
-    font-size: 3rem;
-  }
-
-  .slogan {
-    font-size: 1.6rem;
-  }
-
-  #banner-wrapper {
-    z-index: 2;
-    top: 35%;
-    /* width: 100%; */
-    left: 5%;
-  }
-
-  .brand {
-    font-size: 1rem;
-  }
-
-  .banner-heading {
-    /* font-size: 2rem; */
-    line-height: 4rem;
-    padding-left: 2rem;
-    /* width: 80%; */
-  }
-
-  .banner-paragraph {
-    /* font-size: 1.2rem; */
-    line-height: 2rem;
-    width: 80%;
-  }
-
-  .presentation-text-wrapper {
-    margin: 1rem 0.3rem;
-  }
-
-  .check-programs,
-  .get-account {
-    width: 20rem;
-    display: inline;
-    /* font-size: 1rem; */
-  }
-
-  .account-wrapper {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-}
-
-@media (max-width: 350px) {
-  .slider ul {
-    display: flex;
-    padding: 0;
-    animation: cambio 50s infinite linear;
-  }
-
-  .brand {
-    font-size: 0.8rem;
-  }
-
-  .afrohk-title {
-    font-size: 3rem;
-  }
-
-  .slogan {
-    font-size: 1.5rem;
-  }
-
-  .account-wrapper {
-    width: 80%;
-  }
-
-  #banner-wrapper {
-    z-index: 2;
-    top: 35%;
-    /* width: 100%; */
-    /* left: 10%; */
+    .logo-navbar {
+      display: none;
+    }
   }
 
 
-  .banner-heading {
-    /* font-size: 2rem; */
-    line-height: 4rem;
-    /* width: 80%; */
+  @media (max-width: 768px) {
+    #footer {
+      background: -webkit-linear-gradient(to top,
+          #412388,
+          #556497,
+          #ffffff);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to top,
+          #412388,
+          #556497,
+          #ffffff);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
   }
 
-  .banner-paragraph {
-    /* font-size: 1.2rem; */
-    line-height: 2rem;
-    width: 80%;
+  @media (max-width: 450px) {
+    .footer-links-header {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    .brand {
+      font-size: 1rem;
+    }
+
+    html {
+      font-size: 90%;
+    }
+
+    .useful-links {
+      font-size: 1rem;
+    }
   }
 
-  .check-programs,
-  .get-account {
-    width: 10rem;
-    display: inline;
-    font-size: 0.8rem;
+  @media (max-width: 350px) {
+    .brand {
+      font-size: 0.8rem;
+    }
   }
 
-  .presentation-text-wrapper {
-    background-color: #000000;
-    border-radius: 5px;
-    margin: 1rem;
+  /* End footer */
+
+
+
+
+
+
+
+
+
+  /* animations */
+  /*=========================Responsiveness ===========================*/
+  @media (max-width: 1400px) {
+
+    .program-description {
+      line-height: 3rem;
+      height: 13rem;
+    }
+
+    .news-text {
+      padding-top: 1rem;
+      height: 15rem;
+      font-size: 1.2rem;
+    }
   }
 
-  .account-wrapper {}
-}
+  @media (max-width: 1200px) {
 
-/* --- animations---- */
-/* --- animation 1 fade in Up---- */
-@-webkit-keyframes fadeInUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    .learn-with-us,
+    .why-afrohk,
+    .partners,
+    .clients,
+    .about,
+    .services {
+      font-size: 2.6rem;
+      margin: 0;
+      padding: 3rem 0;
+    }
+
+    #banner-wrapper {
+      z-index: 2;
+      top: 25%;
+      left: 10%;
+    }
+
+    .afrohk-title {
+      font-size: 5rem;
+    }
+
+    .header-text {
+      font-size: 3rem;
+    }
+
+    .flash-container {
+      z-index: 2;
+      top: 17%;
+      left: 50%;
+    }
+
+    .flash {
+      font-size: 1rem;
+    }
+
+    .new-program {
+      font-family: "Chivo", sans-serif;
+      font-family: "Chango";
+      font-size: 1.5rem;
+      color: rgb(245, 235, 235);
+      text-shadow: 1px 2px 1px black;
+      transition: all 1s;
+      padding-bottom: 0.5rem;
+    }
+
+    .news-text {
+      padding-top: 1rem;
+      font-size: 1.2rem;
+    }
   }
 
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
+  /* Small devices (portrait tablets and large phones, 600px and up) */
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
+  @media (max-width: 1100px) {
+    .top-footer-line>p {
+      font-size: 1.5rem;
+    }
 
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.fadeInUp {
-  -webkit-animation-name: fadeInUp;
-  animation-name: fadeInUp;
-}
-
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-/* --- animation 1 fade in left ---- */
-@-webkit-keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
+    .news-text {
+      padding-top: 1rem;
+      height: 17rem;
+      font-size: 1.2rem;
+    }
   }
 
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+  @media (max-width: 992px) {
+    nav {}
+
+    .nav-link {
+      display: flex;
+      justify-content: center;
+    }
+
+    .footer-links-header {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    .more-btn {
+      font-size: 1rem;
+      padding: 1rem 1.4rem;
+    }
+
+
+    .check-programs,
+    .get-account {
+      width: 25rem;
+      display: inline;
+      font-size: 0.8rem;
+    }
+
+
+    .account-wrapper {
+      width: 100%;
+    }
+
+    #banner-wrapper {
+      z-index: 2;
+      top: 20%;
+      left: 10%;
+    }
+
+    .flash-container {
+      z-index: 2;
+      top: 15%;
+      left: 50%;
+    }
+
+    .banner-heading {
+      padding-left: 4rem;
+    }
+
+    .banner-paragraph {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+
+
+    .header-text {
+      font-size: 2.5rem;
+    }
+
+    .motto-footer {
+      font-size: 1rem;
+    }
+
+
+
+    .program-description {
+      line-height: 3rem;
+      height: 10rem;
+    }
+
+    .news-img {
+      height: auto;
+    }
+
+    .news-content-wrapper {
+      padding: 1rem 2rem;
+    }
+
+    .news-text {
+      font-size: 1.2rem;
+      height: auto;
+    }
+
+
+    @media (max-width: 905px) {
+
+      .check-programs,
+      .get-account {
+        width: 25rem;
+        display: inline;
+        font-size: 0.8rem;
+      }
+
+      .new-program-wrapper {
+        margin-top: 12rem;
+      }
+    }
+
+    #brand-name {
+      font-size: 2rem;
+    }
+
+    .flash-container {
+      width: 100%;
+    }
+
+    .my-card-wrapper {
+      margin: 0 0.2rem;
+    }
+
+    .account-wrapper {
+      width: 100%;
+    }
+
+    #sky-wrapper {
+      height: 90vh;
+    }
+
+    .learn-with-us,
+    .partners,
+    .clients,
+    .about,
+    .services {
+      font-size: 2.3rem;
+      padding: 1rem;
+    }
+
+    #monitor {
+      margin: 2%;
+    }
+
+    .motto {
+      font-size: 1.5rem;
+    }
+
+    .header-text {
+      /* font-size: 2.6rem; */
+    }
+
+    .common-header {
+      margin-bottom: 2rem;
+    }
+
+    .customer-section {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .learn-section {
+      height: 50vh;
+      padding: 1rem;
+      background-color: whitesmoke;
+      margin-bottom: 1rem;
+    }
+
+    .study {
+      font-size: 2.5rem;
+    }
+
+    .word-slider>li {
+      font-size: 1.8rem;
+    }
+
+    .testimony-text {
+      font-size: 1rem;
+      margin: 2rem 2rem 4rem;
+    }
+
+    .knowledge-quote {
+      font-size: 2rem;
+    }
+
+    .mission {
+      /* background-color: whitesmoke; */
+      margin-top: 3rem;
+    }
+
+    .common-heading {
+      margin: 5rem 0 0.8rem 0;
+      font-size: 2rem;
+      text-align: center;
+      letter-spacing: 0.2rem;
+    }
+
+    .customers-paragraph {
+      font-size: 1rem;
+      width: 50%;
+      margin: 2rem auto 4rem;
+      text-align: center;
+    }
+
+    .customer-image {
+      width: 10rem;
+      height: 12rem;
+      margin-left: -0.6rem;
+      box-shadow: 0.2rem 0.2rem 2rem 0.5rem rgba(0, 0, 0, 0.678);
+    }
+
+    .customers-card {
+      /* background-color:#ddd; */
+      width: 30rem;
+      margin-top: 2rem;
+    }
+
+    .slider ul {
+      display: flex;
+      padding: 0;
+      animation: cambio 30s infinite linear;
+    }
+
+    .news-text {
+
+      height: auto;
+    }
+
+    .header-text {
+      font-size: 2rem;
+    }
+
+    .motto-footer {
+      font-size: 1rem;
+    }
   }
-}
 
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
+  @media (max-width: 800px) {
+    .logo-footer {
+      width: 150px;
+      height: 200px;
+    }
+
+    #banner-wrapper {
+      z-index: 2;
+      top: 30%;
+      left: 15%;
+    }
+
+    .banner-heading {
+      font-size: 2.5rem;
+      line-height: 3rem;
+      /* width: 60%; */
+    }
+
+    .banner-paragraph {
+      font-size: 1.5rem;
+      width: 60%;
+      line-height: 2.8rem;
+    }
+
+    .check-programs,
+    .get-account {
+      width: 20rem;
+      display: inline;
+      font-size: 1rem;
+    }
+
+    .account-wrapper {
+      width: 100%;
+      margin: 5rem 0 0;
+    }
+
+    .video-container video {
+      display: none;
+    }
+
+    .new-program-wrapper {
+      margin-bottom: 4rem;
+    }
+
+    .new-program {
+      font-size: 1.5rem;
+      text-transform: capitalize;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .header-text {
+      /* font-size: 3rem; */
+    }
+
+    .news-text {
+
+      height: auto;
+    }
   }
 
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+  @media (max-width: 780px) {
+    .news-text {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      font-size: 1.2rem;
+      height: auto;
+    }
+
+
+    .afrohk-title {
+      font-size: 5rem;
+    }
+
+    .slogan {
+      font-size: 1.5rem;
+      padding-bottom: 1rem;
+    }
+
   }
-}
-
-.fadeInLeft {
-  -webkit-animation-name: fadeInLeft;
-  animation-name: fadeInLeft;
-}
-
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
 
 
 
+  @media (max-width: 768px) {
+    #footer {
+      background: #141E30;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #243B55, #141E30);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #243B55, #141E30);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+
+    .slogan {
+      font-size: 1.5rem;
+    }
+
+    .footer-links-header {
+      font-size: 1rem;
+
+    }
+
+    .more-btn {
+      font-size: 1rem;
+    }
+
+    .accessibility-text {
+      font-size: 1.8rem;
+    }
+  }
+
+  /* Extra small devices (phones, 600px and down) */
+  @media (max-width: 700px) {
+    .video-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: url('https://images.pexels.com/photos/7550293/pexels-photo-7550293.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500') no-repeat center center/cover;
+    }
+
+
+
+    .afrohk-footer,
+    .header-text {
+      font-size: 3rem;
+    }
+
+    .course-link {
+      color: #fcfbfa;
+      font-size: 0.8rem;
+    }
+
+    .logo-navbar {}
+
+    #banner-wrapper {
+      z-index: 2;
+      top: 25%;
+      left: 15%;
+    }
+
+    .banner-heading {
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+
+    .banner-paragraph {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    .check-programs,
+    .get-account {
+      width: 20rem;
+      display: inline;
+      font-size: 1rem;
+    }
+
+    .account-wrapper {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .header-text {
+      font-size: 2rem;
+    }
+
+    .account-wrapper {}
+
+    #sky-wrapper {
+      position: relative;
+    }
+
+    .program-name {
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .program-description {
+      font-size: 1.2em;
+      font-weight: 400;
+      height: auto;
+    }
+
+    .learn-with-us,
+    .why-afrohk,
+    .partners,
+    .clients,
+    .about,
+    .services {
+      font-size: 2rem;
+      padding: 1rem;
+    }
+
+    .slider ul {
+      display: flex;
+      padding: 0;
+      animation: cambio 40s infinite linear;
+    }
+
+    .card-img-top {
+      display: none;
+    }
+
+    .learn-section,
+    .learn-line-top,
+    .learn-line-bottom {
+      display: none;
+    }
+
+    .new-program-wrapper {
+      margin-top: 2rem;
+    }
+
+    .study {
+      font-size: 2rem;
+    }
+
+    .word-slider>li {
+      font-size: 1.2rem;
+    }
+
+    .motto-footer {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+
+    .afrohk-footer,
+    .header-text {
+      font-size: 2rem;
+    }
+
+    .xxlarge {
+      display: none;
+    }
+
+    .medium {
+      width: 300px;
+      height: 300px;
+      left: -100px;
+      bottom: -100px;
+    }
+
+    .large {
+      width: 500px;
+      height: 500px;
+      left: -200px;
+      bottom: -200px;
+    }
+
+    .xlarge {
+      width: 700px;
+      height: 700px;
+      left: -300px;
+      bottom: -300px;
+    }
+
+
+
+
+
+    @keyframes ripple {
+      0% {
+        transform: scale(0.6);
+      }
+
+      50% {
+        transform: scale(1.0);
+      }
+
+      100% {
+        transform: scale(0.6);
+      }
+    }
+
+
+    .afrohk-title {
+      font-size: 4rem;
+    }
+
+    .flash {
+      font-size: 0.6rem;
+    }
+
+
+    .check-programs,
+    .get-account {
+      width: 20rem;
+      display: inline;
+      /* font-size: 0.5rem; */
+    }
+
+    .presentation-heading {
+      letter-spacing: 0.1rem;
+      font-size: 1.2rem;
+    }
+
+    .presentation-paragraph {
+      letter-spacing: 0.1rem;
+      font-size: 1rem;
+      line-height: 2rem;
+    }
+
+    .learn-section {
+      height: 30vh;
+      padding: 1rem;
+      background-color: whitesmoke;
+      margin-bottom: 1rem;
+    }
+
+    .study {
+      font-size: 1.5rem;
+    }
+
+    .word-slider>li {
+      font-size: 1.3rem;
+    }
+
+
+  }
+
+  @media (max-width: 460px) {
+    .slider ul {
+      display: flex;
+      padding: 0;
+      animation: cambio 50s infinite linear;
+    }
+
+    .xlarge {
+      display: none;
+    }
+
+    html {
+      font-size: 90%;
+    }
+
+    .afrohk-title {
+      font-size: 3rem;
+    }
+
+    .slogan {
+      font-size: 1.6rem;
+    }
+
+    #banner-wrapper {
+      z-index: 2;
+      top: 35%;
+      /* width: 100%; */
+      left: 5%;
+    }
+
+    .brand {
+      font-size: 1rem;
+    }
+
+    .banner-heading {
+      /* font-size: 2rem; */
+      line-height: 4rem;
+      padding-left: 2rem;
+      /* width: 80%; */
+    }
+
+    .banner-paragraph {
+      /* font-size: 1.2rem; */
+      line-height: 2rem;
+      width: 80%;
+    }
+
+    .presentation-text-wrapper {
+      margin: 1rem 0.3rem;
+    }
+
+    .check-programs,
+    .get-account {
+      width: 20rem;
+      display: inline;
+      /* font-size: 1rem; */
+    }
+
+    .account-wrapper {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (max-width: 350px) {
+    .slider ul {
+      display: flex;
+      padding: 0;
+      animation: cambio 50s infinite linear;
+    }
+
+    .brand {
+      font-size: 0.8rem;
+    }
+
+    .afrohk-title {
+      font-size: 3rem;
+    }
+
+    .slogan {
+      font-size: 1.5rem;
+    }
+
+    .account-wrapper {
+      width: 80%;
+    }
+
+    #banner-wrapper {
+      z-index: 2;
+      top: 35%;
+      /* width: 100%; */
+      /* left: 10%; */
+    }
+
+
+    .banner-heading {
+      /* font-size: 2rem; */
+      line-height: 4rem;
+      /* width: 80%; */
+    }
+
+    .banner-paragraph {
+      /* font-size: 1.2rem; */
+      line-height: 2rem;
+      width: 80%;
+    }
+
+    .check-programs,
+    .get-account {
+      width: 10rem;
+      display: inline;
+      font-size: 0.8rem;
+    }
+
+    .presentation-text-wrapper {
+      background-color: #000000;
+      border-radius: 5px;
+      margin: 1rem;
+    }
+
+    .account-wrapper {}
+  }
+
+  /* --- animations---- */
+  /* --- animation 1 fade in Up---- */
+  @-webkit-keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+  }
+
+  .animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+
+  /* --- animation 1 fade in left ---- */
+  @-webkit-keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .fadeInLeft {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+  }
+
+  .animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
