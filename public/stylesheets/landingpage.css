@@ -84,6 +84,11 @@ button{
   float: inline-end;
 }
 
+.mobile-nav, #logout-mobile-nav{
+  display: none;
+  opacity: 0;
+}
+
 @media (max-width:768px) {
   .nav > .nav-btn {
     display: inline-block;
@@ -104,7 +109,7 @@ button{
     display: block;
     width: 25px;
     height: 10px;
-    border-top: 2px solid #eee;
+    border-top: 2px solid #310683;
   }
   .nav > .nav-links {
     position: absolute;
@@ -133,7 +138,14 @@ button{
     background-color: #2f044f;
     color: white;
     padding: 1rem;
+    opacity: 1;
   }
+
+  #logout-mobile-nav{
+    opacity:1 ;
+    display: block;
+  }
+
 }
 
 
@@ -2389,7 +2401,6 @@ ul {
   }
 
   @media (max-width: 992px) {
-    nav {}
 
     .nav-link {
       display: flex;

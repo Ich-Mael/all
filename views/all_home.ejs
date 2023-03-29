@@ -171,9 +171,10 @@
       </ul>
 
       <a class="nav-link m-0" id="drop-down-contact" href="#footer"><span class="myNav-link">Contacts</span></a>
+
       <% if(typeof currentUser !=undefined){%>
         <% if (currentUser) {%>
-          <a class="btn  mobile-nav me-2 my-2" style="background-color:  rgb(138, 7, 36); color: white ;" href="/login">Deconnexion</a>
+          <a id="logout-mobile-nav" class="btn  me-2 my-2" style="background-color:  rgb(138, 7, 36); color: white ;" href="/login">Deconnexion</a>
           <%} %>
 
               <%}%>
