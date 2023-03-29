@@ -139,6 +139,18 @@
       <!-- <img src="../images/logo_Afrohk.jpeg" alt="" width="50" height="50"> -->
       <!-- <span class="afro ms-2">Afro</span><span class="hk">HK</span> -->
     </a>
+    <% if(typeof currentUser !=undefined){%>
+      <% if (!currentUser) {%>
+        <a class="nav-link-connexion mobile-nav me-2 my-2" href="/login">Connexion</a>
+        <%} else { %>
+          <h3 id="user" class="my-1 mx-2 mobile-nav align-self-center">
+            <a class="profile-link btn" href="/user/<%= currentUser._id%>">
+              <i class="bi bi-person-circle"></i>
+              <%=currentUser.username%>
+            </a>
+          </h3>
+    <%}%>
+    <%}%> 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
