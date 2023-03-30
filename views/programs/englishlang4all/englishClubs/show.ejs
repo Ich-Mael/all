@@ -39,9 +39,11 @@
           <p class="club-motto">
             <%=club.motto %>
           </p>
-          <p class="pb-2">
-            <span class="connect"> Connect with us </span>
+          <div class="pb-2">
+            <span class="connect d-inline-block"> Connect with us </span>
+            <span class="d-inline-block">
             <!-- Facebook -->
+
             <a class="btn btn-floating m-2" href="" id="m-facebook" role="button" target="_blank"><i
                 class="engclub-sm-icon fab fa-facebook-f"></i></a>
             <!-- Instagram -->
@@ -50,7 +52,8 @@
             <!-- Youtube -->
             <a class="btn btn-floating m-2" href="" role="button" id="m-youtube" target="_blank"><i
                 class="engclub-sm-icon bi bi-youtube"></i></a>
-          </p>
+              </span>
+            </div>
           <p>
             <a href="/englishlang4all/clubs/<%=club._id%>/member/<%= clubMemberInfo._id%>/myprogress"
               class="my-progress">My English Learning
@@ -136,121 +139,11 @@
     </li>
     <div style="height: 0.2rem; width: 100%; background-color: #080364;"></div>
   </ul>
-
-  <!-- board section 
-<h1 class="common-heading">
-  <span class="underline"></span>Board Members<span class="underline"></span>
-</h1>
-<div class="customer-section">
-  <div class="container">-->
-  <!-- Button trigger modal
-    <div class="d-flex flex-column justifify-content-center
-    align-items-center">
-      <button type="button" class="btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        <h1 class="align-self-center year"> <span style="color:rgb(246, 249, 250);"><%= club.name %></span></h1>
-        <hr>
-        <h2 class="py-1">Board Members <br> Year 2022-2023</h2>
-      </button>
-    </div> -->
-  <!-- Modal -->
-  <!--
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Board Members</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div id="customers-cards" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner" id="board-members-wrapper">
-                <div class="carousel-item active">
-                  <div>
-                    <div class="logo-wrapper">
-                      <img class="club-logo img-thumbnail" src="<%=club.logoImageUrl%>" alt="" />
-                    </div>
-                  </div>
-                </div>
-                <% for(let i=0; i <club.boardMembers.length ; i++){ %>
-                <div class="carousel-item">
-                  <div class="carousel-caption">
-                    <div class="py-3">
-                      <div class="">
-                        <div class="">
-                          <img class="img-fluid" src="<%= club.boardMembers[i].imageUrl %>" />
-                        </div>
-                        <div class="">
-                          <div id="image-caption" class="">
-                            <h3 class="position mb-2">
-                              <%= positions[i] %>
-                            </h3>
-                            <hr>
-                            <h4 class="member-name">
-                              <%=
-                                      club.boardMembers[i].name +" "+
-                                      club.boardMembers[i].surname%>
-                            </h4>
-                            <p>
-                              <%= club.boardMembers[i].about%>
-                            </p>
-                            <hr>
-                            -->
-  <!-- Social media
-                            <div class="social-media-icons align-self-center"> -->
-  <!-- Mail 
-                              <a class="btn btn-outline-light btn-floating m-2"
-                                href="mailto:<%= club.boardMembers[i].email %>" target="_blank" role="button"
-                                id="user_mail"><i class="fas fa-at"></i></a>-->
-  <!-- Facebook -->
-  <!-- <a class="btn btn-outline-light btn-floating" href="<%=
-                                    club.boardMembers[i].facebookLink %>" id="m-facebook" role="button" target="_blank"><i
-                      class="engclub-sm-icon fab fa-facebook-f"></i></a -->
-  <!-- Twitter -->
-  <!-- <a class="btn btn-outline-light btn-floating" href="<%= 
-                                    club.boardMembers[i].twitterLink %>" id="m-twitter" target="_blank" role="button"><i
-                      class="engclub-sm-icon fab fa-twitter"></i></a-->
-  <!--  Linkedin 
-                              <a class="btn btn-outline-light btn-floating" href="<%=
-                                    club.boardMembers[i].linkedIn%>" target="_blank" role="button" id="m-linkedIn"><i
-                                  class="engclub-sm-icon fab fa-linkedin-in"></i></a>-->
-  <!-- whatsapp 
-                              <a class="btn btn-outline-light btn-floating" href="<%=
-                                    club.boardMembers[i].whatsAppLink %>" role="button" id="m-whatsapp"
-                                target="_blank"><i class="engclub-sm-icon fa fa-whatsapp"></i></a>
-                            </div>
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <% } %>
-              </div>
-              <a class="carousel-control-prev" href="#customers-cards" data-bs-slide="prev">
-                <i class="fas carousel-button fa-arrow-left"></i>
-              </a>
-              <a class="carousel-control-next" href="#customers-cards" data-bs-slide="next">
-                <i class="fas carousel-button fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
--->
-
-
   <!-- Clubs Activities -->
   <h1 class="common-heading">
     <span class="underline"></span>English Learning Activities<span class="underline"></span>
   </h1>
+  
   <div class="main-content-wrapper">
     <div class="container p-2 current-activity">
       <h1 class="current-activity-heading"><span>Upcoming Events of the week</span></h1>
@@ -492,6 +385,7 @@
           </div>
         </section>
 
+        <!-- News -->
         <section id="news-wrapper" class="my-5">
           <h1 class="activity-heading">News</h1>
           <div class="d-flex justifify-content-center">
@@ -597,8 +491,8 @@
                         <div id="tv-container">
                           <div id="monitor">
                             <div class="afrohk-TV">
-                              <h3 class="text-center afrohk-text mb-2 py-0"><span class="afrohk">AfroHK</span><span
-                                  class="tv">Radar</span>
+                              <h3 class="text-center afrohk-text mb-2 py-0"><span class="afrohk">Afro</span><span
+                                  class="tv">Language Lab</span>
                               </h3>
                             </div>
                             <div id="monitorscreen">
@@ -1097,8 +991,8 @@
                   <div id="tv-container">
                     <div id="monitor">
                       <div class="afrohk-TV">
-                        <h3 class="text-center afrohk-text mb-2 py-0"><span class="afrohk">AfroHK</span><span
-                            class="tv">Radar</span>
+                        <h3 class="text-center afrohk-text mb-2 py-0"><span class="afrohk">Afro</span><span
+                            class="tv">Language Lab</span>
                         </h3>
                       </div>
                       <div id="monitorscreen">

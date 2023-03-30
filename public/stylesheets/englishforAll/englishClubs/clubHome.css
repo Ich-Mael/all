@@ -119,6 +119,10 @@ body {
 
 
 /* Team */
+
+#team{
+    overflow: hidden;
+}
 .myTeamSwiper {
     margin: 2rem 0 1rem;
     height: 60vh;

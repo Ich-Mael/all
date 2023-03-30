@@ -134,35 +134,12 @@ router.get("/user/verifyemail", async (req, res) => {
       });
 
       res.render("user/account_verified", { userData });
-      /*
-            await req.login(userData, (err) => {
-              if (err) {
-                res.render("errorpage");
-              } else {
-                // const redirectUrl = (await req.session.returnTo) || "/";
-                // delete req.session.returnTo;
-                res.render("user/account_verified", {userData});
-              }
-            });
-            */
+     
     } else {
       res.render("user/account_already_activated")
     }
   };
 });
-//   else {
-//     res.render("user/account_handler", {
-//       username: req.user.username,
-//       verified: req.user.isVerified,
-//       err: "Le lien d’activation de compte est expiré",
-//       emailsent: true,
-//     });
-//   }
-// } else {
-//   // doesnt have a token
-//   // I will simply redirect to profile
-//   res.redirect("/register");
-// }
 
 // login user form
 router.get("/login", (req, res) => {
@@ -264,6 +241,8 @@ router.get('/userPassworLost/reset-password', catchAsync(async (req, res) => {
       });
 
     }
+  }else{
+    res.redirect("/")
   };
 
 }));
