@@ -195,37 +195,27 @@ router.post(
         user.isClubMember = true;
         await user.save();
       } else {
-        newEngClubMember = checkingMember;
+
+        const newEngClubMember = checkingMember;
+
+        if (englishClub.members.includes(newEngClubMember._id)) {
+          req.flash("error", `${user.username} is already a member of this English club`);
+          res.redirect('back');
+        } else {
+          
+          englishClub.members.push(newEngClubMember._id);
+          newEngClubMember.memberEnglishClubs.push(englishClub._id);
+  
+          await englishClub.save();
+          await newEngClubMember.save();
+  
+          req.flash("success", `${user.username} is successfully added to this English club`);
+          res.redirect('back');
+        }
       }
     }catch(err){
       res.send ("Something went wrong");
-      console.log(err);
     }
-
-  
-    try {
-      if (englishClub.members.includes(newEngClubMember._id)) {
-        req.flash("error", `${user.username} is already a member of this English club`);
-        res.redirect('back');
-      } else {
-  
-        englishClub.members.push(newEngClubMember._id);
-        newEngClubMember.memberEnglishClubs.push(englishClub._id);
-
-        await englishClub.save();
-        await newEngClubMember.save();
-
-        req.flash("success", `${user.username} is successfully added to this English club`);
-        res.redirect('back');
-      }
-    }
-    catch(err) {
-      res.send ("Something went wrong here");
-      console.log(err);
-    }
-
-    
-
   })
 );
 
