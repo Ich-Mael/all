@@ -42,18 +42,18 @@
           <div class="pb-2">
             <span class="connect d-inline-block"> Connect with us </span>
             <span class="d-inline-block">
-            <!-- Facebook -->
+              <!-- Facebook -->
 
-            <a class="btn btn-floating m-2" href="" id="m-facebook" role="button" target="_blank"><i
-                class="engclub-sm-icon fab fa-facebook-f"></i></a>
-            <!-- Instagram -->
-            <a class="btn btn-floating m-2" href="#!" role="button" id="m-instagram" target="_blank"><i
-                class="engclub-sm-icon fab fa-instagram"></i></a>
-            <!-- Youtube -->
-            <a class="btn btn-floating m-2" href="" role="button" id="m-youtube" target="_blank"><i
-                class="engclub-sm-icon bi bi-youtube"></i></a>
-              </span>
-            </div>
+              <a class="btn btn-floating m-2" href="" id="m-facebook" role="button" target="_blank"><i
+                  class="engclub-sm-icon fab fa-facebook-f"></i></a>
+              <!-- Instagram -->
+              <a class="btn btn-floating m-2" href="#!" role="button" id="m-instagram" target="_blank"><i
+                  class="engclub-sm-icon fab fa-instagram"></i></a>
+              <!-- Youtube -->
+              <a class="btn btn-floating m-2" href="" role="button" id="m-youtube" target="_blank"><i
+                  class="engclub-sm-icon bi bi-youtube"></i></a>
+            </span>
+          </div>
           <p>
             <a href="/englishlang4all/clubs/<%=club._id%>/member/<%= clubMemberInfo._id%>/myprogress"
               class="my-progress">My English Learning
@@ -143,7 +143,7 @@
   <h1 class="common-heading">
     <span class="underline"></span>English Learning Activities<span class="underline"></span>
   </h1>
-  
+
   <div class="main-content-wrapper">
     <div class="container p-2 current-activity">
       <h1 class="current-activity-heading"><span>Upcoming Events of the week</span></h1>
@@ -284,6 +284,7 @@
         <section class="">
           <h1 class="daily-vocabulary-title">Daily Vocabulary</h1>
           <div class="row mb-5">
+            <!-- Word -->
             <div class="col-md-6">
               <div class="daily-content">
                 <div class="card m-2">
@@ -334,6 +335,7 @@
                 </div>
               </div>
             </div>
+            <!-- Idiom -->
             <div class="col-md-6">
               <div class="daily-content">
                 <div class="card m-2">
@@ -381,7 +383,57 @@
                 </div>
               </div>
             </div>
+          </div>
 
+        <div class="d-flex justify-content-around mb-4">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#latest-vocab">
+            Latest Vocabulary of the week
+          </button>
+        </div>
+          <!-- Modal for latest vocabulary -->
+          <div class="modal fade" id="latest-vocab" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Latest vocabulary</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="container d-flex justify-content-around flex-column">
+                    <h4  style="background-color: #6c00e0; border-radius: 5px;" class="text-white text-center py-2" >Words or Phrases</h4>
+                    <% for (i=0; i < 5 ; i++){%>
+                      <div>
+                        <p class="card-title fs-5"  style="color:#080364; font-family: Georgia, 'Times New Roman', Times, serif;">
+                          <%= club.dailyVocab[i].wordOfDay.word %>
+                        </p>
+        
+                        <p class="card-text fs-6"><span class="fw-bold">Meaning : </span>
+                          <%= club.dailyVocab[i].wordOfDay.wordMeaning %>
+                        </p>
+                      </div>
+                      <hr>
+                      <%}%>
+                        <h4 style="background-color: #4A00E0; border-radius: 5px;" class="text-white text-center mt-4 py-2" >Idiomatic expression</h4>
+                        <% for (i=0; i < 5 ; i++){%>
+                          <div class="" style="">
+                            <p class="card-title  fs-5" style="color:#080364; font-family: Georgia, 'Times New Roman', Times, serif;">
+                              <%= club.dailyVocab[i].IdiomDay.idiom %>
+                            </p>
+                            <p class="card-text fs-6"><span class="fw-bold">Meaning : </span>
+                              <%= club.dailyVocab[i].IdiomDay.idiomMeaning %>
+                            </p>
+                          </div>
+                          <hr>
+                          <%}%>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -1067,7 +1119,7 @@
                               </form>
                               <%}%>
 
-                <!-- all comments -->
+                                <!-- all comments -->
                                 <hr>
                                 <h5 class="text-center py-3 mb-3" style="color:white; background: #8E2DE2;  /* fallback for old browsers */
                   background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
@@ -1100,11 +1152,13 @@
                                       <p class="comment-text">
                                         <%= review.text %>
                                       </p>
-                                      <%if(currentUser.role === "admin"){%>
+                                      <%if(currentUser.role==="admin" ){%>
                                         <form
-                                action="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/clubMedia/<%= club.media[i]._id %>/comment/<%=review._id%>/delete_comment"
-                                method="POST" class=""><button class="btn btn-sm fs-6 btn-danger" type="submit"><i class="fa-solid px-2 fa-trash-can"></i>Delete Comment</button></form> 
-                                      <%}%>
+                                          action="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/clubMedia/<%= club.media[i]._id %>/comment/<%=review._id%>/delete_comment"
+                                          method="POST" class=""><button class="btn btn-sm fs-6 btn-danger"
+                                            type="submit"><i class="fa-solid px-2 fa-trash-can"></i>Delete
+                                            Comment</button></form>
+                                        <%}%>
                                     </div>
                                   </div>
                                   <% } %>

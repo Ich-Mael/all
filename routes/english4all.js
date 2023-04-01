@@ -436,7 +436,7 @@ router.delete(
 
 //=========================================================================================
 //
-//                                     Weekly activity
+//                                     Daily vocabulary
 //
 //=========================================================================================
 
@@ -449,6 +449,15 @@ router.post(
   checkEnglishBoardMembership,
   catchAsync(engClub.createDailyVocabulary)
 );
+
+router.post(
+  "/englishlang4all/clubs/:city/hub/:hub_id/club/:club_id/board_dashboard/latest_dailyVocab",
+  isLoggedIn,
+  isVerified,
+  checkEnglishBoardMembership,
+  catchAsync(engClub.latestDailyVocabulary)
+);
+
 
 // weekly meeting
 router.post(

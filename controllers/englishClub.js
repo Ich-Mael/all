@@ -352,7 +352,7 @@ module.exports.deleteArticle = async (req, res) => {
 
 
 //======================================
-//          Weekly Activity
+//          Daily Vocabulary
 //======================================
 
 module.exports.createDailyVocabulary = async (req, res) => {
@@ -377,6 +377,21 @@ module.exports.createDailyVocabulary = async (req, res) => {
 
     res.redirect(`/englishlang4all/clubs/${city}/hub/${hub_id}/club/${club_id}`);
 }
+
+module.exports.latestDailyVocabulary = async (req, res) => {
+    const club_id = req.params.club_id;
+    const city = req.params.city;
+    const hub_id = req.params.hub_id;
+    const englishClub = await englishClubs.findById(req.params.club_id);
+   
+console.log(englishClub.dailyVocab);
+
+    const latestVocabulary = []; 
+
+
+    res.redirect(`/englishlang4all/clubs/${city}/hub/${hub_id}/club/${club_id}`);
+}
+
 
 module.exports.createMeeting = async (req, res) => {
     const club_id = req.params.club_id;
