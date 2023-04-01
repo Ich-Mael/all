@@ -157,9 +157,9 @@ router.post(
       "success",
       "Content de vous revoir " + req.user.username
     );
-    const redirectUrl = (await req.session.returnTo) || "/";
-    delete req.session.returnTo;
-    res.redirect(redirectUrl);
+    // const redirectUrl = (await req.session.returnTo) || "/";
+    // delete req.session.returnTo;
+    res.redirect("/");
   }
 );
 
