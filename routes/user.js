@@ -298,7 +298,12 @@ router.get(
     if (user.isClubMember) {
       clubMember = await englishClubMember.findById(user.clubMember_id).populate("memberEnglishClubs");
     }else{
-      console.log("member not found");
+
+      clubMember = null;
+      res.render("user/userprofile", {
+        user,
+        clubMember
+      });
     }
 
     res.render("user/userprofile", {
