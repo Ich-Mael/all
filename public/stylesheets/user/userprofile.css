@@ -40,9 +40,9 @@ body {
 }
 
 .quote {
-    margin: 2rem 1rem;
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 2rem 1rem 3rem ;
+    text-align: start ;
+    font-family: "Nosifer", cursive; 
     font-size: 1.4rem;
 }
 
@@ -60,15 +60,15 @@ body {
 }
 
 .nep {
-    font-family: "Rye", cursive;
-    padding: 1rem 3rem 0 1rem;
+    font-family: 'Paytone One', sans-serif;
+    padding: 1rem 3rem 0 0;
     font-size: 1.3rem;
     color: rgb(4, 96, 167);
 }
 
 .my-clubs {
     /* padding: 1rem 3rem 0 1rem; */
-    margin: 0 1rem;
+    margin: 0;
 }
 
 .club-name {
@@ -124,4 +124,14 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+@media (max-width: 578px) {
+.program-wrapper {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin: 1rem 2rem 4rem;
+    padding: 1rem 1rem;
+}
 }

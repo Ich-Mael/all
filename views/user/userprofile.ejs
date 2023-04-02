@@ -13,18 +13,21 @@
       </div>
       <div class="col-md-3">
         <a href="/reset-password" class="btn btn-outline-danger my-3">Reinitialiser mon mot de passe</a>
-        <% if (currentUser.role === "account-manager" || currentUser.role === "admin" ) {%>
+        <% if (currentUser.role==="account-manager" || currentUser.role==="admin" ) {%>
           <a href="/register" class="btn btn-outline-primary my-3">Creation de compte</a>
           <% } %>
       </div>
     </div>
   </div>
 
-  <p class="quote">« One language sets you in a corridor for life. Two languages open every door along the way » <br>
-    <strong>—> Frank Smith – Ecrivain canadien</strong> <br>
-    « Une langue vous place dans un couloir pour la vie. Deux langues vous ouvrent toutes les portes le long du chemin
-    ».
-  </p>
+  <div class="container col-md-10 d-flex justify-content-around">
+    <p class="quote ">« One language sets you in a corridor for life. Two languages open every door along the way » <br>
+      <strong>—> Frank Smith – Ecrivain canadien</strong> <br>
+      « Une langue vous place dans un couloir pour la vie. Deux langues vous ouvrent toutes les portes le long du chemin
+      ».
+    </p>
+  </div>
+
   <h2 class="my-program">Mes programmes</h2>
   <div class="row container mx-5 my-5">
     <div class="col-md-6">
@@ -69,7 +72,10 @@
                           <div class="img">
                             <img src="<%= club.logoImageUrl %>" class="img-thumbnail img-fluid" alt="">
                           </div>
-                          <a href="/englishlang4all/clubs/<%= club.city %>/hub/<%= club.hub %>/club/<%= club._id %>" class="club-name"><%= club.name %></a>
+                          <a href="/englishlang4all/clubs/<%= club.city %>/hub/<%= club.hub %>/club/<%= club._id %>"
+                            class="club-name">
+                            <%= club.name %>
+                          </a>
                         </div>
                         <%}%>
                     </div>
