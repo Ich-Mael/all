@@ -182,19 +182,8 @@ router.post(
       clubMember: user._id
     })
 
-    try{
-      if (!checkingMember) {
-        const newEngClubMember = new englishClubMember({
-          clubMember: user._id,
-          level
-        });
-
-        user.clubMember_id = newEngClubMember._id;
-
-        await newEngClubMember.save();
-        user.isClubMember = true;
-        await user.save();
-      } else {
+    try {
+      if (checkingMember) {
 
         const newEngClubMember = checkingMember;
 
@@ -202,19 +191,47 @@ router.post(
           req.flash("error", `${user.username} is already a member of this English club`);
           res.redirect('back');
         } else {
-          
+
           englishClub.members.push(newEngClubMember._id);
           newEngClubMember.memberEnglishClubs.push(englishClub._id);
-  
+
           await englishClub.save();
           await newEngClubMember.save();
-  
+
+          req.flash("success", `${user.username} is successfully added to this English club`);
+          res.redirect('back');
+        }
+
+      } else {
+
+        const newEngClubMember = new englishClubMember({
+          clubMember: user._id,
+          level
+        });
+
+        user.clubMember_id = newEngClubMember._id;
+
+        user.isClubMember = true;
+        await user.save();
+
+
+        if (englishClub.members.includes(newEngClubMember._id)) {
+          req.flash("error", `${user.username} is already a member of this English club`);
+          res.redirect('back');
+        } else {
+
+          englishClub.members.push(newEngClubMember._id);
+          newEngClubMember.memberEnglishClubs.push(englishClub._id);
+
+          await englishClub.save();
+          await newEngClubMember.save();
+
           req.flash("success", `${user.username} is successfully added to this English club`);
           res.redirect('back');
         }
       }
-    }catch(err){
-      res.send ("Something went wrong");
+    } catch (err) {
+      res.send("Something went wrong");
     }
   })
 );
