@@ -856,6 +856,10 @@ customers-cards:before {
   padding: 0 1rem;
 }
 
+.lsc-title{
+  height: 4rem;
+}
+
 /* media */
 
 .video-details-wrapper {
