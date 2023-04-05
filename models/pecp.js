@@ -266,6 +266,25 @@ const pecpStudentCvSchema = new Schema({
 
 });
 
+// Live performance
+const livePerfSchema = new Schema({
+  
+    topicTitle: String,
+
+    lpVideoLink: String,
+    Date: {
+      type: Date,
+      default: Date.now()
+    },
+
+    isPrivate: {
+      type: Boolean,
+      default: false
+    },
+    feedback: String,
+  
+})
+
 
 const pecpStudent = mongoose.model("pecpStudent", pecpStudentSchema);
 
@@ -278,10 +297,13 @@ const pecpStudentProgressTrack = mongoose.model("pecpStudentProgressTrack", pecp
 
 const pecpStudentCv = mongoose.model("pecpStudentCv", pecpStudentCvSchema);
 
+const livePerf = mongoose.model("LivePerf", livePerfSchema);
+
 module.exports = {
     pecpStudent,
     pecpCoach,
     pecpStudentCv,
     pecpConvFeedback,
     pecpStudentProgressTrack,
+    livePerf,
 };

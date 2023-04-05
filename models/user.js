@@ -16,6 +16,11 @@ const userSchema = new Schema({
     required: true,
   },
 
+  isVip: {
+    type: Boolean,
+    default: false
+  },
+
   username: {
     type: String,
     trim: true,
@@ -92,6 +97,8 @@ const userSchema = new Schema({
     trim: true,
   },
 
+
+
   //High_school student
   isHighSchoolStudent: {
     type: Boolean,
@@ -104,19 +111,19 @@ const userSchema = new Schema({
     default: "",
   },
 
-// is English club memebers
-isClubMember: {
-  type: Boolean,
-  default: false,
-},
+  // Is English club memebers
+  isClubMember: {
+    type: Boolean,
+    default: false,
+  },
 
-clubMember_id: {
-  type: String,
-  trim: true,
-  default: "",
-},
+  clubMember_id: {
+    type: String,
+    trim: true,
+    default: "",
+  },
 
-  // pecp student
+  // Pecp student
   isPecpStudent: {
     type: Boolean,
     default: false,
@@ -192,6 +199,12 @@ clubMember_id: {
   // programs
   ownedPrograms: [],
 
+  // My live perfomance
+  myLivePerf : [{
+    type: Schema.Types.ObjectId,
+    ref: "LivePerf",
+  },],
+
   // courses
   specialProgram: [{
     courseTitle: String,
@@ -229,8 +242,11 @@ clubMember_id: {
   timestamps: true
 });
 
+
+
 userSchema.plugin(passportLocalMongoose);
 
 const user = mongoose.model("User", userSchema);
+
 
 module.exports = user;

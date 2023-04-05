@@ -14,6 +14,8 @@ const {
   englishClubs,
 } = require("../models/englishClub");
 
+const { livePerf } = require("../models/pecp");
+
 const catchAsync = require("../utilities/catchAsync");
 
 const {
@@ -134,7 +136,7 @@ router.get("/user/verifyemail", async (req, res) => {
       });
 
       res.render("user/account_verified", { userData });
-     
+
     } else {
       res.render("user/account_already_activated")
     }
@@ -241,7 +243,7 @@ router.get('/userPassworLost/reset-password', catchAsync(async (req, res) => {
       });
 
     }
-  }else{
+  } else {
     res.redirect("/")
   };
 
@@ -292,12 +294,13 @@ router.get(
     const id = req.params.id;
     const user = await User.findById(id)
       .populate("coursesTaken")
+      .populate("myLivePerf")
       .populate("coursesGiven");
 
-      let memberEngClubs;
+    let memberEngClubs;
     if (user.isClubMember) {
       clubMember = await englishClubMember.findById(user.clubMember_id).populate("memberEnglishClubs");
-    }else{
+    } else {
 
       clubMember = null;
       res.render("user/userprofile", {
@@ -327,6 +330,20 @@ router.get(
     res.render("admindashboard");
   }
 );
+
+// All users
+router.get(
+  "/admindashboard/allUsers",
+  isLoggedIn,
+  isVerified,
+  checkRoles("admin"),
+  catchAsync(async (req, res) => {
+
+    const users = await User.find({});
+    res.render("all_users", { users });
+  }
+  ));
+
 
 // adding a student to a course form
 router.get(
@@ -375,6 +392,33 @@ router.post(
     res.send("user successfully registered for the course");
   })
 );
+
+
+
+// live perfomance
+
+router.post(
+  "/livePerformance/user/:user_id",
+  isLoggedIn,
+  isVerified,
+  checkRoles("admin"),
+  catchAsync(async (req, res) => {
+    const newPerf = new livePerf(req.body.livePerf)
+
+    const user = await User.findById(req.params.user_id);
+
+    user.myLivePerf.unshift(newPerf._id);
+
+    await user.save();
+    await newPerf.save();
+    
+
+    req.flash("success", "Live performance posted in the learner's profile");
+    res.redirect("back");
+  })
+);
+
+
 
 //==========================//==========================
 //   Instrucctor Privileges  Managing courses

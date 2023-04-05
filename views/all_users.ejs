@@ -1,0 +1,101 @@
+<% layout('layouts/boilerplate') %>
+ <!-- WORD Processor-->
+ <script src="https://cdn.tiny.cloud/1/p06f8vxdpje8xosyvnq48z68vc7n479iauh5s2jk9zx30qg2/tinymce/5/tinymce.min.js"
+  referrerpolicy="origin"></script>
+ <script>
+  tinymce.init({
+   selector: '.mytextarea',
+   height: 200,
+   relative_urls: false,
+   remove_script_host: false,
+   toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+   plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+   max_width: 500,
+   min_height: 300,
+   min_width: 400
+  });
+ </script>
+
+ <style>
+  label{
+   color: black;
+  }
+ </style>
+
+ <h1>All Users</h1>
+ <div class="container">
+  <table class="table table-dark table-bordered  table-responsive table-hover">
+   <thead>
+    <tr>
+     <th scope="col">#</th>
+     <th scope="col">Name</th>
+     <th scope="col">Surname</th>
+     <th scope="col">Username</th>
+     <th scope="col">Action</th>
+    </tr>
+   </thead>
+   <tbody>
+    <% for (let i=1; i < users.length; i++){%>
+     <tr>
+      <th scope="row">
+       <%=i%>
+      </th>
+      <td>
+       <%= users[i].name %>
+      </td>
+      <td>
+       <%= users[i].surname %>
+      </td>
+      <td>
+       <%= users[i].username %>
+      </td>
+      <td>
+
+       <!-- Button trigger modal -->
+       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#user_<%=i%>">
+        Live Perf
+       </button>
+
+       <!-- Modal -->
+       <div class="modal fade" id="user_<%=i%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+         <div class="modal-content">
+          <div class="modal-header">
+           <h5 class="modal-title text-primary" id="exampleModalLabel">Live Perfomance for <%= users[i].username %></h5>
+           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+           <form action="/livePerformance/user/<%= users[i]._id %>" method="post">
+            <!-- Topic title -->
+            <label class="form-label my-2" for="">Live Perfomance Topic Title</label>
+            <input type="text" required class="form-control" name="livePerf[topicTitle]" id="" value="" />
+
+            <!-- Date-->
+            <label class="form-label my-2" for="">Live Perfomance Date</label>
+            <input type="date" required class="form-control" name="livePerf[Date]" id="" value="" />
+
+            <!-- Video Link -->
+            <label class="form-label my-2" for="">Live Perfomance Video Link</label>
+            <input type="text" required class="form-control" name="livePerf[lpVideoLink]" id="" value="" />
+
+            <!-- Feedback -->
+            <label class="form-label my-2" for="">Feedback</label>
+            <textarea type="text" class="form-control mytextarea" name="livePerf[feedback]" value=""
+             id=""></textarea>
+
+             <button class="btn btn-primary">Submit</button>
+
+           </form>
+          </div>
+          <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+         </div>
+        </div>
+       </div>
+      </td>
+     </tr>
+     <%}%>
+   </tbody>
+  </table>
+ </div>

@@ -176,13 +176,13 @@
 
   <div class="container col-lg-8 mb-5 d-flex flex-column align-items-center">
     <div class="pecp_wrapper mt-5">
-      <h1 class="pecs">My Personal English Learning Space</h1>
+      <h1 class="pecs">Espace Personnel d'Apprentissage</h1>
       <hr>
       <div class="d-flex justify-content-evenly flex-wrap py-3">
-        <a href="#courses" class="ms-2 activity-links d-block">My courses</a>
-        <a href="#conversation" class="mx-2 activity-links d-block">Conversation Practice</a>
-        <a href="#progress" class="mx-2 activity-links d-block">Progress</a>
-        <a href="#cvInt" class="ms-2 activity-links d-block">My CV as Interview</a>
+        <a href="#courses" class="ms-2 activity-links d-block">Mes cours</a>
+        <a href="#conversation" class="mx-2 activity-links d-block">Pratique de la conversation</a>
+        <a href="#progress" class="mx-2 activity-links d-block">Progres</a>
+        <a href="#cvInt" class="ms-2 activity-links d-block">Mon CV en Interview</a>
       </div>
       <hr>
       <div class="container ps-5 py-5">
@@ -208,7 +208,7 @@
 
   <!-- My courses -->
   <div id="courses">
-    <h3 class="section-title">My courses</h3>
+    <h3 class="section-title">Mes cours</h3>
     <div class="container my-5">
       <div class="row">
         <% for (let course of studentSpecial_courses){ %>
@@ -229,7 +229,7 @@
 
   <!-- Conversation practice -->
   <div id="conversation" class="mb-5 pb-5 pt-2">
-    <h3 class="section-title">Conversation Practice</h3>
+    <h3 class="section-title">Pratique de la conversation</h3>
     <p class="conv-info-text container col-md-10">Dans cette section vous aurez toutes les informations concernant votre
       apprentissage pratique de l'Anglais. Votre coach vous assistera pour l'amelioration continue de votre capacité
       linguistique orale. <br> Pour chaque séance de conversation pratique, votre coach vous fera des retours
@@ -391,7 +391,7 @@
 
   <!-- My progress -->
   <div id="progress">
-    <h3 class="section-title">Evaluation Results and Progress Tracking</h3>
+    <h3 class="section-title">Ma progression</h3>
     <div class="container col-lg-8 mt-3">
 
       <% if(student.pecpStudentProgress.length> 0) {%>
@@ -619,7 +619,7 @@
 
   <!-- My cvInt -->
   <div id="cvInt">
-    <h3 class="section-title">My Cv as Interview</h3>
+    <h3 class="section-title">Mon Cv en Interview</h3>
     <% if(student.myCv.length> 0) {%>
       <div class="container py-5">
         <div class="d-flex interview justify-content-around">
