@@ -970,6 +970,10 @@ customers-cards:before {
   html {
     font-size: 92.5%;
   }
+
+  .lsc-title{
+    height: auto;
+  }
 }
 
 
