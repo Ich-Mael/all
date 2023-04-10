@@ -512,44 +512,44 @@ module.exports.postWeeklyPractice = async (req, res) => {
     await newPractice.save();
 
     if (newPractice.exerciseType === "Grammar") {
-        englishClub.grammarExercise.push(newPractice._id);
+        englishClub.grammarExercise.unshift(newPractice._id);
         await englishClub.save();
     }
 
     if (newPractice.exerciseType === "Vocabulary") {
-        englishClub.vocabularyExercise.push(newPractice._id);
+        englishClub.vocabularyExercise.unshift(newPractice._id);
         await englishClub.save();
     }
 
     if (newPractice.exerciseType === "Listening Comprehension") {
-        englishClub.listeningExercise.push(newPractice._id);
+        englishClub.listeningExercise.unshift(newPractice._id);
         await englishClub.save();
     }
 
 
     if (newPractice.exerciseType === "Dictation") {
-        englishClub.dictationExercise.push(newPractice._id);
+        englishClub.dictationExercise.unshift(newPractice._id);
         await englishClub.save();
     }
 
 
     if (newPractice.exerciseType === "Reading Comprehension") {
-        englishClub.readingComprehensionExercise.push(newPractice._id);
+        englishClub.readingComprehensionExercise.unshift(newPractice._id);
         await englishClub.save();
     }
 
     if (newPractice.exerciseType === "Watching Comprehension") {
-        englishClub.watchingComprehensionExercise.push(newPractice._id);
+        englishClub.watchingComprehensionExercise.unshift(newPractice._id);
         await englishClub.save();
     }
 
     if (newPractice.exerciseType === "Read Aloud") {
-        englishClub.readAloudExercise.push(newPractice._id);
+        englishClub.readAloudExercise.unshift(newPractice._id);
         await englishClub.save();
     }
 
     if (newPractice.exerciseType === "LSC") {
-        englishClub.LSC.push(newPractice._id);
+        englishClub.LSC.unshift(newPractice._id);
         await englishClub.save();
     }
 

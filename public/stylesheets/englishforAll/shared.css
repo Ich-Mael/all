@@ -4,9 +4,6 @@
   -webkit-tap-highlight-color: transparent !important;
 }
 
-html,body{
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -22,7 +19,7 @@ a.active:focus {
 
 .flash-container {
   width: 40%;
-  font-family: "Roboto" serif;
+  font-family: "Roboto" , serif;
   height: 2rem;
   padding: 0.5rem;
   letter-spacing: 0.1rem;
@@ -109,7 +106,7 @@ nav {
 
 .nav-link-connexion {
   text-align: center;
-  font-family: "Roboto" serif;
+  font-family: "Roboto" , serif;
   padding: 0.3rem 1rem;
   border-radius: 5px;
   text-decoration: none;
@@ -125,7 +122,7 @@ nav {
 }
 
 .profile-link{
-  font-family: "Roboto" serif;
+  font-family: "Roboto", serif;
   text-decoration: none;
   font-size: 1rem;
   color: rgb(12, 12, 11);
@@ -1023,6 +1020,11 @@ profile-link:hover {
   .header-text {
     font-size: 2.5rem;
   }
+#menu-btn{
+  color: #000;
+  background-color: #000;
+}
+
 
   .flash-container {
     width: 80%;

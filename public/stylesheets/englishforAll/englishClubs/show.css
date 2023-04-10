@@ -932,6 +932,8 @@ customers-cards:before {
     margin: 0 1rem;
     background-color: orangered;
   }
+
+
 }
 
 @media (max-width: 800px) {
