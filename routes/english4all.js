@@ -68,7 +68,8 @@ router.post('/admindashboard/newEnglishClubHub', isLoggedIn,
   checkRoles("admin"),
   catchAsync(engClub.createEnglishHub));
 
-//English clubs
+
+// English clubs
 router.get("/englishlang4all/clubs/home", async (req, res) => {
   res.render("programs/englishlang4all/englishClubs/home");
 });

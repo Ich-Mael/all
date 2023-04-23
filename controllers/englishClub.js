@@ -558,7 +558,7 @@ module.exports.postWeeklyPractice = async (req, res) => {
 
 module.exports.readAloud = async (req, res) => {
     const club_id = req.params.club_id;
-    const city = req.params.city;
+    // const city = req.params.city;
     const hub = await englishClubHub.findById(req.params.hub_id);
 
     const club = await englishClubs.findById(club_id);
