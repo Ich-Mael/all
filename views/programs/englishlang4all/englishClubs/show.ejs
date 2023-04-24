@@ -139,6 +139,7 @@
     </li>
     <div style="height: 0.2rem; width: 100%; background-color: #080364;"></div>
   </ul>
+
   <!-- Clubs Activities -->
   <h1 class="common-heading">
     <span class="underline"></span>English Learning Activities<span class="underline"></span>
@@ -405,6 +406,7 @@
                     <h4  style="background-color: #6c00e0; border-radius: 5px;" class="text-white text-center py-2" >Words or Phrases</h4>
                     <% for (i=0; i < 5 ; i++){%>
                       <div>
+                        <% if(club.dailyVocab[i]){%> 
                         <p class="card-title fs-5"  style="color:#080364; font-family: Georgia, 'Times New Roman', Times, serif;">
                           <%= club.dailyVocab[i].wordOfDay.word %>
                         </p>
@@ -412,18 +414,21 @@
                         <p class="card-text fs-6"><span class="fw-bold">Meaning : </span>
                           <%= club.dailyVocab[i].wordOfDay.wordMeaning %>
                         </p>
+                      <%}%>
                       </div>
                       <hr>
                       <%}%>
                         <h4 style="background-color: #4A00E0; border-radius: 5px;" class="text-white text-center mt-4 py-2" >Idiomatic expression</h4>
                         <% for (i=0; i < 5 ; i++){%>
                           <div class="" style="">
+                          <% if(club.dailyVocab[i]){%>
                             <p class="card-title  fs-5" style="color:#080364; font-family: Georgia, 'Times New Roman', Times, serif;">
                               <%= club.dailyVocab[i].IdiomDay.idiom %>
                             </p>
                             <p class="card-text fs-6"><span class="fw-bold">Meaning : </span>
                               <%= club.dailyVocab[i].IdiomDay.idiomMeaning %>
                             </p>
+                          <%}%>
                           </div>
                           <hr>
                           <%}%>
