@@ -36,7 +36,7 @@ const {
 
 // helper functions
 function removeItemOnce(arr, value) {
-  var index = arr.indexOf(value);
+  let index = arr.indexOf(value);
   if (index > -1) {
     arr.splice(index, 1);
   }
@@ -84,8 +84,8 @@ router.get(
   isVerified,
   checkRoles("admin"),
   catchAsync(async (req, res) => {
-    city = req.params.city;
-    hub_id = req.params.hub_id;
+   const  city = req.params.city;
+   const  hub_id = req.params.hub_id;
 
     res.render("programs/englishlang4all/englishClubs/new", {
       city,
@@ -110,7 +110,6 @@ router.put(
   checkRoles("admin"),
   catchAsync(engClub.englishClubInfo)
 );
-
 
 //show english club home page
 router.get(
@@ -210,7 +209,8 @@ router.post(
 
         const newEngClubMember = new englishClubMember({
           clubMember: user._id,
-          level
+          level,
+          memberUsername: newMember
         });
 
         user.clubMember_id = newEngClubMember._id;

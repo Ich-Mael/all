@@ -119,7 +119,7 @@ module.exports.showCountryHubs = async (req, res) => {
 module.exports.createEnglishClub = async (req, res) => {
     const englishClub = new englishClubs(req.body.englishClub);
 
-    hub = await englishClubHub.findById(req.params.hub_id);
+    let hub = await englishClubHub.findById(req.params.hub_id);
     // adding boad members
     const president = await User.findOne({
         username: req.body.PresidentInfo,
@@ -128,6 +128,7 @@ module.exports.createEnglishClub = async (req, res) => {
     // create a new english club member
     const newEngClubMember = new englishClubMember({
         clubMember: president._id,
+        memberUsername:president.username, 
         position: "Chair Person",
         level: "B1 - Intermediate",
         isBoardMember: true

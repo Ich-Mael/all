@@ -359,6 +359,9 @@ const englishClubMemberSchema = new Schema({
     ref: "ProgressTrack",
   }],
 
+  memberUsername:{
+    type: String
+  },
 
   isBoardMember: {
     type: Boolean,
