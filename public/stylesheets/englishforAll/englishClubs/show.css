@@ -670,9 +670,9 @@ customers-cards:before {
   background: #007991;
   color: white;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #007991, #489e84, #007991);
+  background: -webkit-linear-gradient(to right, #05963c, #489e84, #00911f);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #007991, #4ea78c, #007991);
+  background: linear-gradient(to right, #00913f, #4ea78c, #009135);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
@@ -719,6 +719,35 @@ customers-cards:before {
 .word-day-meaning {
   min-height: 7rem;
 }
+
+.student-example-wrapper{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.all_examples_wod {
+  background-color: #047d47;
+  color: white;
+  font-size: 1.2rem;
+  padding: 1rem ;
+  text-align: center;
+}
+
+.all_examples{
+  background-color: #0a51cd;
+  color: white;
+  font-size: 1.2rem;
+  padding: 1rem ;
+  text-align: center; 
+}
+
+.example_text{
+font-size: 1.1rem;
+}
+
+.example_author{
+  color: #0082c8;
+}
+
+
 
 
 .incomming-activities {

@@ -596,8 +596,8 @@ const dailyVocabularySchema = new Schema({
 const exampleSchema = new Schema(
   {
     author: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
+      type: String,
+      trim: true,
     },
 
     studentExample: {

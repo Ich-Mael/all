@@ -479,13 +479,24 @@ router.post(
   catchAsync(engClub.latestDailyVocabulary)
 );
 
+//****** Student Examples *******/
+
 router.post(
   "/englishlang4all/clubs/:city/hub/:hub_id/club/:club_id/dailyVocab/:dailyVocab_id/wod_St_ex",
   isLoggedIn,
   isVerified,
   checkEnglishClubMembership, 
-  catchAsync(engClub.studentExample)
+  catchAsync(engClub.studentExample_wod)
 );
+
+router.post(
+  "/englishlang4all/clubs/:city/hub/:hub_id/club/:club_id/dailyVocab/:dailyVocab_id/iod_St_ex",
+  isLoggedIn,
+  isVerified,
+  checkEnglishClubMembership, 
+  catchAsync(engClub.studentExample_iod)
+);
+
 
 // weekly meeting
 router.post(

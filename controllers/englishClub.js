@@ -116,7 +116,6 @@ module.exports.showCountryHubs = async (req, res) => {
 }
 
 // English club
-
 module.exports.createEnglishClub = async (req, res) => {
     const englishClub = new englishClubs(req.body.englishClub);
 
@@ -129,7 +128,7 @@ module.exports.createEnglishClub = async (req, res) => {
     // create a new english club member
     const newEngClubMember = new englishClubMember({
         clubMember: president._id,
-        memberUsername:president.username, 
+        memberUsername: president.username,
         position: "Chair Person",
         level: "B1 - Intermediate",
         isBoardMember: true
@@ -211,7 +210,24 @@ module.exports.showEnglishClub = async (req, res) => {
                 }
             },
         })
-        .populate("dailyVocab")
+        .populate({
+            path: "dailyVocab",
+            populate: {
+                path: "wordOfDay",
+                populate: {
+                    path: "studentsExamples_wod"
+                }
+            },
+        })
+        .populate({
+            path: "dailyVocab",
+            populate: {
+                path: "IdiomDay",
+                populate: {
+                    path: "studentsExamples_iod"
+                }
+            },
+        })
         .populate("weeklyMeeting")
         .populate("grammarExercise")
         .populate("vocabularyExercise")
@@ -223,7 +239,7 @@ module.exports.showEnglishClub = async (req, res) => {
         .populate("dictationExercise")
         .populate("onlineDebates");
 
-    // console.log(club.description);
+    console.log(club.dailyVocab[0].wordOfDay.studentsExamples_wod);
 
     res.render("programs/englishlang4all/englishClubs/show", {
         club,
@@ -385,15 +401,49 @@ module.exports.latestDailyVocabulary = async (req, res) => {
     const city = req.params.city;
     const hub_id = req.params.hub_id;
     const englishClub = await englishClubs.findById(req.params.club_id);
-   
-console.log(englishClub.dailyVocab);
 
-    const latestVocabulary = []; 
+    console.log(englishClub.dailyVocab);
+
+    const latestVocabulary = [];
 
 
     res.redirect(`/englishlang4all/clubs/${city}/hub/${hub_id}/club/${club_id}`);
 }
 
+module.exports.studentExample_wod = async (req, res) => {
+    
+    const dailyVocab = await dailyVocabulary.findById(req.params.dailyVocab_id)
+
+    const studentExample = new example({
+        author: req.user.username,
+        studentExample: req.body.studentExample,
+    })
+
+    await studentExample.save();
+    dailyVocab.wordOfDay.studentsExamples_wod.push(studentExample._id);
+    await dailyVocab.save();
+
+
+    res.redirect('back');
+}
+
+
+module.exports.studentExample_iod = async (req, res) => {
+    
+    const dailyVocab = await dailyVocabulary.findById(req.params.dailyVocab_id)
+
+    const studentExample = new example({
+        author: req.user.username,
+        studentExample: req.body.studentExample,
+    })
+
+    await studentExample.save();
+    dailyVocab.IdiomDay.studentsExamples_iod.push(studentExample._id);
+    await dailyVocab.save();
+
+
+    res.redirect('back');
+}
 
 module.exports.createMeeting = async (req, res) => {
     const club_id = req.params.club_id;
@@ -767,7 +817,7 @@ module.exports.memberGradeForm = async (req, res) => {
 
 module.exports.memberGrade = async (req, res) => {
 
-    const member = await englishClubMember.findOne({clubMember: req.params.member_id});
+    const member = await englishClubMember.findOne({ clubMember: req.params.member_id });
 
     const memberGrade = new progressTrack(req.body.grade);
 

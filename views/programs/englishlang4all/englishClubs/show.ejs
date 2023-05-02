@@ -302,12 +302,17 @@
                       <%= club.dailyVocab[0].wordOfDay.wordMeaning %>
                     </p>
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn mx-2 btn-outline-success" data-bs-toggle="modal"
+                    <button type="button" class="btn mx-2 btn-success" data-bs-toggle="modal"
                       data-bs-target="#wod-1">
                       Understand better with examples
                     </button>
 
-                    
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn mx-2 btn-outline-success" data-bs-toggle="modal"
+                      data-bs-target="#wod-2">
+                      build my own examples
+                    </button>
+
                     <!-- Modal for wod explanation -->
                     <div class="modal fade" id="wod-1" tabindex="-1" aria-labelledby="exampleModalLabel"
                       aria-hidden="true">
@@ -347,20 +352,41 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body px-5">
-                           <form action="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/dailyVocab/<%= club.dailyVocab[0]._id%>/wod_St_ex" method="POST">
-                            <div class="form-floating">
-                              <textarea class="form-control" name="review[text]" placeholder="Leave a comment here"
-                                id="floatingTextarea" style="height: 70px" required></textarea>
-                              <label for="floatingTextarea">Build my own examples with the word of the day</label>
-                            </div>
-                            <button class="btn btn-outline-primary my-3">Post my example</button>
-                          </form> 
+                            <form
+                              action="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/dailyVocab/<%= club.dailyVocab[0]._id%>/wod_St_ex"
+                              method="POST">
+                              <div class="form-floating">
+                                <textarea class="form-control" name="studentExample" placeholder="Leave a comment here"
+                                  id="floatingTextarea" style="height: 70px" required></textarea>
+                                <label for="floatingTextarea">Build my own examples with the word of the day</label>
+                              </div>
+                              <button class="btn btn-outline-primary my-3">Post my example</button>
+                            </form>
                           </div>
+
+                          <!-- See previous comments -->
+                          <div class=" container">
+                            <div class="student-example-wrapper">
+                              <p class="all_examples_wod">Examples by members of the club </p>
+                              <% for (example of club.dailyVocab[0].wordOfDay.studentsExamples_wod){%>
+                                <div class="px-3">
+                                  <h5 class="example_author">
+                                    <%= example.author %>
+                                  </h5>
+                                  <p class="example_text">
+                                    <%= example.studentExample %>
+                                  </p>
+                                  <hr>
+                                </div>
+                                <%}%>
+                            </div>
+                          </div>
+
                           <div class="modal-footer">
                             <button type="button" class="btn
                                       btn-danger" data-bs-dismiss="modal">Close</button>
                           </div>
-                        
+
                         </div>
                       </div>
                     </div>
@@ -383,9 +409,15 @@
                       <%= club.dailyVocab[0].IdiomDay.idiomMeaning %>
                     </p>
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                       data-bs-target="#iod-1">
                       Understand better with examples
+                    </button>
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn mx-2 btn-outline-primary" data-bs-toggle="modal"
+                      data-bs-target="#iod-2">
+                      build my own examples
                     </button>
 
                     <!-- Modal -->
@@ -409,6 +441,58 @@
                             <button type="button" class="btn
                                         btn-danger" data-bs-dismiss="modal">Close</button>
                           </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Modal for student examples -->
+                    <div class="modal fade" id="iod-2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog modal-lg
+                                 modal-fullscreen-md-down">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title " id="exampleModalLabel">
+                              Understand better by building my own examples
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body px-5">
+                            <form
+                              action="/englishlang4all/clubs/<%= hub.cityName %>/hub/<%= hub._id %>/club/<%= club._id %>/dailyVocab/<%= club.dailyVocab[0]._id%>/iod_St_ex"
+                              method="POST">
+                              <div class="form-floating">
+                                <textarea class="form-control" name="studentExample" placeholder="Leave a comment here"
+                                  id="floatingTextarea" style="height: 70px" required></textarea>
+                                <label for="floatingTextarea">Build my own examples with the word of the day</label>
+                              </div>
+                              <button class="btn btn-outline-primary my-3">Post my example</button>
+                            </form>
+                          </div>
+
+                          <!-- See previous comments -->
+                          <div class=" container">
+                            <div class="student-example-wrapper">
+                              <p class="all_examples">Examples by members of the club </p>
+                              <% for (example of club.dailyVocab[0].IdiomDay.studentsExamples_iod){%>
+                                <div class="px-3">
+                                  <h5 class="example_author">
+                                    <%= example.author %>
+                                  </h5>
+                                  <p class="example_text">
+                                    <%= example.studentExample %>
+                                  </p>
+                                  <hr>
+                                </div>
+                                <%}%>
+                            </div>
+                          </div>
+
+                          <div class="modal-footer">
+                            <button type="button" class="btn
+                                       btn-danger" data-bs-dismiss="modal">Close</button>
+                          </div>
+
                         </div>
                       </div>
                     </div>
