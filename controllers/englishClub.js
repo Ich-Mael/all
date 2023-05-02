@@ -17,6 +17,7 @@ const {
     englishClubs,
     progressTrack,
     event,
+    example,
     englishClubArticles,
     dailyVocabulary,
     clubMeeting,

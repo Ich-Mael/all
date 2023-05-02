@@ -562,6 +562,10 @@ const dailyVocabularySchema = new Schema({
     learnMoreWord: {
       type: String,
     },
+    studentsExamples_wod: [{
+      type: Schema.Types.ObjectId,
+      ref: "Example",
+    },],
   },
 
   IdiomDay: {
@@ -579,8 +583,40 @@ const dailyVocabularySchema = new Schema({
       type: String,
       default: "",
     },
+
+    studentsExamples_iod: [{
+      type: Schema.Types.ObjectId,
+      ref: "Example",
+    },],
   },
 });
+
+
+// english club comment schema
+const exampleSchema = new Schema(
+  {
+    author: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+
+    studentExample: {
+      type: String,
+      trim: true,
+    },
+
+    correctedExample: {
+      type: String,
+      trim: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+
+
 
 //weekly meeting
 const englishClubMeetingSchema = new Schema({
@@ -803,6 +839,8 @@ const progressTrack = mongoose.model("ProgressTrack", progressTrackSchema);
 const event = mongoose.model("Event", eventSchema);
 
 
+const example = mongoose.model("Example", exampleSchema);
+
 
 
 const englishClubMedia = mongoose.model(
@@ -850,6 +888,7 @@ module.exports = {
   englishClubArticles,
   dailyVocabulary,
   onlineDebate,
+  example,
   clubMeeting,
   englishWeeklyLessons,
   englishWeeklyExercises,

@@ -475,10 +475,17 @@ router.post(
   "/englishlang4all/clubs/:city/hub/:hub_id/club/:club_id/board_dashboard/latest_dailyVocab",
   isLoggedIn,
   isVerified,
-  checkEnglishBoardMembership,
+  checkEnglishClubMembership,
   catchAsync(engClub.latestDailyVocabulary)
 );
 
+router.post(
+  "/englishlang4all/clubs/:city/hub/:hub_id/club/:club_id/dailyVocab/:dailyVocab_id/wod_St_ex",
+  isLoggedIn,
+  isVerified,
+  checkEnglishClubMembership, 
+  catchAsync(engClub.studentExample)
+);
 
 // weekly meeting
 router.post(
