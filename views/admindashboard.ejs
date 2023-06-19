@@ -73,12 +73,7 @@
     Personal English Coaching Program
   </button>
 
-  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3"
-    aria-expanded="false" aria-controls="collapseExample">
-    Easy Maths
-  </button>
-
-  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4"
+   <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4"
     aria-expanded="false" aria-controls="collapseExample">
     News
   </button>
@@ -170,7 +165,7 @@
 <!-- PECP -->
 
 <!-- Add New Pecp Student Form -->
-<div class="collapse container  p-5" id="pecp" style="background-color: rgb(192, 198, 203); padding: 1rem 3rem;">
+<div class="collapse container col-md-6 p-5" id="pecp" style="background-color: rgb(192, 198, 203); padding: 1rem 3rem;">
 
   <h1 class="text-center">Add a new PECP Student</h1>
   <form action="/admindashboard/pecp/student" method="POST">
@@ -235,92 +230,6 @@
     <button class="btn my-3  me-2 btn-dark" type="submit">Proceed</button>
   </form>
 
-</div>
-
-<!-- Easy Maths -->
-<div class="collapse" id="collapse-3">
-  <div class="card card-body">
-    <!-- Managing 100 bac program -->
-    <div class="container col-md-6 my-5" style="background-color: rgb(233, 229, 224);">
-      <h1 class="text-primary">Easy-Maths</h1>
-      <a class="btn btn-success" href="/admindashboard/100bac/series_and_classes">Voir toutes les series et les
-        classes</a>
-      <hr>
-
-      <h4 class="text-center">Creez une classe</h4>
-      <form action="/admindashboard/100bac/class" method="POST">
-        <!-- Serie General information -->
-
-        <select class="form-select mt-2" id="serie" class="form-control" required name="class[serie]"
-          aria-label="Default select example">
-          <option selected>Selectionnez la serie</option>
-          <option value="A">Serie A</option>
-          <option value="C">Serie C</option>
-          <option value="D">Serie D</option>
-          <option value="G2">Serie G2</option>
-          <option value="F">Serie F</option>
-          <option value="Collège">Collège</option>
-          <option value="Primaire">Primaire</option>
-        </select>
-
-
-        <select class="form-select mt-2" id="class_title" class="form-control" required name="class[title]"
-          aria-label="Default select example">
-          <option selected>Selectionnez la classe</option>
-          <option value="Seconde">Seconde</option>
-          <option value="Premiere">Premiere</option>
-          <option value="Terminale">Terminale</option>
-          <option value="Troisieme">Troisieme</option>
-          <option value="F">Quatrieme</option>
-          <option value="Cinquieme">Cinquieme</option>
-          <option value="Sixieme">Sixieme</option>
-        </select>
-
-        <label class="form-label mt-2" for="title">Image</label>
-        <input type="text" class="form-control" id="serieImage" name="class[serieImageUrl]" value="" />
-        <button type="submit" class="btn btn-outline-primary my-3">Create a new serie</button>
-      </form>
-
-      <!-- new high school student -->
-      <hr>
-      <h2 class="text-center">Create a new high-school student</h2>
-      <form action="/admindashboard/100bac/class/newHighschoolStudent" method="POST">
-        <!-- Serie General information -->
-        <label class="form-label" for="student_username">Student username</label>
-        <input type="text" class="form-control" id="student_username" name="student_username" value="" required />
-
-        <label class="form-label" for="school">School</label>
-        <input type="text" class="form-control" id="school" name="school" value="" required />
-
-
-        <select class="form-select mt-2" id="serie" class="form-control" required name="serie"
-          aria-label="Default select example">
-          <option selected>Selectionnez la serie</option>
-          <option value="A">Serie A</option>
-          <option value="C">Serie C</option>
-          <option value="D">Serie D</option>
-          <option value="G2">Serie G2</option>
-          <option value="F">Serie F</option>
-          <option value="Collège">Collège</option>
-          <option value="Primaire">Primaire</option>
-        </select>
-
-        <select class="form-select mt-2" id="class_title" class="form-control" required name="class"
-          aria-label="Default select example">
-          <option selected>Selectionnez la classe</option>
-          <option value="Seconde">Seconde</option>
-          <option value="Premiere">Premiere</option>
-          <option value="Terminale">Terminale</option>
-          <option value="Troisieme">Troisieme</option>
-          <option value="F">Quatrieme</option>
-          <option value="Cinquieme">Cinquieme</option>
-          <option value="Sixieme">Sixieme</option>
-        </select>
-
-        <button type="submit" class="btn btn-outline-primary my-3">Create a new high school student</button>
-      </form>
-    </div>
-  </div>
 </div>
 
 <!-- news -->

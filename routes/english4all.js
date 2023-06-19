@@ -257,6 +257,10 @@ router.post(
     // Removing the member
     removeItemOnce(englishClub.members, req.params.member_id);
 
+    // Removing the member from board members
+    removeItemOnce(englishClub.boardMembers, req.params.member_id);
+
+    // Removing the club id form the member club list
     removeItemOnce(clubMember.memberEnglishClubs, englishClub._id);
 
 

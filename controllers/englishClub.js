@@ -28,7 +28,7 @@ const {
     englishClubMedia,
 } = require("../models/englishClub");
 
-function addEngClub(club) {
+function addEngClub(club, hub) {
 
     if (club.clubType === "High-school") {
         hub.clubs.High_school.push(club._id);
@@ -117,34 +117,50 @@ module.exports.showCountryHubs = async (req, res) => {
 
 // English club
 module.exports.createEnglishClub = async (req, res) => {
+    const hub = await englishClubHub.findById(req.params.hub_id);
     const englishClub = new englishClubs(req.body.englishClub);
 
-    let hub = await englishClubHub.findById(req.params.hub_id);
+    englishClub.hub = hub._id;
+
     // adding boad members
     const president = await User.findOne({
         username: req.body.PresidentInfo,
     });
 
-    // create a new english club member
-    const newEngClubMember = new englishClubMember({
-        clubMember: president._id,
-        memberUsername: president.username,
-        position: "Chair Person",
-        level: "B1 - Intermediate",
-        isBoardMember: true
+    // Check if member is already an English club member
+    checkingEnglishClubStatus = await englishClubMember.findOne({
+        memberUsername: req.body.PresidentInfo,
     });
 
-    await newEngClubMember.save();
+    if (checkingEnglishClubStatus) {
+        checkingEnglishClubStatus.position = "Chair Person",
+        checkingEnglishClubStatus.isBoardMember = true
 
+        englishClub.boardMembers.push(checkingEnglishClubStatus._id);
+        englishClub.members.push(checkingEnglishClubStatus._id);
 
-    englishClub.boardMembers.push(newEngClubMember._id);
-    englishClub.members.push(newEngClubMember._id);
-    englishClub.hub = hub._id;
+    } else {
+        // create a new english club member
+        const newEngClubMember = new englishClubMember({
+            clubMember: president._id,
+            memberUsername: president.username,
+            position: "Chair Person",
+            level: "B1 - Intermediate",
+            isBoardMember: true
+        });
+
+        newEngClubMember.memberEnglishClubs.push(englishClub._id);
+        await newEngClubMember.save();
+
+        englishClub.boardMembers.push(newEngClubMember._id);
+        englishClub.members.push(newEngClubMember._id);
+    }
+
 
     await englishClub.save();
 
     // adding the English club to the hub
-    addEngClub(englishClub);
+    addEngClub(englishClub, hub);
 
     await hub.save();
 
@@ -411,7 +427,7 @@ module.exports.latestDailyVocabulary = async (req, res) => {
 }
 
 module.exports.studentExample_wod = async (req, res) => {
-    
+
     const dailyVocab = await dailyVocabulary.findById(req.params.dailyVocab_id)
 
     const studentExample = new example({
@@ -429,7 +445,7 @@ module.exports.studentExample_wod = async (req, res) => {
 
 
 module.exports.studentExample_iod = async (req, res) => {
-    
+
     const dailyVocab = await dailyVocabulary.findById(req.params.dailyVocab_id)
 
     const studentExample = new example({

@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+  
+  html {
+    overflow-x: hidden;
+  }
+  
+  body {
+    font-family: "Roboto", serif;
+    overflow-x: hidden;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .carousel-inner {
+    height: 70vh;
+  }
+  
+  .program-title {
+    font-family: "Chivo", sans-serif;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 2px 1px black;
+    font-size: 2.5rem;
+    background: #4568dc;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right,
+        #b06ab3,
+        #4568dc);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,
+        #b06ab3,
+        #4568dc);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    letter-spacing: 0.1rem;
+    padding: 2rem 2rem;
+  }
+  
+  /* why section */
+  .why-eng-clubs {
+    padding: 1rem 0 4rem;
+    background-color: rgb(224, 224, 224);
+  }
+  
+  .why-heading {
+    text-align: center;
+    font-family: "Chivo", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 2rem 0 0;
+    color: rgb(56, 55, 54);
+  }
+  
+  .underline {
+    width: 12rem;
+    display: inline-block;
+    text-align: center;
+    height: 1rem;
+    margin: 0 1rem;
+    background-color: rgb(147, 7, 165);
+  }
+  
+  .eng-club-details:hover {
+    border: 1px solid rgb(60, 117, 238);
+  }
+  
+  .univ-eng-clubs {
+    background-color: rgb(253, 251, 251);
+  }
+  
+  .univ-eng-club-title {
+    text-align: center;
+    padding: 3rem 0;
+    font-family: "Chivo", sans-serif;
+    font-weight: 700;
+  }
+  
+  .eng-club-details {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 10px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    /* background-color: rgb(253, 253, 253); */
+    padding: 0;
+    border-radius: 5px;
+    border: 3px solid rgb(3, 143, 36);
+    /* width: 100%; */
+  }
+  
+  
+  .afrohk-club-details {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 10px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    /* background-color: rgb(253, 253, 253); */
+    padding: 0;
+    border-radius: 5px;
+    border: 3px solid rgb(3, 85, 143);
+    /* width: 100%; */
+  }
+  
+  .img-wrapper {
+    margin: 0;
+  }
+  
+  .img-wrapper img {
+    width: 100%;
+    height: 150px;
+  }
+  
+  .eng-clubs-description {
+    padding: 0.5rem 0 0 0.8rem;
+    font-size: 1.2rem;
+  }
+  
+  .eng-club-name {
+    font-size: 1.2rem;
+    font-family: "Chivo", sans-serif;
+    font-weight: 700;
+    color: rgba(2, 119, 31, 0.719);
+  }
+  
+  .institution {
+    background: #FF8008;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFC837, #FF8008);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFC837, #FF8008);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  
+    padding: 1rem 1rem;
+    font-family: "Chivo", sans-serif;
+    font-weight: 900;
+    font-size: 1.6rem;
+    text-align: center;
+    color: rgba(24, 23, 23, 0.801);
+  }
+  
+  .inst-afrohk {
+    background: #4a91ef;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3d90de, #1660a1);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3d90de, #1660a1);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+    color: white;
+  }
+  
+  
+  
+  .definition {
+    margin-top: 0.5rem;
+  }
+  
+  .found-date {
+    font-style: italic;
+    color: #646462;
+  }
+  
+  .join-link {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .join-link:hover {
+    text-decoration: none;
+    color: aliceblue;
+  }
+  
+  /* ================================= */
+  /*         responsiveness            */
+  /* ================================= */
+  
+  @media (max-width: 1200px) {}
+  
+  @media (max-width: 1024px) {
+    .underline {
+      width: 10rem;
+      display: inline-block;
+      text-align: center;
+      height: 1rem;
+      margin: 0 1rem;
+    }
+  
+    .eng-club-details {
+      padding: 0;
+      margin: 0 0.5rem;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .underline {
+      width: 9rem;
+      height: 0.8rem;
+    }
+  
+    @media (max-width: 768px) {
+      .carousel-inner {
+        display: none;
+      }
+  
+      banner-wrapper {
+        height: 50vh;
+        background: url("https://i.ibb.co/1dbjT55/neci-6.jpg");
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-position: center center;
+        position: relative;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+      }
+  
+      .program-title {
+        margin-top: 0;
+        padding-top: 3rem;
+        color: #f2fcfe;
+        text-shadow: 1px 2px 1px black;
+        font-size: 2rem;
+      }
+  
+      .underline {
+        width: 5rem;
+        height: 0.8rem;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .program-title {
+        font-size: 2rem;
+      }
+  
+      .underline {
+        width: 3rem;
+        height: 0.8rem;
+      }
+  
+      .why-heading {
+        font-size: 1.2rem;
+        margin: 0;
+        padding: 1rem 0;
+      }
+  
+      .eng-club-heading {
+        font-size: 1.5rem;
+      }
+  
+      .eng-club-details {
+        width: 90%;
+      }
+  
+      .img-wrapper img {
+        height: 250px;
+      }
+    }
+  
+    @media (max-width: 430px) {
+      .why-heading {
+        font-size: 1.2rem;
+      }
+  
+      .underline {
+        display: none;
+      }
+    }
+  
+    @media (max-width: 320px) {
+      .program-title {
+        font-size: 2rem;
+      }
+  
+      .eng-club-heading {
+        font-size: 1.2rem;
+      }
+  
+      .underline {
+        width: 2rem;
+        height: 0.5rem;
+      }
+    }
+  
+    .why-heading {
+      font-size: 1.2rem;
+    }
+  }

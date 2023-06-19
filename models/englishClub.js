@@ -10,6 +10,7 @@ const englishClubSchema = new Schema({
   city: {
     type: String,
     trim: true,
+    default:"Ouagadougou"
   },
 
   hub: {
