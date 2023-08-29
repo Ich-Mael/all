@@ -559,7 +559,7 @@ nav {
 
 .presentation-paragraph {
   font-family: "Roboto", sans-serif;
-  text-align: start;
+  text-align: center;
   /* font-weight: 500; */
   background-color: #faf9f9;
   /* text-transform: uppercase; */
@@ -1195,7 +1195,6 @@ nav {
   opacity: 0.8;
 }
 
-.sponsored-program-image {}
 
 .sponsored-program-card {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;

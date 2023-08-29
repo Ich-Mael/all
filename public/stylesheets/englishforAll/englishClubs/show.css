@@ -582,20 +582,17 @@ customers-cards:before {
   color: rgb(255, 255, 255);
   font-size: 1.2rem;
   letter-spacing: 0.1rem;
-  background: #FF0099;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #ba6ed8, #FF0099);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #ba6ed8, #FF0099);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #8E2DE2;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  transition: all 0.3s;
 }
 
 .student-month-btn:hover {
-  background: transparent;
-  border: 2px solid #FF0099;
+  border: 2px solid #2a0440;
   border-radius: 5px;
-  transition: all 0.3s;
+  color: whitesmoke;
+  
 }
 
 .instructor-month,
@@ -604,20 +601,17 @@ customers-cards:before {
   font-weight: 700;
   letter-spacing: 0.1rem;
   font-size: 1.2rem;
-  background: #667db6;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  transition: all 0.3s; 
   color: whitesmoke;
 }
 
 .instructor-month-btn:hover {
-  background: transparent;
-  border: 2px solid #008cff;
+  border: 2px solid #2a0440;
   border-radius: 5px;
-  transition: all 0.3s;
+  color: whitesmoke;
 }
 
 .som-img-wrapper,
@@ -642,9 +636,43 @@ customers-cards:before {
 
 .som-img-wrapper img,
 .iom-img-wrapper img {
-  object-fit: cover;
+  object-fit:contain;
   width: 15rem;
-  height: 10rem;
+  height: 15rem;
+}
+
+.about-Alm-wrapper{
+ margin-bottom: 2rem;
+}
+
+.about-Alm-wrapper p{
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
+   /* font-family: 'Albril Fatface', cursive; */
+   font-family: "Esteban";
+   font-family: "Titan One", cursive;
+   /* font-family: 'Chivo', sans-serif; */
+   /* font-family: 'Poppins', sans-serif; */
+   /* font-family: "Ultra", serif; */
+   font-weight: 600;
+   text-align: center;
+   color: #2b0681;
+   font-size: 3rem;
+   text-shadow: 0 1px 0 #ccc, 
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+               0 30px 20px rgba(0,0,0,.1);
+ }
+
+.about-Alm-wrapper img{
+  object-fit: cover; 
 }
 
 .leaders-card {

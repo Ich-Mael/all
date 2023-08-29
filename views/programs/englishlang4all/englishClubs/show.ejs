@@ -302,8 +302,7 @@
                       <%= club.dailyVocab[0].wordOfDay.wordMeaning %>
                     </p>
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn me-4 btn-success" data-bs-toggle="modal"
-                      data-bs-target="#wod-1">
+                    <button type="button" class="btn me-4 btn-success" data-bs-toggle="modal" data-bs-target="#wod-1">
                       Understand better with examples
                     </button>
 
@@ -362,31 +361,31 @@
                               </div>
                               <button class="btn btn-outline-primary my-3">Post my example</button>
                             </form>
-                          
 
-                          <!-- See previous comments -->
-                          <div class="mt-5">
-                            <div class="student-example-wrapper">
-                              <p class="all_examples_wod">Examples by members of the club </p>
-                              <% for (example of club.dailyVocab[0].wordOfDay.studentsExamples_wod){%>
-                                <div class="px-3">
-                                  <h5 class="example_author">
-                                    <%= example.author %>
-                                  </h5>
-                                  <p class="example_text">
-                                    <%= example.studentExample %>
-                                  </p>
-                                  <hr>
-                                </div>
-                                <%}%>
+
+                            <!-- See previous comments -->
+                            <div class="mt-5">
+                              <div class="student-example-wrapper">
+                                <p class="all_examples_wod">Examples by members of the club </p>
+                                <% for (example of club.dailyVocab[0].wordOfDay.studentsExamples_wod){%>
+                                  <div class="px-3">
+                                    <h5 class="example_author">
+                                      <%= example.author %>
+                                    </h5>
+                                    <p class="example_text">
+                                      <%= example.studentExample %>
+                                    </p>
+                                    <hr>
+                                  </div>
+                                  <%}%>
+                              </div>
                             </div>
                           </div>
-                        </div>
                           <div class="modal-footer">
                             <button type="button" class="btn
                                       btn-danger" data-bs-dismiss="modal">Close</button>
                           </div>
-                       
+
                         </div>
                       </div>
                     </div>
@@ -409,8 +408,7 @@
                       <%= club.dailyVocab[0].IdiomDay.idiomMeaning %>
                     </p>
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn me-4 btn-primary" data-bs-toggle="modal"
-                      data-bs-target="#iod-1">
+                    <button type="button" class="btn me-4 btn-primary" data-bs-toggle="modal" data-bs-target="#iod-1">
                       Understand better with examples
                     </button>
 
@@ -469,29 +467,29 @@
                               <button class="btn btn-outline-primary my-3">Post my example</button>
                             </form>
 
-                          <!-- See previous comments -->
-                          <div class="mt-5">
-                            <div class="student-example-wrapper">
-                              <p class="all_examples">Examples by members of the club </p>
-                              <% for (example of club.dailyVocab[0].IdiomDay.studentsExamples_iod){%>
-                                <div class="px-3">
-                                  <h5 class="example_author">
-                                    <%= example.author %>
-                                  </h5>
-                                  <p class="example_text">
-                                    <%= example.studentExample %>
-                                  </p>
-                                  <hr>
-                                </div>
-                                <%}%>
+                            <!-- See previous comments -->
+                            <div class="mt-5">
+                              <div class="student-example-wrapper">
+                                <p class="all_examples">Examples by members of the club </p>
+                                <% for (example of club.dailyVocab[0].IdiomDay.studentsExamples_iod){%>
+                                  <div class="px-3">
+                                    <h5 class="example_author">
+                                      <%= example.author %>
+                                    </h5>
+                                    <p class="example_text">
+                                      <%= example.studentExample %>
+                                    </p>
+                                    <hr>
+                                  </div>
+                                  <%}%>
+                              </div>
                             </div>
                           </div>
-                        </div>
                           <div class="modal-footer">
                             <button type="button" class="btn
                                        btn-danger" data-bs-dismiss="modal">Close</button>
-                         
-                        </div>
+
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1046,34 +1044,33 @@
 
         <!-- leaders -->
         <section id="top-stories-wrapper" class="my-5">
-          <h1 class="activity-heading mb-5">Leaders of the Month</h1>
+          <h1 class="activity-heading mb-5">Afro Leaders of the Month</h1>
           <div class="row">
             <!-- Female leader of the month-->
             <div class="col-md student-OM">
               <div class="leaders-card">
                 <div class="card-header text-center
                                   student-month">
-                  Female leader
+                  <%= club.workersOfMonth[0].studentOfMonth.fullname %>
                 </div>
                 <div class="card-body">
-                  <div class="row">
+                  <div class="row" style="height: 15rem;">
                     <div class="som-img-wrapper col-lg-4">
                       <img src="<%= club.workersOfMonth[0].studentOfMonth.imageUrl %>" alt="" class="img-thumbnail">
                     </div>
-                    <div class="col-lg-8">
-                      <h5 class="leader-name text-center">
-                        <%= club.workersOfMonth[0].studentOfMonth.fullname %>
-                      </h5>
-                      <hr>
+                    <div class="col-lg-8 d-flex flex-column justify-content-center">
                       <p class="card-text leader-occupation">
                         <%= club.workersOfMonth[0].studentOfMonth.reasons %>
                       </p>
+                      <p class="align-items-end">
+                        <button type="button" class="btn student-month-btn w-100" data-bs-toggle="modal"
+                          data-bs-target="#som">
+                          Learn more
+                        </button>
+                      </p>
                     </div>
                   </div>
-                  <button type="button" class="btn student-month-btn w-100" data-bs-toggle="modal"
-                    data-bs-target="#som">
-                    Learn more about the FLOM
-                  </button>
+
 
                   <div class="modal fade" id="som" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg
@@ -1081,10 +1078,16 @@
                       <div class="modal-content">
                         <div class="modal-header">
                           <h5 class="modal-title" id="exampleModalLabel">
-                            All about the Female leader of the Month</h5>
+                            All about the Afro leader of the Month</h5>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body px-5">
+                          <div class="about-Alm-wrapper">
+                            <p>
+                            <%= club.workersOfMonth[0].studentOfMonth.fullname %>
+                          </p>
+                          <img src="<%= club.workersOfMonth[0].studentOfMonth.imageUrl %>" alt="" class="img-thumbnail">
+                        </div>
                           <%- club.workersOfMonth[0].studentOfMonth.about %>
                         </div>
                         <div class="modal-footer">
@@ -1103,28 +1106,27 @@
               <div class="leaders-card">
                 <div class="card-header text-center
                                   instructor-month">
-                  Male leader
+                  <%= club.workersOfMonth[0].instructorOfMonth.fullname%>
                 </div>
                 <div class="card-body">
-                  <div class="row">
+                  <div class="row" style="height: 15rem;">
                     <div class="som-img-wrapper col-lg-4">
                       <img src="<%= club.workersOfMonth[0].instructorOfMonth.imageUrl %>" alt="" class="img-thumbnail">
                     </div>
-                    <div class="col-lg-8">
-                      <h5 class="leader-name text-center  ">
-                        <%= club.workersOfMonth[0].instructorOfMonth.fullname%>
-                      </h5>
-                      <hr>
+                    <div class="col-lg-8 d-flex flex-column justify-content-center">
                       <p class="card-text leader-occupation">
                         <%= club.workersOfMonth[0].instructorOfMonth.reasons %>
+                      </p>
+                      <p>
+
+                        <button type="button" class="btn w-100 
+                  instructor-month-btn" data-bs-toggle="modal" data-bs-target="#iom">
+                          Learn more 
+                        </button>
                       </p>
                     </div>
                   </div>
 
-                  <button type="button" class="btn w-100 
-            instructor-month-btn" data-bs-toggle="modal" data-bs-target="#iom">
-                    Learn more about the MLOM
-                  </button>
 
                   <div class="modal fade" id="iom" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg
@@ -1132,11 +1134,18 @@
                       <div class="modal-content">
                         <div class="modal-header">
                           <h5 class="modal-title" id="exampleModalLabel">
-                            All about Male leader of the month
+                            All about Afro leader of the month
                           </h5>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body px-5">
+
+                          <div class="about-Alm-wrapper">
+                            <p>
+                              <%= club.workersOfMonth[0].instructorOfMonth.fullname%>
+                          </p>
+                          <img src="<%= club.workersOfMonth[0].instructorOfMonth.imageUrl %>" alt="" class="img-thumbnail">
+                        </div>
                           <%- club.workersOfMonth[0].instructorOfMonth.about %>
                         </div>
                         <div class="modal-footer">
