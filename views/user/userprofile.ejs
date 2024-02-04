@@ -1,32 +1,32 @@
 <% layout('layouts/boilerplate') %>
-  <link href="/stylesheets/user/userprofile.css" rel="stylesheet" />
+<link href="/stylesheets/user/userprofile.css" rel="stylesheet" />
 
-  <div class="container col-md-10 ">
-    <div class="row user-banner">
-      <div class="col-md-3">
-        <img src="<%= user.imageUrl %>" class="user-img img-thumbnail" alt="">
-      </div>
+<div class="container col-md-10 ">
+  <div class="row user-banner">
+    <div class="col-md-3">
+      <img src="<%= user.imageUrl %>" class="user-img img-thumbnail" alt="">
+    </div>
 
-      <div class="col-md-6">
-        <h1 class="welcome-msg py-3">
-          Salut
-          <%= user.username %> ! <span> <br> Bienvenue dans votre espace personnel d'apprentissage</span>
-        </h1>
-      </div>
+    <div class="col-md-6">
+      <h1 class="welcome-msg py-3">
+        Salut
+        <%= user.username %> ! <span> <br> Bienvenue dans votre espace personnel d'apprentissage</span>
+      </h1>
+    </div>
 
-      <div class="col-md-3">
-        <% if (!user.isVip ) {%>
-          <a href="/reset-password" class="btn btn-outline-danger my-3">Reinitialiser mon mot de passe</a>
-          <% } %>
+    <div class="col-md-3">
+      <% if (!user.isVip ) {%>
+        <a href="/reset-password" class="btn btn-outline-danger my-3">Reinitialiser mon mot de passe</a>
+      <% } %>
 
-            <% if (currentUser.role==="account-manager" || currentUser.role==="admin" ) {%>
-              <a href="/register" class="btn btn-outline-primary my-3">Creation de compte</a>
-              <% } %>
-      </div>
+      <% if (currentUser.role==="account-manager" || currentUser.role==="admin" ) {%>
+        <a href="/register" class="btn btn-outline-primary my-3">Creation de compte</a>
+      <% } %>
     </div>
   </div>
+</div>
 
-  <div class="container col-md-10 d-flex justify-content-around">
+<div class="container col-md-10 d-flex justify-content-around">
     <p class="quote ">« One language sets you in a corridor for life. Two languages open every door along the way » <br>
       <strong>—> Frank Smith – Ecrivain canadien</strong> <br>
       « Une langue vous place dans un couloir pour la vie. Deux langues vous ouvrent toutes les portes le long du chemin
@@ -34,79 +34,81 @@
     </p>
   </div>
 
-  <h2 class="my-program">Mes programmes de club d'Anglais</h2>
-  <div class="row container mx-5 my-5">
-    <div class="col-md-6">
-      <% if (currentUser.isPecpStudent) {%>
-        <div class="program-wrapper">
-          <div class="program-img-wrapper">
-            <img src="https://cambridgeinstitute.co.in/wp-content/uploads/2021/03/english-img-22.jpg" class="img-fluid"
-              alt="">
-            <a class="btn mb-2 mt-3 fw-bold ms-3 btn-outline-primary"
-              href="/user/<%=currentUser._id%>/pecpStudentDashboard/<%=currentUser.pecpStudent_id%>">
-              Coaching en Anglais Personnalisé</a>
-            <%}%>
-          </div>
+<h2 class="my-program">Mes programmes d'Anglais</h2>
+
+<div class="row px-5 my-5">
+  <div class="col-md-6 col-lg-4">
+    <% if (currentUser.isPecpStudent) {%>
+      <div class="program-wrapper">
+        <div class="program-img-wrapper">
+          <img src="https://cambridgeinstitute.co.in/wp-content/uploads/2021/03/english-img-22.jpg" class="img-fluid"
+               alt="">
+          <p class="nep d-inline-block">Coaching en Anglais Personnalisé</p>
+          <a class="btn mb-2 mt-3 fw-bold ms-3 btn-outline-primary"
+             href="/user/<%=currentUser._id%>/pecpStudentDashboard/<%=currentUser.pecpStudent_id%>">My coaching dashboard</a>
+    <%}%>
         </div>
-    </div>
-    <div class="col-md-6">
-      <% if (currentUser.isClubMember) {%>
-        <div class="program-wrapper">
-          <div class="program-img-wrapper">
-            <img
-              src="https://res.cloudinary.com/afro-house-of-knowledge/image/upload/v1679828340/Screen_Shot_2023-03-26_at_10.56.54_hjlani.png"
-              class="img-fluid" alt="">
-            <p class="nep d-inline-block">Club de Conversation Naturelle</p>
-            <!-- Button trigger modal -->
-            <button type="button my-clubs" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mes-clubs">
-              Mes Clubs
-            </button>
+      </div>
+  </div>
+  <div class="col-md-6 col-lg-4">
+    <% if (currentUser.isClubMember) {%>
+      <div class="program-wrapper">
+        <div class="program-img-wrapper">
+          <img
+            src="https://res.cloudinary.com/afro-house-of-knowledge/image/upload/v1679828340/Screen_Shot_2023-03-26_at_10.56.54_hjlani.png"
+            class="img-fluid" alt="">
+          <p class="nep d-inline-block">Club de Conversation Naturelle</p>
+          <!-- Button trigger modal -->
+          <button type="button my-clubs" class="btn mb-2 mt-3 fw-bold ms-3 btn-outline-primary" data-bs-toggle="modal" data-bs-target="#mes-clubs">
+            My English Clubs
+          </button>
 
-            <!-- Modal -->
-            <div class="modal fade" id="mes-clubs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Mes Clubs d'Anglais</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="row">
-                      <% for(club of clubMember.memberEnglishClubs){%>
-                        <div class="col-md-4">
-                          <div class="img">
-                            <img src="<%= club.logoImageUrl %>" class="img-thumbnail img-fluid" alt="">
-                          </div>
-                          <a href="/englishlang4all/clubs/<%= club.city %>/hub/<%= club.hub %>/club/<%= club._id %>"
-                            class="club-name">
-                            <%= club.name %>
-                          </a>
+          <!-- Modal -->
+          <div class="modal fade" id="mes-clubs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Mes Clubs d'Anglais</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <% for(club of clubMember.memberEnglishClubs){%>
+                      <div class="col-md-4">
+                        <div class="img">
+                          <img src="<%= club.logoImageUrl %>" class="img-thumbnail img-fluid" alt="">
                         </div>
-                        <%}%>
-                    </div>
+                        <a href="/englishlang4all/clubs/<%= club.city %>/hub/<%= club.hub %>/club/<%= club._id %>"
+                           class="club-name">
+                          <%= club.name %>
+                        </a>
+                      </div>
+                    <%}%>
+                  </div>
 
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
-            <%}%>
           </div>
+    <%}%>
         </div>
-    </div>
+      </div>
   </div>
+</div>
 
-  <h2 class="my-program">Moi en Action en Live</h2>
-  <p class="mal-msg">Se revoir en action permet de s'autoévaluer et relever les points d'amélioration. Votre progression sera également visible à vos yeux et ceci boostera votre confiance.</p> 
-  <div class="mal-wrapper d-flex justify-content-center ">
-    <div class="video-wrapper">
+<h2 class="my-program">Mes Live Challenges</h2>
+<p class="mal-msg">Se revoir en action permet de s'autoévaluer et relever les points d'amélioration. Votre progression sera également visible à vos yeux et ceci boostera votre confiance.</p>
+<div class="mal-wrapper d-flex justify-content-center ">
+  <div class="video-wrapper">
     <div class="row">
       <!-- Video 1-->
       <%for (i= 0; i < user.myLivePerf.length; i++){%>
-      <div class="col-md-4">
-        <div id="tv-container">
+        <div class="col-md-6 col-lg-4">
+          <div class="perf-box-wrapper">
+            <div id="tv-container">
           <div id="monitor">
             <div class="afrohk-TV">
               <h3 class="text-center afrohk-text mb-2 py-0"><span class="afrohk">Afro </span><span
@@ -115,56 +117,59 @@
             </div>
             <div id="monitorscreen">
               <iframe id="vimeo-content" width="100%" height="100%" src="<%= user.myLivePerf[i].lpVideoLink %>"
-                title="YouTube video player" 
+                title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; fullscreen; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
               </iframe>
             </div>
           </div>
-        </div>
-        <div class="d-flex justify-content-center">
-          <div class="d-flex topic-title justify-content-between align-items-center">
-          <p class="pt-2"><span class="perf-number"><%= user.myLivePerf.length - i%></span><%= user.myLivePerf[i].topicTitle %>
-          </p>
-          <button type="" class="button-87" data-bs-toggle="modal" data-bs-target="#perf_<%=i%>">
-            Feedback 
-           </button>
-          </div>
-          <!-- Button trigger modal -->
-          
-          
-          <!-- Modal -->
-          <div class="modal fade" id="perf_<%=i%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Feedback</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <%= user.myLivePerf[i].feedback %> 
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+            <div class="">
+                <p class=" topic-title "><%= user.myLivePerf[i].topicTitle %>
+                </p>
+              <!-- Button trigger modal -->
+              <p class="mt-3 ms-3 ">
+                <span class="perf-number "><%= user.myLivePerf.length - i%></span>
+
+                <button type="" class="btn btn-outline-dark fs-5 px-4" data-bs-toggle="modal" data-bs-target="#perf_<%=i%>">
+                  Feedback
+                </button>
+              </p>
+
+              <!-- Modal -->
+              <div class="modal fade" id="perf_<%=i%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Feedback from the club coaches</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <%- user.myLivePerf[i].feedback %>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
-      </div>
       <%}%>
     </div>
   </div>
 </div>
 
-  <!-- Instructors -->
-  <% if (currentUser.isPecpCoach) {%>
-    <h2 class="my-program">Pecp Coach Space</h2>
-    <div class="pecp-coach">
-      <div class="pecp-link-wrapper">
-        <a class="btn fs-4 btn-primary pecp-link"
-          href="/user/<%=currentUser._id%>/pecpCoachDashboard/<%=currentUser.pecpCoach_id%>">PECP
-          Coaching Dashboarb</a>
-        <%}%>
-      </div>
+<!-- Instructors -->
+<% if (currentUser.isPecpCoach) {%>
+  <h2 class="my-program">Pecp Coach Space</h2>
+  <div class="pecp-coach">
+    <div class="pecp-link-wrapper">
+      <a class="btn fs-4 btn-primary pecp-link"
+         href="/user/<%=currentUser._id%>/pecpCoachDashboard/<%=currentUser.pecpCoach_id%>">PECP
+        Coaching Dashboarb</a>
+<%}%>
     </div>
+  </div>

@@ -45,6 +45,7 @@ const {
 // connecting to the database
 const connectDB = catchAsync(async () => {
     await mongoose.connect(process.env.APP_DB, {
+        dbName: "all",
         useNewUrlParser: true,
         useCreateIndex: true,
         useFindAndModify: false,
