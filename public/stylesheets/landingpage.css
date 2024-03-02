@@ -462,7 +462,7 @@ nav {
   padding-left: 5rem;
   animation: moveBanner 2s 1.2s forwards;
   margin-bottom: 2rem;
-
+  -webkit-animation: moveBanner 2s 1.2s forwards;
 }
 
 .slogan {
@@ -750,7 +750,6 @@ nav {
   }
 }
 
-#banner {}
 
 
 .banner-paragraph {

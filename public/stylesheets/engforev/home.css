@@ -1,0 +1,153 @@
+html {
+  font-size: 90%;
+}
+
+.wrapper {
+  background: url("https://res.cloudinary.com/dccibzcxp/image/upload/v1707085270/Afro%20Language%20lab/IMG_8209_ddtbqb.jpg");
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position: center center;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper:after {
+  content: "";
+  z-index: 1;
+  height: 90%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(6, 4, 46, 0.409);
+  position: absolute;
+}
+
+.eng-title {
+  font-family: "Chivo", sans-serif;
+  font-size: 5rem;
+  padding: 3rem 2rem;
+  color: rgb(47, 82, 237);
+  text-shadow: 1px 2px 1px rgb(255, 255, 255);
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  z-index: 500;
+  animation: moveBanner 2s 1.2s forwards;
+}
+
+.class-title {
+  font-family: "Chivo", sans-serif;
+  font-size: 2rem;
+  padding: 1rem 5rem;
+  color: rgba(227, 229, 239, 0.91);
+  font-weight: 700;
+  background: #360033; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0b8793,
+    #360033
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0b8793,
+    #360033
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card-wrapper {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  margin: 0 1rem;
+  border-radius: 0.3rem;
+}
+
+.card-wrapper img {
+  height: 15rem;
+  width: 100%;
+}
+
+.level {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.level-spc {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: rgb(255, 255, 255);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.beg {
+  background: #fc4a1a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f7b733,
+    #fc4a1a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f7b733,
+    #fc4a1a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.int {
+  background: #4568dc;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4568dc, #79487a, #4568dc);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4568dc, #613a63, #4568dc);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.adv {
+  background: #007991;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #007991,
+    rgb(66, 141, 119) 6,
+    #007991
+  );
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #007991, #2b6352, #007991);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.inscription {
+  background-color: #a19ea1;
+  color: rgb(255, 255, 255);
+  padding: 1rem auto;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.phone {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.3rem;
+}
+
+@keyframes moveBanner {
+  0% {
+    transform: translateX(-20rem) rotate(-10deg);
+    -webkit-transform: translateX(-20rem) rotate(-10deg);
+    -moz-transform: translateX(-20rem) rotate(-10deg);
+    -ms-transform: translateX(-20rem) rotate(-10deg);
+    -o-transform: translateX(-20rem) rotate(-10deg);
+  }
+
+  100% {
+    transform: translateX(0) rotate(0);
+    opacity: 1;
+    -webkit-transform: translateX(0) rotate(0);
+    -moz-transform: translateX(0) rotate(0);
+    -ms-transform: translateX(0) rotate(0);
+    -o-transform: translateX(0) rotate(0);
+  }
+}

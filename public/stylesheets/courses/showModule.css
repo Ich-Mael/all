@@ -95,12 +95,12 @@ body {
 }
 
 /* module */
-.module>a {
+.module > a {
   text-decoration: none;
   font-size: 1.2rem;
 }
 
-.module>a:hover {
+.module > a:hover {
   color: blue;
 }
 
@@ -115,32 +115,27 @@ body {
   font-weight: 700;
 }
 
-.objectives, .moreLink{
+.objectives,
+.moreLink {
   color: rgb(255, 255, 255);
-  background: #0f0c29;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #0f056bc9; /* fallback for old browsers */
   padding: 1rem 2rem;
   text-align: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
   font-size: 1.2rem;
   transition: all 0.3s;
 }
 
-.objectives:hover, .moreLink:hover {
+.objectives:hover,
+.moreLink:hover {
   color: #ffffff;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  border: 3px solid rgb(34, 34, 244);
+  background: #0f0c29;
 }
 
 .video-wrapper {
   border: 2px solid rgba(46, 10, 88, 0.562);
   border-radius: 3px;
-  margin: 7rem 0;
+  margin: 4rem 0;
 }
 
 .course-video-heading {
@@ -152,7 +147,8 @@ background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+
   /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #46d8fc, #081e88b9, #46c8fc);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   margin-bottom: 2rem;
   padding: 1rem 2rem;
   letter-spacing: 0.1rem;
@@ -161,13 +157,22 @@ background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+
 }
 
 .rok {
-  background: #4e54c8;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #8f94fb, #4e54c8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #4e54c8; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #8f94fb,
+    #4e54c8
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #8f94fb,
+    #4e54c8
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   padding: 1.2rem;
   margin-top: 2rem;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   letter-spacing: 0.1rem;
   text-align: center;
   color: white;
@@ -189,24 +194,22 @@ background: linear-gradient(to right, #8f94fb, #4e54c8); /* W3C, IE 10+/ Edge, F
   height: 20rem;
 }
 
-
 .assignment-category {
   text-align: center;
   padding: 1rem 0.6rem;
   color: #ffffff;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  background: #56CCF2;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background: #56ccf2;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
+  background: -webkit-linear-gradient(to right, #2f80ed, #56ccf2);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2F80ED, #56CCF2);
+  background: linear-gradient(to right, #2f80ed, #56ccf2);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
 .assignment-title {
   font-size: 1.4rem;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   padding: 0.5rem;
 }
 
@@ -224,7 +227,7 @@ background: linear-gradient(to right, #8f94fb, #4e54c8); /* W3C, IE 10+/ Edge, F
   padding: 2rem 0;
   font-weight: 500;
   color: blueviolet;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   text-transform: capitalize;
 }
 
@@ -234,7 +237,8 @@ Responsivness
 
 */
 
-@media (max-width: 1200px) {}
+@media (max-width: 1200px) {
+}
 
 @media (max-width: 1024px) {
   html {
@@ -255,4 +259,5 @@ Responsivness
   }
 }
 
-@media (max-width: 320px) {}
+@media (max-width: 320px) {
+}

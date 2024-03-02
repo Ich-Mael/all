@@ -6,8 +6,11 @@
 <script>
   tinymce.init({
     selector: '.mytextarea',
-    plugins: "print link image lists advlist wordcount",
     height: 200,
+    relative_urls: false,
+    remove_script_host: false,
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
     max_width: 500,
     min_height: 300,
     min_width: 400
@@ -29,6 +32,7 @@
 <h2 class="text-center py-4" style="color: rgb(150, 77, 199);"><%= course.title %></h2>
 <hr>
 <h3 class="text-center my-3">Update Module : <%= courseModule.title %></h3>
+<!--  -->
 <section class="container col-md-8 my-3 p-2" style="background-color: rgb(136, 175, 190)">
   <form action="/admindashboard/courses/<%= course._id %>/modules/<%= courseModule._id %>?_method=PUT" method="POST">
     <div class="">
@@ -45,11 +49,11 @@
               required />
           </div>
         </div>
-        <label class="form-label" for="willLearnModule">What will we learn</label>
+        <label class="form-label" for="willLearnModule">What will we learn ?</label>
         <textarea class="form-control my-2 mytextarea" name="module[willLearnModule]" id="willLearnModule" required>  <%= courseModule.willLearnModule %>
         </textarea>
 
-        <label class="form-label" for="explanationText">Explanation Text</label>
+        <label class="form-label" for="explanationText">Module Content</label>
         <textarea class="form-control my-2 mytextarea" name="module[explanationText]" id="explanationText" required><%= courseModule.explanationText%>
         </textarea>
 

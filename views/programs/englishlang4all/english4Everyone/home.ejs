@@ -1,105 +1,18 @@
 <% layout('layouts/boilerplate') %>
-
-
-<style>
-    html {
-        font-size: 90%;
-    }
-
-    .wrapper {
-        background: url("https://www.goatsontheroad.com/wp-content/uploads/2020/02/online-english-lesson-plan.jpg");
-        background-size: cover;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-position: center center;
-        height: 56vh;
-    }
-
-    .eng-title {
-        color: rgb(58, 57, 56);
-        text-transform: uppercase;
-        text-align: center;
-        padding: 3rem 0;
-        font-size: 2rem;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-
-    .card-wrapper {
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-        margin: 0 1rem;
-        border-radius: 0.3rem;
-    }
-
-    .card-wrapper img {
-        height: 15rem;
-        width: 100%;
-    }
-
-    .level {
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        color: rgb(255, 255, 255);
-        text-align: center;
-        padding: 1rem 0;
-        text-transform: uppercase;
-        letter-spacing: 0.2rem;
-    }
-
-    .level-spc {
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        color: rgb(255, 255, 255);
-        padding: 1rem 0;
-        text-align: center;
-    }
-
-    .beg {
-        background: #007991;
-        /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #007991, rgb(66, 141, 119)6, #007991);
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #007991, #2b6352, #007991);
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    }
-
-    .int {
-        background: #4568DC;
-        /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #4568DC, #79487a, #4568DC);
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #4568DC, #613a63, #4568DC);
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    }
-
-    .adv {
-        background: #C04848;
-        /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #480048, #C04848);
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #480048, #C04848);
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    }
-
-    .inscription {
-        background-color: #a19ea1;
-        color: rgb(255, 255, 255);
-        padding: 1rem auto;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-
-    .phone {
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        font-size: 1.3rem;
-    }
-</style>
+<link rel="stylesheet" href="/stylesheets/engforev/home.css">
 <div class="wrapper">
+<h1 class="eng-title">Afro English Class</h1>
 </div>
-<h1 class="eng-title">Anglais Pour tous les niveaux</h1>
-<div class="container mb-5">
+
+<h1 class="class-title" style="margin-top: 5rem;">Cours d'Anglais par niveau</h1>
+<div class="container my-5">
+    <!-- English by level -->
     <div class="row">
+        <!-- Debutant -->
         <div class="col-md-4">
             <div class="card-wrapper">
                 <img class="img-fluid img-thumbnail"
-                    src="https://hh-certificates.sgp1.digitaloceanspaces.com/blog/wp-content/uploads/2020/05/12111240/Teach-English-To-Beginners.jpg"
+                    src="https://bpl.bibliocommons.com/events/uploads/images/full/2682bf316a01d52f9669162ba0e67f2c/Untitleddesign.png"
                     alt="">
                 <h3 class="level beg">Débutant</h3>
                 <!-- Button trigger modal -->
@@ -142,7 +55,7 @@
                 </div>
                 <hr>
                 <!-- <a href="" class="mb-2 mx-2 btn btn-outline-success">Témoignage</a> -->
-                <a href="" class="mb-2 mx-2 btn btn-outline-success">Etudier</a>
+                <a href="/courses/65c01a3f09afc3a32fa5eaba" class="mb-2 mx-2 btn btn-outline-success">Etudier</a>
                 <a class="mb-2 mx-2 btn btn-outline-secondary" data-bs-toggle="collapse" href="#contact-a" role="button"
                     aria-expanded="false" aria-controls="collapseExample">
                     S'inscrire
@@ -155,11 +68,12 @@
                 </div>
             </div>
         </div>
+        <!-- Pre Int -->
         <div class="col-md-4">
             <div class="card-wrapper">
                 <img class="img-fluid img-thumbnail"
                     src="https://heritageinstitute.in/wp-content/uploads/2019/01/Pre-Intermediate-English.png" alt="">
-                <h3 class="level int">Intermediare</h3>
+                <h3 class="level int">Pre-Intermediare</h3>
                 <!-- Button trigger modal -->
                 <button type="button" class="mb-2 mx-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#int">
                     En savoir plus
@@ -213,11 +127,12 @@
                 </div>
             </div>
         </div>
+        <!-- Int -->
         <div class="col-md-4">
             <div class="card-wrapper">
-                <img class="img-fluid img-thumbnail" src="https://www.ohipopo.org/my_media/2020/05/ENGLISH-AL.jpg"
+                <img class="img-fluid img-thumbnail" src="https://heritageinstitute.in/wp-content/uploads/2019/01/Intermediate-English-1.png"
                     alt="">
-                <h3 class="level adv">Avancé</h3>
+                <h3 class="level adv">Intermediare</h3>
                 <!-- Button trigger modal -->
                 <button type="button" class="mb-2 mx-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#adv">
                     En savoir plus
@@ -273,14 +188,15 @@
         </div>
     </div>
 </div>
-<hr>
-<h1 class="eng-title">Cours Spéciaux</h1>
+
+<h1 class="class-title"  style="margin: 5rem 0;">English Masterclass</h1>
 <div class="container mb-5">
     <div class="row">
+        <!-- Spoken English -->
         <div class="col-md-4">
             <div class="card-wrapper">
                 <img class="img-fluid img-thumbnail"
-                    src="https://eliteoverseaseducation.com/wp-content/uploads/2015/07/cover-english.png" alt="">
+                    src="https://www.creativeitinstitute.com/images/course/course_1663654149.jpg" alt="">
                 <h3 class="level-spc beg">Spoken English Class</h3>
                 <!-- Button trigger modal -->
                 <button type="button" class="mb-2 mx-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#com">
@@ -322,7 +238,7 @@
                 </div>
                 <hr>
                 <!-- <a href="" class="mb-2 mx-2 btn btn-outline-success">Témoignage</a> -->
-                <a href="/courses/623718438647dd001645161b" class="mb-2 mx-2 btn btn-outline-success">Etudier</a>
+                <a href="" class="mb-2 mx-2 btn btn-outline-success">Etudier</a>
                 <a class="mb-2 mx-2 btn btn-outline-secondary" data-bs-toggle="collapse" href="#contact-0" role="button"
                     aria-expanded="false" aria-controls="collapseExample">
                     S'inscrire
@@ -335,6 +251,7 @@
                 </div>
             </div>
         </div>
+        <!-- Pronunciation -->
         <div class="col-md-4">
             <div class="card-wrapper">
                 <img class="img-fluid img-thumbnail"
@@ -393,6 +310,7 @@
                 </div>
             </div>
         </div>
+        <!-- Writing -->
         <div class="col-md-4">
             <div class="card-wrapper">
                 <img class="img-fluid img-thumbnail"
