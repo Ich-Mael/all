@@ -292,8 +292,7 @@ hk-shadow {
 }
 
 .afrohk-text {
-  font-size: 1.2rem;
-  font-family: "Kaushan Script", cursive;
+  font-size: 1rem;
 }
 
 .afrohk {
@@ -303,7 +302,11 @@ hk-shadow {
 
 .tv {
   letter-spacing: 0.2rem;
-  color: rgb(191, 17, 235);
+  color: rgb(76, 131, 234);
+}
+
+.lab{
+  color: yellow;
 }
 
 #vimeo-content {

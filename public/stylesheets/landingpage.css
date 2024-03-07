@@ -148,14 +148,6 @@ button{
 }
 
 
-
-
-
-
-
-
-
-
 /* preloader */
 
 section {
@@ -681,8 +673,6 @@ nav {
     transform: scale(0.8);
   }
 }
-
-
 
 
 
@@ -1641,8 +1631,7 @@ customers-cards:before {
 }
 
 .afrohk-text {
-  font-size: 1.2rem;
-  font-family: "Kaushan Script", cursive;
+  font-size: 1rem;
 }
 
 .afrohk {
@@ -1652,7 +1641,11 @@ customers-cards:before {
 
 .tv {
   letter-spacing: 0.2rem;
-  color: rgb(81, 9, 157);
+  color: rgb(76, 131, 234);
+}
+
+.lab{
+  color: yellow;
 }
 
 #vimeo-content {
