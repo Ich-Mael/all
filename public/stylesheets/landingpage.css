@@ -1963,7 +1963,7 @@ ul {
 
 .footer-content {
   position: relative;
-  padding: 35px 0px 50px 0px;
+  padding: 35px 0px 0px;
 }
 
 .footer-content:before {
@@ -2009,24 +2009,28 @@ ul {
 .footer-content .logo-widget {
   position: relative;
   margin-top: -5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.footer-social, .whatsApp {
-  margin: 30px 0;
+.footer-social{
+  margin: 10px 0;
 }
 
-.footer-content .footer-social li {
+.footer-social li {
   position: relative;
   display: inline-block;
   margin-right: 9px;
   margin-top: 7px;
 }
 
-.footer-content .footer-social li:last-child {
+.footer-social li:last-child {
   margin-right: 0px;
 }
 
-.footer-content .footer-social li a {
+.footer-social li a {
   position: relative;
   display: inline-block;
   width: 42px;
@@ -2036,7 +2040,7 @@ ul {
   border-radius: 50%;
 }
 
-.footer-content .footer-social li a:hover {
+.footer-social li a:hover {
   color: #ffffff;
   background: #5806c5;
 }
@@ -2068,10 +2072,15 @@ ul {
   position: relative;
   display: inline-block;
   color: #1e1f21;
+  font-weight: 500;
+  transition: all 0.3s;
 }
 
 .footer-content .service-widget .list li a:hover {
-  color: #470585;
+  color: white;
+  background-color: #640eb5;
+  padding: 4px;
+  border-radius: 3px;
 }
 
 .footer-content .contact-widget p {
