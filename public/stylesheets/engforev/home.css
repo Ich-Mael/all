@@ -9,7 +9,7 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-position: center center;
-  height: 80vh;
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +18,7 @@ html {
 .wrapper:after {
   content: "";
   z-index: 1;
-  height: 90%;
+  height: 70%;
   width: 100%;
   top: 0;
   left: 0;
@@ -38,10 +38,18 @@ html {
   animation: moveBanner 2s 1.2s forwards;
 }
 
+.intro{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  padding: 2rem 0 0 0;
+  color: #020202ab;
+  text-align: center;
+}
+
 .class-title {
   font-family: "Chivo", sans-serif;
   font-size: 2rem;
-  padding: 1rem 5rem;
+  padding: 1rem 9rem;
   color: rgba(227, 229, 239, 0.91);
   font-weight: 700;
   background: #360033; /* fallback for old browsers */
@@ -61,6 +69,7 @@ html {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   margin: 0 1rem;
   border-radius: 0.3rem;
+  margin: 2rem 0;
 }
 
 .card-wrapper img {
@@ -69,11 +78,12 @@ html {
 }
 
 .level {
-  font-family: Georgia, "Times New Roman", Times, serif;
   color: rgb(255, 255, 255);
+  font-family: Georgia, "Times New Roman", Times, serif;
   text-align: center;
+  font-size: 1.3rem;
   padding: 1rem 0;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 0.2rem;
 }
 
@@ -82,6 +92,7 @@ html {
   color: rgb(255, 255, 255);
   padding: 1rem 0;
   text-align: center;
+  font-size: 1.3rem;
 }
 
 .beg {

@@ -13,12 +13,7 @@ body {
   overflow-x: hidden;
   background-color: rgb(255, 255, 255);
 }
-/**
-* Template Name: Selecao - v4.9.0
-* Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 
 /*--------------------------------------------------------------
 # General
@@ -69,7 +64,7 @@ h6 {
   width: 100%;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(0deg, rgb(42, 44, 57) 0%, rgb(51, 54, 74) 100%);
+  background: linear-gradient(0deg, rgb(30, 4, 83) 0%, rgb(35, 45, 112) 100%);
   padding: 0;
 }
 
@@ -949,12 +944,25 @@ border-radius: 5px;
   right: -68px;
   transform: rotate(45deg);
   z-index: 1;
-  font-size: 14px;
+  font-size: 10px;
   padding: 1px 0 3px 0;
   background: #ef6603;
   color: #fff;
 }
 
+
+.pricing .basic {
+  width: 200px;
+  position: absolute;
+  top: 18px;
+  right: -68px;
+  transform: rotate(45deg);
+  z-index: 1;
+  font-size: 14px;
+  padding: 1px 0 3px 0;
+  background: #033aef;
+  color: #fff;
+}
 /*--------------------------------------------------------------
 # F.A.Q
 --------------------------------------------------------------*/

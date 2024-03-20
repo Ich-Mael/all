@@ -149,8 +149,12 @@ module.exports.createEnglishClub = async (req, res) => {
             isBoardMember: true
         });
 
+        president.clubMember_id = newEngClubMember._id;
+        president.isClubMember = true;
         newEngClubMember.memberEnglishClubs.push(englishClub._id);
+        
         await newEngClubMember.save();
+        await president.save();
 
         englishClub.boardMembers.push(newEngClubMember._id);
         englishClub.members.push(newEngClubMember._id);

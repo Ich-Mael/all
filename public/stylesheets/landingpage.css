@@ -192,8 +192,17 @@ section {
   font-weight: 700;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
-  color: #0f2f57;
   color: #5000c8;
+}
+
+.section-title h5 {
+  margin: 0;
+  margin: 0;
+  font-size: 19px;
+  margin-top: 10px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: #3c304db3;
 }
 
 
@@ -397,8 +406,7 @@ nav {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: url('https://res.cloudinary.com/dccibzcxp/image/upload/v1696889990/Afro%20Language%20lab/IMG_8317_dbrosj.jpg') no-repeat center center/cover;
-
+  background: url('https://images.pexels.com/photos/6683885/pexels-photo-6683885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
 }
 
 .video-container video {
@@ -419,7 +427,6 @@ nav {
   top: 0;
   left: 0;
   background: rgba(33, 4, 46, 0.406);
-
   position: absolute;
 }
 
@@ -434,7 +441,7 @@ nav {
 .afrohk-title {
   font-family: "Chivo", sans-serif;
   font-size: 5rem;
-  padding: 3rem 0;
+  padding: 3rem 0 1rem;
   text-align: start;
   color: rgb(255, 255, 255);
   text-shadow: 1px 2px 1px rgb(42, 39, 39);
@@ -464,14 +471,14 @@ nav {
   /* font-family: "Ultra", serif; */
   font-family: "Chivo", sans-serif;
   text-shadow: 1px 1px 1px rgb(28, 28, 29);
-  padding-top: 1.3rem;
+  padding-top: 0.5rem;
   /* font-family: 'Meriweather', Times, serif; */
   letter-spacing: 0.1rem;
-  width: 60%;
+  width: 80%;
   line-height: 2.5rem;
   text-align: start;
   color: rgb(255, 255, 255);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   padding-bottom: 2rem;
 }
 
@@ -482,7 +489,7 @@ nav {
   background-color: #4d0db4;
   background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 87% at 26% 20%, rgba(255, 255, 255, 0.41) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
   box-shadow: 2px 19px 31px rgba(0, 0, 0, 0.2);
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 16px;
   transition: all 0.3s;
   border: 0;
@@ -1642,10 +1649,6 @@ customers-cards:before {
 .tv {
   letter-spacing: 0.2rem;
   color: rgb(76, 131, 234);
-}
-
-.lab{
-  color: yellow;
 }
 
 #vimeo-content {
