@@ -22,6 +22,10 @@
       <% if (currentUser.role==="account-manager" || currentUser.role==="admin" ) {%>
         <a href="/register" class="btn btn-outline-primary my-3">Creation de compte</a>
       <% } %>
+
+      <% if (currentUser.role==="admin" ) {%>
+        <a href="/admindashboard" class="btn btn-danger my-3">Admindashboard</a>
+      <% } %>
     </div>
   </div>
 </div>
