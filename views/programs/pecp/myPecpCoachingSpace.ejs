@@ -27,7 +27,7 @@
 
     .pecs {
       padding: 2rem 5rem;
-      font-family: 'Rye', cursive;
+      /* font-family: 'Rye', cursive; */
       color: rgb(13, 87, 152);
     }
 
@@ -148,11 +148,12 @@
               <div class="col-md-6 student-info">
                 <h1 class="student-name">
                   <%= student.pecpStudentBasicInfo.surname %>
-                    <%= student.pecpStudentBasicInfo.name %> <span
-                        class="bg-success text-center mx-3 px-2 py-2 text-white">
-                        <%= student.level %>
-                      </span>
+                    <%= student.pecpStudentBasicInfo.name %> 
                 </h1>
+                <p
+                  class="bg-success text-center mx-3 px-2 py-2 text-white">
+                  <%= student.level %>
+                </p>
                 <hr class="mx-2">
                 <h6 class="text-success fst-italic fw-bold">Student Learning Goal</h6>
                 <p class="student-learning">
@@ -266,8 +267,7 @@
                     </div>
                     <div class="modal-body">
                       <form
-                        action="/user/<%=currentUser._id%>/pecpCoachDashboard/<%=currentUser.pecpCoach_id%>/pecpStudent/<%= student._id %>/grade"
-                        method="POST">
+                        action="/user/<%=currentUser._id%>/pecpCoachDashboard/<%=currentUser.pecpCoach_id%>/pecpStudent/<%= student._id %>/grade" method="POST">
 
                         <!-- Writing test info -->
                         <div class="my-5 p-3" style="border-radius:5px; border: 1px solid rgb(28, 26, 28);">
@@ -396,8 +396,8 @@
 
                           <!-- Testee feedback -->
                           <textarea type="text" class="form-control mytextarea"
-                            placeholder="What are the Strenghs and Weaknesses of the testee ?  What are your recommendations for continuous improvement "
-                            name="grade[feedback]" value="" required id="feedback"></textarea>
+                            placeholder="What are the Strenghs and Weaknesses of the testee ?  What are your recommendations for continuous improvement"
+                            name="grade[feedback]" value="" id="feedback"></textarea>
                         </div>
 
                         <button type="submit" class="btn mb-5 btn-lg btn-primary"> Submit Grade </button>
@@ -407,7 +407,6 @@
                   </div>
                 </div>
               </div>
-
               <!-- Cv -->
               <div class="collapse" id="Cv_<%= student._id %>" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">

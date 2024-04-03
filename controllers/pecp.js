@@ -140,7 +140,6 @@ module.exports.pecpCoachDashboard = async (req, res) => {
 */
 
     const user = await User.findById(req.params.user_id)
-console.log(coach);
 
     res.render("programs/pecp/myPecpCoachingSpace", {
         coach,
