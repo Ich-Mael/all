@@ -1,0 +1,41 @@
+<% layout('layouts/boilerplate') %>
+<style>
+  .card-body {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+      rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    margin: 2rem 0;
+  }
+
+  html {
+    font-size: 85%;
+  }
+</style>
+
+<h1 class="text-center py-3">Students List</h1>
+<div class="d-flex justify-content-around">
+    <div class="col-md-8">
+<table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Full name</th>
+        <th scope="col">English Speaking Level</th>
+        <th scope="col">Take action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% for (let i=0; i < course.students.length ; i++ ){%>
+      <tr>
+        <th scope="row"><%= i + 1 %></th>
+        <td><%=
+            course.students[i].name +" "+
+            course.students[i].surname%></td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <%}%>
+     
+    </tbody>
+  </table>
+</div>
+</div>

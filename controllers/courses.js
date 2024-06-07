@@ -60,6 +60,12 @@ module.exports.updateCourse = async(req, res)=>{
   res.redirect(`/courses/${course._id}`);
 };
 
+module.exports.showStudents = async(req, res)=>{
+  const course = await Course.findById(req.params.course_id)
+    .populate("students")
+  res.render("courses/studentsList", { course}); 
+}
+
 module.exports.deleteCourse = async (req, res) => {
   const course = await Course.findByIdAndDelete(req.params.course_id);
   req.flash("success", "Course successfully deleted");

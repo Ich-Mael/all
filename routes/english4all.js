@@ -62,6 +62,16 @@ router.get("/englishlang4all/free_english_lessons", (req, res) => {
  *
  * ================================================ */
 
+/** All English hubs */
+router.get('/admindashboard/showClubHubs', isLoggedIn,
+  isVerified,
+  checkRoles("admin"),
+  async (req, res) => {
+    res.render("programs/englishlang4all/englishClubs/showClubHub");
+    // res.send("hubs")
+  });
+
+
 /** English hub */
 router.post('/admindashboard/newEnglishClubHub', isLoggedIn,
   isVerified,

@@ -55,7 +55,7 @@ router.put("/admindashboard/courses/:course_id", isVerified, isLoggedIn, checkRo
 // Edit new course
 router.delete("/admindashboard/courses/:course_id", isVerified, isLoggedIn, checkRoles("admin"), catchAsync(Courses.deleteCourse));
 
-
+router.get("/admindashboard/courses/:course_id/showStudents", isVerified, isLoggedIn, checkRoles("admin"), catchAsync(Courses.showStudents));
 /*
  ************************* MODULE ROUTES *******************************************
  */
@@ -108,6 +108,9 @@ router.get('/courses/:course_id/evaluations/:evaluation', isVerified, isLoggedIn
     const evaluation = req.params.evaluation;
     res.send("eval page");
 }));
+
+
+
 
 
 

@@ -128,7 +128,7 @@ background: linear-gradient(to right, #2B32B2, #1488CC); /* W3C, IE 10+/ Edge, F
   padding: 2rem;
 }
 
-.instructor-img {
+instructor-img {
   width: 200px;
   height: 200px;
 }
@@ -148,6 +148,10 @@ background: linear-gradient(to right, #2B32B2, #1488CC); /* W3C, IE 10+/ Edge, F
   text-align: center;
 }
 
+.about-instructor{
+  padding: 1rem;
+  font-size: 1rem;
+}
 
 /* about course */
 .about-course-wrapper {

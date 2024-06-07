@@ -95,6 +95,24 @@
         <div class="row mb-3">
           <div class="col-md-4">
             <img src="<%= instructor.imageUrl %>" alt="instructor-img" class="img-fluid img-thumbnail instructor-img" />
+            <div class="mt-3">
+              <!-- Mail -->
+              <a class="btn instructor-social-icon btn-floating m-2" href="mailto:<%= instructor.email %>" target="_blank"
+                role="button" id="user_mail"><i class="fas fa-at"></i></a>
+              <!-- whatsapp -->
+              <a class="btn  instructor-social-icon btn-floating m-2" href="<%=instructor.whatsAppLink %>" role="button" id="m-whatsapp"
+                target="_blank"><i class="fa fa-whatsapp"></i></a>
+              <!-- Facebook 
+              <a   class="btn instructor-social-icon btn-floating m-2" href="<%= instructor.facebookLink %>" id="facebook"
+                role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>-->
+              <!-- Twitter 
+              <a class="btn  instructor-social-icon btn-floating m-2" href="<%= instructor.twitterLink %>" id="twitter"
+                target="_blank" role="button"><i class="fab fa-twitter"></i></a>
+                -->
+              <!-- Linkedin -->
+              <a class="btn  instructor-social-icon btn-floating m-2" href="<%= instructor.linkedIn %>" target="_blank"
+                role="button" id="linkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
           </div>
           <div class="col-md-8">
             <h3 class="instructor-name">
@@ -103,21 +121,7 @@
             <p class="about-instructor"><%- instructor.about %></p>
           </div>
         </div>
-        <!-- Mail -->
-        <a class="btn instructor-social-icon btn-floating m-2" href="mailto:<%= instructor.email %>" target="_blank"
-          role="button" id="user_mail"><i class="fas fa-at"></i></a>
-        <!-- whatsapp -->
-        <a class="btn  instructor-social-icon btn-floating m-2" href="<%=instructor.whatsAppLink %>" role="button" id="m-whatsapp"
-          target="_blank"><i class="fa fa-whatsapp"></i></a>
-        <!-- Facebook -->
-        <a   class="btn instructor-social-icon btn-floating m-2" href="<%= instructor.facebookLink %>" id="facebook"
-          role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <!-- Twitter -->
-        <a class="btn  instructor-social-icon btn-floating m-2" href="<%= instructor.twitterLink %>" id="twitter"
-          target="_blank" role="button"><i class="fab fa-twitter"></i></a>
-        <!-- Linkedin -->
-        <a class="btn  instructor-social-icon btn-floating m-2" href="<%= instructor.linkedIn %>" target="_blank"
-          role="button" id="linkedIn"><i class="fab fa-linkedin-in"></i></a>
+        
       </div>
     </div>
     <%}%>

@@ -90,6 +90,7 @@ const userSchema = new Schema({
   about: {
     type: String,
     trim: true,
+    default:"What you should know about me"
   },
 
   englishLevel: {
