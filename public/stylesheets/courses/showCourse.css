@@ -8,7 +8,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ffffffce;
-  font-family: "Roboto"serif;
+  font-family: "Roboto" serif;
 }
 
 .banner-wrapper {
@@ -80,7 +80,6 @@ body {
   }
 }
 
-
 .banner-heading {
   color: rgb(9, 114, 185);
   /* width: 100%; */
@@ -96,7 +95,6 @@ body {
   text-shadow: 1px 2px 2px rgba(253, 203, 4, 0.89);
   animation: moveBanner 2s 1.2s forwards;
 }
-
 
 /* Instructor section */
 .intrustors-wrapper {
@@ -114,11 +112,12 @@ body {
 .underline-1 {
   width: 12rem;
   height: 0.5rem;
-  background: #1488CC;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #2B32B2, #1488CC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
+  background: #1488CC;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2B32B2, #1488CC);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   text-align: center;
 }
 
@@ -139,16 +138,19 @@ instructor-img {
   letter-spacing: 0.2rem;
   padding: 0.5rem 1rem;
   color: #ffffff;
-  background: #1488CC;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2B32B2, #1488CC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+  background: #1488CC;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2B32B2, #1488CC);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 
   font-family: Georgia, 'Times New Roman', Times, serif;
   text-align: center;
 }
 
-.about-instructor{
+.about-instructor {
   padding: 1rem;
   font-size: 1rem;
 }

@@ -2148,18 +2148,7 @@ ul {
 }
 
 /* footer responsive */
-@media (max-width: 767px) {
-  .footer-slogan {
-    font-size: 1.2rem;
-  }
 
-
-  @media (max-width: 578px) {
-    .footer-slogan {
-      font-size: 1rem;
-    }
-
-  }
 
 
   /* responsive */
@@ -2224,22 +2213,18 @@ ul {
     }
   }
 
-
-  @media (max-width: 768px) {
-    #footer {
-      background: -webkit-linear-gradient(to top,
-          #412388,
-          #556497,
-          #ffffff);
-      /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to top,
-          #412388,
-          #556497,
-          #ffffff);
-      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  @media (max-width: 767px) {
+    .footer-slogan {
+      font-size: 1.2rem;
     }
-
-  }
+  
+  
+    @media (max-width: 578px) {
+      .footer-slogan {
+        font-size: 1rem;
+      }
+  
+    }
 
   @media (max-width: 450px) {
     .footer-links-header {
@@ -2684,13 +2669,7 @@ ul {
 
   @media (max-width: 768px) {
     #footer {
-      background: #141E30;
-      /* fallback for old browsers */
-      background: -webkit-linear-gradient(to right, #243B55, #141E30);
-      /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to right, #243B55, #141E30);
-      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+     
     }
 
     .slogan {
