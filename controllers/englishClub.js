@@ -133,11 +133,20 @@ module.exports.createEnglishClub = async (req, res) => {
     });
 
     if (checkingEnglishClubStatus) {
+
+        // changing status of the chair person
         checkingEnglishClubStatus.position = "Chair Person",
         checkingEnglishClubStatus.isBoardMember = true
 
+        // adding chair person to club members list and board members list
         englishClub.boardMembers.push(checkingEnglishClubStatus._id);
         englishClub.members.push(checkingEnglishClubStatus._id);
+
+        // adding club to the chair person list of clubs
+        checkingEnglishClubStatus.memberEnglishClubs.push(englishClub._id); 
+
+        await checkingEnglishClubStatus.save();
+        await englishClub.save()
 
     } else {
         // create a new english club member
@@ -149,10 +158,13 @@ module.exports.createEnglishClub = async (req, res) => {
             isBoardMember: true
         });
 
+        // Adding club to memer info
         president.clubMember_id = newEngClubMember._id;
         president.isClubMember = true;
         newEngClubMember.memberEnglishClubs.push(englishClub._id);
-        
+
+        console.log(newEngClubMember.memberEnglishClubs)
+       
         await newEngClubMember.save();
         await president.save();
 
