@@ -85,7 +85,16 @@
       border-radius: 5px;
     }
 
-    .course-link-wrapper{
+    .course-box {
+      padding: 2rem 2rem;
+    }
+
+    .img-wrapper img {
+      height: 20rem;
+      width: auto;
+    }
+
+    .course-link-wrapper {
       border-radius: 5px;
       border: 2px solid white;
       background: #1A2980;
@@ -97,7 +106,7 @@
 
     .course-link {
       color: white;
-     
+
       text-decoration: none;
       font-size: 1.3rem;
       padding: 1.3rem 2rem;
@@ -212,15 +221,17 @@
     <div class="container my-5">
       <div class="row">
         <% for (let course of studentSpecial_courses){ %>
-          <div class="col-md-4 course-wrapper">
-            <div class="img-wrapper">
-              <img src="<%=course.courseImageUrl %>" class="img-fluid img-thumbnail mt-2 " class="" alt="">
+          <div class="col-md-4 course-box">
+            <div class="course-wrapper">
+              <div class="img-wrapper">
+                <img src="<%=course.courseImageUrl %>" class="img-fluid img-thumbnail mt-2 " class="" alt="">
+              </div>
+              <p class="my-3 py-3 course-link-wrapper">
+                <a href="/courses/<%= course._id %>" target="_blank" class="course-link">
+                  <%= course.title %>
+                </a>
+              </p>
             </div>
-            <p class="my-3 py-3 course-link-wrapper">
-              <a href="/courses/<%= course._id %>" target="_blank" class="course-link">
-                <%= course.title %>
-              </a>
-            </p>
           </div>
           <%}%>
       </div>
@@ -394,7 +405,7 @@
     <h3 class="section-title">Ma progression</h3>
     <div class="container col-lg-8 mt-3">
 
-      <% if(student.pecpStudentProgress.length > 0) {%>
+      <% if(student.pecpStudentProgress.length> 0) {%>
         <div class="my-4" style=" border: 1px solid rgb(33, 12, 15); border-radius: 4px;">
 
           <h4 class="text-center py-3 mb-3" style="letter-spacing: 0.1rem; color: white; background: #1488CC;  /* fallback for old browsers */

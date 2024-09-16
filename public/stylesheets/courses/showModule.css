@@ -21,7 +21,7 @@ body {
 
 .bg-img-wrapper {
   width: 100%;
-  height: 60vh;
+  height: 40vh;
   overflow: hidden;
   background-color: rgba(10, 10, 10, 0.979);
 }
@@ -95,17 +95,23 @@ body {
 }
 
 /* module */
-.module > a {
+.module>a {
   text-decoration: none;
   font-size: 1.2rem;
 }
 
-.module > a:hover {
+.module>a:hover {
   color: blue;
 }
 
 .module-title-wrapper {
-  background-color: rgb(59, 70, 226);
+  background: #000046;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1CB5E0, #000046);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #1CB5E0, #000046);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   color: rgb(240, 234, 234);
   padding: 1.5rem 1rem;
   text-align: center;
@@ -115,68 +121,74 @@ body {
   font-weight: 700;
 }
 
-.objectives,
-.moreLink {
+.objectives {
   color: rgb(255, 255, 255);
-  background: #0f056bc9; /* fallback for old browsers */
-  padding: 1rem 2rem;
+  background: #3a29d0c9;
+  /* fallback for old browsers */
+  padding: 0.5rem 1.3rem;
   text-align: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
-  font-size: 1.2rem;
+  font-size: 1rem;
   transition: all 0.3s;
 }
 
-.objectives:hover,
-.moreLink:hover {
+.objectives:hover {
   color: #ffffff;
-  background: #0f0c29;
+  background: #3424bcde;
 }
 
 .video-wrapper {
-  border: 2px solid rgba(46, 10, 88, 0.562);
-  border-radius: 3px;
+ 
   margin: 4rem 0;
+}
+
+.lessonWrapper{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.lessonTitle{
+ font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
+  font-size: 1rem; 
 }
 
 .course-video-heading {
   color: rgb(255, 255, 255);
-  background-color: rgb(114, 52, 133);
-  background: #aa46fc;
+  background: #1e3c72;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #46c8fc, #10227ed5, #46e1fc);
+  background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #46d8fc, #081e88b9, #46c8fc);
+  background: linear-gradient(to right, #2a5298, #1e3c72);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   margin-bottom: 2rem;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   letter-spacing: 0.1rem;
   text-align: center;
   font-size: 1.3rem;
 }
 
-.rok {
-  background: #4e54c8; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #8f94fb,
-    #4e54c8
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #8f94fb,
-    #4e54c8
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.assignment-wrapper{
+  margin: 2rem 0;
+}
 
-  padding: 1.2rem;
+.rok {
+  padding: 1.2rem 0.2rem;
   margin-top: 2rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   letter-spacing: 0.1rem;
   text-align: center;
-  color: white;
-  font-size: 1.3rem;
+  color: #490489;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.underline-1{
+  height: 1rem;
+  background-color: #490489;
+  padding: 00.2rem;
+  margin-bottom: 3rem;
 }
 
 .moreLink {
@@ -187,30 +199,33 @@ body {
 .underline-section {
   /* border-bottom: 4px solid rgb(54, 53, 56); */
   padding-bottom: 0.2rem;
+  display: inline-block;
 }
 
 .assignment-card {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  height: 20rem;
+  /* height: 20rem; */
+  border-radius: 5px;
+  border: 1px solid rgba(18, 12, 35, 0.435);
 }
 
 .assignment-category {
   text-align: center;
   padding: 1rem 0.6rem;
   color: #ffffff;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  background: #56ccf2;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2f80ed, #56ccf2);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2f80ed, #56ccf2);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  background: #02536e;
 }
 
 .assignment-title {
-  font-size: 1.4rem;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  padding: 0.5rem;
+  font-size: 1.1rem;
+  padding: 0.3rem 1rem;
+  background-color: #026e6160;
+  height: 3.2rem;
+  line-height: 100%;
+  text-align: center;
 }
 
 .not-available {
@@ -237,8 +252,7 @@ Responsivness
 
 */
 
-@media (max-width: 1200px) {
-}
+@media (max-width: 1200px) {}
 
 @media (max-width: 1024px) {
   html {
@@ -259,5 +273,4 @@ Responsivness
   }
 }
 
-@media (max-width: 320px) {
-}
+@media (max-width: 320px) {}

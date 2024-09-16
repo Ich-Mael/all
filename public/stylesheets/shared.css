@@ -305,6 +305,11 @@ hk-shadow {
   color: rgb(76, 131, 234);
 }
 
+.lab{
+  letter-spacing: 0.2rem;
+  color: rgb(255, 197, 8); 
+}
+
 
 #vimeo-content {
   position: absolute;

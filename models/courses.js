@@ -151,9 +151,10 @@ const practiceSchema = new Schema({
     type: String,
   },
 
-  category: {
+  category:{
     type: String,
-    default: "S'entraîner"
+    default: "English Exercise",
+    enum:["English lesson", "Vocabulary", "Grammar", "Listening", "Reading", "Writing"],
   },
 
   links: [{
@@ -206,8 +207,7 @@ const gradeSchema = new Schema({
   },
 });
 
-
-
+// ENGLISH VIDEO LESSON
 const engCourseVideoSchema = new Schema({
   title: {
     type: String,
@@ -215,7 +215,12 @@ const engCourseVideoSchema = new Schema({
 
   lessonType: {
     type: String,
-    default: "English lesson"
+    default: "English lesson",
+    enum:["English lesson", "Vocabulary", "Grammar", "Pronunciation", "Writing"],
+  },
+
+  lessonImage:{
+    type: String,
   },
 
   engCourseLink: {

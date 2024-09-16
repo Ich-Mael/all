@@ -1,124 +1,149 @@
 <% layout('layouts/courseBoilerplate') %>
-<!-- WORD Processor-->
-<script src="https://cdn.tiny.cloud/1/p06f8vxdpje8xosyvnq48z68vc7n479iauh5s2jk9zx30qg2/tinymce/5/tinymce.min.js"
-  referrerpolicy="origin"></script>
-</script>
-<script>
-  tinymce.init({
-    selector: '.mytextarea',
-    height: 200,
-    relative_urls: false,
-    remove_script_host: false,
-    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-    max_width: 500,
-    min_height: 300,
-    min_width: 400
-  });
-</script>
-<style>
-  html {
-    font-size: 85%;
-  }
+  <!-- WORD Processor-->
+  <script src="https://cdn.tiny.cloud/1/p06f8vxdpje8xosyvnq48z68vc7n479iauh5s2jk9zx30qg2/tinymce/5/tinymce.min.js"
+    referrerpolicy="origin"></script>
+  </script>
+  <script>
+    tinymce.init({
+      selector: '.mytextarea',
+      height: 200,
+      relative_urls: false,
+      remove_script_host: false,
+      toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+      plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+      max_width: 500,
+      min_height: 300,
+      min_width: 400
+    });
+  </script>
+  <style>
+    html {
+      font-size: 85%;
+    }
 
-  label {
-    font-weight: bold;
-    margin-top: 2rem;
-    color: rgb(75, 42, 165);
-    font-size: 1.2rem;
-  }
-</style>
+    label {
+      font-weight: bold;
+      margin-top: 2rem;
+      color: rgb(75, 42, 165);
+      font-size: 1.2rem;
+    }
+  </style>
 
-<h2 class="text-center py-4" style="color: rgb(150, 77, 199);"><%= course.title %></h2>
-<hr>
-<h3 class="text-center my-3">Update Module : <%= courseModule.title %></h3>
-<!--  -->
-<section class="container col-md-8 my-3 p-2" style="background-color: rgb(136, 175, 190)">
-  <form action="/admindashboard/courses/<%= course._id %>/modules/<%= courseModule._id %>?_method=PUT" method="POST">
-    <div class="">
-      <div class="card card-body">
-        <div class="row mt-2">
-          <div class="col">
-            <label class="form-label" for="title">Module title</label>
-            <input class="form-control" type="text" name="module[title]" value=" <%= courseModule.title %>" required />
+  <h2 class="text-center py-4" style="color: rgb(150, 77, 199);">
+    <%= course.title %>
+  </h2>
+  <hr>
+  <h3 class="text-center my-3">Update Module : <%= courseModule.title %>
+  </h3>
+  <!-- Chapter details -->
+  <section class="container col-md-8 my-3 p-2" style="background-color: rgb(136, 175, 190)">
+    <form action="/admindashboard/courses/<%= course._id %>/modules/<%= courseModule._id %>?_method=PUT" method="POST">
+      <div class="">
+        <div class="card card-body">
+          <div class="row mt-2">
+            <div class="col">
+              <label class="form-label" for="title">Module title</label>
+              <input class="form-control" type="text" name="module[title]" value=" <%= courseModule.title %>"
+                required />
+            </div>
+
+            <div class="col">
+              <label class="form-label" for="title">Module date</label>
+              <input class="form-control" type="date" name="module[revealDate]" value=" <%= courseModule.revealDate %>"
+                required />
+            </div>
           </div>
-
-          <div class="col">
-            <label class="form-label" for="title">Module date</label>
-            <input class="form-control" type="date" name="module[revealDate]" value=" <%= courseModule.revealDate %>"
-              required />
-          </div>
-        </div>
-        <label class="form-label" for="willLearnModule">What will we learn ?</label>
-        <textarea class="form-control my-2 mytextarea" name="module[willLearnModule]" id="willLearnModule" required>  <%= courseModule.willLearnModule %>
+          <label class="form-label" for="willLearnModule">What will we learn ?</label>
+          <textarea class="form-control my-2 mytextarea" name="module[willLearnModule]" id="willLearnModule" required>  <%= courseModule.willLearnModule %>
         </textarea>
 
-        <label class="form-label" for="explanationText">Module Content</label>
-        <textarea class="form-control my-2 mytextarea" name="module[explanationText]" id="explanationText" required><%= courseModule.explanationText%>
+          <label class="form-label" for="explanationText">Module Content</label>
+          <textarea class="form-control my-2 mytextarea" name="module[explanationText]" id="explanationText" required><%= courseModule.explanationText%>
         </textarea>
 
-        <label class="form-label" for="moreDetails">More Details</label>
-        <textarea class="form-control my-2 mytextarea" name="module[moreDetails]" id="moreDetails" required>
+          <label class="form-label" for="moreDetails">More Details</label>
+          <textarea class="form-control my-2 mytextarea" name="module[moreDetails]" id="moreDetails" required>
 	<%= courseModule.moreDetails %>
         </textarea>
 
+        </div>
+        <button type="submit" class="btn my-3 btn-warning">update Module</button>
       </div>
-      <button type="submit" class="btn my-3 btn-warning">update Module</button>
-    </div>
-  </form>
-</section>
+    </form>
+  </section>
 
-<section class="container col-md-8 my-5 p-2" style="background-color: rgb(247, 233, 208)">
-  <h3 class="text-center">Add a video course to this module</h3>
-  <form action="/admindashboard/courses/<%= course._id %>/modules/<%= courseModule._id %>/engcoursevideo" method="POST">
-    <div class="card card-body">
-      <div class="mt-2">
-        <div class="col">
-          <label class="form-label" for="title">Lesson title</label>
-          <input class="form-control" type="text" name="engVideo[title]" value="" required />
+  <!-- English lesson -->
+  <section class="container col-md-8 my-5 p-2" style="background-color: rgb(247, 233, 208)">
+    <h3 class="text-center">Add a video course to this module</h3>
+    <form action="/admindashboard/courses/<%= course._id %>/modules/<%= courseModule._id %>/engcoursevideo"
+      method="POST">
+      <div class="card card-body">
+        <div class="mt-2">
+          <div class="col">
+            <label class="form-label" for="title">Lesson title</label>
+            <input class="form-control" type="text" name="engVideo[title]" value="" required />
+          </div>
+
+          <!-- Lesson type -->
+          <label class="form-label my-3" for="Lesson Type">Lesson Type</label>
+          <select class="form-select" name="engVideo[lessonType]" aria-label="Default select example" required>
+            <option selected value="English lesson">English lesson</option>
+            <option value="Grammar">Grammar</option>
+            <option value="Vocabulary">Vocabulary</option>
+            <option value="Pronunciation">Pronunciation</option>
+            <option value="Writing">Writing</option>
+          </select>
+
+          <div class="col">
+            <label class="form-label" for="title">Lesson Image</label>
+            <input class="form-control" type="text" name="engVideo[lessonImage]" placeholder="Enter lesson image link"
+              value="" required />
+          </div>
+
+          <div class="col">
+            <label class="form-label" for="title">English Course Link</label>
+            <input class="form-control" type="text" name="engVideo[engCourseLink]" value=""
+              placeholder="Enter course video link" required />
+          </div>
         </div>
 
-        <div class="col">
-          <label class="form-label" for="title">Lesson Type</label>
-          <input class="form-control" type="text" name="engVideo[lessonType]" value="" required />
-        </div>
-
-        <div class="col">
-          <label class="form-label" for="title">English Course Link</label>
-          <input class="form-control" type="text" name="engVideo[engCourseLink]" value=""
-            placeholder="Enter course video link" required />
-        </div>
+        <button class="btn btn-success mx-2 my-3" type="submit">Add an English video course to this module</button>
       </div>
+    </form>
+  </section>
 
-      <button class="btn btn-success mx-2 my-3" type="submit">Add an English video course to this module</button>
-    </div>
-  </form>
-</section>
+  <!-- Practice session-->
+  <section class="container col-md-8 my-5 p-2" style="background-color: rgb(247, 233, 208)">
+    <h3 class="text-center">Add a practice exercise to this module</h3>
+    <form action="/admindashboard/courses/<%= course._id %>/modules/<%= courseModule._id %>/practice" method="POST">
+      <div class="card card-body">
+        <div class="mt-2">
+          <div class="col">
+            <label class="form-label" for="title">Assignment title</label>
+            <input class="form-control" type="text" name="practice[title]" value="" required />
+          </div>
 
+          <!-- Exercise type -->
+          <div class="col">
+            <label class="form-label my-3" for="Exercise Type">Exercise Type</label>
+            <select class="form-select" name="practice[category]" aria-label="Default select example" required>
+              <option selected value="English lesson">English Exercise</option>
+              <option value="Grammar">Grammar</option>
+              <option value="Vocabulary">Vocabulary</option>
+              <option value="Listening">Listening</option>
+              <option value="Reading">Reading</option>
+              <option value="Writing">Writing</option>
+            </select>
+          </div>
 
-<section class="container col-md-8 my-5 p-2" style="background-color: rgb(247, 233, 208)">
-  <h3 class="text-center">Add a practice exercise to this module</h3>
-  <form action="/admindashboard/courses/<%= course._id %>/modules/<%= courseModule._id %>/practice" method="POST">
-    <div class="card card-body">
-      <div class="mt-2">
-        <div class="col">
-          <label class="form-label" for="title">Assignment title</label>
-          <input class="form-control" type="text" name="practice[title]" value="" required />
+          <div class="col">
+            <label class="form-label" for="title">Assignment Links</label>
+            <input class="form-control" type="text" name="practice[practice_links]" value=""
+              placeholder="Enter video links separated by ," required />
+          </div>
         </div>
 
-        <div class="col">
-          <label class="form-label" for="title">Category</label>
-          <input class="form-control" type="text" name="practice[category]" value="" required />
-        </div>
-
-        <div class="col">
-          <label class="form-label" for="title">Assignment Links</label>
-          <input class="form-control" type="text" name="practice[practice_links]" value=""
-            placeholder="Enter video links separated by ," required />
-        </div>
+        <button class="btn btn-success mx-2 my-3" type="submit">Add practice exercise to this module</button>
       </div>
-
-      <button class="btn btn-success mx-2 my-3" type="submit">Add practice exercise to this module</button>
-    </div>
-  </form>
-</section>
+    </form>
+  </section>
