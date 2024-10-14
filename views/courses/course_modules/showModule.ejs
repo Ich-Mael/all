@@ -144,8 +144,6 @@
               </div>
             </div>
             <%}%>
-
-
               <%}%>
       </div>
       <% for (video of courseModule.videoLinks) {%>
@@ -412,7 +410,7 @@
         <div class="row">
           <% for ( assignment of courseModule.Assignment) {%>
             <% if( assignment.category==="Grammar" ){%>
-              <div class=" col-lg-4 col-md-6 px-2 my-3">
+              <div class=" col-md-6 px-2 my-3">
                 <div class="mx-2 assignment-card">
                   <h1 class="assignment-title">
                     <%= assignment.title %>
@@ -420,7 +418,7 @@
 
                   <div class="pb-2 d-flex justify-content-around ">
                     <%for (link of assignment.links ){%>
-                      <button class="btn  btn-secondary"> <a target="_blank" class="fs-6 text-white"
+                      <button class="btn  btn-success"> <a target="_blank" class="fs-6 text-white"
                           href=" <%= link %> ">
                           Exercise
                           <%= assignment.links.indexOf(link) + 1 %>
