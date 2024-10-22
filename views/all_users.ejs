@@ -31,6 +31,8 @@
      <th scope="col">Name</th>
      <th scope="col">Surname</th>
      <th scope="col">Username</th>
+     <th scope="col">Account Status</th>
+     <th scope="col">PEPC status</th>
      <th scope="col">Action</th>
     </tr>
    </thead>
@@ -49,6 +51,12 @@
       <td>
        <%= users[i].username %>
       </td>
+      <td>
+        <%= users[i].isVerified %>
+       </td>
+      <td>
+        <%= users[i].isPecpStudent %>
+       </td>
       <td>
 
        <!-- Button trigger modal -->
