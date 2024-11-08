@@ -16,9 +16,9 @@
           <%= course.title %>
         </h1>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Voir les autres chapitres
-        </button>
+        <!-- <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+             Voir les autres chapitres
+             </button> -->
       </div>
     </div>
   </div>
@@ -52,7 +52,9 @@
     </div>
   </div>
   <p class="module-title-wrapper">
-    Chapter <%= module_number %> : <%= courseModule.title %>
+    Chapter <%= module_number %> : <%= courseModule.title %> <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Voir les autres chapitres
+        </button>
   </p>
 
 
