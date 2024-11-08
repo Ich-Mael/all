@@ -111,7 +111,6 @@ body {
   /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #1CB5E0, #000046);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
   color: rgb(240, 234, 234);
   padding: 1.5rem 1rem;
   text-align: center;
@@ -138,19 +137,22 @@ body {
 }
 
 .video-wrapper {
- 
   margin: 4rem 0;
 }
 
 .lessonWrapper{
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  margin: 1rem 0;
 }
 
-
+.lessonWrapper img{
+    width:100%;
+    height: 10rem;
+}
 
 .lessonTitle{
  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
-  font-size: 1.4rem; 
+  font-size: 1.4rem;
   font-weight: 300;
 }
 
@@ -162,7 +164,6 @@ body {
   /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #2a5298, #1e3c72);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   margin-bottom: 2rem;
