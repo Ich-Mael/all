@@ -17,8 +17,8 @@ const ExpressError = require("./utilities/ExpressError");
 const {
     news,
     allNews
-} = require("./models/news");
 
+} = require("./models/news");
 // Routes requirements
 const userRoutes = require("./routes/user");
 const newsRoutes = require("./routes/news");
