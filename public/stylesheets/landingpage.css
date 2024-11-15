@@ -10,6 +10,7 @@
 html {
   box-sizing: border-box;
   font-size: 90%;
+  background-color: yellow;
 }
 
 body {
@@ -283,10 +284,10 @@ nav {
   text-transform: capitalize;
   color: rgba(51, 6, 136, 0.9) !important;
   font-weight: 500;
-  transition: all 0.4s !important;
+  transition: all 0.8s !important;
 }
 
-.myNav-link:hover {
+.nav-link:hover .myNav-link{
   text-decoration: none;
   font-weight: 600;
   color: rgb(254, 254, 254) !important;
@@ -300,7 +301,6 @@ nav {
   color: rgb(243, 239, 237);
   border: 1px solid rgb(243, 241, 241);
   text-decoration: none;
-  background-color: rgba(108, 12, 204, 0.752);
   background-color: #4d0db4;
   transition: all 0.3s;
 }
