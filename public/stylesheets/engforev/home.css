@@ -3,28 +3,18 @@ html {
 }
 
 .wrapper {
-  background: url("https://res.cloudinary.com/dccibzcxp/image/upload/v1725565872/Afro%20Language%20lab/IMG_7893_lcrkll.jpg");
+  background: url("https://res.cloudinary.com/dccibzcxp/image/upload/v1733605637/Afro%20Language%20lab/English_Club_Facebook_Facebook_Ad_3_ft8jw6.png");
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-position: center center;
-  height: 60vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.wrapper:after {
-  content: "";
-  z-index: 1;
-  height: 70%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(6, 4, 46, 0.409);
-  position: absolute;
-}
 
 .eng-title {
   font-family: "Chivo", sans-serif;
@@ -39,17 +29,29 @@ html {
 }
 
 .intro{
-  font-family: 'Times New Roman', Times, serif;
+  /* font-family: 'Times New Roman', Times, serif; */
   font-size: 1.5rem;
-  padding: 2rem 0 0 0;
-  color: #020202ab;
-  text-align: center;
+  padding: 1rem 0 0 0;
+  color: #48047cdc;
+  /* text-align: center; */
+}
+
+ul li{
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+}
+
+li i{
+  color: #4c069c;
+  font-size: 1rem ;
+  margin: 0 5px 0 3px ;
 }
 
 .class-title {
   font-family: "Chivo", sans-serif;
   font-size: 2rem;
-  padding: 1rem 9rem;
+  text-align: center;
+  padding: 2rem;
   color: rgba(227, 229, 239, 0.91);
   font-weight: 700;
   background: #360033; /* fallback for old browsers */
@@ -133,16 +135,30 @@ html {
 }
 
 .inscription {
-  background-color: #a19ea1;
+  background-color: #520bcec4;
   color: rgb(255, 255, 255);
-  padding: 1rem auto;
+  padding: 0.6rem 1rem ;
+  border-radius: 3px;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.phone {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 1.3rem;
+.whatsapp-msg{
+  background-color: rgba(0, 128, 0, 0.808);
+  padding: 0.5rem;
+  text-align: center;
 }
+
+.whatsapp-msg a{
+  color: whitesmoke;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.phone {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1.5rem;
+}
+
+/* Animation */ 
 
 @keyframes moveBanner {
   0% {
@@ -161,4 +177,25 @@ html {
     -ms-transform: translateX(0) rotate(0);
     -o-transform: translateX(0) rotate(0);
   }
+}
+
+/* Responsiveness */ 
+@media (max-width: 576px) {
+  .wrapper {
+    background: url("https://res.cloudinary.com/dccibzcxp/image/upload/v1733605304/Afro%20Language%20lab/eng-boost_1_ahcdms.png");
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center center;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  html {
+    font-size: 70%;
+  }
+  
 }
