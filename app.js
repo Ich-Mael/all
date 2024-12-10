@@ -159,6 +159,16 @@ app.get("/blog/news-1", (req, res)=> {
   res.render("news/blog-1.ejs")
 });
 
+app.get("/blog/news-2", (req, res)=> {
+  res.render("news/blog-2.ejs")
+});
+
+app.get("/blog/news-3", (req, res)=> {
+  res.render("news/blog-3.ejs")
+});
+
+
+
 //user routes
 app.use("/", userRoutes);
 

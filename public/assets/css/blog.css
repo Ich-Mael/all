@@ -111,22 +111,6 @@ html {
 }
 
 
-.news-background {
-    background: url("https://images.pexels.com/photos/10565669/pexels-photo-10565669.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    height: 60vh;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-position: center center;
-    position: relative;
-    /* background-attachment: fixed; */
-    background-repeat: no-repeat;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-}
 
 /*--------------------------------------------------------------
 # Blog Details Section
@@ -161,6 +145,12 @@ html {
 .blog-details .content p {
     font-size: 1.2rem;
     margin-top: 30px;
+    font-weight: 300;
+    color: #2d0f4fe0;
+}
+
+.list-items li {
+    font-size: 1.2rem;
     font-weight: 300;
     color: #2d0f4fe0;
 }
