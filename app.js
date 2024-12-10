@@ -153,6 +153,12 @@ app.get("/date", (req, res) => {
   res.send(" Date test");
 });
 
+
+// News
+app.get("/blog/news-1", (req, res)=> {
+  res.render("news/blog-1.ejs")
+});
+
 //user routes
 app.use("/", userRoutes);
 

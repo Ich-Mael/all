@@ -494,7 +494,7 @@ hk-shadow {
   align-self: center;
 }
 
-.slogan {
+.footer-slogan {
   font-family: 'Playfair Display', serif;
   color: #5806c5;
 
@@ -509,15 +509,24 @@ hk-shadow {
 .top-footer-line>p {
   text-align: center;
   position: relative;
-  background-color: #5000c8;
-  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  background-color: #5000c8d0;
+  background: #4776E6;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8E54E9, #4776E6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  font-size: 1.2rem;
   line-height: 35px;
-  font-family: 'Playfair Display', serif;
-  color: #ffffff;
+  /* font-family: 'Playfair Display', serif; */
+  color: #ffffffe9;
   padding: 2rem 1rem;
   font-weight: 700;
   margin-bottom: 27px;
 }
+
 
 a,
 a:hover,
