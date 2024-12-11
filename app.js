@@ -4,6 +4,7 @@ if (process.env.NODE_ENV !== "production") {
 
 const moment = require("moment");
 const express = require("express");
+const expressLayouts = require('express-ejs-layouts');
 const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
 const session = require("express-session");
