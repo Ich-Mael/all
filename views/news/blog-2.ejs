@@ -404,32 +404,61 @@ content="https://images.pexels.com/photos/8730969/pexels-photo-8730969.jpeg?auto
 
      <div class="col-lg-4 sidebar">
       <div class="widgets-container">
-       <p class="video-summary-title">L'essentiel de l'article en deux minutes</p>
+       <p class="video-summary-title">Cliquez ici pour le résumé de l'article en deux minutes</p>
        <div class="blog-author-widget widget-item">
         <div class="d-flex flex-column align-items-center">
-         <div class="col-lg-12 mb-2">
-          <div id="tv-container" data-aos="fade-up" data-aos-duration="500">
-           <div id="monitor">
-            <div class="afrohk-TV">
-             <h3 class="text-center afrohk-text mb-2 py-0">
-              <span class="afrohk">Afro</span><span class="tv"> Language <span class="lab">Lab</span></span>
-             </h3>
+        		<!-- Button trigger modal en Savoir plus -->
+            <button type="button" class="btn-blog-video" data-bs-toggle="modal"
+            data-bs-target="#beg">
+            L'essentiel de l'article en deux minutes
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="beg" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered  modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Ce qu'il faut retenir
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div id="tv-container">
+                    <div id="monitor">
+                      <div class="afrohk-TV">
+                        <h3 class="text-center afrohk-text mb-2 py-0">
+                          <span class="afrohk">Afro</span><span
+                            class="tv"> Language <span
+                              class="lab">Lab</span></span>
+                        </h3>
+                      </div>
+                      <div id="monitorscreen">
+                        <iframe id="vimeo-content"
+                          src="https://player.vimeo.com/video/675654851?h=749c808189"
+                          frameborder="0" height="500px" width="1000px"
+                          allow="autoplay; fullscreen; picture-in-picture"
+                          allow="fullscreen"
+                          title="High-intensity Classes"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger"
+                    data-bs-dismiss="modal">Fermer</button>
+                </div>
+              </div>
             </div>
-            <div id="monitorscreen">
-             <iframe loading="lazy" id="vimeo-content"
-              src="https://player.vimeo.com/video/999702673?h=dcdeaf1551&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-              height="100%" width="100%" allow="autoplay; fullscreen; picture-in-picture" allow="fullscreen"
-              title="High-intensity Classes"></iframe>
-            </div>
-           </div>
           </div>
-         </div>
         </div>
        </div>
        <!--/Blog Author Widget -->
        <!-- Blog Author Widget -->
        <div class="blog-author-widget widget-item">
-        <div class="d-flex flex-column align-items-center">
+        <div class="d-flex flex-column 
+        align-items-center">
           <img  src="https://res.cloudinary.com/dccibzcxp/image/upload/v1733855834/Afro%20Language%20lab/Chantal_htd6pi.jpg"
           class="author-img mb-3 flex-shrink-0" alt="">
          <div class="d-flex align-items-center justify-content-around w-100">
