@@ -453,12 +453,12 @@ border-radius: 5px;
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: #2a2c39;
+  background: #2b1f49;
   padding: 80px 0;
 }
 
 .cta h3 {
-  color: #fff;
+  color: #ffffffa9;
   font-size: 28px;
   font-weight: 700;
 }
@@ -479,13 +479,13 @@ border-radius: 5px;
   text-decoration: none;
   transition: 0.5s;
   margin: 10px;
-  color: #fff;
+  color: #f0eefbcf;
   border: 1px solid whitesmoke;
   background: #2e027b;
 }
 
 .cta .cta-btn:hover {
-  background: #fff;
+  background: #eeeff6d3;
   color: #41047e;
 }
 
