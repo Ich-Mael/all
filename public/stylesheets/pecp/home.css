@@ -207,27 +207,35 @@ body {
 }
 
 .card {
-  padding: 30px;
+  padding: 2rem 2rem;
   background: rgba(25, 24, 54, 0.523);
-  border: 2px solid rgba(61, 57, 57, 0.586);
+  border: 2px solid rgba(255, 253, 253, 0.586);
   backdrop-filter: blur(10px);
   border-radius: 25px;
   transition: all 0.5s;
 }
 
 .card:hover {
-  background: rgba(38, 3, 163, 0.873);
+  background: #2b5876;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4e4376, #2b5876);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4e4376, #2b5876);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .card_title {
   font-weight: normal;
-  font-size: 36px;
+  font-size: 1.5rem;
   text-align: center;
-  background-color: #07609f;
+  background-color: #350fa0bb;
   margin-bottom: 20px;
   border-radius: 10px;
-  padding: 0.5rem;
+  padding: 1rem 0.5rem;
   font-family: "Titan One", cursive;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.795);
 
 }
 
@@ -235,7 +243,7 @@ body {
   font-weight: normal;
   font-size: 26px;
   color: #d0e1ed;
-  text-shadow: 1px 1px 1px rgb(7, 86, 2);
+  text-shadow: 1px 1px 1px rgb(3, 2, 86);
   font-family: Ultra;
 }
 
@@ -503,9 +511,12 @@ a.cta_btn:hover {
 }
 
 .testimonial_section .testimonial_box .testimonial_container {
-  background: #614385;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #516395, #614385);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #516395, #614385); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #614385;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #516395, #614385);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #516395, #614385);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   margin-left: -170px !important;
   position: relative;

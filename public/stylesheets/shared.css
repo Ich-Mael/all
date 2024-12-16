@@ -135,15 +135,15 @@ nav {
   color: rgb(243, 239, 237);
   border: 1px solid rgb(243, 241, 241);
   text-decoration: none;
-  background-color: rgb(138, 30, 201);
+  background-color: rgb(67, 30, 201);
 }
 
 .nav-link-connexion:hover {
   background-color: transparent;
   background-color: rgb(250, 245, 245);
   text-decoration: none;
-  border: 2px solid rgb(109, 5, 109);
-  color: rgba(130, 14, 165, 0.925);
+  border: 2px solid rgb(40, 5, 109);
+  color: rgba(69, 14, 165, 0.925);
 }
 
 .profile-link {
